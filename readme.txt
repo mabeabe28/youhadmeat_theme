@@ -1,4 +1,4 @@
-=== YouHadMeAtV1 ===
+=== youhadmeat_theme ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called YouHadMeAtV1.
+A starter theme called youhadmeat_theme.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-YouHadMeAtV1 includes support for Infinite Scroll in Jetpack.
+youhadmeat_theme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package YouHadMeAtV1
+ * @package youhadmeat_theme
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

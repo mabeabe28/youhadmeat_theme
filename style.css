@@ -1,5 +1,5 @@
 /*!
-Theme Name: YouHadMeAtV1
+Theme Name: youhadmeat_theme
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -7,13 +7,13 @@ Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: youhadmeatv1
+Text Domain: youhadmeat_theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-YouHadMeAtV1 is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+youhadmeat_theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -355,19 +355,19 @@ textarea {
 
 @font-face {
     font-family: Jullian-Regular;
-    src: url('/wp-content/themes/youhadmeatv1/includes/fonts/Jullian/Jullian-Regular.ttf');
+    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Jullian/Jullian-Regular.ttf');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Selima;
-    src: url('/wp-content/themes/youhadmeatv1/includes/fonts/Selima/Selima.otf');
+    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Selima/Selima.otf');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Hensa;
-    src: url('/wp-content/themes/youhadmeatv1/includes/fonts/Hensa/Hensa.otf');
+    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Hensa/Hensa.otf');
     font-weight: normal;
 }
 

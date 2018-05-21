@@ -1,8 +1,8 @@
 <?php
 /**
- * YouHadMeAtV1 Theme Customizer
+ * youhadmeat_theme Theme Customizer
  *
- * @package YouHadMeAtV1
+ * @package youhadmeat_theme
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function youhadmeatv1_customize_register( $wp_customize ) {
+function youhadmeat_theme_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -18,22 +18,22 @@ function youhadmeatv1_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'youhadmeatv1_customize_partial_blogname',
+			'render_callback' => 'youhadmeat_theme_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'youhadmeatv1_customize_partial_blogdescription',
+			'render_callback' => 'youhadmeat_theme_customize_partial_blogdescription',
 		) );
 	}
 }
-add_action( 'customize_register', 'youhadmeatv1_customize_register' );
+add_action( 'customize_register', 'youhadmeat_theme_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function youhadmeatv1_customize_partial_blogname() {
+function youhadmeat_theme_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -42,14 +42,14 @@ function youhadmeatv1_customize_partial_blogname() {
  *
  * @return void
  */
-function youhadmeatv1_customize_partial_blogdescription() {
+function youhadmeat_theme_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function youhadmeatv1_customize_preview_js() {
-	wp_enqueue_script( 'youhadmeatv1-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function youhadmeat_theme_customize_preview_js() {
+	wp_enqueue_script( 'youhadmeat_theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'youhadmeatv1_customize_preview_js' );
+add_action( 'customize_preview_init', 'youhadmeat_theme_customize_preview_js' );

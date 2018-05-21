@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package YouHadMeAtV1
+ * @package youhadmeat_theme
  */
 
 get_header();
