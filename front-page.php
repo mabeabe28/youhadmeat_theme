@@ -122,7 +122,7 @@ get_header('home');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
 		background-color: black;
 			}
 
