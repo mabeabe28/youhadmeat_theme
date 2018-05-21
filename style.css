@@ -360,26 +360,8 @@ textarea {
 }
 
 @font-face {
-    font-family: Selima;
-    src: url('./includes/fonts/Selima/Selima.otf');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: Hensa;
-    src: url('./includes/fonts/Hensa/Hensa.otf');
-    font-weight: normal;
-}
-
-@font-face {
     font-family: Gloss-and-Bloom;
-    src: url('./includes/fonts/gloss_and_bloom/gloss_and_bloom.ttf');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: Broadcast-Matter;
-    src: url('./includes/fonts/broadcast_matter/broadcast_matter.ttf');
+    src: url('./includes/fonts/gloss_and_bloom/Gloss_And_Bloom.ttf');
     font-weight: normal;
 }
 
