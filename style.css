@@ -359,6 +359,20 @@ textarea {
     font-weight: normal;
 }
 
+@font-face {
+    font-family: Selima;
+    src: url('/wp-content/themes/youhadmeatv1/includes/fonts/Selima/Selima.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Hensa;
+    src: url('/wp-content/themes/youhadmeatv1/includes/fonts/Hensa/Hensa.otf');
+    font-weight: normal;
+}
+
+
+
 /* Interactive
 	 ========================================================================== */
 
@@ -407,7 +421,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: "Avenir";
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -808,7 +822,9 @@ text-align: left;
 }
 
 #site-navigation #logo{
-	font-family: "Jullian-Regular", Arial, sans-serif;
+	font-family: "Avenir";
+	font-style: italic;
+
 }
 
 

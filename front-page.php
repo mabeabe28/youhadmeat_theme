@@ -152,12 +152,15 @@ get_header('home');
 }
 
 #youhadmeatHeroText #leading{
-	font-family: "Jullian-Regular", Arial, sans-serif;
+	font-family: "Avenir";
+	font-style: italic;
+	font-weight: bold;
 	word-spacing: 30px;
 	display: inline-block;
 }
 
 #youhadmeatHeroText #trailing{
+	font-family: "Jullian-Regular", Arial, sans-serif;
 	display: inline-block;
 	margin-left: 5%;
 }
