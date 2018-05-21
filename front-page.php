@@ -170,6 +170,10 @@ get_header('home');
 		font-size: 6.5vw;
 		width: 100%;
 
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+
 }
 
 #youhadmeatHeroText #leading{
