@@ -155,12 +155,11 @@ get_header('home');
 	font-family: "Avenir";
 	font-style: italic;
 	font-weight: bold;
-	word-spacing: 30px;
 	display: inline-block;
 }
 
 #youhadmeatHeroText #trailing{
-	font-family: "Jullian-Regular", Arial, sans-serif;
+	font-family: "Gloss-and-Bloom", Arial, sans-serif;
 	display: inline-block;
 	margin-left: 5%;
 }

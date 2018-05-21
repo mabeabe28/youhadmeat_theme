@@ -355,19 +355,31 @@ textarea {
 
 @font-face {
     font-family: Jullian-Regular;
-    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Jullian/Jullian-Regular.ttf');
+    src: url('./includes/fonts/Jullian/Jullian-Regular.ttf');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Selima;
-    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Selima/Selima.otf');
+    src: url('./includes/fonts/Selima/Selima.otf');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Hensa;
-    src: url('/wp-content/themes/youhadmeat_theme/includes/fonts/Hensa/Hensa.otf');
+    src: url('./includes/fonts/Hensa/Hensa.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Gloss-and-Bloom;
+    src: url('./includes/fonts/gloss_and_bloom/gloss_and_bloom.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Broadcast-Matter;
+    src: url('./includes/fonts/broadcast_matter/broadcast_matter.ttf');
     font-weight: normal;
 }
 
