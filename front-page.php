@@ -17,13 +17,19 @@ get_header('home');
 
 			<section>
 
+				<!-- get most recent post from each category -->
 				<div class="slideshow-container">
 
 				<?php
+				//get all cats
+				$categories=get_categories();
+				//for each category
+		  	foreach($categories as $category) {
+
 					$args = array(
-						'numberposts' => 5,
+						'numberposts' => 1,
 						'offset' => 0,
-						'category' => 0,
+						'category' => $category->term_id,
 						'orderby' => 'post_date',
 						'order' => 'DESC',
 						'include' => '',
@@ -35,47 +41,49 @@ get_header('home');
 						'suppress_filters' => true
 					);
 
-					$recent_posts = wp_get_recent_posts( $args );
-					//print_r($recent_posts);
-					foreach( $recent_posts as $recent ){
-							//echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> Excerpt:'.$recent["post_excerpt"] .'</li> ';
-							//echo	$recent["ID"];
-							//echo get_the_post_thumbnail_url($recent["ID"], 'thumbnail');
-							//echo wp_get_post_categories($recent["ID"][0]);
-							//echo '<div stlye="height:100;background-image:url('.get_the_post_thumbnail_url($recent["ID"], 'full').');background-position:cover;">
-							//</div>';
-							$category = get_the_category($recent["ID"]);
-							$firstCategory = $category[0]->cat_name;
-							//print_r($firstCategory);
-							echo '<div class="mySlides fade">';
+					//get one recent post
+					$recent_post = wp_get_recent_posts( $args );
+					//get the categories for the post
+					$category = get_the_category($recent_post[0]["ID"]);
+					$firstCategory = $category[0]->cat_name;
 
-							if(has_post_thumbnail($recent["ID"])){
-								// use one of these
-								//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
-								echo '
+					if($category[0]->count > 0){
+						echo '<div class="mySlides">';
 
-								<div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent["ID"], 'full').');">
-										<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
-										<div style="display:none;">
-											<img src="'.get_the_post_thumbnail_url($recent["ID"], 'full').'">
-										</div>
+						if(has_post_thumbnail($recent_post[0]["ID"])){
+							// use one of these
+							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
+							echo '
+							<div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');">
+									<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
+									<div style="display:none;">
+										<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
+									</div>
 
-										<div id="youhadmeatHeroText">
-												<div id="leading">You Had Me At</div>
-												<div id="trailing">'.$firstCategory.'</div>
-												<!--<h2>'.$recent["post_excerpt"].'</h2>-->
-										</div>
-								</div>
-								</div>
+									<div id="youhadmeatHeroText">
+											<div id="leading">You Had Me At</div>
+											<div id="trailing" class="fade">'.$firstCategory.'
+												<div id="recentPost">
+													<div style="font-size:12px;">Latest Post:</div>
+													<div class="recentPost_detail">
+														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.get_the_title($recent_post[0]["ID"]).'</a>
+													</div>
+													<div class="recentPost_excerpt">
+														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.$recent_post[0]["post_excerpt"].'</a>
+													</div>
+													<div class="cta" style="font-size: 15px;"><a href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
+												</div>
+											</div>
+									</div>
 
-								';
-
-
-							}
-							/*echo '<img src="img1.jpg" style="width:100%">
-								<div class="text">'.$recent["post_excerpt"].'</div>
-							</div>';*/
+							</div>
+							';
 						}
+
+						echo '</div>';
+				 }
+				} // foreach($categories
+
 					wp_reset_query();
 				?>
 
@@ -87,6 +95,16 @@ get_header('home');
 
 
 			<style>
+
+			/* Each state */
+			#recentPost  a{text-decoration:none;;color: white;}
+			#recentPost  .cta a{text-decoration:underline;color: white;}
+			#recentPost  a:visited { text-decoration: none; color:white; }
+			#recentPost  a:hover { text-decoration: none;; color:white; }
+			#recentPost  .cta a:hover { text-decoration: underline; color:white; }
+			#recentPost  a:focus { text-decoration: none; color:white; }
+			#recentPost  a:hover, a:active { text-decoration: none; color:white }
+
 			.hero {
 			    /* Sizing */
 		width: 100vw;
@@ -108,16 +126,19 @@ get_header('home');
 		background-color: black;
 			}
 
-			.hero h1 {
-    /* Text styles */
-    font-size: 5em;
-		/* Margins */
-    margin-top: 0;
-    margin-bottom: 0.5em;
+		#recentPost{
+			padding-top: 20px;
+			font-family: "Avenir";
+		}
+		.recentPost_detail{
+			font-weight: bold;
+			font-size: 20px;
+		}
 
-
-
-}
+		.recentPost_excerpt{
+			font-size: 15px;
+			font-style: italic;
+		}
 			</style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -146,22 +167,37 @@ get_header('home');
     position: absolute;
     top: 40%;
     color: white;
-		font-size: 6vw;
-		display: block;
+		font-size: 6.5vw;
 		width: 100%;
+
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+
 }
 
 #youhadmeatHeroText #leading{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 	font-family: "Avenir";
 	font-style: italic;
 	font-weight: bold;
+	text-align: center;
 	display: inline-block;
+	padding-bottom: 20px;
 }
 
 #youhadmeatHeroText #trailing{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 400px;
 	font-family: "Gloss-and-Bloom", Arial, sans-serif;
 	display: inline-block;
-	margin-left: 5%;
+	text-align: center;
 }
 
 
@@ -192,12 +228,12 @@ get_header('home');
 }
 
 /* Fading animation */
-/*.fade {
+.fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 3s;
   animation-name: fade;
   animation-duration: 3s;
-}*/
+}
 		/* Slideshow container */
 		/*.slideshow-container {
 		  max-width: 100%;

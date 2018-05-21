@@ -835,6 +835,7 @@ text-align: left;
 
 #site-navigation #logo{
 	font-family: "Avenir";
+	font-weight: bold;
 	font-style: italic;
 
 }
@@ -884,7 +885,10 @@ text-align: left;
 	.main-navigation ul {
 		display: inline-block;
 	}
+
+
 }
+
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
