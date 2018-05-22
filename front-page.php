@@ -128,7 +128,7 @@ get_header('home');
 
 		#recentPost{
 			padding-top: 20px;
-			font-family: "Avenir";
+			font-family: "Avenir","Open Sans","Calibri", sans-serif;
 		}
 		.recentPost_detail{
 			font-weight: bold;
@@ -181,7 +181,7 @@ get_header('home');
 	padding-right: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
-	font-family: "Avenir";
+	font-family: "Avenir","Open Sans","Calibri", sans-serif;
 	font-style: italic;
 	font-weight: bold;
 	text-align: center;
