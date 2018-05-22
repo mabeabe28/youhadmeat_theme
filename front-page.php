@@ -164,7 +164,7 @@ get_header('home');
 
 
 #youhadmeatHeroText {
-    position: absolute;
+    /*position: absolute;*/
     top: 40%;
     color: white;
 		font-size: 6.5vw;
