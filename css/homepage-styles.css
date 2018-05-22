@@ -1,0 +1,194 @@
+/*!
+Theme Name: youhadmeat_theme
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: youhadmeat_theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+youhadmeat_theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Hero Featured Images
+--------------------------------------------------------------*/
+/*Main Hero Wrapper Full screen*/
+		.hero {
+			/* Sizing */
+			width: 100vw;
+			height: 100vh;
+			/* Flexbox stuff */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* Text styles */
+			text-align: center;
+			color: white;
+			/* Background styles */
+			/*background-image: url(http://localhost:8888/youhadmeat/wp-content/uploads/2018/05/DSCF6505.jpg);*/
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			/*background-attachment: fixed;*/
+			background-color: black;
+		}
+
+		/*hero text wrapper stuff*/
+		#youhadmeatHeroText {
+		    /*position: absolute;*/
+		    top: 40%;
+		    color: white;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				flex-flow: row wrap;
+
+		}
+
+		#youhadmeatHeroText #leading{
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 20px;
+			margin-right: 20px;
+			font-family: "Avenir","Open Sans","Calibri", sans-serif;
+			font-style: italic;
+			font-weight: bold;
+			text-align: center;
+			display: inline-block;
+			padding-bottom: 20px;
+			font-size: 5vw;
+		}
+
+		#youhadmeatHeroText #trailing{
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 20px;
+			margin-right: 20px;
+			width: 400px;
+			font-family: "Gloss-and-Bloom", Arial, sans-serif;
+			display: inline-block;
+			text-align: center;
+			font-size: 7vw;
+		}
+
+
+		/*Recent Post Detail stuff*/
+		#recentPost{
+			padding-top: 20px;
+			font-family: "Avenir","Open Sans","Calibri", sans-serif;
+		}
+		.recentPost_detail{
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.recentPost_excerpt{
+			font-size: 15px;
+			font-style: italic;
+		}
+
+		/* Links */
+		#recentPost  a{text-decoration:none;;color: white;}
+		#recentPost  .cta a{text-decoration:underline;color: white;}
+		#recentPost  a:visited { text-decoration: none; color:white; }
+		#recentPost  a:hover { text-decoration: none;; color:white; }
+		#recentPost  .cta a:hover { text-decoration: underline; color:white; }
+		#recentPost  a:focus { text-decoration: none; color:white; }
+		#recentPost  a:hover, a:active { text-decoration: none; color:white }
+
+
+
+/*--------------------------------------------------------------
+# Slider CSS
+--------------------------------------------------------------*/
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+		/* Slideshow container */
+		/*.slideshow-container {
+		  max-width: 100%;
+			height:50%;
+		  position: relative;
+		  margin: auto;
+		}*/
+
+
+		/* Hide the images by default */
+.mySlides {
+	display: none;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

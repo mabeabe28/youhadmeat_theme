@@ -11,11 +11,11 @@
 
 ?>
 
-<!--	</div> #content -->
+</div> <!--#content -->
 
 	<footer id="footer" >
 		<div class="site-info">
-			You Had Me At 
+			You Had Me At
 			<!--<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'youhadmeat_theme' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -29,7 +29,7 @@
 				?>-->
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-<!--</div> #page -->
+</div> <!--#page -->
 
 <?php wp_footer(); ?>
 
