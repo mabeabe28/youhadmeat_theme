@@ -167,7 +167,6 @@ get_header('home');
     /*position: absolute;*/
     top: 40%;
     color: white;
-		font-size: 6.5vw;
 		width: 100%;
 
 		display: flex;
@@ -187,6 +186,7 @@ get_header('home');
 	text-align: center;
 	display: inline-block;
 	padding-bottom: 20px;
+	font-size: 5vw;
 }
 
 #youhadmeatHeroText #trailing{
@@ -198,6 +198,7 @@ get_header('home');
 	font-family: "Gloss-and-Bloom", Arial, sans-serif;
 	display: inline-block;
 	text-align: center;
+	font-size: 6.5vw;
 }
 
 
