@@ -52,10 +52,19 @@
 
 			<div id="logo">
 				You Had Me At
+
+			</div>
+
+			<div style="display:inline-block;position:relative;margin-top:10px;float:right;margin-right:10px;">
+				<a href="<?php echo get_home_url()?>">
+					<i class="fas fa-home fa-lg">
+					</i>
+				</a>
 			</div>
 
 
 			<div class="main-navigation">
+
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

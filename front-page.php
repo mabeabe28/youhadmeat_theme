@@ -148,9 +148,11 @@ get_header('home');
 		//$categories_all=get_categories();
 		//for each category
 		foreach($categories as $curcat) {
+			//print_r($curcat);
 			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
 		 	echo '<div class="category-header">
 							<div class="category-header-title"><h1>'.$curcat->name.'<h1></div>
+							<div class="category-header-desc">'.$curcat->category_description.'</div>
 						</div>';
 			echo '<ul class="category-content">';
 
@@ -170,7 +172,7 @@ get_header('home');
 			foreach($recent_three as $curpost){
 
 				//print_r($curpost);
-				echo '<li style="background-image:url('.get_the_post_thumbnail_url($curpost["ID"], 'full').');" class="category-post-wrapper">
+				echo '<li style="background-image:url('.get_the_post_thumbnail_url($curpost["ID"], 'large').');" class="category-post-wrapper">
 								<div class="category-post-header"></div>
 								<div class="category-post-content"><h4>'.$curpost["post_title"].'</h4>'.$curpost["post_excerpt"].'</div>
 							</li>';
@@ -192,7 +194,12 @@ get_header('home');
 			}
 
 			.category-wrapper .category-header{
+				text-align: center;
+			}
+
+			.category-wrapper .category-header .category-header-title{
 				font-family:Gloss-and-Bloom;
+				font-size: 34px;
 				text-align: center;
 			}
 
@@ -217,7 +224,10 @@ get_header('home');
 				background-size: cover;
 				background-position: center center;
 				background-repeat: no-repeat;
-				box-shadow: 0 8px 6px -6px black;
+
+				-webkit-box-shadow: 6px 8px 6px -3px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+			  -moz-box-shadow:    6px 8px 6px -3px black;  /* Firefox 3.5 - 3.6 */
+			  box-shadow:         6px 8px 6px -3px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
 			}
 
@@ -235,6 +245,8 @@ get_header('home');
 				width: 100%;
 
 			}
+
+
 
 
 
