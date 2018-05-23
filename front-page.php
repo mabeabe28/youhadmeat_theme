@@ -62,8 +62,8 @@ get_header('home');
 
 									<div id="youhadmeatHeroText">
 											<div id="leading">You Had Me At</div>
-											<div id="trailing" class="fade">'.$firstCategory.'
-												<div id="recentPost">
+											<div id="trailing" ><span class="pop">'.$firstCategory.'</span>
+												<div id="recentPost" class="fade">
 													<div style="font-size:12px;">Latest Post:</div>
 													<div class="recentPost_detail">
 														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.get_the_title($recent_post[0]["ID"]).'</a>

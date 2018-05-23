@@ -168,6 +168,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   animation-name: fade;
   animation-duration: 3s;
 }
+.pop {
+  -webkit-animation-name: pop;
+  -webkit-animation-duration: 0.5s;
+  animation-name: pop;
+  animation-duration: 0.5s;
+}
 		/* Slideshow container */
 		/*.slideshow-container {
 		  max-width: 100%;
@@ -191,4 +197,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@-webkit-keyframes pop {
+ 	50%  {transform: scale(1.2);}
+}
+
+@keyframes pop{
+  50%  {transform: scale(1.2);}
 }
