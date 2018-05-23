@@ -153,7 +153,7 @@ get_header('home');
 		$categories_all=get_categories();
 		//for each category
 		foreach($categories_all as $curcat) {
-			echo '<div class="catstest" id="'.$curcat->term_id.'" style="display:none">'.print_r($curcat).'</div>';
+			echo '<div style="display:none">'.print_r($curcat).'</div>';
 		}//for each category
 		?>
 
