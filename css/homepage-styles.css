@@ -107,7 +107,21 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 			padding-top: 10px;
 		}
 
+		/*large screens*/
+		@media screen and (min-width: 20.5em) {
 
+			#youhadmeatHeroText #leading{
+				padding-top: 30px;
+				margin-top: 10px;
+		}
+
+			#youhadmeatHeroText #trailing{
+				padding-top: 30px;
+				margin-top: 10px;
+			}
+
+
+		}
 		/*Recent Post Detail stuff*/
 		#recentPost{
 			padding-top: 20px;

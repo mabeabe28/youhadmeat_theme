@@ -172,7 +172,7 @@ get_header('home');
 
 				//print_r($curpost);
 				echo '<li class="category-post-wrapper">
-									<a href="'.get_permalink($recent_post[0]["ID"]).'">
+									<a href="'.get_permalink($curpost["ID"]).'">
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="category-post-header"></div>
 										<div class="category-post-content">
