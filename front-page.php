@@ -84,7 +84,6 @@ get_header('home');
 				 }
 				} // foreach($categories
 
-					wp_reset_query();
 				?>
 
 				<!-- Next and previous buttons -->
@@ -150,11 +149,11 @@ get_header('home');
 
 		<?php
 		//get all cats
-		$categories_all=get_categories();
+		//$categories_all=get_categories();
 		//for each category
-		foreach($categories_all as $curcat) {
-			echo '<div class="category-wrapper category--'.$curcat["slug"].'">';
-		 	echo '<div class="category-header">'.$curcat["name"].'</div>';
+		foreach($categories as $curcat) {
+			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
+		 	echo '<div class="category-header">'.$curcat->name.'</div>';
 			echo '<ul class="category-content"';
 
 			echo '<li class="category-post-wrapper">
@@ -177,6 +176,8 @@ get_header('home');
 			echo 		'<ul>';//category-content
 			echo '</div>';//category-wrapper
 		}//for each category
+
+		wp_reset_query();
 		?>
 		<style>
 			.category-wrapper{
