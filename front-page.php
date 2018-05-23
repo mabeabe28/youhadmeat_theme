@@ -153,7 +153,9 @@ get_header('home');
 		//for each category
 		foreach($categories as $curcat) {
 			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
-		 	echo '<div class="category-header">'.$curcat->name.'</div>';
+		 	echo '<div class="category-header">
+							<div class="category-header-title"><h1>'.$curcat->name.'><h1></div>
+						</div>';
 			echo '<ul class="category-content">';
 
 			echo '<li class="category-post-wrapper">
@@ -189,6 +191,7 @@ get_header('home');
 
 			.category-wrapper .category-header{
 				font-family:Gloss-and-Bloom;
+				text-align: center;
 			}
 
 			.category-wrapper .category-content{
@@ -196,8 +199,11 @@ get_header('home');
 				flex-wrap:wrap;
 				position: relative;
 				justify-content: space-evenly;
-				width: 100%;
-
+				margin-left: 0;
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+				list-style: none;
 			}
 
 			.category-content .category-post-wrapper{
