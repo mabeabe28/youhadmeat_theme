@@ -55,7 +55,7 @@
 
 			</div>
 
-			<div style="display:inline-block;position:relative;margin-top:10px;float:right;margin-right:10px;">
+			<div class="navigation-buttons">
 				<a href="<?php echo get_home_url()?>">
 					<i class="fas fa-home fa-lg">
 					</i>

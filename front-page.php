@@ -152,7 +152,6 @@ get_header('home');
 			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
 		 	echo '<div class="category-header">
 							<div class="category-header-title"><h1>'.$curcat->name.'<h1></div>
-							<div class="category-header-desc">'.$curcat->category_description.'</div>
 						</div>';
 			echo '<ul class="category-content">';
 
@@ -172,9 +171,17 @@ get_header('home');
 			foreach($recent_three as $curpost){
 
 				//print_r($curpost);
-				echo '<li style="background-image:url('.get_the_post_thumbnail_url($curpost["ID"], 'large').');" class="category-post-wrapper">
-								<div class="category-post-header"></div>
-								<div class="category-post-content"><h4>'.$curpost["post_title"].'</h4>'.$curpost["post_excerpt"].'</div>
+				echo '<li class="category-post-wrapper">
+									<a href="'.get_permalink($recent_post[0]["ID"]).'">
+										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+										<div class="category-post-header"></div>
+										<div class="category-post-content">
+											<div class="category-post-content-title">'.$curpost["post_title"].'</div>
+											<div class="category-post-content-excerpt">
+												'.$curpost["post_excerpt"].'
+											</div>
+										</div>
+									</a>
 							</li>';
 			}
 
@@ -218,18 +225,29 @@ get_header('home');
 			.category-content .category-post-wrapper{
 				position: relative;
 				width: 300px;
-				height: 450px;
+				height: 520px;
 				background-color: black;
 				margin-bottom: 20px;
-				background-size: cover;
-				background-position: center center;
-				background-repeat: no-repeat;
 
-				-webkit-box-shadow: 6px 8px 6px -3px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-			  -moz-box-shadow:    6px 8px 6px -3px black;  /* Firefox 3.5 - 3.6 */
-			  box-shadow:         6px 8px 6px -3px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+				-webkit-box-shadow: 0 10px 6px -6px #777;
+	      -moz-box-shadow: 0 10px 6px -6px #777;
+	      box-shadow: 0 10px 6px -6px #777;
+
+				display: block;
+				overflow: hidden;
+
+
 
 			}
+
+
+				.category-content .category-post-wrapper img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+				}
+
+
 
 			.category-content .category-post-wrapper .category-post-header{
 				position: relative;
@@ -239,15 +257,48 @@ get_header('home');
 			.category-content .category-post-wrapper .category-post-content{
 				bottom:0;
 				position: absolute;
-				color:white;
-				padding: 20px;
-				background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+				color:black;
+				background-color:white;
 				width: 100%;
+				text-align: center;
+				height: 20%;
+				padding: 5px;
 
 			}
 
+			.category-post-content .category-post-content-title{
+				font-size: 18px;
+				font-weight:300;
+			}
 
+			.category-post-content .category-post-content-excerpt{
+				font-size: 14px;
+				font-weight: lighter;
+				text-overflow: ellipsis;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-top: 5px;
+				font-style: italic;
+			}
 
+			/*small screens*/
+			@media screen and (max-width: 450px) {
+
+				.category-content .category-post-wrapper{
+					width: 100vw;
+					height: 100vh;
+				}
+
+				.category-post-content .category-post-content-title{
+					font-size: 2em;
+				}
+
+				.category-post-content .category-post-content-excerpt{
+					font-size: 1em;
+				}
+
+			}
 
 
 		</style>
