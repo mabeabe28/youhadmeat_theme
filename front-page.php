@@ -153,10 +153,54 @@ get_header('home');
 		$categories_all=get_categories();
 		//for each category
 		foreach($categories_all as $curcat) {
-			echo '<div style="display:none">'.print_r($curcat).'</div>';
+			echo '<div class="category-wrapper category--'.$curcat["slug"].'">';
+		 	echo '<div class="category-header">'.$curcat["name"].'</div>';
+			echo '<ul class="category-content"';
+
+			echo '<li class="category-post-wrapper">
+							<div class="category-post-header">Title 1</div>
+							<div class="category-post-content">Description 1</div>
+						</li>';
+
+			echo '<li class="category-post-wrapper">
+							<div class="category-post-header">Title 2</div>
+							<div class="category-post-content">Description 2</div>
+						</li>';
+
+			echo '<li class="category-post-wrapper">
+								<div class="category-post-header">Title 3</div>
+								<div class="category-post-content">Description 3</div>
+						</li>';
+
+
+
+			echo 		'<ul>';//category-content
+			echo '</div>';//category-wrapper
 		}//for each category
 		?>
+		<style>
+			.category-wrapper{
+				width: 100%;
+				margin-top:20px;
+				margin-bottom:20px ;
+			}
 
+			.category-wrapper .category-header{
+				font-family:Gloss-and-Bloom;
+			}
+
+			.category-wrapper .category-content{
+				display:flex;
+				flex-wrap:wrap;
+				position: relative;
+			}
+
+			.category-content .category-post-wrapper{
+				position: absolute;
+				width: 33%;
+				background-color: red;
+			}
+		</style>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
