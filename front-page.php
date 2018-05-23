@@ -151,7 +151,7 @@ get_header('home');
 		//get all cats
 		//$categories_all=get_categories();
 		//for each category
-		foreach($categories as $curcat) {
+		/*foreach($categories as $curcat) {
 			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
 		 	echo '<div class="category-header">'.$curcat->name.'</div>';
 			echo '<ul class="category-content">';
@@ -175,7 +175,7 @@ get_header('home');
 
 			echo 		'</ul>';//category-content
 			echo '</div>';//category-wrapper
-		}//for each category
+		}//for each category*/
 
 		wp_reset_query();
 		?>
