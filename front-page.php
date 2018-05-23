@@ -37,7 +37,7 @@ get_header('home');
 						'meta_key' => '',
 						'meta_value' =>'',
 						'post_type' => 'post',
-						'post_status' => 'draft, publish, future, pending, private',
+						'post_status' => 'publish',
 						'suppress_filters' => true
 					);
 
@@ -148,6 +148,13 @@ get_header('home');
 		endif;
 		?>
 
+		<?php
+		//get all cats
+		$categories_all=get_categories();
+		//for each category
+		foreach($categories_all as $curcat) {
+			echo '<div class="catstest" id="'.$curcat->term_id.'" style="display:none">'.print_r($curcat).'</div>';
+		}//for each category
 
 
 		</main><!-- #main -->
