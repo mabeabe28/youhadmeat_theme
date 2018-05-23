@@ -196,14 +196,16 @@ get_header('home');
 				flex-wrap:wrap;
 				position: relative;
 				justify-content: space-evenly;
+				width: 100%;
 
 			}
 
 			.category-content .category-post-wrapper{
-				position: absolute;
-				width: 33%;
+				position: relative;
+				width: 350px;
 				background-color: red;
-				height: 200px;
+				height: 250px;
+				margin-bottom: 20px;
 			}
 
 			.category-content .category-post-wrapper .category-post-header{
