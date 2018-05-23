@@ -154,7 +154,7 @@ get_header('home');
 		foreach($categories as $curcat) {
 			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
 		 	echo '<div class="category-header">'.$curcat->name.'</div>';
-			echo '<ul class="category-content"';
+			echo '<ul class="category-content">';
 
 			echo '<li class="category-post-wrapper">
 							<div class="category-post-header">Title 1</div>
