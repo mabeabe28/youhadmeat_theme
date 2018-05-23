@@ -173,7 +173,7 @@ get_header('home');
 
 
 
-			echo 		'<ul>';//category-content
+			echo 		'</ul>';//category-content
 			echo '</div>';//category-wrapper
 		}//for each category
 
@@ -184,6 +184,7 @@ get_header('home');
 				width: 100%;
 				margin-top:20px;
 				margin-bottom:20px ;
+
 			}
 
 			.category-wrapper .category-header{
@@ -194,12 +195,20 @@ get_header('home');
 				display:flex;
 				flex-wrap:wrap;
 				position: relative;
+				justify-content: space-evenly;
+
 			}
 
 			.category-content .category-post-wrapper{
 				position: absolute;
 				width: 33%;
 				background-color: red;
+				height: 200px;
+			}
+
+			.category-content .category-post-wrapper .category-post-header{
+				height: 60px;
+				background-color: blue;
 			}
 		</style>
 		</main><!-- #main -->
