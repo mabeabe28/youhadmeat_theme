@@ -48,7 +48,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*Main Hero Wrapper Full screen*/
 		.hero {
 			/* Sizing */
-			width: 100vw;
+			width: 100%;
 			height: 100vh;
 			/* Flexbox stuff */
 			display: flex;
