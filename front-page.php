@@ -24,18 +24,15 @@ get_header('home');
 				//get all cats
 				$categories=get_categories();
 				//for each category
+				$data = array();
+
 		  	foreach($categories as $category) {
 
 					$args = array(
 						'numberposts' => 1,
-						'offset' => 0,
 						'category' => $category->term_id,
 						'orderby' => 'post_date',
 						'order' => 'DESC',
-						'include' => '',
-						'exclude' => '',
-						'meta_key' => '',
-						'meta_value' =>'',
 						'post_type' => 'post',
 						'post_status' => 'publish',
 						'suppress_filters' => true
@@ -83,7 +80,6 @@ get_header('home');
 						echo '</div>';
 				 }
 				} // foreach($categories
-
 				?>
 
 				<!-- Next and previous buttons -->
@@ -158,21 +154,27 @@ get_header('home');
 						</div>';
 			echo '<ul class="category-content">';
 
-			echo '<li class="category-post-wrapper">
-							<div class="category-post-header">Title 1</div>
-							<div class="category-post-content">Description 1</div>
-						</li>';
+			$args = array(
+				'numberposts' => 3,
+				'category' => $curcat->term_id,
+				'orderby' => 'post_date',
+				'order' => 'DESC',
+				'post_type' => 'post',
+				'post_status' => 'publish',
+				'suppress_filters' => true
+			);
 
-			echo '<li class="category-post-wrapper">
-							<div class="category-post-header">Title 2</div>
-							<div class="category-post-content">Description 2</div>
-						</li>';
+			//get three recent post
+			$recent_three = wp_get_recent_posts( $args );
 
-			echo '<li class="category-post-wrapper">
-								<div class="category-post-header">Title 3</div>
-								<div class="category-post-content">Description 3</div>
-						</li>';
+			foreach($recent_three as $curpost){
 
+				//print_r($curpost);
+				echo '<li style="background-image:url('.get_the_post_thumbnail_url($curpost["ID"], 'full').');" class="category-post-wrapper">
+								<div class="category-post-header"></div>
+								<div class="category-post-content"><h4>'.$curpost["post_title"].'</h4>'.$curpost["post_excerpt"].'</div>
+							</li>';
+			}
 
 
 			echo 		'</ul>';//category-content
@@ -208,16 +210,34 @@ get_header('home');
 
 			.category-content .category-post-wrapper{
 				position: relative;
-				width: 350px;
-				background-color: red;
-				height: 250px;
+				width: 300px;
+				height: 450px;
+				background-color: black;
 				margin-bottom: 20px;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				box-shadow: 0 8px 6px -6px black;
+
 			}
 
 			.category-content .category-post-wrapper .category-post-header{
-				height: 60px;
-				background-color: blue;
+				position: relative;
+				color:white;
 			}
+
+			.category-content .category-post-wrapper .category-post-content{
+				bottom:0;
+				position: absolute;
+				color:white;
+				padding: 20px;
+				background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+				width: 100%;
+
+			}
+
+
+
 		</style>
 		</main><!-- #main -->
 	</div><!-- #primary -->

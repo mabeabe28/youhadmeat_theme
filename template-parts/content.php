@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article style="margin-bottom:0;" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
@@ -31,7 +31,25 @@
 		) );*/
 		?>
 	</div><!-- .entry-content -->
+	<style>
+	.entry-footer{
+		/*background-color: black;*/
+		width: 100%;
+		height: auto;
+		margin-bottom: 0;
+		display: flex;
+		justify-content: center;
+	}
 
+	.author-box{
+		color:black;
+	}
+	</style>
 	<footer class="entry-footer">
+		<div class="author-box">
+			<?php
+			echo 'hello '.get_author_name().'.';
+			?>
+		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
