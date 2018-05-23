@@ -206,8 +206,9 @@ get_header('home');
 
 			.category-wrapper .category-header .category-header-title{
 				font-family:Gloss-and-Bloom;
-				font-size: 34px;
+				font-size: 28px;
 				text-align: center;
+				padding-top: 20px;
 			}
 
 			.category-wrapper .category-content{
