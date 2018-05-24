@@ -41,8 +41,8 @@
 	<?php endif; ?>
 
 	<?php
-	$pagetype = get_post_meta( the_ID(),'page-type', true );
-	if($pagetype == "category"){
+	$pagetype = get_post_meta( get_the_id(),'page-type', true );
+	if($pagetype = "category"){
 
 
 		global $post;
@@ -67,7 +67,7 @@
 	    //$firstCategory = $category[0]->cat_name;
 
 	    //if($category[0]->count > 0){
-		/*	echo '<div class="category-wrapper">';
+			echo '<div class="category-wrapper">';
 			echo '<div class="category-header">
 							Recent Posts:
 						</div>';
@@ -90,9 +90,10 @@
 
 			echo 		'</ul>';//category-content
 			echo '</div>';//category-wrapper
-*/
+
 			echo "This is a category page";
-	}else if($pagetype == "author"){
+	}elseif($pagetype = "author"){
+
 		echo "This is a author page";
 	}
 
