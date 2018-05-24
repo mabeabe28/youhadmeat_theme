@@ -19,8 +19,8 @@ get_header();
   <?php
   global $post;
   $post_slug=$post->post_name;
-
-  $category=get_category_by_slug($post_slug);
+  echo $post_slug;
+  $category=get_category_by_slug('travel');
 
     $args = array(
       'numberposts' => 3,
