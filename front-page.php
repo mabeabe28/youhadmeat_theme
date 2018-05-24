@@ -24,8 +24,6 @@ get_header();
 				//get all cats
 				$categories=get_categories();
 				//for each category
-				$data = array();
-
 		  	foreach($categories as $category) {
 
 					$args = array(
