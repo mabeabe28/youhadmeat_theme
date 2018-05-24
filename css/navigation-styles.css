@@ -84,17 +84,19 @@ a:hover, a:active {
 	width: 100%
 }
 
-#navigation-buttons a { text-decoration: none; color:white; }
-#navigation-buttons a:visited { text-decoration: none; color:white; }
-#navigation-buttons a:hover { text-decoration: none; color:white; }
-#navigation-buttons a:focus { text-decoration: none; color:white; }
-#navigation-buttons a:hover, a:active { text-decoration: none; color:white }
+#site-navigation a { text-decoration: none; color:white; }
+#site-navigation a:visited { text-decoration: none; color:white; }
+#site-navigation a:hover { text-decoration: none; color:white; }
+#site-navigation a:focus { text-decoration: none; color:white; }
+#site-navigation a:hover, a:active { text-decoration: none; color:white }
 
 #logo{
 	display: inline-block;
 	float: left;
 	margin-top: 10px
 }
+
+
 
 /*--------------------------------------------------------------
 ## main navigation
@@ -176,8 +178,11 @@ a:hover, a:active {
 	color: red;
 }
 
+/*--------------------------------------------------------------
+## right nav button
+--------------------------------------------------------------*/
 
-.navigation-buttons{
+#navigation-buttons{
 	display:inline-block;
 	position:relative;
 	margin-top:10px;
@@ -185,12 +190,6 @@ a:hover, a:active {
 	margin-right:10px;
 
 }
-
-.navigation-buttons a { text-decoration: none; color:white; }
-.navigation-buttons a:visited { text-decoration: none; color:white; }
-.navigation-buttons a:hover { text-decoration: none; color:white; }
-.navigation-buttons a:focus { text-decoration: none; color:white; }
-.navigation-buttons a:hover, a:active { text-decoration: none; color:white }
 
 /*--------------------------------------------------------------
 ## side navigation

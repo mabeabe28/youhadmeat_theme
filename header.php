@@ -51,16 +51,17 @@
 
 
 			<div id="logo">
-				You Had Me At
-
+				<a href="<?php echo get_home_url()?>">
+					You Had Me At
+				</a>
 			</div>
 
-			<div class="navigation-buttons">
+			<!--<div id="navigation-buttons">
 				<a href="<?php echo get_home_url()?>">
 					<i class="fas fa-home fa-lg">
 					</i>
 				</a>
-			</div>
+			</div>-->
 
 
 			<div class="main-navigation">
