@@ -62,7 +62,7 @@
 					$logo_text = $curcat->cat_name;
 				}
 			}
-		}elseif($post_type == 'page'){
+		}elseif($post_type == 'page' && !is_front_page()){
 			$logo_text = get_the_title($post->ID);
 		}
 
