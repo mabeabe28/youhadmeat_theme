@@ -42,8 +42,8 @@
 
 	<?php
 	$pagetype = get_post_meta( get_the_id(),'page-type', true );
-	if($pagetype = "category"){
-
+echo $pagetype;
+	if($pagetype == "category"){
 
 		global $post;
 	  $post_slug=$post->post_name;
@@ -92,7 +92,7 @@
 			echo '</div>';//category-wrapper
 
 			echo "This is a category page";
-	}elseif($pagetype = "author"){
+	}elseif($pagetype == "author"){
 
 		echo "This is a author page";
 	}
