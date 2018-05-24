@@ -42,10 +42,13 @@
 
 	<?php
 	$pagetype = get_post_meta( get_the_id(),'page-type', true );
+
+
+	global $post;
+	$post_slug=$post->post_name;
+
 	if($pagetype == "category"){
 
-		global $post;
-	  $post_slug=$post->post_name;
 
 	  $category=get_category_by_slug($post_slug);
 
@@ -91,6 +94,7 @@
 			echo '</div>';//category-wrapper
 
 	}elseif($pagetype == "author"){
+		$user = get_user_by('slug',$post_slug);
 
 	}
 
