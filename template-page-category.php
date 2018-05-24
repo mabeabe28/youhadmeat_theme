@@ -19,8 +19,8 @@ get_header();
   <?php
   global $post;
   $post_slug=$post->post_name;
-  echo $post_slug;
-  $category=get_category_by_slug('travel');
+
+  $category=get_category_by_slug('$post_slug');
 
     $args = array(
       'numberposts' => 3,
@@ -78,7 +78,28 @@ get_header();
 
    //}
   ?>
+  <script>
+  var slideIndex = 0;
+  showSlides();
 
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+
+  function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 6000); // Change image every 2 seconds
+  }
+  </script>
   <!-- Next and previous buttons -->
 <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
