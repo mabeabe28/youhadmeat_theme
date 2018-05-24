@@ -70,6 +70,11 @@ body {
 	margin: 0;
 }
 
+p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.

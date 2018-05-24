@@ -155,11 +155,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	}
 
 	.card-content .card-content-title{
-		font-size: 2em;
+		margin-top: 10px;
+		/*font-size: 12px;*/
 	}
 
 	.card-content .card-content-excerpt{
-		font-size: 1em;
+		margin-top: 10px;
+		/*font-size: 10px;*/
 	}
 
 }
