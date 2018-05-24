@@ -22,7 +22,10 @@ get_header();
 
 				<?php
 				//get all cats
-				$categories=get_categories();
+				$catargs = array(
+					'parent' => 0
+				);
+				$categories=get_categories($catargs);
 				//for each category
 		  	foreach($categories as $category) {
 
@@ -40,7 +43,13 @@ get_header();
 					$recent_post = wp_get_recent_posts( $args );
 					//get the categories for the post
 					$category = get_the_category($recent_post[0]["ID"]);
-					$firstCategory = $category[0]->cat_name;
+					$firstCategory = "";
+
+					foreach($category as $curcat){
+						if($curcat->parent == 0){
+							$firstCategory = $curcat->cat_name;
+						}
+					}
 
 					if($category[0]->count > 0){
 						echo '<div class="mySlides">';
