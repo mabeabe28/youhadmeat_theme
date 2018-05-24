@@ -230,9 +230,9 @@ get_header('home');
 				background-color: black;
 				margin-bottom: 20px;
 
-				-webkit-box-shadow: 0 10px 6px -6px #777;
-	      -moz-box-shadow: 0 10px 6px -6px #777;
-	      box-shadow: 0 10px 6px -6px #777;
+				-webkit-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
+				-moz-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
+				box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
 
 				display: block;
 				overflow: hidden;
