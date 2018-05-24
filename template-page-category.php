@@ -94,13 +94,13 @@ get_header();
   while ( have_posts() ) :
     the_post();
 
-    echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');">
+    /*echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');">
       <div id="featured-wrapper">
         <div id="featured-text">
         '.get_the_title().'
         </div>
       </div>
-    </div>';
+    </div>';*/
 
     get_template_part( 'template-parts/content', 'page' );
 
