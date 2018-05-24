@@ -39,4 +39,15 @@
 			?>-->
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+
+	<?php
+	$pagetype = get_post_meta( the_ID(),'page-type', true );
+	if($pagetype = "category"){
+		echo "This is a category page";
+	}else if($pagetype = "author"){
+		echo "This is a author page";
+	}
+
+	?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -54,8 +54,8 @@ get_header();
 
             <div id="youhadmeatHeroText">
                 <div id="leading">You Had Me At</div>
-                <div id="trailing" class="fade">'.$category->cat_name.'
-                  <div id="recentPost">
+                <div id="trailing">'.$category->cat_name.'
+                  <div id="recentPost" class="fade">
                     <div style="font-size:12px;">Latest Post:</div>
                     <div class="recentPost_detail">
                       <a href="'.get_permalink($curpost["ID"]).'">'.get_the_title($curpost["ID"]).'</a>
@@ -139,54 +139,7 @@ get_header();
 
   </main><!-- #main -->
 </div><!-- #primary -->
-<style>
 
-#featured-image {
-  /* Sizing */
-  width: 100vw;
-  height: 100vh;
-  /* Flexbox stuff */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Text styles */
-  text-align: center;
-  color: white;
-  /* Background styles */
-  /*background-image: url(http://localhost:8888/youhadmeat/wp-content/uploads/2018/05/DSCF6505.jpg);*/
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
-  background-color: black;
-}
-
-/*hero text wrapper stuff*/
-#featured-wrapper {
-    /*position: absolute;*/
-    top: 40%;
-    color: white;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-}
-
-/*hero text wrapper stuff*/
-#featured-text {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Gloss-and-Bloom";
-  text-align: center;
-  display: inline-block;
-  padding-bottom: 20px;
-  font-size: 5vw;
-  width:80%;
-}
-
-</style>
 <?php
 /*get_sidebar();*/
 get_footer();
