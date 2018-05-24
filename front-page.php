@@ -12,7 +12,7 @@
  * @package youhadmeat_theme
  */
 
-get_header('home');
+get_header();
 ?>
 
 			<section>
