@@ -123,6 +123,8 @@ function youhadmeat_theme_scripts() {
 	wp_enqueue_style( 'youhadmeat_theme-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'navigation-styles', get_template_directory_uri() . '/css/navigation-styles.css');
 	wp_enqueue_style( 'homepage-styles', get_template_directory_uri() . '/css/homepage-styles.css');
+	wp_enqueue_style( 'card-styles', get_template_directory_uri() . '/css/card-styles.css');
+
 
 	wp_enqueue_style( 'fontawesome-all', get_template_directory_uri() . '/includes/icons/fontawesome/css/fontawesome-all.css');;
 

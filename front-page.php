@@ -136,11 +136,11 @@ get_header();
 		//for each category
 		foreach($categories as $curcat) {
 			//print_r($curcat);
-			echo '<div class="category-wrapper category--'.$curcat->slug.'" cat-attr="'.$curcat->name.'" >';
-		 	echo '<div class="category-header">
-							<div class="category-header-title"><h1>'.$curcat->name.'<h1></div>
+			echo '<div class="card-deck category--'.$curcat->slug.'" cat-attr="'.$curcat->name.'" >';
+		 	echo '<div class="card-deck-header">
+							<div class="card-deck-header-title"><h1>'.$curcat->name.'<h1></div>
 						</div>';
-			echo '<ul class="category-content">';
+			echo '<ul class="card-container">';
 
 			$args = array(
 				'numberposts' => 3,
@@ -158,13 +158,13 @@ get_header();
 			foreach($recent_three as $curpost){
 
 				//print_r($curpost);
-				echo '<li class="category-post-wrapper">
+				echo '<li class="card-wrapper">
 									<a href="'.get_permalink($curpost["ID"]).'">
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
-										<div class="category-post-header"></div>
-										<div class="category-post-content">
-											<div class="category-post-content-title">'.$curpost["post_title"].'</div>
-											<div class="category-post-content-excerpt">
+										<div class="card-header"></div>
+										<div class="card-content">
+											<div class="card-content-title">'.$curpost["post_title"].'</div>
+											<div class="card-content-excerpt">
 												'.$curpost["post_excerpt"].'
 											</div>
 										</div>
@@ -179,120 +179,7 @@ get_header();
 
 		wp_reset_query();
 		?>
-		<style>
-			.category-wrapper{
-				width: 100%;
-				margin-top:20px;
-				margin-bottom:20px ;
 
-			}
-
-			.category-wrapper .category-header{
-				text-align: center;
-			}
-
-			.category-wrapper .category-header .category-header-title{
-				font-family:Gloss-and-Bloom;
-				font-size: 28px;
-				text-align: center;
-				padding-top: 20px;
-			}
-
-			.category-wrapper .category-content{
-				display:flex;
-				flex-wrap:wrap;
-				position: relative;
-				justify-content: space-evenly;
-				margin-left: 0;
-				margin-right: 0;
-				padding-left: 0;
-				padding-right: 0;
-				list-style: none;
-			}
-
-			.category-content .category-post-wrapper{
-				position: relative;
-				width: 300px;
-				height: 520px;
-				background-color: black;
-				margin-bottom: 20px;
-				margin-left: 10px;
-				margin-right: 10px;
-
-				-webkit-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
-				-moz-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
-				box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
-
-				display: block;
-				overflow: hidden;
-
-
-
-			}
-
-
-				.category-content .category-post-wrapper img {
-				object-fit: cover;
-				height: 100%;
-				width: 100%;
-				}
-
-
-
-			.category-content .category-post-wrapper .category-post-header{
-				position: relative;
-				color:white;
-			}
-
-			.category-content .category-post-wrapper .category-post-content{
-				bottom:0;
-				position: absolute;
-				color:black;
-				background-color:white;
-				width: 100%;
-				text-align: center;
-				height: 20%;
-				padding: 5px;
-
-			}
-
-			.category-post-content .category-post-content-title{
-				font-size: 18px;
-				font-weight:300;
-				font-family: 'Crimson Text', serif;
-			}
-
-			.category-post-content .category-post-content-excerpt{
-				font-size: 14px;
-				font-weight: lighter;
-				text-overflow: ellipsis;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding-top: 5px;
-				font-style: italic;
-			}
-
-			/*small screens*/
-			@media screen and (max-width: 600px) {
-
-				.category-content .category-post-wrapper{
-					width: 100vw;
-					height: 100vh;
-				}
-
-				.category-post-content .category-post-content-title{
-					font-size: 2em;
-				}
-
-				.category-post-content .category-post-content-excerpt{
-					font-size: 1em;
-				}
-
-			}
-
-
-		</style>
 		<script>
 		var slideIndex = 0;
 		showSlides();

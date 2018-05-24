@@ -52,7 +52,9 @@
 		<?php
 		global $post;
 		$post_type = get_post_type($post->ID);
-		$logo_text = "Blog";
+		$logo_text = "";
+		$logo_text_link = get_home_url();
+
 
 		if($post_type == 'post'){
 			$category = get_the_category($post->ID);
@@ -60,17 +62,23 @@
 			foreach($category as $curcat){
 				if($curcat->parent == 0){
 					$logo_text = $curcat->cat_name;
+					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
 				}
 			}
 		}elseif($post_type == 'page' && !is_front_page()){
 			$logo_text = get_the_title($post->ID);
+			$logo_text_link = get_permalink($post->ID);
 		}
 
 		echo '<div id="logo">
 			<a href="'.get_home_url().'">
 				You Had Me At
 			</a>
-			<span id="logo-item" style="margin-left:5px;font-family:Gloss-and-Bloom">'.$logo_text.'</span>
+			<div id="logo-item" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
+				<a href="'.$logo_text_link.'">
+					'.$logo_text.'
+				</a>
+			</div>
 		</div>';
 
 		 ?>
