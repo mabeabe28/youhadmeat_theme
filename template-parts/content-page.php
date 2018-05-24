@@ -174,6 +174,7 @@
 		.category-post-content .category-post-content-title{
 			font-size: 18px;
 			font-weight:300;
+			font-family: 'Crimson Text', serif;
 		}
 
 		.category-post-content .category-post-content-excerpt{
