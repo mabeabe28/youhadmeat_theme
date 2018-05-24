@@ -20,7 +20,7 @@ get_header();
   global $post;
   $post_slug=$post->post_name;
 
-  $category=get_category_by_slug('$post_slug');
+  $category=get_category_by_slug($post_slug);
 
     $args = array(
       'numberposts' => 3,
