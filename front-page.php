@@ -47,11 +47,12 @@ get_header();
 
 					foreach($category as $curcat){
 						if($curcat->parent == 0){
-							$firstCategory = $curcat->cat_name;
+							$ParentCategory = $curcat;
 						}
 					}
 
-					if($category[0]->count > 0){
+					//todo amend this.
+					if($ParentCategory->count > 0){
 						echo '<div class="mySlides">';
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
@@ -66,7 +67,7 @@ get_header();
 
 									<div id="youhadmeatHeroText">
 											<div id="leading">You Had Me At</div>
-											<div id="trailing" class="fade">'.$firstCategory.'
+											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
 												<div id="recentPost">
 													<div style="font-size:12px;">Latest Post:</div>
 													<div class="recentPost_detail">
@@ -99,28 +100,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<script>
-		var slideIndex = 0;
-		showSlides();
 
-		// Next/previous controls
-		function plusSlides(n) {
-		  showSlides(slideIndex += n);
-		}
-
-
-		function showSlides() {
-		    var i;
-		    var slides = document.getElementsByClassName("mySlides");
-		    for (i = 0; i < slides.length; i++) {
-		        slides[i].style.display = "none";
-		    }
-		    slideIndex++;
-		    if (slideIndex > slides.length) {slideIndex = 1}
-		    slides[slideIndex-1].style.display = "block";
-		    setTimeout(showSlides, 6000); // Change image every 2 seconds
-		}
-		</script>
 		<?php
 		if ( have_posts() ) :
 
@@ -156,7 +136,7 @@ get_header();
 		//for each category
 		foreach($categories as $curcat) {
 			//print_r($curcat);
-			echo '<div class="category-wrapper category--'.$curcat->slug.'">';
+			echo '<div class="category-wrapper category--'.$curcat->slug.'" cat-attr="'.$curcat->name.'" >';
 		 	echo '<div class="category-header">
 							<div class="category-header-title"><h1>'.$curcat->name.'<h1></div>
 						</div>';
@@ -313,6 +293,30 @@ get_header();
 
 
 		</style>
+		<script>
+		var slideIndex = 0;
+		showSlides();
+
+		// Next/previous controls
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+
+		function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}
+				slides[slideIndex-1].style.display = "block";
+				setTimeout(showSlides, 6000); // Change image every 2 seconds
+		}
+
+
+		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

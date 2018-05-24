@@ -49,12 +49,32 @@
 				</i>
 			</span>
 
+		<?php
+		global $post;
+		$post_type = get_post_type($post->ID);
+		$logo_text = "Blog";
 
-			<div id="logo">
-				<a href="<?php echo get_home_url()?>">
-					You Had Me At
-				</a>
-			</div>
+		if($post_type == 'post'){
+			$category = get_the_category($post->ID);
+
+			foreach($category as $curcat){
+				if($curcat->parent == 0){
+					$logo_text = $curcat->cat_name;
+				}
+			}
+		}elseif($post_type == 'page'){
+			$logo_text = get_the_title($post->ID);
+		}
+
+		echo '<div id="logo">
+			<a href="'.get_home_url().'">
+				You Had Me At
+			</a>
+			<span id="logo-item" style="margin-left:5px;font-family:Gloss-and-Bloom">'.$logo_text.'</span>
+		</div>';
+
+		 ?>
+
 
 			<!--<div id="navigation-buttons">
 				<a href="<?php echo get_home_url()?>">
