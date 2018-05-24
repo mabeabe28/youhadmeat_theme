@@ -227,6 +227,8 @@ get_header();
 				height: 520px;
 				background-color: black;
 				margin-bottom: 20px;
+				margin-left: 10px;
+				margin-right: 10px;
 
 				-webkit-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
 				-moz-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
@@ -283,7 +285,7 @@ get_header();
 			}
 
 			/*small screens*/
-			@media screen and (max-width: 450px) {
+			@media screen and (max-width: 600px) {
 
 				.category-content .category-post-wrapper{
 					width: 100vw;

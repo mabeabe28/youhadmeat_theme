@@ -95,7 +95,43 @@
 
 	}elseif($pagetype == "author"){
 		$user = get_user_by('slug',$post_slug);
+		$args = array(
+			'numberposts' => 12,
+			'category' => $category->term_id,
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'post_type' => 'post',
+			'author' => $user->ID,
+			'post_status' => 'publish',
+			'suppress_filters' => true
+		);
 
+		//get one recent post
+		$recent_posts = wp_get_recent_posts( $args );
+
+		echo '<div class="category-wrapper">';
+		echo '<div class="category-header">
+						Recent Posts:
+					</div>';
+		echo '<ul class="category-content">';
+		foreach($recent_posts as $curpost){
+			//print_r($curpost);
+			echo '<li class="category-post-wrapper">
+								<a href="'.get_permalink($curpost["ID"]).'">
+									<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+									<div class="category-post-header"></div>
+									<div class="category-post-content">
+										<div class="category-post-content-title">'.$curpost["post_title"].'</div>
+										<div class="category-post-content-excerpt">
+											'.$curpost["post_excerpt"].'
+										</div>
+									</div>
+								</a>
+						</li>';
+		}
+
+		echo 		'</ul>';//category-content
+		echo '</div>';//category-wrapper
 	}
 
 	?>
@@ -137,6 +173,9 @@
 			height: 520px;
 			background-color: black;
 			margin-bottom: 20px;
+			margin-left: 10px;
+			margin-right: 10px;
+
 
 			-webkit-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
 			-moz-box-shadow: 3px 10px 69px -24px rgba(36,32,36,1);
@@ -193,7 +232,7 @@
 		}
 
 		/*small screens*/
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: 600px) {
 
 			.category-content .category-post-wrapper{
 				width: 100vw;
