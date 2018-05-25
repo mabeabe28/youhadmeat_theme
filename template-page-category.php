@@ -63,7 +63,7 @@ get_header();
                     <div class="recentPost_excerpt">
                      '.$curpost["post_excerpt"].'
                     </div>
-                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->cat_name.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
+                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
                   </div>
                 </div>
             </div>
