@@ -58,12 +58,12 @@ get_header();
                   <div id="recentPost" class="fade">
                     <div style="font-size:12px;">Latest Post:</div>
                     <div class="recentPost_detail">
-                      <a href="'.get_permalink($curpost["ID"]).'">'.get_the_title($curpost["ID"]).'</a>
+                      '.get_the_title($curpost["ID"]).'
                     </div>
                     <div class="recentPost_excerpt">
-                      <a href="'.get_permalink($curpost["ID"]).'">'.$curpost["post_excerpt"].'</a>
+                     '.$curpost["post_excerpt"].'
                     </div>
-                    <div class="cta" style="font-size: 15px;"><a href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
+                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
                   </div>
                 </div>
             </div>
