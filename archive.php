@@ -32,11 +32,27 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+
+				the_archive_title( '<h1 class="archivetitle">', '</h1>' );
+				the_archive_description( '<div class="archivedesc">', '</div>' );
 				?>
 			</header><!-- .page-header -->
+			<style>
+				.archivetitle{
+					position: block;
+					text-align: center;
+					margin-top: 50px;
+				}
 
+				.archivedesc{
+					position: block;
+					text-align: center;
+				}
+
+				.archivedesc p{
+					text-align: center;
+				}
+			</style>
 			<?php
 			/* Start the Loop */
 			echo '<div class="card-deck">';
