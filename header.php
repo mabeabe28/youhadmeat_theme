@@ -58,7 +58,7 @@
 
 		if($post_type == 'post'){
 			$category = get_the_category($post->ID);
-
+			//get top level parent only
 			foreach($category as $curcat){
 				if($curcat->parent == 0){
 					$logo_text = $curcat->cat_name;
@@ -107,9 +107,6 @@
 
 
 	<script type="text/javascript">
-	$(document).ready(function(){
-	  console.log("hello")
-	});
 
 	/*side nav drop down*/
 	$('#sideNav-menu .menu-item-has-children').prepend('<span class="sidenav-dropdown fas fa-caret-down"></span>');

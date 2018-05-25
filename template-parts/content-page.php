@@ -74,10 +74,27 @@
 			echo '<ul class="card-container">';
 	    foreach($recent_posts as $curpost){
 				//print_r($curpost);
+				$ParentCategory = "";
+				$ChildCategory = "";
+
+				$cat = get_the_category($curpost["ID"]);
+				foreach($cat as $curcat){
+					if($curcat->parent == 0){
+						$ParentCategory = $curcat;
+					}else{
+						$ChildCategory = $curcat;
+					}
+				}
+
+				if($ChildCategory == ""){
+					$ChildCategory = $ParentCategory;
+				}
 				echo '<li class="card-wrapper">
 									<a href="'.get_permalink($curpost["ID"]).'">
+										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
+											<div class="category-title">'.$ChildCategory->name.'</div>
+										</div></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
-										<div class="card-header"></div>
 										<div class="card-content">
 											<div class="card-content-title">'.$curpost["post_title"].'</div>
 											<div class="card-content-excerpt">
@@ -89,7 +106,16 @@
 			}
 
 			echo 		'</ul>';//card-container
+			$archivelink = ''.get_site_url().'/category/'.$category->slug.'';
+
+			echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
+				<a href="'.$archivelink.'" class="ghost-button-black category--'.$category->slug.'">
+					View '.$category->name.' Archive
+				</a>
+			</div>';
 			echo '</div>';//card-deck
+
+
 
 	}elseif($pagetype == "author"){
 		$user = get_user_by('slug',$post_slug);
@@ -112,10 +138,22 @@
 		echo '<ul class="card-container">';
 		foreach($recent_posts as $curpost){
 			//print_r($curpost);
+			$ParentCategory = "";
+
+			$cat = get_the_category($curpost["ID"]);
+			foreach($cat as $curcat){
+				if($curcat->parent == 0){
+					$ParentCategory = $curcat;
+				}
+			}
+
+
 			echo '<li class="card-wrapper">
 								<a href="'.get_permalink($curpost["ID"]).'">
+									<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
+										<div class="category-title">'.$ParentCategory->name.'</div>
+									</div></div>
 									<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
-									<div class="card-header"></div>
 									<div class="card-content">
 										<div class="card-content-title">'.$curpost["post_title"].'</div>
 										<div class="card-content-excerpt">
@@ -127,7 +165,16 @@
 		}
 
 		echo 		'</ul>';//card-container
+		$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
+		echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
+			<a class="ghost-button-black" href="'.$archivelink.'">
+				View Posts Archive of '.$user->display_name.'
+			</a>
+		</div>';
 		echo '</div>';//card-deck
+
+
+
 	}
 
 	?>

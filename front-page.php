@@ -43,7 +43,7 @@ get_header();
 					$recent_post = wp_get_recent_posts( $args );
 					//get the categories for the post
 					$category = get_the_category($recent_post[0]["ID"]);
-					$firstCategory = "";
+					$ParentCategory = "";
 
 					foreach($category as $curcat){
 						if($curcat->parent == 0){

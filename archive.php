@@ -9,7 +9,22 @@
 
 get_header();
 ?>
-zsfafas
+	<style>
+		#site-navigation{
+			background-color: black;
+		}
+	</style>
+	<script>
+
+	$(document).on('scroll', function () {
+			event.stopPropagation();
+			event.preventDefault();
+			$('#site-navigation').css('background-color', 'rgba(0,0,0,100)');
+
+	});
+
+	</script>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -39,10 +54,20 @@ zsfafas
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
 				/*get_template_part( 'template-parts/content', get_post_type() );*/
+				$ParentCategory = "";
+				$category = get_the_category();
+				foreach($category as $curcat){
+					if($curcat->parent == 0){
+						$ParentCategory = $curcat;
+					}
+				}
+
 				echo '<li class="card-wrapper">
 									<a href="'.get_permalink(get_the_id()).'">
+										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
+											<div class="category-title">'.$ParentCategory->name.'</div>
+										</div></div>
 										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
-										<div class="card-header"></div>
 										<div class="card-content">
 											<div class="card-content-title">'.get_the_title().'</div>
 											<div class="card-content-excerpt">
