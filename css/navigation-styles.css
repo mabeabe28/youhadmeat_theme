@@ -42,11 +42,11 @@ a:hover, a:active {
 	width: 100%
 }
 
-#site-navigation a { text-decoration: none; }
+#site-navigation a { text-decoration: none; color: white;}
 #site-navigation a:visited { text-decoration: none; color: white;  }
-#site-navigation a:hover { text-decoration: none;  }
-#site-navigation a:focus { text-decoration: none;  }
-#site-navigation a:hover, a:active { text-decoration: none; }
+#site-navigation a:hover { text-decoration: none; color: white;  }
+#site-navigation a:focus { text-decoration: none; color: white;  }
+#site-navigation a:hover, a:active { text-decoration: none; color: white;}
 
 #logo{
 	display: inline-block;
