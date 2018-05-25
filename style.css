@@ -924,8 +924,8 @@ object {
   transition: border-color 0.3s ease-out,
               color 0.3s ease-out;
 }
-.ghost-button:hover,
-.ghost-button:active {
+.ghost-button-black:hover,
+.ghost-button-black:active {
   color: #66d8ed;
   border-color: #66d8ed;
   transition: border-color 0.4s ease-in,
