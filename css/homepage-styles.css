@@ -93,13 +93,14 @@
 			font-size: 15px;
 			font-style: italic;
 		}
+		#recentPost  .cta { margin-top: 20px;}
 
 		/* Links */
 		#recentPost  a{text-decoration:none;;color: white;}
-		#recentPost  .cta a{text-decoration:underline;color: white;}
+		/*#recentPost  .cta a{text-decoration:underline;color: white;}*/
 		#recentPost  a:visited { text-decoration: none; color:white; }
 		#recentPost  a:hover { text-decoration: none;; color:white; }
-		#recentPost  .cta a:hover { text-decoration: underline; color:white; }
+		/*#recentPost  .cta a:hover { text-decoration: underline; color:white; }*/
 		#recentPost  a:focus { text-decoration: none; color:white; }
 		#recentPost  a:hover, a:active { text-decoration: none; color:white }
 
