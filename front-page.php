@@ -69,7 +69,7 @@ get_header();
 											<div id="leading">You Had Me At</div>
 											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
 												<div id="recentPost">
-													<div style="font-size:12px;">Latest Postss:</div>
+													<div style="font-size:12px;">Latest Postsss:</div>
 													<div class="recentPost_detail">
 														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.get_the_title($recent_post[0]["ID"]).'</a>
 													</div>
