@@ -93,7 +93,7 @@
 			font-size: 15px;
 			font-style: italic;
 		}
-		#recentPost  .cta { margin-top: 20px;}
+		/*#recentPost  .cta a:hover { text-decoration: underline; color:white; }*/
 
 		/* Links */
 		#recentPost  a{text-decoration:none;;color: white;}
