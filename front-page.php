@@ -76,7 +76,7 @@ get_header();
 													<div class="recentPost_excerpt">
 														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.$recent_post[0]["post_excerpt"].'</a>
 													</div>
-													<div class="cta" style="font-size: 15px;"><a class="ghost-button" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
+													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
 												</div>
 											</div>
 									</div>
@@ -172,8 +172,13 @@ get_header();
 							</li>';
 			}
 
-
+			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 			echo 		'</ul>';//category-content
+				echo '<div class="cta" style="margin-top:20px;">
+								<a href="'$catLink'" class="ghost-button-black category--'.$curcat->slug.'">
+								  You Had Me At '.$curcat->name.'
+								</a>
+							</div>'
 			echo '</div>';//category-wrapper
 		}//for each category
 
