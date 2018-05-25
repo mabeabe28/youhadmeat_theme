@@ -24,6 +24,12 @@ zsfafas
 
 			<?php
 			/* Start the Loop */
+			echo '<div class="card-deck">';
+			echo '<div class="card-deck-header">
+						 <div class="card-deck-header-title"></div>
+					 </div>';
+			echo '<ul class="card-container">';
+
 			while ( have_posts() ) :
 				the_post();
 
@@ -32,10 +38,25 @@ zsfafas
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				/*get_template_part( 'template-parts/content', get_post_type() );*/
+				echo '<li class="card-wrapper">
+									<a href="'.get_permalink(the_ID()).'">
+										<img src="'.get_the_post_thumbnail_url(the_ID(), 'large').'" />
+										<div class="card-header"></div>
+										<div class="card-content">
+											<div class="card-content-title">'.get_the_title(the_ID()).'</div>
+											<div class="card-content-excerpt">
+												'.$curpost["post_excerpt"].'
+											</div>
+										</div>
+									</a>
+							</li>';
+
+
 
 			endwhile;
-
+			echo 		'</ul>';//category-content
+			echo '</div>';//category-wrapper
 			the_posts_navigation();
 
 		else :
