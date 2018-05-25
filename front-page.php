@@ -178,7 +178,7 @@ get_header();
 								<a href="'.$catLink.'" class="ghost-button-black category--'.$curcat->slug.'">
 								  You Had Me At '.$curcat->name.'
 								</a>
-							</div>'
+							</div>';
 			echo '</div>';//category-wrapper
 		}//for each category
 
