@@ -910,6 +910,4 @@ object {
   border-color: #66d8ed;
   transition: border-color 0.4s ease-in,
               color 0.4s ease-in;
-	background-color: #fff; /* fallback */
-	background-color: rgba(255, 255, 255, 0.4);
 }
