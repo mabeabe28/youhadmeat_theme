@@ -175,7 +175,7 @@ get_header();
 			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 			echo 		'</ul>';//category-content
 				echo '<div class="cta" style="margin-top:20px;">
-								<a href="'$catLink'" class="ghost-button-black category--'.$curcat->slug.'">
+								<a href="'$catLink.'" class="ghost-button-black category--'.$curcat->slug.'">
 								  You Had Me At '.$curcat->name.'
 								</a>
 							</div>'
