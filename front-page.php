@@ -76,7 +76,7 @@ get_header();
 													<div class="recentPost_excerpt">
 														<a href="'.get_permalink($recent_post[0]["ID"]).'">'.$recent_post[0]["post_excerpt"].'</a>
 													</div>
-													<div class="cta" style="font-size: 15px;"><a href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
+													<div class="cta" style="font-size: 15px;"><a class="ghost-button" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
 												</div>
 											</div>
 									</div>
