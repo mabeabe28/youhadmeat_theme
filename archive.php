@@ -40,11 +40,11 @@ zsfafas
 				 */
 				/*get_template_part( 'template-parts/content', get_post_type() );*/
 				echo '<li class="card-wrapper">
-									<a href="'.get_permalink(the_ID()).'">
-										<img src="'.get_the_post_thumbnail_url(the_ID(), 'large').'" />
+									<a href="'.get_permalink(get_the_id()).'">
+										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
 										<div class="card-header"></div>
 										<div class="card-content">
-											<div class="card-content-title">'.get_the_title(the_ID()).'</div>
+											<div class="card-content-title">'.get_the_title().'</div>
 											<div class="card-content-excerpt">
 												'.$curpost["post_excerpt"].'
 											</div>
