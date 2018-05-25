@@ -46,7 +46,7 @@ zsfafas
 										<div class="card-content">
 											<div class="card-content-title">'.get_the_title().'</div>
 											<div class="card-content-excerpt">
-												'.$curpost["post_excerpt"].'
+												'.get_the_excerpt().'
 											</div>
 										</div>
 									</a>
@@ -70,5 +70,5 @@ zsfafas
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+/*get_sidebar();*/
 get_footer();
