@@ -96,11 +96,9 @@
 		#recentPost  .cta{ margin-top: 20px;}
 
 		/* Links */
-		#recentPost  a{text-decoration:none;color: white;}
-		/*#recentPost  .cta a{text-decoration:underline;color: white;}*/
+		#recentPost  a{text-decoration:none;}
 		#recentPost  a:visited { text-decoration: none;  }
 		#recentPost  a:hover { text-decoration: none; }
-		/*#recentPost  .cta a:hover { text-decoration: underline; color:white; }*/
 		#recentPost  a:focus { text-decoration: none; }
 		#recentPost  a:hover, a:active { text-decoration: none; }
 
