@@ -69,9 +69,11 @@ get_header();
 										</div></div>
 										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
 										<div class="card-content">
-											<div class="card-content-title">'.get_the_title().'</div>
-											<div class="card-content-excerpt">
-												'.get_the_excerpt().'
+											<div class="card-content-container">
+												<div class="card-content-title">'.get_the_title().'</div>
+												<div class="card-content-excerpt">
+													'.get_the_excerpt().'
+												</div>
 											</div>
 										</div>
 									</a>

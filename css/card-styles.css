@@ -93,7 +93,12 @@
 	height: 20%;
 	padding: 5px;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 }
+
 
 .card-content .card-content-title{
 	font-size: 18px;

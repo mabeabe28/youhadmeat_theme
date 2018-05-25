@@ -163,9 +163,11 @@ get_header();
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="card-header"></div>
 										<div class="card-content">
-											<div class="card-content-title">'.$curpost["post_title"].'</div>
-											<div class="card-content-excerpt">
-												'.$curpost["post_excerpt"].'
+											<div class="card-content-container">
+												<div class="card-content-title">'.$curpost["post_title"].'</div>
+												<div class="card-content-excerpt">
+													'.$curpost["post_excerpt"].'
+												</div>
 											</div>
 										</div>
 									</a>
