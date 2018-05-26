@@ -84,7 +84,7 @@ get_header();
 							</div>
 							';
 						}
-
+						echo '<div class="scroll-down"></div>';
 						echo '</div>';
 				 }
 				} // foreach($categories
@@ -95,8 +95,47 @@ get_header();
    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
 			</div>
 			</section>
+			<style>
+
+.scroll-down {
+	position: absolute;
+	bottom: 10px;
+	display: block;
+	text-align: center;
+	z-index: 100;
+	text-decoration: none;
+	text-shadow: 0;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  z-index: 9;
+  right: 2%;
+  -webkit-transform: translate(-50%, 0%) rotate(45deg);
+  -moz-transform: translate(-50%, 0%) rotate(45deg);
+  transform: translate(-50%, 0%) rotate(45deg);
+	-webkit-animation: fade_move_down 3s ease-in-out infinite;
+	-moz-animation:    fade_move_down 3s ease-in-out infinite;
+	animation:         fade_move_down 3s ease-in-out infinite;
+}
 
 
+/*animated scroll arrow animation*/
+@-webkit-keyframes fade_move_down {
+  0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@-moz-keyframes fade_move_down {
+  0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@keyframes fade_move_down {
+  0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}</style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
