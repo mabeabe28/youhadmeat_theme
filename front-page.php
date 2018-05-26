@@ -59,7 +59,7 @@ get_header();
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
 							echo '
-							<div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');">
+							<div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');">
 									<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 									<div style="display:none;">
 										<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
