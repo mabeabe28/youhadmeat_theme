@@ -193,14 +193,15 @@ get_header();
 
 			//get three recent post
 			$recent_three = wp_get_recent_posts( $args );
-
 			foreach($recent_three as $curpost){
 
 				//print_r($curpost);
-				echo '<li class="card-wrapper">
+				echo '<li class="card-wrapper category--'.$curcat->slug.'">
 									<a href="'.get_permalink($curpost["ID"]).'">
+										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
+											<div class="category-title">'.$curcat->name.'</div>
+										</div></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
-										<div class="card-header"></div>
 										<div class="card-content">
 											<div class="card-content-container">
 												<div class="card-content-title">'.$curpost["post_title"].'</div>

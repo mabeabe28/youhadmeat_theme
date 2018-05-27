@@ -52,6 +52,27 @@
 	overflow: hidden;
 }
 
+/*hover animation*/
+.card-wrapper:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: -5px;
+    background-color: pink;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.card-wrapper:hover:after{
+    width: 100%;
+    background-color: pink;
+}
+
 .card-wrapper img {
 	object-fit: cover;
 	height: 100%;
