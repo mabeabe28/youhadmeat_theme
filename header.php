@@ -32,8 +32,8 @@
 
 	<header id="masthead" class="site-header">
 
-		<div id="searchOverlay" class="overlay">
-			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-sm">
+		<div id="searchOverlay" class="overlay fade">
+			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-xs">
 			</i></span>
 			<div class="overlay-content">
 				<?php get_search_form() ?>
