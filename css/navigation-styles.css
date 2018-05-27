@@ -344,11 +344,13 @@ text-align: left;
     font-weight: 300;
     text-align: center;
     outline: none;
+		-webkit-appearance: none;
   }
 
   #searchOverlay .search-submit {
     position: inline-block;
     border: black;
+		-webkit-appearance: none;
   }
 
 /* The overlay effect with black background */

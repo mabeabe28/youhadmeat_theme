@@ -42,6 +42,8 @@
     font-weight: 300;
     text-align: center;
     outline: none;
+
+		-webkit-appearance: none;
   }
 
   .no-results .search-submit {
