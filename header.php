@@ -64,7 +64,7 @@
 		$logo_text_link = get_home_url();
 
 
-		if($post_type == 'post' && !is_archive()){
+		if($post_type == 'post' && !is_archive() && !is_search() ){
 			$category = get_the_category($post->ID);
 			//get top level parent only
 			foreach($category as $curcat){

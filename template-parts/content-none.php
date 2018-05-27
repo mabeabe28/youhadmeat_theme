@@ -9,9 +9,50 @@
 
 ?>
 
+<style>
+	.no-results{
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: white;
+
+		display: flex;
+		flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.no-results .title{
+		width: 100%;
+		text-align: center;
+		font-family: "Gloss-and-Bloom";
+	}
+	.no-results .search-form{
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+	}
+
+	.no-results .search-field {
+		width: 100%;
+    position: inline-block;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    outline: none;
+  }
+
+  .no-results .search-submit {
+    position: inline-block;
+    border: black;
+  }
+</style>
+
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'youhadmeat_theme' ); ?></h1>
+	<header class="title">
+		<h1><?php esc_html_e( 'Nothing Found', 'youhadmeat_theme' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
