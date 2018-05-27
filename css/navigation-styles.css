@@ -37,7 +37,7 @@ a:hover, a:active {
 	overflow: hidden;
 	text-align:center;
 	height:auto;
-	z-index: 9999;
+	z-index: 101;
 	color: white;
 	width: 100%
 }
@@ -97,7 +97,7 @@ a:hover, a:active {
 	    background-color: #f1f1f1;
 	    min-width: 160px;
 	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	    z-index: 9999;
+	    z-index: 101;
 	}
 
 	/* Links inside the dropdown */
@@ -115,7 +115,7 @@ a:hover, a:active {
 	#primary-menu .menu-item:hover .sub-menu {
 	    display: block;
 			position: fixed;
-			z-index: 9999;
+			z-index: 101;
 	}
 
 
@@ -156,7 +156,7 @@ a:hover, a:active {
 	height: 100%; /* 100% Full-height */
 	width: 0; /* 0 width - change this with JavaScript */
 	position: fixed; /* Stay in place */
-	z-index: 99999; /* Stay on top */
+	z-index: 101; /* Stay on top */
 	top: 0; /* Stay at the top */
 	left: 0;
 	background-color: #111; /* Black*/
@@ -231,7 +231,7 @@ text-align: left;
 #sideNav-menu .menu-item .sub-menu {
 		display: none;
 		background-color: #f1f1f1;
-		z-index: 99999;
+		z-index: 101;
 }
 
 #sideNav-menu .menu-item a {
@@ -314,6 +314,86 @@ text-align: left;
               color 0.4s ease-in;
 }
 
+/*--------------------------------------------------------------
+## Search Box
+--------------------------------------------------------------*/
+
+.search-toggle{
+	display:inline-block;
+	position:relative;
+	float:right;
+	padding: 10px 10px 10px 10px;
+}
+
+.search-toggle:hover{
+	color: red;
+}
+
+/* The overlay effect with black background */
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
+}
+
+/* The content */
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+/* Close button */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+/* Style the search field */
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/

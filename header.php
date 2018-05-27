@@ -32,6 +32,14 @@
 
 	<header id="masthead" class="site-header">
 
+		<div id="searchOverlay" class="overlay">
+			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-sm">
+			</i></span>
+			<div class="overlay-content">
+				<?php get_search_form() ?>
+			</div>
+		</div>
+
 		<div id="side-navigation">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<?php
@@ -91,15 +99,19 @@
 				</a>
 			</div>-->
 
+			<div class="search-toggle" onclick="openSearch()">
+			 	<i class="fas fa-search fa-lg">
+			 	</i>
+		 	</div>
 
 			<div class="main-navigation">
 
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-				?>
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+					?>
 			 </div>
 
 		</nav><!-- #site-navigation -->
@@ -144,6 +156,17 @@
 	      $('#site-navigation').css('color', 'white');
 	    }
 	});
+
+		/*search*/
+			// Open the full screen search box
+		function openSearch() {
+		  document.getElementById("searchOverlay").style.display = "block";
+		}
+
+		// Close the full screen search box
+		function closeSearch() {
+		  document.getElementById("searchOverlay").style.display = "none";
+		}
 	</script>
 
 	<?php if ( is_admin_bar_showing() ) { ?>
