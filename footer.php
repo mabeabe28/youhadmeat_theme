@@ -36,7 +36,7 @@
 					Feel free to contact us about anything!
 				</br>
 				<i class="fas fa-envelope fa-sm">
-				</i> Email: contact.youhadme@gmail.com
+				</i> Email: hello@youhadme.at
 				</br>
 				<i class="fab fa-instagram fa-sm">
 				</i> Instagram: @youhadme.at
