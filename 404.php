@@ -25,23 +25,6 @@ get_header();
 	});
 	</script>
 
-	<style>
-		.page-header{
-			top: 40%;
-			display: flex;
-			justify-content: center;
-			flex-flow: row wrap;
-		}
-
-
-
-
-		.page-content p{
-			text-align: center;
-		}
-
-
-	</style>
 
 
 
