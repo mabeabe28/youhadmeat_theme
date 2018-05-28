@@ -74,7 +74,7 @@ get_header();
 						</div>
 						<div style="font-size:16px;font-family:Avenir,Open Sans">
 							'.get_the_date().' |
-							'.get_author_name().'
+							'.get_the_author_meta('nickname').'
 						</div>
 					</div>
 				</div>

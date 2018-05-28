@@ -37,18 +37,146 @@
 		width: 100%;
 		height: auto;
 		margin-bottom: 0;
-		display: flex;
-		justify-content: center;
+		/*display: flex;*/
+		/*justify-content: center;*/
 	}
 
 	.author-box{
 		color:black;
+		text-align: center;
 	}
+
+
+
+	.author-name .leading{
+		font-style: italic;
+		font-weight: bold;
+		display: inline-block;
+		padding: 8px;
+	}
+
+	.author-name .trailing{
+		font-family: "Gloss-and-Bloom";
+		display: inline-block;
+		padding: 8px;
+
+	}
+
+
+
 	</style>
+
+
 	<footer class="entry-footer">
-		<div class="author-box">
+
+
 			<?php
-			echo 'hello '.get_author_name().'.';
+			echo '<div class="author-box" style="background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('.get_the_post_thumbnail_url().');
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-color: black;">';
+
+			echo '<div class="card-deck" >';
+		 	echo '<div class="card-deck-header">
+							<div class="card-deck-header-title"></div>
+						</div>';
+			echo '<div class="card-container">';
+
+			$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename').'';
+
+			echo '<div class="card-wrapper">
+								<a href="'.$authorUrl.'">
+									<div class="card-header"><div class="card-header-category">
+										<div class="category-title" style="font-family:Crimson Text">Written by:</div>
+									</div></div>
+									'.get_wp_user_avatar(get_the_author_id(),'large').'
+									<div class="card-content">
+										<div class="card-content-container">
+											<div class="card-content-title">You had me at '.get_author_name().'</div>
+											<div class="card-content-excerpt">
+												'.get_the_author_meta('description').'
+											</div>
+										</div>
+									</div>
+								</a>
+						</div>';
+
+						echo 		'</div>';//card-container
+						echo '</div>';//card-deck
+
+			?>
+		</div><!-- Author box -->
+
+		<div class="related-box">
+			<?php
+
+			/*Related*/
+			$orig_post = $post;
+			global $post;
+
+			$tags = wp_get_post_tags($post->ID);
+			if ($tags) {
+				$tag_ids = array();
+
+				foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+
+				$args=array(
+				'tag__in' => $tag_ids,
+				'post__not_in' => array($post->ID),
+				'posts_per_page'=>3, // Number of related posts that will be shown.
+				'caller_get_posts'=>1
+				);
+
+				$my_query = new wp_query( $args );
+				if( $my_query->have_posts() ) {
+
+					echo '<div class="card-deck" >';
+					echo '<div class="card-deck-header">
+									<div class="card-deck-header-title"><h3>Related Posts:</h3></div>
+								</div>';
+					echo '<ul class="card-container">';
+
+
+					while( $my_query->have_posts() ) {
+					$my_query->the_post();
+
+
+
+					$ParentCategory = "";
+					$category = get_the_category();
+					foreach($category as $curcat){
+						if($curcat->parent == 0){
+							$ParentCategory = $curcat;
+						}
+					}
+
+					echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
+										<a href="'.get_permalink(get_the_id()).'">
+											<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
+												<div class="category-title">'.$ParentCategory->name.'</div>
+											</div></div>
+											<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
+											<div class="card-content">
+												<div class="card-content-container">
+													<div class="card-content-title">'.get_the_title().'</div>
+													<div class="card-content-excerpt">
+														'.get_the_excerpt().'
+													</div>
+												</div>
+											</div>
+										</a>
+								</li>';
+
+					}
+
+					echo 		'</ul>';//category-content
+					echo '</div>';//category-wrapper
+				}
+			}
+
+			$post = $orig_post;
+			wp_reset_query();
 			?>
 		</div>
 	</footer><!-- .entry-footer -->
