@@ -52,8 +52,14 @@
 					'menu_id'        => 'sideNav-menu',
 				) );
 				?>
+
+				<div class="logo">
+					<div class="text">
+						You Had Me At
+					</div>
+				</div>
 			</div>
-			
+
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
 				</i>
@@ -123,12 +129,12 @@
 	<script type="text/javascript">
 
 	/*side nav drop down*/
-	$('#sideNav-menu .menu-item-has-children').prepend('<span class="sidenav-dropdown fas fa-caret-down"></span>');
+	/*$('#sideNav-menu .menu-item-has-children').prepend('<div class="sidenav-dropdown fas fa-caret-down"></div>');
 
 	$('.sidenav-dropdown').click(function(event) {
 		//console.log(event);
 		$(event.target).siblings('.sub-menu').toggle();
-	});
+	});*/
 
 	/* Set the width of the side navigation to 250px */
 	function openNav() {
