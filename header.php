@@ -44,7 +44,7 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'sidenav',
 				'menu_id'        => 'sideNav-menu',
 			) );
 			?>
@@ -108,7 +108,7 @@
 
 				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'main',
 						'menu_id'        => 'primary-menu',
 					) );
 					?>
