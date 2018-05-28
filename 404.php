@@ -55,11 +55,8 @@ get_header();
 			flex-flow: row wrap;
 		}
 
-		.wrapper-404 .page-content p{
-			text-align: center;
-		}
-
 		.wrapper-404 .page-content{
+			text-align: center;
 			margin-bottom: 30px;
 		}
 
