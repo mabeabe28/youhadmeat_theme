@@ -348,7 +348,7 @@ text-align: left;
     font-weight: 300;
     text-align: center;
     outline: none;
-		border-color: white;
+		border-color: rgb(0,0,0,0);
 		-webkit-appearance: none;
   }
 
