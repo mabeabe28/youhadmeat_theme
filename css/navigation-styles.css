@@ -93,7 +93,7 @@ a:hover, a:active {
 	    display: none;
 	    position: absolute;
 	    background-color: #f1f1f1;
-	    min-width: 160px;
+	    width: 120px;
 	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	    z-index: 101;
 	}
@@ -107,7 +107,7 @@ a:hover, a:active {
 	}
 
 	/* Change color of dropdown links on hover */
-	#primary-menu .menu-item .sub-menu a:hover {background-color: #ddd}
+	#primary-menu .menu-item .sub-menu a:hover {color: red}
 
 	/* Show the dropdown menu on hover */
 	#primary-menu .menu-item:hover .sub-menu {
