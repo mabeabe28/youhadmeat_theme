@@ -88,7 +88,7 @@
 				if($ChildCategory == ""){
 					$ChildCategory = $ParentCategory;
 				}
-				echo '<li class="card-wrapper">
+				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
 									<a href="'.get_permalink($curpost["ID"]).'">
 										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
 											<div class="category-title">'.$ChildCategory->name.'</div>
