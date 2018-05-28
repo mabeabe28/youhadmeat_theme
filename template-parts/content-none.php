@@ -21,6 +21,10 @@
 	  align-items: center;
 	  justify-content: center;
 		text-align: center;
+
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
 	}
 
 	.no-results .title{
@@ -31,7 +35,8 @@
 
 </style>
 
-<section class="no-results not-found">
+<section class="no-results not-found" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(<?php echo ''.get_template_directory_uri().'/includes/images/404.jpg'; ?>);">
+
 	<header class="title">
 		<h1><?php esc_html_e( 'Nothing Found', 'youhadmeat_theme' ); ?></h1>
 	</header><!-- .page-header -->

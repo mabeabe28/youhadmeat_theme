@@ -33,11 +33,54 @@ get_header();
 			flex-flow: row wrap;
 		}
 
+
+
+
+		.page-content p{
+			text-align: center;
+		}
+
+
+	</style>
+
+
+
+	<style>
+		.wrapper-404{
+			background-color: black;
+			height: 100vh;
+			width: 100%;
+			color: white;
+
+			display: flex;
+			flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+			text-align: center;
+
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+
+		.wrapper-404 .title{
+			width: 100%;
+			text-align: center;
+			font-family: "Gloss-and-Bloom";
+			display: flex;
+			justify-content: center;
+			flex-flow: row wrap;
+		}
+
+		.wrapper-404 .page-content{
+			margin-bottom: 30px;
+		}
+
 		.text-404-leading{
 			padding-left: 10px;
 			padding-right: 10px;
 			margin-left: 20px;
-			margin-right: 20px;
+			margin-right: 5px;
 			font-family: "Avenir","Open Sans","Calibri", sans-serif;
 			font-style: italic;
 			font-weight:bold;
@@ -45,7 +88,7 @@ get_header();
 			display: inline-block;
 			padding-bottom: 20px;
 			padding-top: 30px;
-			font-size: 5vw;
+			font-size: 4vw;
 
 			margin-bottom: 10px;
 
@@ -54,79 +97,32 @@ get_header();
 		.text-404-trailing{
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-left: 20px;
+			margin-left: 5px;
 			margin-right: 20px;
 			width: 400px;
 			font-family: "Gloss-and-Bloom", Arial, sans-serif;
 			display: inline-block;
 			text-align: center;
-			font-size: 7vw;
+			font-size: 6vw;
 			padding-top: 10px;
 			margin-bottom: 10px;
 
 		}
 
-
-		.page-content p{
-			text-align: center;
-		}
-
-		.error-404{
-			background-color: black;
-			color: white;
-			height: 100vh;
-			width: 100%;
-		}
-
 	</style>
 
+	<section class="wrapper-404" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(<?php echo ''.get_template_directory_uri().'/includes/images/404.jpg'; ?>);">
+		<header class="title">
+			<div class="text-404-leading"><?php esc_html_e( 'You had me at ', 'youhadmeat_theme' ); ?></div>
+			<div class="text-404-trailing"><?php esc_html_e( 'Oops', 'youhadmeat_theme' ); ?></div>
+		</header><!-- .page-header -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<div class="page-content">
+			<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'youhadmeat_theme' ); ?>
+		</div><!-- .page-content -->
+		<?php get_search_form(); ?>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="text-404-leading"><?php esc_html_e( 'You had me at ', 'youhadmeat_theme' ); ?></h1>
-					<h1 class="text-404-trailing"><?php esc_html_e( 'Oops', 'youhadmeat_theme' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'youhadmeat_theme' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					/*the_widget( 'WP_Widget_Recent_Posts' );*/
-					?>
-
-					<!--<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'youhadmeat_theme' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div>--><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					/*$youhadmeat_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'youhadmeat_theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$youhadmeat_theme_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );*/
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</section><!-- .no-results -->
 
 <?php
 get_footer();
