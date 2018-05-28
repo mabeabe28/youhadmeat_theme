@@ -20,6 +20,7 @@
 		flex-direction: column;
 	  align-items: center;
 	  justify-content: center;
+		text-align: center;
 	}
 
 	.no-results .title{
@@ -27,29 +28,7 @@
 		text-align: center;
 		font-family: "Gloss-and-Bloom";
 	}
-	.no-results .search-form{
-		display: flex;
-		justify-content: center;
-		flex-flow: row wrap;
-	}
 
-	.no-results .search-field {
-		width: 100%;
-    position: inline-block;
-    color: rgb(255, 255, 255);
-    background: rgba(0, 0, 0, 0);
-    font-size: 60px;
-    font-weight: 300;
-    text-align: center;
-    outline: none;
-
-		-webkit-appearance: none;
-  }
-
-  .no-results .search-submit {
-    position: inline-block;
-    border: black;
-  }
 </style>
 
 <section class="no-results not-found">

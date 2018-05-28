@@ -329,29 +329,46 @@ text-align: left;
 	color: red;
 }
 
-	#searchOverlay .search-form{
+	#searchOverlay .search-form,
+	.no-results .search-form,
+	.error-404 .search-form{
 		display: flex;
 		justify-content: center;
 		flex-flow: row wrap;
 	}
 
-	#searchOverlay .search-field {
+	#searchOverlay .search-field,
+	.no-results .search-field,
+	.error-404 .search-field {
 		width: 100%;
     position: inline-block;
     color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0);
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 300;
     text-align: center;
     outline: none;
+		border-color: white;
 		-webkit-appearance: none;
   }
 
-  #searchOverlay .search-submit {
+  #searchOverlay .search-submit,
+	.no-results .search-submit,
+	.error-404 .search-submit  {
     position: inline-block;
     border: black;
+		background-color: white;
 		-webkit-appearance: none;
   }
+
+	@media screen and (max-width:600px) {
+		#searchOverlay .search-field,
+		.no-results .search-field,
+		.error-404 .search-field {
+	    font-size: 40px;
+	  }
+	}
+
 
 /* The overlay effect with black background */
 .overlay {

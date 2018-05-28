@@ -44,6 +44,10 @@ $(document).on('scroll', function () {
 				.search-trailing{
 					text-align: center;
 				}
+
+				.page-content p{
+					text-align: center;
+				}
 			</style>
 
 		<?php if ( have_posts() ) : ?>
