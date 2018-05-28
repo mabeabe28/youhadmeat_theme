@@ -40,18 +40,20 @@
 			</div>
 		</div>
 
-		<div id="side-navigation">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'sidenav',
-				'menu_id'        => 'sideNav-menu',
-			) );
-			?>
-		</div>
+
 
 		<nav id="site-navigation">
 
+			<div id="side-navigation">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'sidenav',
+					'menu_id'        => 'sideNav-menu',
+				) );
+				?>
+			</div>
+			
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
 				</i>
