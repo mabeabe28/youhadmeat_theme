@@ -134,6 +134,10 @@ ul#footer-menu.menu{
 	padding-left: 0;
 }
 
+#footer-menu .sub-menu{
+	padding-left: 5px;
+}
+
 /* Links */
 #footer-menu a{text-decoration:underline;color:white;}
 #footer-menu a:visited { text-decoration: none; color:white; }
