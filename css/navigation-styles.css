@@ -442,3 +442,90 @@ text-align: left;
 #footer{
 	background-color: black;
 }
+
+
+#footer {
+	font-family: "Avenir", "Open Sans";
+	color: white;
+	font-size: 12px;
+}
+
+#footer .footer-main{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+
+#footer .copyright-info{
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+#footer .site-logo{
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 40px;
+	width: 300px;
+	display: inline-block;
+}
+
+#footer  .site-logo .leading{
+	font-style: italic;
+	font-weight: bold;
+}
+
+#footer .site-logo .trailing{
+	font-family: "Gloss-and-Bloom";
+	padding:10px;
+}
+#footer .site-info{
+	margin: 20px;
+	width: 300px;
+	display: inline-block;
+}
+#footer .contact-info{
+	margin: 20px;
+	width: 300px;
+	display: inline-block;
+}
+#footer .menu-info{
+	margin: 20px;
+	width: 300px;
+	display: inline-block;
+}
+#footer-menu{
+	margin: 0;
+	width: 300px;
+	display: inline-block;
+	list-style: none;
+	overflow:hidden;
+}
+
+#footer-menu li{
+	float:left;
+	display:inline;
+	width:50%;
+}
+
+#footer-menu .menu-main-container{
+	padding: 0px;
+	margin: 0px;
+}
+
+ul#footer-menu.menu{
+	padding-left: 0;
+}
+
+#footer-menu .sub-menu{
+	padding-left: 5px;
+}
+
+/* Links */
+#footer-menu a{text-decoration:underline;color:white;}
+#footer-menu a:visited { text-decoration: none; color:white; }
+#footer-menu a:hover { text-decoration: none;color:white; }
+#footer-menu a:focus { text-decoration: none; color:white;}
+#footer-menu a:hover, a:active { text-decoration: none; color:white;}
