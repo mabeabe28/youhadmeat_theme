@@ -72,7 +72,7 @@ get_header();
 			flex-flow: row wrap;
 		}
 
-		.wrapper-404 p{
+		.wrapper-404 .page-content p{
 			text-align: center;
 		}
 
