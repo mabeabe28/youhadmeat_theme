@@ -193,5 +193,51 @@ function theme_customize_register( $wp_customize ) {
 	    'label'   => esc_html__( 'Food Colour', 'theme' ),
 	  ) ) );
 }
-
 add_action( 'customize_register', 'theme_customize_register' );
+
+function theme_get_customizer_css() {
+    ob_start();
+
+    $food_colour = get_theme_mod( 'food_colour', '' );
+    if ( ! empty( $food_colour ) ) {
+      ?>
+      body {
+        color: <?php echo $food_colour; ?>;
+      }
+
+			a.category--food:hover{
+				color:<?php echo $food_colour; ?>;
+				border-color:<?php echo $food_colour; ?>;
+			}
+
+			.category--food h1{
+				color:<?php echo $food_colour; ?>;
+			}
+
+			.card-header-category.category--food{
+				background-color:<?php echo $food_colour; ?>;
+			}
+
+			.card-wrapper.category--food:after{
+			    background-color:<?php echo $food_colour; ?>;
+			}
+			.card-wrapper.category--food:hover:after{
+			   background-color:<?php echo $food_colour; ?>;
+			}
+
+
+      <?php
+    }
+
+    $css = ob_get_clean();
+    return $css;
+  }
+
+
+	function theme_enqueue_styles() {
+	  wp_enqueue_style( 'youhadmeat_theme-style', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+	  $custom_css = theme_get_customizer_css();
+	  wp_add_inline_style( 'youhadmeat_theme-style', $custom_css );
+	}
+
+	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
