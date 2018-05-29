@@ -88,7 +88,7 @@
 
 		echo '<div id="logo">
 			<a href="'.get_home_url().'">
-				You Had Me At
+				<strong><i>You Had Me At</i></strong>
 			</a>
 			<div id="logo-item" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
 				<a href="'.$logo_text_link.'">
