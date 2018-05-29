@@ -232,9 +232,9 @@ function theme_get_customizer_css() {
 
 
 	function theme_enqueue_styles() {
-	  wp_enqueue_style( 'youhadmeat_theme-style', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+		wp_enqueue_style( 'card-styles', get_template_directory_uri() . '/css/card-styles.css');
 	  $custom_css = theme_get_customizer_css();
-	  wp_add_inline_style( 'youhadmeat_theme-style', $custom_css );
+	  wp_add_inline_style( 'card-styles', $custom_css );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
