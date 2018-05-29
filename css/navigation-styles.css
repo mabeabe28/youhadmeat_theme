@@ -236,7 +236,7 @@ text-align: left;
 #sideNav-menu .menu-item .sub-menu {
 		padding-left: 20px;
 		position: block;
-		overflow: scroll;
+		overflow: hidden;
 		width: 100%;
 }
 #sideNav-menu .menu-item a {
