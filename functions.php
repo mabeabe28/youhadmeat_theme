@@ -181,3 +181,17 @@ function wpb_image_editor_default_to_gd( $editors ) {
     return $editors;
 }
 add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
+
+function theme_customize_register( $wp_customize ) {
+	$wp_customize->add_setting( 'food_colour', array(
+      'default'   => '',
+      'transport' => 'refresh',
+    ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'food_colour', array(
+	    'section' => 'colors',
+	    'label'   => esc_html__( 'Food Colour', 'theme' ),
+	  ) ) );
+}
+
+add_action( 'customize_register', 'theme_customize_register' );
