@@ -200,33 +200,30 @@ function theme_get_customizer_css() {
 
     $food_colour = get_theme_mod( 'food_colour', '' );
     if ( ! empty( $food_colour ) ) {
-      ?>
-      body {
-        color: <?php echo $food_colour; ?>;
-      }
 
+			echo '
 			a.category--food:hover{
-				color:<?php echo $food_colour; ?>;
-				border-color:<?php echo $food_colour; ?>;
+				color:'.$food_colour.';
+				border-color:'.$food_colour.';
 			}
 
 			.category--food h1{
-				color:<?php echo $food_colour; ?>;
+				color:'.$food_colour.';
 			}
 
 			.card-header-category.category--food{
-				background-color:<?php echo $food_colour; ?>;
+				background-color:'.$food_colour.';
 			}
 
 			.card-wrapper.category--food:after{
-			    background-color:<?php echo $food_colour; ?>;
+			    background-color:'.$food_colour.';
 			}
 			.card-wrapper.category--food:hover:after{
-			   background-color:<?php echo $food_colour; ?>;
+			   background-color:'.$food_colour.';
 			}
+			';
 
 
-      <?php
     }
 
     $css = ob_get_clean();
