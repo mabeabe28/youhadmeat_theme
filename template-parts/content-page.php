@@ -61,10 +61,9 @@
 	      'suppress_filters' => true
 	    );
 
-			if($post_slug == "travel"){
-			$showMap = get_post_meta( $post->id,'showMap', true );
+			$showMap = get_post_meta( $post->ID,'showMap', true );
 
-				if($showMap){
+				if($showMap == 'true'){
 					echo '<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							  <script>
 							    google.charts.load("current", { "packages": ["map"] });
@@ -90,7 +89,7 @@
 							      showInfoWindow: true
 							    };
 
-							    var map = new google.visualization.Map(document.getElementById('chart_div'));
+							    var map = new google.visualization.Map(document.getElementById("chart_div"));
 
 							    map.draw(data, options);
 									};
@@ -98,7 +97,6 @@
 									<div id="chart_div"></div>';
 				}
 
-			}
 	    //get one recent post
 	    $recent_posts = wp_get_recent_posts( $args );
 	    //get the categories for the post
