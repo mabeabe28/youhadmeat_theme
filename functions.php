@@ -183,15 +183,24 @@ function wpb_image_editor_default_to_gd( $editors ) {
 add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
 
 function theme_customize_register( $wp_customize ) {
-	$wp_customize->add_setting( 'food_colour', array(
-      'default'   => '',
-      'transport' => 'refresh',
-    ) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'food_colour', array(
-	    'section' => 'colors',
-	    'label'   => esc_html__( 'Food Colour', 'theme' ),
-	  ) ) );
+	$catargs = array(
+		'parent' => 0
+	);
+	$categories=get_categories($catargs);
+	//for each category
+	foreach($categories as $curcat) {
+		$wp_customize->add_setting( ''.$curcat->slug.'_colour', array(
+				'default'   => '',
+				'transport' => 'refresh',
+			) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, ''.$curcat->slug.'_colour', array(
+				'section' => 'colors',
+				'label'   => esc_html__( ''.$curcat->name.' Colour', 'theme' ),
+			) ) );
+	}
+
 }
 add_action( 'customize_register', 'theme_customize_register' );
 
