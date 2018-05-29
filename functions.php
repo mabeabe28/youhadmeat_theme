@@ -174,72 +174,78 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function wpb_image_editor_default_to_gd( $editors ) {
-    $gd_editor = 'WP_Image_Editor_GD';
-    $editors = array_diff( $editors, array( $gd_editor ) );
-    array_unshift( $editors, $gd_editor );
-    return $editors;
-}
-add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
-
-function theme_customize_register( $wp_customize ) {
-
-	$catargs = array(
-		'parent' => 0
-	);
-	$categories=get_categories($catargs);
-	//for each category
-	foreach($categories as $curcat) {
-		$wp_customize->add_setting( ''.$curcat->slug.'_colour', array(
-				'default'   => '',
-				'transport' => 'refresh',
-			) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, ''.$curcat->slug.'_colour', array(
-				'section' => 'colors',
-				'label'   => esc_html__( ''.$curcat->name.' Colour', 'theme' ),
-			) ) );
+	function wpb_image_editor_default_to_gd( $editors ) {
+	    $gd_editor = 'WP_Image_Editor_GD';
+	    $editors = array_diff( $editors, array( $gd_editor ) );
+	    array_unshift( $editors, $gd_editor );
+	    return $editors;
 	}
+	add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
 
-}
-add_action( 'customize_register', 'theme_customize_register' );
+	/*create category colour settings*/
+	function theme_customize_register( $wp_customize ) {
 
-function theme_get_customizer_css() {
+		$catargs = array(
+			'parent' => 0
+		);
+		$categories=get_categories($catargs);
+		//for each category
+		foreach($categories as $curcat) {
+			$wp_customize->add_setting( ''.$curcat->slug.'_colour', array(
+					'default'   => '',
+					'transport' => 'refresh',
+				) );
+
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, ''.$curcat->slug.'_colour', array(
+					'section' => 'colors',
+					'label'   => esc_html__( ''.$curcat->name.' Colour', 'theme' ),
+				) ) );
+		}
+
+	}
+	add_action( 'customize_register', 'theme_customize_register' );
+
+	/*create css to output cateory colour*/
+	function theme_get_customizer_css() {
     ob_start();
+		$catargs = array(
+			'parent' => 0
+		);
+		$categories=get_categories($catargs);
+		//for each category
+		foreach($categories as $curcat) {
+			$cat_colour = get_theme_mod( ''.$curcat->slug.'_colour', '' );
+	    if ( ! empty( $cat_colour ) ) {
 
-    $food_colour = get_theme_mod( 'food_colour', '' );
-    if ( ! empty( $food_colour ) ) {
+				echo '
+				a.category--'.$curcat->slug.':hover{
+					color:'.$cat_colour.';
+					border-color:'.$cat_colour.';
+				}
 
-			echo '
-			a.category--food:hover{
-				color:'.$food_colour.';
-				border-color:'.$food_colour.';
+				.category--'.$curcat->slug.' h1{
+					color:'.$cat_colour.';
+				}
+
+				.card-header-category.category--'.$curcat->slug.'{
+					background-color:'.$cat_colour.';
+				}
+
+				.card-wrapper.category--'.$curcat->slug.':after{
+				    background-color:'.$cat_colour.';
+				}
+				.card-wrapper.category--'.$curcat->slug.':hover:after{
+				   background-color:'.$cat_colour.';
+				}
+				';
 			}
-
-			.category--food h1{
-				color:'.$food_colour.';
-			}
-
-			.card-header-category.category--food{
-				background-color:'.$food_colour.';
-			}
-
-			.card-wrapper.category--food:after{
-			    background-color:'.$food_colour.';
-			}
-			.card-wrapper.category--food:hover:after{
-			   background-color:'.$food_colour.';
-			}
-			';
-
-
     }
 
     $css = ob_get_clean();
     return $css;
   }
 
-
+	/*output category colour css*/
 	function theme_enqueue_styles() {
 		wp_enqueue_style( 'card-styles', get_template_directory_uri() . '/css/card-styles.css');
 	  $custom_css = theme_get_customizer_css();
