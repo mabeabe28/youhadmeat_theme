@@ -93,7 +93,7 @@
 
 							    map.draw(data, options);
 									};
-
+									</script>
 									<div id="chart_div"></div>';
 				}
 
