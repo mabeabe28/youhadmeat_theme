@@ -3,9 +3,7 @@
  * Template Name: Category Page
  * Template Post Type:  page
  *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @package youhadmeat_theme
  */
 
 get_header();
