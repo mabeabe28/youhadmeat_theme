@@ -23,12 +23,7 @@
 			background-color: black;
 		}
 
-		/*large screens*/
-		@media screen and (min-width: 1200px) {
-			.hero{
-				background-attachment: fixed;
-			}
-		}
+
 
 		/*hero text wrapper stuff*/
 		#youhadmeatHeroText {
