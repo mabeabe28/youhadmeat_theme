@@ -69,14 +69,14 @@ get_header();
 											<div id="leading">You Had Me At</div>
 											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
 												<div id="recentPost">
-													<div style="font-size:12px;">Latest Post:</div>
+													<div style="font-size:0.75em;">Latest Post:</div>
 													<div class="recentPost_detail">
 														'.get_the_title($recent_post[0]["ID"]).'
 													</div>
 													<div class="recentPost_excerpt">
 														'.$recent_post[0]["post_excerpt"].'
 													</div>
-													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
+													<div class="cta" style="font-size: 0.94em;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
 												</div>
 											</div>
 									</div>

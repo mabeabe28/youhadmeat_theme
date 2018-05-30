@@ -56,14 +56,14 @@ get_header();
                 <div id="leading">You Had Me At</div>
                 <div id="trailing">'.$category->cat_name.'
                   <div id="recentPost" class="fade">
-                    <div style="font-size:12px;">Latest Post:</div>
+                    <div style="font-size:0.75em;">Latest Post:</div>
                     <div class="recentPost_detail">
                       '.get_the_title($curpost["ID"]).'
                     </div>
                     <div class="recentPost_excerpt">
                      '.$curpost["post_excerpt"].'
                     </div>
-                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
+                    <div class="cta" style="font-size: 0.94em;"><a class="ghost-button category--'.$category->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
                   </div>
                 </div>
             </div>

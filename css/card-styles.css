@@ -15,9 +15,9 @@
 
 .card-deck-header-title{
 	font-family:Gloss-and-Bloom;
-	font-size: 28px;
+	font-size: 1.75em;
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 1.25em;
 }
 
 .card-container{
@@ -124,7 +124,7 @@
 
 
 .card-content .card-content-title{
-	font-size: 18px;
+	font-size: 1.13em;
 	font-weight:bold;
 	font-family: 'Crimson Text', serif;
 	padding-left: 12px;
@@ -133,7 +133,7 @@
 }
 
 .card-content .card-content-excerpt{
-	font-size: 14px;
+	font-size: 0.87em;
 	font-weight: lighter;
 	text-overflow: ellipsis;
 	display: flex;

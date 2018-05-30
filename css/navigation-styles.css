@@ -168,7 +168,7 @@ a:hover, a:active {
 #side-navigation a {
 	padding: 5px 5px 5px 32px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 1.56em;
 	color: #818181;
 	display: block;
 	transition: 0.3s;
@@ -199,7 +199,7 @@ text-align: left;
 }
 
 #sideNav-menu .menu-item .sub-menu a {
-	font-size: 23px;
+	font-size: 1.44em;
 }
 /* When you mouse over the navigation links, change their color */
 #side-navigation a:hover {
@@ -211,7 +211,7 @@ text-align: left;
 	position: absolute;
 	top: 0;
 	right: 25px;
-	font-size: 36px;
+	font-size: 2.25em;
 	margin-left: 20px;
 }
 
@@ -221,7 +221,7 @@ text-align: left;
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
 	#side-navigation {padding-top: 15px;}
-	#side-navigation a {font-size: 18px;}
+	#side-navigation a {font-size: 1.13em;}
 }
 
 #side-navigation.navOpen{
@@ -344,7 +344,7 @@ text-align: left;
     position: inline-block;
     color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0);
-    font-size: 80px;
+    font-size: 5em;
     font-weight: 300;
     text-align: center;
     outline: none;
@@ -370,7 +370,7 @@ text-align: left;
 		#searchOverlay .search-field,
 		.no-results .search-field,
 		.wrapper-404 .search-field {
-	    font-size: 40px;
+	    font-size: 2.5em;
 	  }
 	}
 
@@ -403,7 +403,7 @@ text-align: left;
   position: absolute;
   top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 3.75em;
   cursor: pointer;
   color: white;
 }
@@ -415,7 +415,7 @@ text-align: left;
 /* Style the search field */
 .overlay input[type=text] {
   padding: 15px;
-  font-size: 17px;
+  font-size: 1.06em;
   border: none;
   float: left;
   width: 80%;
@@ -432,7 +432,7 @@ text-align: left;
   width: 20%;
   padding: 15px;
   background: #ddd;
-  font-size: 17px;
+  font-size: 1.06em;
   border: none;
   cursor: pointer;
 }
@@ -452,7 +452,7 @@ text-align: left;
 #footer {
 	font-family: "Avenir", "Open Sans";
 	color: white;
-	font-size: 12px;
+	font-size: 0.75em;
 }
 
 #footer .footer-main{
@@ -470,7 +470,7 @@ text-align: left;
 
 #footer .site-logo{
 	text-align: center;
-	font-size: 20px;
+	font-size: 1.25em;
 	color: white;
 	margin: 40px;
 	width: 300px;
