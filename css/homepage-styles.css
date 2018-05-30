@@ -24,7 +24,7 @@
 		}
 
 		/*large screens*/
-		@media screen and (min-width: 45.5em) {
+		@media screen and (min-width: 1200px) {
 			.hero{
 				background-attachment: fixed;
 			}
