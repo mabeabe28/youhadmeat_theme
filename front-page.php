@@ -65,6 +65,7 @@ get_header();
 										<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
 									</div>
 
+									
 									<div id="youhadmeatHeroText">
 											<div id="leading">You Had Me At</div>
 											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
