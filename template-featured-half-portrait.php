@@ -51,6 +51,26 @@ get_header();
   width: 50%;
 }
 
+.section-two .title{
+  top:20%;
+  position:relative;
+  font-size:3em;
+  font-family:"Crimson Text";
+  letter-spacing:2px;
+}
+
+.section-two .excerpt{
+  margin-left:75px;
+  margin-right:75px;
+  top:30%;
+  position:relative;
+  font-size:1em;
+  font-style:italic;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+
 @media screen and (max-width:1000px){
   .featured-image{
     height: auto;
@@ -64,6 +84,14 @@ get_header();
   .section-two{
     height: 100vh;
     width: 1000px;
+  }
+
+}
+@media screen and (max-width:500px){
+
+  .section-two .excerpt{
+    margin-left:20px;
+    margin-right:20px;
   }
 }
 
@@ -97,7 +125,7 @@ get_header();
         if($featuredPosition == 'right'){
           echo  '
             <div class="section-two fade-slow">
-              <div style="top:20%;position:relative;font-size:3em;font-family:Crimson Text;letter-spacing:2px;">
+              <div class="title">
                 <div>
                 '.get_the_title().'
                 </div>
@@ -105,7 +133,7 @@ get_header();
                   '.get_the_date().' | '.get_the_author_meta('nickname').'
                 </div>
               </div>
-              <div style="margin-left:75px;margin-right:75px;top:30%;position:relative;font-size:1em;font-style:italic;text-align:justify;text-justify:inter-word;">
+              <div class="excerpt">
                 '.get_the_excerpt().'
               </div>
             </div><div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
@@ -114,7 +142,7 @@ get_header();
           echo  '<div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
             </div>
             <div class="section-two fade-slow">
-              <div style="top:20%;position:relative;font-size:3em;font-family:Crimson Text;letter-spacing:2px;">
+              <div class="title">
                 <div>
                 '.get_the_title().'
                 </div>
@@ -122,7 +150,7 @@ get_header();
                   '.get_the_date().' | '.get_the_author_meta('nickname').'
                 </div>
               </div>
-              <div style="margin-left:75px;margin-right:75px;top:30%;position:relative;font-size:1em;font-style:italic;text-align:justify;text-justify:inter-word;">
+              <div class="excerpt">
                 '.get_the_excerpt().'
               </div>
             </div>';
