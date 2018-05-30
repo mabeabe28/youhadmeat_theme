@@ -164,8 +164,8 @@
 	      $('#site-navigation').css('color', 'white');
 	    }
 
-			$(".hero").css("opacity", 1 - $(document).scrollTop() / 450);
-			$(".featured-image").css("opacity", 1 - $(document).scrollTop() / 450);
+			$(".hero").css("opacity", 1 - $(document).scrollTop() / 550);
+			$(".featured-image").css("opacity", 1 - $(document).scrollTop() / 550);
 	});
 
 		/*search*/
