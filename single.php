@@ -69,10 +69,10 @@ get_header();
 				<div id="featured-wrapper">
 					<div id="featured-text">
 					'.get_the_title().'
-						<div style="font-size:2em;font-family:Avenir,Open Sans">
+						<div style="font-size:32px;font-family:Avenir,Open Sans">
 							'.get_the_excerpt().'
 						</div>
-						<div style="font-size:1em;font-family:Avenir,Open Sans">
+						<div style="font-size:16px;font-family:Avenir,Open Sans">
 							'.get_the_date().' |
 							'.get_the_author_meta('nickname').'
 						</div>
