@@ -88,8 +88,12 @@ get_header();
 
 }
 @media screen and (max-width:500px){
+  .section-two .title{
+    top:5%;
+  }
 
   .section-two .excerpt{
+    top:15%;
     margin-left:20px;
     margin-right:20px;
   }
