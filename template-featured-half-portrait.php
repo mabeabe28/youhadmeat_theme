@@ -96,7 +96,7 @@ get_header();
 
         if($featuredPosition == 'right'){
           echo  '
-            <div class="section-two"">
+            <div class="section-two fade-slow">
               <div style="top:20%;position:relative;font-size:3em;font-family:Crimson Text;letter-spacing:2px;">
                 <div>
                 '.get_the_title().'

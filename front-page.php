@@ -73,7 +73,7 @@ get_header();
 													<div class="recentPost_detail">
 														'.get_the_title($recent_post[0]["ID"]).'
 													</div>
-													<div class="recentPost_excerpt">
+													<div class="recentPost_excerpt" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
 														'.$recent_post[0]["post_excerpt"].'
 													</div>
 													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
