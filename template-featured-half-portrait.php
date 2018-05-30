@@ -113,7 +113,7 @@ get_header();
         }else{
           echo  '<div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
             </div>
-            <div class="section-two"">
+            <div class="section-two fade-slow">
               <div style="top:20%;position:relative;font-size:3em;font-family:Crimson Text;letter-spacing:2px;">
                 <div>
                 '.get_the_title().'
