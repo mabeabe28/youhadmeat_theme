@@ -71,7 +71,7 @@ get_header();
 }
 
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:780px){
   .featured-image{
     height: auto;
   }
@@ -139,7 +139,7 @@ get_header();
     }
 
     echo '<style>
-      @media screen and (min-width:1000px){
+      @media screen and (min-width:780px){
 
         body{
           background-color:'.$backgroundColour.';
