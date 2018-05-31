@@ -64,13 +64,13 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
+			$excerptStr = (strlen(get_the_excerpt()) > 140) ? substr(get_the_excerpt(),0,140).'...' :get_the_excerpt();
 			echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');">
 				<div id="featured-wrapper">
 					<div id="featured-text">
 					'.get_the_title().'
 						<div style="font-size:32px;font-family:Avenir,Open Sans">
-							'.get_the_excerpt().'
+							'.$excerptStr.'
 						</div>
 						<div style="font-size:16px;font-family:Avenir,Open Sans">
 							'.get_the_date().' |
