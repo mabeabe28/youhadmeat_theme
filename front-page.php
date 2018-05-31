@@ -199,6 +199,8 @@ get_header();
 			foreach($recent_three as $curpost){
 
 				//print_r($curpost);
+				$excerptStr = (strlen($curpost["post_excerpt"]) > 140) ? substr($curpost["post_excerpt"],0,140).'...' :$curpost["post_excerpt"];
+
 				echo '<li class="card-wrapper category--'.$curcat->slug.'">
 									<a href="'.get_permalink($curpost["ID"]).'">
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
@@ -209,7 +211,7 @@ get_header();
 											<div class="card-content-container">
 												<div class="card-content-title">'.$curpost["post_title"].'</div>
 												<div class="card-content-excerpt">
-													'.$curpost["post_excerpt"].'
+													'.$excerptStr.'
 												</div>
 											</div>
 										</div>
