@@ -112,10 +112,10 @@ get_header();
 
     if($featuredPosition == 'right'){
       $imgPosition = '50%';
-      $excerptFloat = 'right';
+      $excerptFloat = 'left';
     }else{
       $imgPosition = '0%';
-      $excerptFloat = 'left';
+      $excerptFloat = 'right';
     }
     echo '<style>
       .section-one{
