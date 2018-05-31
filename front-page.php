@@ -25,7 +25,7 @@ get_header();
 				$catargs = array(
 					'parent' => 0,
 					'orderby' => 'name',
-					'order' => 'ASC',
+					'order' => 'DESC',
 				);
 				$categories=get_categories($catargs);
 				//for each category
