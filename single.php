@@ -57,27 +57,81 @@ get_header();
 		width:80%;
 	}
 
+	/*hero text wrapper stuff*/
+	#featured-wrapper--bottom {
+			/*position: absolute;*/
+			margin-top: 40px;
+			color: black;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-flow: row wrap;
+	}
+
+	/*hero text wrapper stuff*/
+	#featured-text--bottom {
+		padding-top: 20px;
+		margin-top: : 20px;
+		margin-bottom: : 5px;
+
+		font-family: "Gloss-and-Bloom";
+		text-align: center;
+		display: inline-block;
+		padding-bottom: 20px;
+		font-size: 5vw;
+		width:80%;
+	}
+
+	.entry-content{
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+
 	</style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
-			the_post();			
-			echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');">
+			the_post();
+			$textOnImage = get_post_meta( get_the_id(),'text-on-image', true );
+			$backgroundStyle = 'background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');';
+			if($textOnImage == 'false'){
+				$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
+			}
+			echo '<div id="featured-image" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
-					<div id="featured-text">
-					'.get_the_title().'
-						<div style="font-size:32px;font-family:Avenir,Open Sans">
-							'.get_the_excerpt().'
-						</div>
-						<div style="font-size:16px;font-family:Avenir,Open Sans">
-							'.get_the_date().' |
-							'.get_the_author_meta('nickname').'
-						</div>
-					</div>
+					<div id="featured-text">';
+
+					if($textOnImage != 'false'){
+						echo ''.get_the_title().'
+							<div style="font-size:32px;font-family:Avenir,Open Sans">
+								'.get_the_excerpt().'
+							</div>
+							<div style="font-size:16px;font-family:Avenir,Open Sans">
+								'.get_the_date().' |
+								'.get_the_author_meta('nickname').'
+							</div>';
+					}
+
+			echo '</div>
 				</div>
 			</div>';
+
+			if($textOnImage == 'false'){
+
+			echo '	<div id="featured-wrapper--bottom">
+								<div id="featured-text--bottom">'.get_the_title().'
+									<div style="font-size:32px;font-family:Avenir,Open Sans">
+										'.get_the_excerpt().'
+									</div>
+									<div style="font-size:16px;font-family:Avenir,Open Sans">
+										'.get_the_date().' |
+										'.get_the_author_meta('nickname').'
+									</div>
+								</div>
+							</div>';
+			}
 
 			get_template_part( 'template-parts/content', get_post_type() );
 

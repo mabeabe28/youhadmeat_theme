@@ -15,13 +15,33 @@
 get_header();
 ?>
 <?php
-echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');">
-	<div id="featured-wrapper">
-		<div id="featured-text">
-		'.get_the_title().'
-		</div>
-	</div>
-</div>'?>
+
+		$textOnImage = get_post_meta( get_the_id(),'text-on-image', true );
+		$backgroundStyle = 'background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');';
+		if($textOnImage == 'false'){
+			$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
+		}
+
+		echo '<div id="featured-image" style="'.$backgroundStyle.'">
+			<div id="featured-wrapper">
+				<div id="featured-text">';
+
+					if($textOnImage != 'false'){
+						echo	''.get_the_title().'';
+					}
+
+		echo '</div>
+			</div>
+		</div>';
+
+		if($textOnImage == 'false'){
+			echo '<div id="featured-wrapper--bottom">
+				<div id="featured-text--bottom">
+					'.get_the_title().'
+				</div>
+			</div>';
+		}
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -87,6 +107,31 @@ echo '<div id="featured-image" style="background-image:linear-gradient(rgba(0, 0
 	  padding-bottom: 20px;
 	  font-size: 5vw;
 	  width:80%;
+	}
+
+	/*hero text wrapper stuff*/
+	#featured-wrapper--bottom {
+			/*position: absolute;*/
+			margin-top: 40px;
+			color: black;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-flow: row wrap;
+	}
+
+	/*hero text wrapper stuff*/
+	#featured-text--bottom {
+		padding-top: 20px;
+		margin-top: : 20px;
+		margin-bottom: : 5px;
+
+		font-family: "Gloss-and-Bloom";
+		text-align: center;
+		display: inline-block;
+		padding-bottom: 20px;
+		font-size: 5vw;
+		width:80%;
 	}
 
 	</style>
