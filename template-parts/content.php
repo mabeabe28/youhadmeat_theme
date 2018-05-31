@@ -33,10 +33,11 @@
 	</div><!-- .entry-content -->
 	<style>
 	.entry-footer{
-		/*background-color: black;*/
+		background-color: white;
 		width: 100%;
 		height: auto;
 		margin-bottom: 0;
+		position:relative;
 		/*display: flex;*/
 		/*justify-content: center;*/
 	}
@@ -108,7 +109,7 @@
 			?>
 		</div><!-- Author box -->
 
-		<div class="related-box">
+		<div class="related-box" style:"background-color:white;">
 			<?php
 
 			/*Related*/
