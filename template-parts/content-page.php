@@ -60,7 +60,7 @@
 	      'post_status' => 'publish',
 	      'suppress_filters' => true
 	    );
-			
+
 	    //get one recent post
 	    $recent_posts = wp_get_recent_posts( $args );
 	    //get the categories for the post
@@ -88,6 +88,8 @@
 				if($ChildCategory == ""){
 					$ChildCategory = $ParentCategory;
 				}
+				$excerptStr = (strlen($curpost["post_excerpt"]) > 80) ? substr($curpost["post_excerpt"],0,80).'...' :$curpost["post_excerpt"];
+
 				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
 									<a href="'.get_permalink($curpost["ID"]).'">
 										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
@@ -98,7 +100,7 @@
 											<div class="card-content-container">
 												<div class="card-content-title">'.$curpost["post_title"].'</div>
 												<div class="card-content-excerpt">
-													'.$curpost["post_excerpt"].'
+													'.$excerptStr.'
 												</div>
 											</div>
 										</div>
@@ -148,7 +150,7 @@
 				}
 			}
 
-
+			$excerptStr = (strlen($curpost["post_excerpt"]) > 80) ? substr($curpost["post_excerpt"],0,80).'...' :$curpost["post_excerpt"];
 			echo '<li class="card-wrapper category--'.$curcat->slug.'">
 								<a href="'.get_permalink($curpost["ID"]).'">
 									<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
@@ -159,7 +161,7 @@
 										<div class="card-content-container">
 											<div class="card-content-title">'.$curpost["post_title"].'</div>
 											<div class="card-content-excerpt">
-												'.$curpost["post_excerpt"].'
+												'.$excerptStr.'
 											</div>
 										</div>
 									</div>

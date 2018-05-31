@@ -77,7 +77,7 @@ get_header();
 						$ParentCategory = $curcat;
 					}
 				}
-
+				$excerptStr = (strlen(get_the_excerpt()) > 80) ? substr(get_the_excerpt(),0,80).'...' :get_the_excerpt();
 				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
 									<a href="'.get_permalink(get_the_id()).'">
 										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
@@ -88,7 +88,7 @@ get_header();
 											<div class="card-content-container">
 												<div class="card-content-title">'.get_the_title().'</div>
 												<div class="card-content-excerpt">
-													'.get_the_excerpt().'
+													'.$excerptStr.'
 												</div>
 											</div>
 										</div>
