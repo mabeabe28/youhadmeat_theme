@@ -166,14 +166,11 @@ get_header();
               <div class="excerpt">
                 '.get_the_excerpt().'
               </div>
-            </div><div class="section-one" >
-              <img src="'.get_the_post_thumbnail_url().'" />
-            </div>';
+            </div><div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
+              </div>';
         }else{
-          echo  '<div class="section-one" >
-          <img src="'.get_the_post_thumbnail_url().'" />
-
-</div>
+          echo  '<div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
+            </div>
             <div class="section-two fade-slow">
               <div class="title">
                 <div>
