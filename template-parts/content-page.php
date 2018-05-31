@@ -93,7 +93,7 @@
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				$postUrl = get_permalink($curpost["ID"]);
 
-				if($comingsoon){
+				if($comingsoon == 'true'){
 					$pageTitle = 'Coming Soon';
 					$excerptStr = '';
 					$postUrl = '##';
@@ -162,7 +162,7 @@
 			$pageTitle = $curpost["post_title"];
 			$postUrl = get_permalink($curpost["ID"]);
 			$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
-			if($comingsoon){
+			if($comingsoon == 'true'){
 				$pageTitle = 'Coming Soon';
 				$excerptStr = '';
 				$postUrl = '##';

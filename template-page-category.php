@@ -48,7 +48,7 @@ get_header();
         $pageTitle = get_the_title($curpost["ID"]);
         $postUrl = get_permalink($curpost["ID"]);
         $ctaText = 'Read More';
-        if($comingsoon){
+        if($comingsoon == 'true'){
           $pageTitle = '';
           $excerptStr = '';
           $postUrl = '##';

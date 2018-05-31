@@ -81,7 +81,7 @@ get_header();
 				$pageTitle = get_the_title();
 				$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
 				$postUrl = get_permalink(get_the_id());
-				if($comingsoon){
+				if($comingsoon == 'true'){
 					$pageTitle = 'Coming Soon';
 					$excerptStr = '';
 					$postUrl = '##';
