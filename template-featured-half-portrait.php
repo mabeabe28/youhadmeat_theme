@@ -145,6 +145,10 @@ get_header();
           background-color:'.$backgroundColour.';
         }
 
+        .entry-content{
+          color: '.$textColour.';
+        }
+
         .section-one{
           left:'.$imgPosition.';position:fixed;
         }
