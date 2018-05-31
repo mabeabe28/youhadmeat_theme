@@ -121,7 +121,7 @@ get_header();
       }
 
       .section-two{
-        color: '$textColour';
+        color: '.$textColour.';
       }
     </style>
     ';
