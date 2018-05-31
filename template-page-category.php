@@ -52,7 +52,7 @@ get_header();
           $pageTitle = '';
           $excerptStr = '';
           $postUrl = '##';
-          $ctaText = 'Coming Soon'
+          $ctaText = 'Coming Soon';
         }
 
         echo '
