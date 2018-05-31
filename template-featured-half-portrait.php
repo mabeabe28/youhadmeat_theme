@@ -21,17 +21,17 @@ get_header();
   align-items: center;
   /* Text styles */
   text-align: center;
-  color: white;
+  color: black;
   /* Background styles */
   /*background-image: url(http://localhost:8888/youhadmeat/wp-content/uploads/2018/05/DSCF6505.jpg);*/
 
-  background-color: black;
+  background-color: white;
 }
 
 /*hero text wrapper stuff*/
 .featured-wrapper {
     /*position: absolute;*/
-    color: white;
+    color: black;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -108,12 +108,12 @@ get_header();
   $featuredPosition = get_post_meta( get_the_id(),'featured-position', true );
   $featuredfixed = get_post_meta( get_the_id(),'featured-is-fixed', true );
 
-  $backgroundColour = 'black';
-  $textColour = 'white';
+  $backgroundColour = 'white';
+  $textColour = 'black';
 
-  if($featuredTheme == 'light'){
-    $backgroundColour = 'white';
-    $textColour = 'black';
+  if($featuredTheme == 'dark'){
+    $backgroundColour = 'black';
+    $textColour = 'white';
 
     echo '<style>
       .featured-image{
