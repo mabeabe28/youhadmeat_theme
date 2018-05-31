@@ -33,7 +33,7 @@ get_header();
 						'numberposts' => 1,
 						'category' => $category->term_id,
 						'orderby' => 'post_date',
-						'order' => 'DESC',
+						'order' => 'ASC',
 						'post_type' => 'post',
 						'post_status' => 'publish',
 						'suppress_filters' => true
