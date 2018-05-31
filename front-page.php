@@ -201,19 +201,15 @@ get_header();
 				//print_r($curpost);
 				$excerptStr = (strlen($curpost["post_excerpt"]) > 70) ? substr($curpost["post_excerpt"],0,70).'...' :$curpost["post_excerpt"];
 				$pageTitle = $curpost["post_title"];
-
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				if($comingsoon){
 					$pageTitle = 'Coming Soon';
-					$excerptStr = '';
-
-					echo '<script>
-						$(".post--'.$curpost["ID"].' a").click(function(e){ e.preventDefault();console.log("hello"); });
-					</script>';
+					$excerptStr = '##';
+					$postUrl = get_permalink($curpost["ID"]);
 				}
 
 				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
-									<a href="'.get_permalink($curpost["ID"]).'">
+									<a href="'.$postUrl.'">
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
 											<div class="category-title">'.$curcat->name.'</div>
 										</div></div>

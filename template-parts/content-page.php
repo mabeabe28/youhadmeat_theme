@@ -89,16 +89,22 @@
 					$ChildCategory = $ParentCategory;
 				}
 				$excerptStr = (strlen($curpost["post_excerpt"]) > 70) ? substr($curpost["post_excerpt"],0,70).'...' :$curpost["post_excerpt"];
-
+				$pageTitle = $curpost["post_title"];
+				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+				if($comingsoon){
+					$pageTitle = 'Coming Soon';
+					$excerptStr = '##';
+					$postUrl = get_permalink($curpost["ID"]);
+				}
 				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
-									<a href="'.get_permalink($curpost["ID"]).'">
+									<a href="'.$postUrl.'">
 										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
 											<div class="category-title">'.$ChildCategory->name.'</div>
 										</div></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="card-content">
 											<div class="card-content-container">
-												<div class="card-content-title">'.$curpost["post_title"].'</div>
+												<div class="card-content-title">'.$pageTitle.'</div>
 												<div class="card-content-excerpt">
 													'.$excerptStr.'
 												</div>
@@ -151,15 +157,22 @@
 			}
 
 			$excerptStr = (strlen($curpost["post_excerpt"]) > 70) ? substr($curpost["post_excerpt"],0,70).'...' :$curpost["post_excerpt"];
+			$pageTitle = $curpost["post_title"];
+			$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+			if($comingsoon){
+				$pageTitle = 'Coming Soon';
+				$excerptStr = '';
+				$postUrl = get_permalink($curpost["ID"]);
+			}
 			echo '<li class="card-wrapper category--'.$curcat->slug.'">
-								<a href="'.get_permalink($curpost["ID"]).'">
+								<a href="'.$postUrl.'">
 									<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
 										<div class="category-title">'.$ParentCategory->name.'</div>
 									</div></div>
 									<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 									<div class="card-content">
 										<div class="card-content-container">
-											<div class="card-content-title">'.$curpost["post_title"].'</div>
+											<div class="card-content-title">'.$pageTitle.'</div>
 											<div class="card-content-excerpt">
 												'.$excerptStr.'
 											</div>
