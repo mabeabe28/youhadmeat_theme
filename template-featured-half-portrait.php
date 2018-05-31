@@ -118,7 +118,7 @@ get_header();
       $excerptFloat = 'right';
     }
     echo '<style>
-      @media screen and (max-width:1000px){
+      @media screen and (min-width:1000px){
         .section-one{
           left:'.$imgPosition.';position:fixed;
         }
