@@ -88,7 +88,7 @@
 				if($ChildCategory == ""){
 					$ChildCategory = $ParentCategory;
 				}
-				$excerptStr = (strlen($curpost["post_excerpt"]) > 80) ? substr($curpost["post_excerpt"],0,80).'...' :$curpost["post_excerpt"];
+				$excerptStr = (strlen($curpost["post_excerpt"]) > 70) ? substr($curpost["post_excerpt"],0,70).'...' :$curpost["post_excerpt"];
 
 				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
 									<a href="'.get_permalink($curpost["ID"]).'">
@@ -150,7 +150,7 @@
 				}
 			}
 
-			$excerptStr = (strlen($curpost["post_excerpt"]) > 80) ? substr($curpost["post_excerpt"],0,80).'...' :$curpost["post_excerpt"];
+			$excerptStr = (strlen($curpost["post_excerpt"]) > 70) ? substr($curpost["post_excerpt"],0,70).'...' :$curpost["post_excerpt"];
 			echo '<li class="card-wrapper category--'.$curcat->slug.'">
 								<a href="'.get_permalink($curpost["ID"]).'">
 									<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
