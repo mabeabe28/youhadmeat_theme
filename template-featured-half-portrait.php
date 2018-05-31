@@ -118,16 +118,18 @@ get_header();
       $excerptFloat = 'right';
     }
     echo '<style>
-      .section-one{
-        left:'.$imgPosition.';position:fixed;
-      }
+      @media screen and (max-width:1000px){
+        .section-one{
+          left:'.$imgPosition.';position:fixed;
+        }
 
-      .section-two{
-        float:'.$excerptFloat.';
-      }
+        .section-two{
+          float:'.$excerptFloat.';
+        }
 
-      .featured-wrapper{
-        display:block;
+        .featured-wrapper{
+          display:block;
+        }
       }
     </style>
     ';
