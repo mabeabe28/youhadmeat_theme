@@ -57,6 +57,16 @@ get_header();
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
 							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 140) ? substr($recent_post[0]["post_excerpt"],0,140).'...' :$recent_post[0]["post_excerpt"];
+							$comingsoon = get_post_meta( $recent_post[0]["ID"],'comingsoon', true );
+							$pageTitle = get_the_title($recent_post[0]["ID"]);
+							$postUrl = get_permalink($recent_post[0]["ID"]);
+							$ctaText = 'Read More';
+							if($comingsoon){
+								$pageTitle = '';
+								$excerptStr = '';
+								$postUrl = '##';
+								$ctaText = 'Coming Soon'
+							}
 
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
@@ -74,12 +84,12 @@ get_header();
 												<div id="recentPost">
 													<div style="font-size:12px;">Latest Post:</div>
 													<div class="recentPost_detail">
-														'.get_the_title($recent_post[0]["ID"]).'
+														'.$pageTitle.'
 													</div>
 													<div class="recentPost_excerpt">
 														'.$excerptStr.'
 													</div>
-													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
+													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a></div>
 												</div>
 											</div>
 									</div>

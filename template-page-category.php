@@ -44,6 +44,17 @@ get_header();
         // use one of these
         //echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
         $excerptStr = (strlen($curpost["post_excerpt"]) > 140) ? substr($curpost["post_excerpt"],0,140).'...' :$curpost["post_excerpt"];
+        $comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+        $pageTitle = get_the_title($curpost["ID"]);
+        $postUrl = get_permalink($curpost["ID"]);
+        $ctaText = 'Read More';
+        if($comingsoon){
+          $pageTitle = '';
+          $excerptStr = '';
+          $postUrl = '##';
+          $ctaText = 'Coming Soon'
+        }
+
         echo '
         <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($curpost["ID"], 'full').');">
             <!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
@@ -57,12 +68,12 @@ get_header();
                   <div id="recentPost" class="fade">
                     <div style="font-size:12px;">Latest Post:</div>
                     <div class="recentPost_detail">
-                      '.get_the_title($curpost["ID"]).'
+                      '.$pageTitle.'
                     </div>
                     <div class="recentPost_excerpt">
                      '.$excerptStr.'
                     </div>
-                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
+                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.$postUrl.'">'.$ctaText.'</a></div>
                   </div>
                 </div>
             </div>
