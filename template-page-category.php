@@ -43,6 +43,7 @@ get_header();
       if(has_post_thumbnail($curpost["ID"])){
         // use one of these
         //echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
+        $excerptStr = (strlen($curpost["post_excerpt"]) > 140) ? substr($curpost["post_excerpt"],0,140).'...' :$curpost["post_excerpt"];
         echo '
         <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($curpost["ID"], 'full').');">
             <!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
@@ -59,7 +60,7 @@ get_header();
                       '.get_the_title($curpost["ID"]).'
                     </div>
                     <div class="recentPost_excerpt">
-                     '.$curpost["post_excerpt"].'
+                     '.$excerptStr.'
                     </div>
                     <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.get_permalink($curpost["ID"]).'">Read More</a></div>
                   </div>
