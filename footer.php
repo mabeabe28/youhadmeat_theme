@@ -39,7 +39,7 @@
 				</i> Email: hello@youhadme.at
 				</br>
 				<i class="fab fa-instagram fa-sm">
-		</i> Instagram: <a href="https://www.instagram.com/youhadme.at">@youhadme.at</a>
+		</i> Instagram: <a href="https://www.instagram.com/youhadme.at">@youhadme.at</a> <!-- Comment Life-->
 			</div>
 			<div class="menu-info">
 				<h3><strong>Navigation</strong></h3>
