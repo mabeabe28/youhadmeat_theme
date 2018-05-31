@@ -42,6 +42,10 @@
 		/*justify-content: center;*/
 	}
 
+	.card-deck{
+		margin-bottom:0px ;
+	}
+
 	.author-box{
 		color:black;
 		text-align: center;
