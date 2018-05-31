@@ -106,6 +106,32 @@ get_header();
 
   $featuredTheme = get_post_meta( get_the_id(),'featured-theme', true );
   $featuredPosition = get_post_meta( get_the_id(),'featured-position', true );
+  $featuredfixed = get_post_meta( get_the_id(),'featured-is-fixed', true );
+
+  if($featuredfixed){
+
+    if($featuredPosition == 'right'){
+      $imgPosition = '50%';
+      $excerptFloat = 'right';
+    }else{
+      $imgPosition = '0%';
+      $excerptFloat = 'left';
+    }
+    echo '<style>
+      .section-one{
+        left:'.$imgPosition.';position:fixed;
+      }
+
+      .section-two{
+        float:'.$excerptFloat.';
+      }
+
+      .featured-wrapper{
+        display:block;
+      }
+    </style>
+    ';
+  }
 
   if($featuredTheme == 'light'){
     echo '<style>
