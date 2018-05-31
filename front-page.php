@@ -208,7 +208,7 @@ get_header();
 					$excerptStr = '';
 
 					echo '<script>
-						$(".post--'.$curpost["ID"].' a").click(function(e){ e.preventDefault(); });
+						$(".post--'.$curpost["ID"].' a").click(function(e){ e.preventDefault();console.log("hello"); });
 					</script>';
 				}
 
