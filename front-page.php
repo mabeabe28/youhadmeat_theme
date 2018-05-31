@@ -209,7 +209,7 @@ get_header();
 
 					echo '<script>
 						$(".post--'.$curpost["ID"].' a").click(function(e){ e.preventDefault(); });
-					</script>'
+					</script>';
 				}
 
 				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
