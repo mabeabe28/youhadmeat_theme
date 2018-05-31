@@ -56,7 +56,7 @@ get_header();
 						echo '<div class="mySlides">';
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
-							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 100) ? substr($recent_post[0]["post_excerpt"],0,200).'...' :$recent_post[0]["post_excerpt"];
+							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 80) ? substr($recent_post[0]["post_excerpt"],0,200).'...' :$recent_post[0]["post_excerpt"];
 
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
