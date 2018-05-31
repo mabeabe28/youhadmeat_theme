@@ -65,7 +65,7 @@ get_header();
 										<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
 									</div>
 
-									
+
 									<div id="youhadmeatHeroText">
 											<div id="leading">You Had Me At</div>
 											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
@@ -74,8 +74,8 @@ get_header();
 													<div class="recentPost_detail">
 														'.get_the_title($recent_post[0]["ID"]).'
 													</div>
-													<div class="recentPost_excerpt" style="overflow: hidden;white-space:nowrap;text-overflow: ellipsis;">
-														'.$recent_post[0]["post_excerpt"].'
+													<div class="recentPost_excerpt">
+														'.(strlen($recent_post[0]["post_excerpt"]) > 200) ? substr($recent_post[0]["post_excerpt"],0,200).'...' :$recent_post[0]["post_excerpt"];.'
 													</div>
 													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
 												</div>
