@@ -56,6 +56,8 @@ get_header();
 						echo '<div class="mySlides">';
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
+							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 200) ? substr($recent_post[0]["post_excerpt"],0,200).'...' :$recent_post[0]["post_excerpt"];
+
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
 							echo '
@@ -75,7 +77,7 @@ get_header();
 														'.get_the_title($recent_post[0]["ID"]).'
 													</div>
 													<div class="recentPost_excerpt">
-														'.(strlen($recent_post[0]["post_excerpt"]) > 200) ? substr($recent_post[0]["post_excerpt"],0,200).'...' :$recent_post[0]["post_excerpt"];.'
+														'.$excerptStr.'
 													</div>
 													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.get_permalink($recent_post[0]["ID"]).'">Read More</a></div>
 												</div>
