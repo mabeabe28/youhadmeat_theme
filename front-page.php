@@ -23,7 +23,9 @@ get_header();
 				<?php
 				//get all cats
 				$catargs = array(
-					'parent' => 0
+					'parent' => 0,
+					'orderby' => 'name',
+					'order' => 'ASC',
 				);
 				$categories=get_categories($catargs);
 				//for each category
@@ -33,7 +35,7 @@ get_header();
 						'numberposts' => 1,
 						'category' => $category->term_id,
 						'orderby' => 'post_date',
-						'order' => 'ASC',
+						'order' => 'DESC',
 						'post_type' => 'post',
 						'post_status' => 'publish',
 						'suppress_filters' => true
