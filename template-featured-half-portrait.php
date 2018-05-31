@@ -108,6 +108,26 @@ get_header();
   $featuredPosition = get_post_meta( get_the_id(),'featured-position', true );
   $featuredfixed = get_post_meta( get_the_id(),'featured-is-fixed', true );
 
+  $backgroundColour = 'black';
+  $textColour = 'white';
+
+  if($featuredTheme == 'light'){
+    $backgroundColour = 'white';
+    $textColour = 'black';
+
+    echo '<style>
+      .featured-image{
+        background-color: '.$backgroundColour.';
+      }
+
+      .section-two{
+        color: '$textColour';
+      }
+    </style>
+    ';
+  }
+
+
   if($featuredfixed){
 
     if($featuredPosition == 'right'){
@@ -117,8 +137,14 @@ get_header();
       $imgPosition = '0%';
       $excerptFloat = 'right';
     }
+
     echo '<style>
       @media screen and (min-width:1000px){
+
+        body{
+          background-color:'.$backgroundColour.';
+        }
+
         .section-one{
           left:'.$imgPosition.';position:fixed;
         }
@@ -135,18 +161,7 @@ get_header();
     ';
   }
 
-  if($featuredTheme == 'light'){
-    echo '<style>
-      .featured-image{
-        background-color: white;
-      }
 
-      .section-two{
-        color: black;
-      }
-    </style>
-    ';
-  }
 
   while ( have_posts() ) :
     the_post();
