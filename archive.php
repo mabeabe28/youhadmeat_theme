@@ -80,10 +80,11 @@ get_header();
 				$excerptStr = (strlen(get_the_excerpt()) > 70) ? substr(get_the_excerpt(),0,70).'...' :get_the_excerpt();
 				$pageTitle = get_the_title();
 				$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
+				$postUrl = get_permalink(get_the_id());
 				if($comingsoon){
 					$pageTitle = 'Coming Soon';
-					$excerptStr = '##';
-					$postUrl = get_permalink(get_the_id());
+					$excerptStr = '';
+					$postUrl = '##';
 				}
 				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
 									<a href="'.$postUrl.'">
