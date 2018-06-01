@@ -128,7 +128,7 @@ get_header();
   }
 
 
-  if($featuredfixed == 'true'){
+  if($featuredfixed){
 
     if($featuredPosition == 'right'){
       $imgPosition = '50%';
