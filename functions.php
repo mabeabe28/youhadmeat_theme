@@ -321,8 +321,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				display: inline-block;
 			}
 			.input-wrapper .hint{
-				font-size: 0.7em;
+				font-size: 0.9em;
 				font-style: italic;
+				width: 300px;
 			}
 		</style>
 
