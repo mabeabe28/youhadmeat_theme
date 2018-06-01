@@ -323,8 +323,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'featured-is-fixed' ] ) ) {
-						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( $_POST[ 'featured-is-fixed' ] ) );
+				if( isset( $_POST[ 'featured-is-fixed' ] ) && $_POST[ 'featured-is-fixed' ] == true ) {
+						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( true ) );
+				}else{
+						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( false ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
