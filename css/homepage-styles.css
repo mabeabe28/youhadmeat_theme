@@ -28,6 +28,10 @@
 			.hero{
 				background-attachment: fixed;
 			}
+
+			#featured-image{
+				background-attachment: fixed;
+			}
 		}
 
 		/*hero text wrapper stuff*/
