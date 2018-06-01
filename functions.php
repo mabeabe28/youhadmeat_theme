@@ -273,26 +273,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		?>
 
 		<section>
-		Full Screen/Default Featured Image Options:
+		<h3>Full Screen/Default Featured Image Options:</h3>
+		<br>
 		<label for="comingsoon">Coming Soon</label>
 		<input type="text" name="comingsoon" id="comingsoon" value="<?php if ( isset ( $meta['comingsoon'] ) ) echo $meta['comingsoon'][0]; ?>" />
-
+		<br>
 		<label for="text-on-image">Title and Excerpt on Featured Image?</label>
 		<input type="text" name="text-on-image" id="text-on-image" value="<?php if ( isset ( $meta['text-on-image'] ) ) echo $meta['text-on-image'][0]; ?>" />
 		</section>
-
+		<br>
 		<section>
-		Portrait Featured Image Options:
-		<label for="featured-is-fix">Fix the Featured Image while scrolling?</label>
-		<input type="text" name="featured-is-fix" id="featured-is-fix" value="<?php if ( isset ( $meta['featured-is-fix'] ) ) echo $meta['featured-is-fix'][0]; ?>" />
-
+		<h3>Portrait Featured Image Options:</h3>
+		<br>
+		<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
+		<input type="text" name="featured-is-fixed" id="featured-is-fixed" value="<?php if ( isset ( $meta['featured-is-fixed'] ) ) echo $meta['featured-is-fixed'][0]; ?>" />
+		<br>
 		<label for="featured-position">Featured Image Position?</label>
 		<input type="text" name="featured-position" id="featured-position" value="<?php if ( isset ( $meta['featured-position'] ) ) echo $meta['featured-position'][0]; ?>" />
 		</section>
-
+		<br>
 		<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
 		<input type="text" name="featured-theme" id="featured-theme" value="<?php if ( isset ( $meta['featured-theme'] ) ) echo $meta['featured-theme'][0]; ?>" />
 		</section>
+		<br>
+
 
 		<?php }
 
