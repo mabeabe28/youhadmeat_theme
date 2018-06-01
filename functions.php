@@ -330,7 +330,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			}
 			.title{
 				font-size: 1.2em;
-				font-weight:bold;
+				font-weight:300;
+				margin-top: 10px;
 			}
 			.hint{
 				font-size: 0.9em;
