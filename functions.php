@@ -275,11 +275,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<section>
 		<h3>Full Screen/Default Featured Image Options:</h3>
 		<br>
-		<label for="comingsoon">Coming Soon</label>
-		<input type="checkbox" name="comingsoon" id="comingsoon" value="<?php if ( isset ( $meta['comingsoon'] ) ) echo $meta['comingsoon'][0]; ?>" />
-		<br>
 		<label for="text-on-image">Title and Excerpt on Featured Image?</label>
-		<input type="checkbox" name="text-on-image" id="text-on-image" value="<?php if ( isset ( $meta['text-on-image'] ) ) echo $meta['text-on-image'][0]; ?>" />
+		<input type="checkbox" name="text-on-image" id="text-on-image" value="true"  <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1  ) echo 'checked="true"'; ?> />
 		</section>
 		<br>
 		<section>
@@ -296,6 +293,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<input type="text" name="featured-theme" id="featured-theme" value="<?php if ( isset ( $meta['featured-theme'] ) ) echo $meta['featured-theme'][0]; ?>" />
 		</section>
 		<br>
+		<section>
+			<h3>General:</h3>
+			<br>
+			<label for="comingsoon">Coming Soon</label>
+			<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
+			<br>
+		</section>
 
 
 		<?php }
@@ -313,13 +317,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		    }
 
 		    // Checks for input and sanitizes/saves if needed
-		    if( isset( $_POST[ 'comingsoon' ] ) ) {
+		    if( isset( $_POST[ 'comingsoon' ]) && $_POST[ 'comingsoon' ] == true ) {
 		        update_post_meta( $post_id, 'comingsoon', sanitize_text_field( $_POST[ 'comingsoon' ] ) );
-		    }
+		    }else{
+						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
+				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'text-on-image' ] ) ) {
+				if( isset( $_POST[ 'text-on-image' ] ) && $_POST[ 'text-on-image' ] == true ) {
 						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( $_POST[ 'text-on-image' ] ) );
+				}else{
+						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( false ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
