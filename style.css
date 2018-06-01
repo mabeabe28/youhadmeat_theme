@@ -89,7 +89,13 @@ h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
 }
+.contact-info a:link,
+.contact-info a:visited,
+.contact-info a:active,
+.contact-info a:focus
+{ color:#FFFFFF; text-decoration:none; }
 
+	.contact-info a:hover { color:#FF0000; text-decoration:underline; }
 /* Grouping content
 	 ========================================================================== */
 
