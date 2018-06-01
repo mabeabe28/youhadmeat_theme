@@ -286,13 +286,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" <?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 1  ) echo 'checked="true"'; ?> />
 		<br>
 		<label for="featured-position">Featured Image Position?</label>
-		<input type="text" name="featured-position" id="featured-position" value="<?php if ( isset ( $meta['featured-position'] ) ) echo $meta['featured-position'][0]; ?>" />
+		<select name="featured-position">
+			<option value="left" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'left') echo 'selected'; ?> >Left</option>
+			<option value="right" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'right') echo 'selected'; ?>>Right</option>
+		</select>
 		</section>
 		<br>
 		<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
 		<select name="featured-theme">
-		  <option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
 		  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
+			<option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
 		</select>
 		</section>
 		<br>
