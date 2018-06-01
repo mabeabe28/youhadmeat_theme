@@ -272,8 +272,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		$meta = get_post_meta( $post->ID );
 		?>
 
+		<section>
+		Full Screen/Default Featured Image Options:
 		<label for="comingsoon">Coming Soon</label>
 		<input type="text" name="comingsoon" id="comingsoon" value="<?php if ( isset ( $meta['comingsoon'] ) ) echo $meta['comingsoon'][0]; ?>" />
+
+		<label for="text-on-image">Title and Excerpt on Featured Image?</label>
+		<input type="text" name="text-on-image" id="text-on-image" value="<?php if ( isset ( $meta['text-on-image'] ) ) echo $meta['text-on-image'][0]; ?>" />
+		</section>
+
+		<section>
+		Portrait Featured Image Options:
+		<label for="featured-is-fix">Fix the Featured Image while scrolling?</label>
+		<input type="text" name="featured-is-fix" id="featured-is-fix" value="<?php if ( isset ( $meta['featured-is-fix'] ) ) echo $meta['featured-is-fix'][0]; ?>" />
+
+		<label for="featured-position">Featured Image Position?</label>
+		<input type="text" name="featured-position" id="featured-position" value="<?php if ( isset ( $meta['featured-position'] ) ) echo $meta['featured-position'][0]; ?>" />
+		</section>
+
+		<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
+		<input type="text" name="featured-theme" id="featured-theme" value="<?php if ( isset ( $meta['featured-theme'] ) ) echo $meta['featured-theme'][0]; ?>" />
+		</section>
 
 		<?php }
 
@@ -293,6 +312,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		    if( isset( $_POST[ 'comingsoon' ] ) ) {
 		        update_post_meta( $post_id, 'comingsoon', sanitize_text_field( $_POST[ 'comingsoon' ] ) );
 		    }
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'text-on-image' ] ) ) {
+						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( $_POST[ 'text-on-image' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured-is-fixed' ] ) ) {
+						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( $_POST[ 'featured-is-fixed' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured-position' ] ) ) {
+						update_post_meta( $post_id, 'featured-position', sanitize_text_field( $_POST[ 'featured-position' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured-theme' ] ) ) {
+						update_post_meta( $post_id, 'featured-theme', sanitize_text_field( $_POST[ 'featured-theme' ] ) );
+				}
 
 		}
 		add_action( 'save_post', 'custom_template_options_save' );
