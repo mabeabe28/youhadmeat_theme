@@ -345,7 +345,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			.input-wrapper .hint{
 				width: 300px;
 				display: inline-block;
-				margin: 10px;
+				margin-top: 10px;
+				margin-bottom: 10px;
 			}
 		</style>
 
