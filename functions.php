@@ -273,7 +273,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		?>
 
 		<section>
-			<h3>Full Screen/Default Featured Image Options:</h3>
+			<h4>Full Screen/Default Featured Image Options:</h4>
 			<br>
 			<div class="input-wrapper">
 				<label for="text-on-image">Title and Excerpt on Featured Image?</label>
@@ -282,7 +282,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		</section>
 		<br>
 		<section>
-			<h3>Portrait Featured Image Options:</h3>
+			<h4>Portrait Featured Image Options:</h4>
 			<br>
 			<div class="input-wrapper">
 				<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
@@ -303,7 +303,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		</section>
 		<br>
 		<section>
-			<h3>General:</h3>
+			<h4>General:</h4>
 			<br>
 			<div class="input-wrapper">
 				<label for="comingsoon">Coming Soon</label>
@@ -313,6 +313,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<style>
 			.input-wrapper label{
 				width: 300px;
+				display: inline-block;
 			}
 		</style>
 
