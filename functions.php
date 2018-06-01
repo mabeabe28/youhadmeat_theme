@@ -316,9 +316,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			</div>
 		</section>
 		<style>
+			.input-wrapper{
+				margin-left: 30px;
+			}
 			.input-wrapper label{
 				width: 300px;
 				display: inline-block;
+				font-weight: bold;
 			}
 			.input-wrapper .hint{
 				font-size: 0.9em;
