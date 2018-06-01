@@ -253,6 +253,96 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+
+	/*custom field metaboxes*/
+	function general_options() {
+		add_meta_box(
+			'general_options', // $id
+			'General Options', // $title
+			'show_general_options', // $callback
+			'', // $screen
+			'normal', // $context
+			'high' // $priority
+		);
+	}
+	add_action( 'add_meta_boxes', 'general_options' );
+
+	function show_general_options() {
+		wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
+		global $post;
+		$meta = get_post_meta( $post->ID );
+		?>
+
+		<section>
+			<span class="title">General:</span>
+			<br/><div class="hint">General Post Options</div>
+			<br>
+			<div class="input-wrapper">
+				<label for="comingsoon">Coming Soon</label>
+				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
+				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
+		</section>
+
+		<br>
+
+		<style>
+			section {
+				margin: 20px;
+			}
+
+			.input-wrapper{
+				margin-left: 10px;
+				margin-right: 10px;
+
+			}
+			.input-wrapper label{
+				width: 300px;
+				display: inline-block;
+				font-weight: bold;
+			}
+			.title{
+				font-size: 1.2em;
+				font-weight:bold;
+				margin-top: 30px;
+			}
+			.hint{
+				font-size: 0.9em;
+				font-style: italic;
+				width: 300px;
+			}
+			.input-wrapper .hint{
+				width: 300px;
+				display: inline-block;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+
+		<?php }
+
+		function general_options_save( $post_id ) {
+
+				// Checks save status
+				$is_autosave = wp_is_post_autosave( $post_id );
+				$is_revision = wp_is_post_revision( $post_id );
+				$is_valid_nonce = ( isset( $_POST[ 'yhma_nonce' ] ) && wp_verify_nonce( $_POST[ 'yhma_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+				// Exits script depending on save status
+				if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+						return;
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'comingsoon' ] ) && $_POST[ 'comingsoon' ] == true ) {
+						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
+				}else{
+						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
+				}
+
+		}
+		add_action( 'save_post', 'general_options_save' );
+
 	/*custom field metaboxes*/
 	function custom_template_options() {
 		add_meta_box(
@@ -272,16 +362,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		$meta = get_post_meta( $post->ID );
 		?>
 
-		<section>
-			<span class="title">General:</span>
-			<br/><div class="hint">General Theme Options</div>
-			<br>
-			<div class="input-wrapper">
-				<label for="comingsoon">Coming Soon</label>
-				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
-				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
-			</div>
-		</section>
+
 		<section>
 			<span class="title">Full Screen/Default Featured Image Options:</span>
 			<br/><div class="hint">Theme Options if using the Default Template</div>
@@ -366,12 +447,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		        return;
 		    }
 
-				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'comingsoon' ] ) && $_POST[ 'comingsoon' ] == true ) {
-						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
-				}
 
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'text-on-image' ] ) && $_POST[ 'text-on-image' ] == true ) {
@@ -399,92 +474,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		}
 		add_action( 'save_post', 'custom_template_options_save' );
-
-		/*custom field metaboxes*/
-		function general_options() {
-			add_meta_box(
-				'general_options', // $id
-				'General Options', // $title
-				'show_general_options', // $callback
-				'', // $screen
-				'normal', // $context
-				'high' // $priority
-			);
-		}
-		add_action( 'add_meta_boxes', 'general_options' );
-
-		function show_general_options() {
-			wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
-			global $post;
-			$meta = get_post_meta( $post->ID );
-			?>
-
-			<section>
-				<span class="title">General:</span>
-				<br/><div class="hint">General Post Options</div>
-				<br>
-				<div class="input-wrapper">
-					<label for="comingsoon">Coming Soon</label>
-					<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
-					<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
-				</div>
-			</section>
-
-			<br>
-
-			<style>
-				section {
-					margin: 20px;
-				}
-
-				.input-wrapper{
-					margin-left: 10px;
-					margin-right: 10px;
-
-				}
-				.input-wrapper label{
-					width: 300px;
-					display: inline-block;
-					font-weight: bold;
-				}
-				.title{
-					font-size: 1.2em;
-					font-weight:bold;
-					margin-top: 30px;
-				}
-				.hint{
-					font-size: 0.9em;
-					font-style: italic;
-					width: 300px;
-				}
-				.input-wrapper .hint{
-					width: 300px;
-					display: inline-block;
-					margin-top: 10px;
-					margin-bottom: 10px;
-				}
-			</style>
-
-			<?php }
-
-			function general_options_save( $post_id ) {
-
-					// Checks save status
-					$is_autosave = wp_is_post_autosave( $post_id );
-					$is_revision = wp_is_post_revision( $post_id );
-					$is_valid_nonce = ( isset( $_POST[ 'yhma_nonce' ] ) && wp_verify_nonce( $_POST[ 'yhma_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
-
-					// Exits script depending on save status
-					if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
-							return;
-					}
-
-					// Checks for input and sanitizes/saves if needed
-					if( isset( $_POST[ 'comingsoon' ] ) && $_POST[ 'comingsoon' ] == true ) {
-							update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
-					}else{
-							update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
-					}
-
-			}
-			add_action( 'save_post', 'general_options_save' );
