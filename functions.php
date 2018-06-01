@@ -255,19 +255,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 	/*custom field metaboxes*/
-	function general_options() {
+	function general_post_options() {
 		add_meta_box(
-			'general_options', // $id
+			'general_post_options', // $id
 			'General Options', // $title
-			'show_general_options', // $callback
-			'', // $screen
+			'show_general_post_options', // $callback
+			'post', // $screen
 			'normal', // $context
 			'high' // $priority
 		);
 	}
-	add_action( 'add_meta_boxes', 'general_options' );
+	add_action( 'add_meta_boxes', 'general_post_options' );
 
-	function show_general_options() {
+	function show_general_post_options() {
 		wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
 		global $post;
 		$meta = get_post_meta( $post->ID );
@@ -321,7 +321,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		<?php }
 
-		function general_options_save( $post_id ) {
+		function general_post_options_save( $post_id ) {
 
 				// Checks save status
 				$is_autosave = wp_is_post_autosave( $post_id );
@@ -341,7 +341,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 		}
-		add_action( 'save_post', 'general_options_save' );
+		add_action( 'save_post', 'general_post_options_save' );
 
 	/*custom field metaboxes*/
 	function custom_template_options() {
@@ -474,3 +474,96 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		}
 		add_action( 'save_post', 'custom_template_options_save' );
+
+		/*General Page Options*/
+		/*custom field metaboxes*/
+		function general_page_options() {
+			add_meta_box(
+				'general_page_options', // $id
+				'General Options', // $title
+				'show_general_page_options', // $callback
+				'page', // $screen
+				'normal', // $context
+				'high' // $priority
+			);
+		}
+		add_action( 'add_meta_boxes', 'general_page_options' );
+
+		function show_general_page_options() {
+			wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
+			global $post;
+			$meta = get_post_meta( $post->ID );
+			?>
+
+			<section>
+				<span class="title">General:</span>
+				<br/><div class="hint">General Page Options</div>
+				<br>
+				<div class="input-wrapper">
+
+					<label for="page-type">Page Type</label>
+					<br/><span class="hint">Choose what type of Page This is, Choosing Category/Author will add the Recent Posts cards according to the Category/Author.</span>
+					<select name="page-type">
+						<option value="normal" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'normal') echo 'selected'; ?> >Normal</option>
+						<option value="category" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'category') echo 'selected'; ?> >Category</option>
+						<option value="author" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'author') echo 'selected'; ?>>Author</option>
+					</select>
+				</div>
+			</section>
+
+			<br>
+
+			<style>
+				section {
+					margin: 20px;
+				}
+
+				.input-wrapper{
+					margin-left: 10px;
+					margin-right: 10px;
+
+				}
+				.input-wrapper label{
+					width: 300px;
+					display: inline-block;
+					font-weight: bold;
+				}
+				.title{
+					font-size: 1.2em;
+					font-weight:bold;
+					margin-top: 30px;
+				}
+				.hint{
+					font-size: 0.9em;
+					font-style: italic;
+					width: 300px;
+				}
+				.input-wrapper .hint{
+					width: 300px;
+					display: inline-block;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			</style>
+
+			<?php }
+
+			function general_page_options_save( $post_id ) {
+
+					// Checks save status
+					$is_autosave = wp_is_post_autosave( $post_id );
+					$is_revision = wp_is_post_revision( $post_id );
+					$is_valid_nonce = ( isset( $_POST[ 'yhma_nonce' ] ) && wp_verify_nonce( $_POST[ 'yhma_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+					// Exits script depending on save status
+					if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+							return;
+					}
+
+					// Checks for input and sanitizes/saves if needed
+					if( isset( $_POST[ 'page-type' ] ) ) {
+							update_post_meta( $post_id, 'page-type', sanitize_text_field( $_POST[ 'page-type' ] ) );
+					}
+
+			}
+			add_action( 'save_post', 'general_page_options_save' );
