@@ -320,6 +320,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<br>
 
 		<style>
+			section {
+				margin: 20px;
+			}
+
 			.input-wrapper{
 				margin-left: 30px;
 			}
@@ -341,6 +345,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			.input-wrapper .hint{
 				width: 300px;
 				display: inline-block;
+				margin: 10px;
 			}
 		</style>
 
