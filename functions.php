@@ -273,7 +273,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		?>
 
 		<section>
-			<h4>General:</h4>
+			<span class="title">General:</span>
 			<br/><div class="hint">General Theme Options</div>
 			<br>
 			<div class="input-wrapper">
@@ -283,7 +283,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			</div>
 		</section>
 		<section>
-			<h4>Full Screen/Default Featured Image Options:</h4>
+			<span class="title">Full Screen/Default Featured Image Options:</span>
 			<br/><div class="hint">Theme Options if using the Default Template</div>
 			<br>
 			<div class="input-wrapper">
@@ -294,7 +294,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		</section>
 		<br>
 		<section>
-			<h4>Portrait Featured Image Options:</h4>
+			<span class="title">Portrait Featured Image Options:</span>
 			<br/><div class="hint">Theme Options if using the Portrait Template</div>
 			<br>
 			<div class="input-wrapper">
@@ -327,6 +327,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				width: 300px;
 				display: inline-block;
 				font-weight: bold;
+			}
+			.title{
+				font-size: 1.2em;
+				font-weight:bold;
 			}
 			.hint{
 				font-size: 0.9em;
