@@ -259,7 +259,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			'custom_template_options', // $id
 			'Template Options', // $title
 			'show_custom_template_options', // $callback
-			'post', // $screen
+			'post,page', // $screen
 			'normal', // $context
 			'high' // $priority
 		);
