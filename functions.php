@@ -324,6 +324,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				font-size: 0.9em;
 				font-style: italic;
 				width: 300px;
+				display: inline-block;
 			}
 		</style>
 
