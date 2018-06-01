@@ -211,12 +211,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		$catargs = array(
 			'parent' => 0
 		);
+		//get top level categories
 		$categories=get_categories($catargs);
-		//for each category
+		//loop through each category
 		foreach($categories as $curcat) {
+			//get the category colour setting
 			$cat_colour = get_theme_mod( ''.$curcat->slug.'_colour', '' );
 	    if ( ! empty( $cat_colour ) ) {
 
+				//create css for that category--target
 				echo '
 				a.category--'.$curcat->slug.':hover{
 					color:'.$cat_colour.';
