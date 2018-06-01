@@ -276,7 +276,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<h4>Full Screen/Default Featured Image Options:</h4>
 			<br>
 			<div class="input-wrapper">
-				<label for="text-on-image">Title and Excerpt on Featured Image?</label>
+				<label for="text-on-image">Text on Image?</label>
+				<br/><span class="hint">Determines whether the Title and Excerpt will be shown on top of the image, or under the Featured Image.</span>
 				<input type="checkbox" name="text-on-image" id="text-on-image" value="true"  <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1  ) echo 'checked="true"'; ?> />
 			</div>
 		</section>
@@ -285,16 +286,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<h4>Portrait Featured Image Options:</h4>
 			<br>
 			<div class="input-wrapper">
-				<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
+				<label for="featured-is-fixed">Featured Image Fixed Position</label>
+				<br/><span class="hint">If selected, the Featured Image will stay in position as you scroll. You will then have to position the content to the corresponding side in the editor</span>
 				<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" <?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 1  ) echo 'checked="true"'; ?> />
 				<br>
-				<label for="featured-position">Featured Image Position?</label>
+				<label for="featured-position">Featured Image Position</label>
+				<br/><span class="hint">Determines which side the Featured Image would be on.</span>
 				<select name="featured-position">
 					<option value="left" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'left') echo 'selected'; ?> >Left</option>
 					<option value="right" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'right') echo 'selected'; ?>>Right</option>
 				</select>
 				<br>
-				<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
+				<label for="featured-theme">Featured Image Theme</label>
+				<br/><span class="hint">Determines wether the Excerpt section is in a Light or Dark theme.</span>
 				<select name="featured-theme">
 				  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
 					<option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
@@ -307,6 +311,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<br>
 			<div class="input-wrapper">
 				<label for="comingsoon">Coming Soon</label>
+				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
 				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
 			</div>
 		</section>
@@ -314,6 +319,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			.input-wrapper label{
 				width: 300px;
 				display: inline-block;
+			}
+			.input-wrapper .hint{
+				font-size: 0.7em;
+				font-style: italic;
 			}
 		</style>
 
