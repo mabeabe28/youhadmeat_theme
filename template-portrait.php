@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Featured Image Half Portrait
+ * Template Name: Portrait
  * Template Post Type:  page, post
  *
  * @package youhadmeat_theme
