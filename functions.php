@@ -273,40 +273,48 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		?>
 
 		<section>
-		<h3>Full Screen/Default Featured Image Options:</h3>
-		<br>
-		<label for="text-on-image">Title and Excerpt on Featured Image?</label>
-		<input type="checkbox" name="text-on-image" id="text-on-image" value="true"  <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1  ) echo 'checked="true"'; ?> />
+			<h3>Full Screen/Default Featured Image Options:</h3>
+			<br>
+			<div class="input-wrapper">
+				<label for="text-on-image">Title and Excerpt on Featured Image?</label>
+				<input type="checkbox" name="text-on-image" id="text-on-image" value="true"  <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
 		</section>
 		<br>
 		<section>
-		<h3>Portrait Featured Image Options:</h3>
-		<br>
-		<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
-		<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" <?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 1  ) echo 'checked="true"'; ?> />
-		<br>
-		<label for="featured-position">Featured Image Position?</label>
-		<select name="featured-position">
-			<option value="left" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'left') echo 'selected'; ?> >Left</option>
-			<option value="right" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'right') echo 'selected'; ?>>Right</option>
-		</select>
-		</section>
-		<br>
-		<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
-		<select name="featured-theme">
-		  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
-			<option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
-		</select>
+			<h3>Portrait Featured Image Options:</h3>
+			<br>
+			<div class="input-wrapper">
+				<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
+				<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" <?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 1  ) echo 'checked="true"'; ?> />
+				<br>
+				<label for="featured-position">Featured Image Position?</label>
+				<select name="featured-position">
+					<option value="left" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'left') echo 'selected'; ?> >Left</option>
+					<option value="right" <?php if ( isset ( $meta['featured-position'] ) && $meta['featured-position'][0] == 'right') echo 'selected'; ?>>Right</option>
+				</select>
+				<br>
+				<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
+				<select name="featured-theme">
+				  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
+					<option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
+				</select>
+			</div>
 		</section>
 		<br>
 		<section>
 			<h3>General:</h3>
 			<br>
-			<label for="comingsoon">Coming Soon</label>
-			<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
-			<br>
+			<div class="input-wrapper">
+				<label for="comingsoon">Coming Soon</label>
+				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
 		</section>
-
+		<style>
+			.input-wrapper label{
+				width: 300px;
+			}
+		</style>
 
 		<?php }
 
