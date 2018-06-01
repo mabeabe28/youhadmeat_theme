@@ -99,7 +99,7 @@ get_header();
 			if($textOnImage == 'false'){
 				$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 			}
-			echo '<div id="featured-image" style="'.$backgroundStyle.'">
+			echo '<div id="featured-image featured-fade" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
 					<div id="featured-text">';
 
