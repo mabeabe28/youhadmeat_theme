@@ -318,14 +318,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		    // Checks for input and sanitizes/saves if needed
 		    if( isset( $_POST[ 'comingsoon' ]) && $_POST[ 'comingsoon' ] == true ) {
-		        update_post_meta( $post_id, 'comingsoon', sanitize_text_field( $_POST[ 'comingsoon' ] ) );
+		        update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
 		    }else{
 						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'text-on-image' ] ) && $_POST[ 'text-on-image' ] == true ) {
-						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( $_POST[ 'text-on-image' ] ) );
+						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( true ) );
 				}else{
 						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( false ) );
 				}
