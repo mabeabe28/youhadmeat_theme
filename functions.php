@@ -325,7 +325,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			}
 
 			.input-wrapper{
-				margin-left: 30px;
+				margin-left: 10px;
+				margin-right: 10px;
+
 			}
 			.input-wrapper label{
 				width: 300px;
