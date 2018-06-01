@@ -273,7 +273,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		?>
 
 		<section>
+			<h4>General:</h4>
+			<br/><div class="hint">General Theme Options</div>
+			<br>
+			<div class="input-wrapper">
+				<label for="comingsoon">Coming Soon</label>
+				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
+				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
+		</section>
+		<section>
 			<h4>Full Screen/Default Featured Image Options:</h4>
+			<br/><div class="hint">Theme Options if using the Default Template</div>
 			<br>
 			<div class="input-wrapper">
 				<label for="text-on-image">Text on Image?</label>
@@ -284,6 +295,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<br>
 		<section>
 			<h4>Portrait Featured Image Options:</h4>
+			<br/><div class="hint">Theme Options if using the Portrait Template</div>
 			<br>
 			<div class="input-wrapper">
 				<label for="featured-is-fixed">Featured Image Fixed Position</label>
@@ -306,15 +318,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			</div>
 		</section>
 		<br>
-		<section>
-			<h4>General:</h4>
-			<br>
-			<div class="input-wrapper">
-				<label for="comingsoon">Coming Soon</label>
-				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
-				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
-			</div>
-		</section>
+
 		<style>
 			.input-wrapper{
 				margin-left: 30px;
@@ -324,9 +328,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				display: inline-block;
 				font-weight: bold;
 			}
-			.input-wrapper .hint{
+			.hint{
 				font-size: 0.9em;
 				font-style: italic;
+				width: 300px;
+			}
+			.input-wrapper .hint{
 				width: 300px;
 				display: inline-block;
 			}
