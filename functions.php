@@ -251,5 +251,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	  $custom_css = theme_get_customizer_css();
 	  wp_add_inline_style( 'card-styles', $custom_css );
 	}
-
 	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+	/*custom field metaboxes*/
+	function custom_template_options() {
+		add_meta_box(
+			'custom_template_options', // $id
+			'Template Options', // $title
+			'show_custom_template_options', // $callback
+			'normal', // $context
+			'high' // $priority
+		);
+	}
+	add_action( 'add_meta_boxes', 'custom_template_options' );
