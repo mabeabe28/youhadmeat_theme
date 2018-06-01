@@ -265,3 +265,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		);
 	}
 	add_action( 'add_meta_boxes', 'custom_template_options' );
+
+	function show_custom_template_options() {
+		wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
+		global $post;
+		$meta = get_post_meta( $post->ID );
+		?>
+
+		<label for="comingsoon"><?php _e( 'Example Text Input', 'yhma-textdomain' )?></label>
+		<input type="text" name="comingsoon" id="comingsoon" value="<?php if ( isset ( $meta['comingsoon'] ) ) echo $meta['comingsoon'][0]; ?>" />
+
+		<?php }
