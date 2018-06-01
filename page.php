@@ -18,7 +18,7 @@ get_header();
 
 		$textOnImage = get_post_meta( get_the_id(),'text-on-image', true );
 		$backgroundStyle = 'background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');';
-		if($textOnImage == 'false'){
+		if(!$textOnImage){
 			$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 		}
 
@@ -26,7 +26,7 @@ get_header();
 			<div id="featured-wrapper">
 				<div id="featured-text">';
 
-					if($textOnImage != 'false'){
+					if($textOnImage){
 						echo	''.get_the_title().'';
 					}
 
@@ -34,7 +34,7 @@ get_header();
 			</div>
 		</div>';
 
-		if($textOnImage == 'false'){
+		if(!$textOnImage){
 			echo '<div id="featured-wrapper--bottom">
 				<div id="featured-text--bottom">
 					'.get_the_title().'

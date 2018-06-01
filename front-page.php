@@ -63,7 +63,7 @@ get_header();
 							$pageTitle = get_the_title($recent_post[0]["ID"]);
 							$postUrl = get_permalink($recent_post[0]["ID"]);
 							$ctaText = 'Read More';
-							if($comingsoon == 'true'){
+							if($comingsoon){
 								$pageTitle = '';
 								$excerptStr = '';
 								$postUrl = '##';
@@ -215,7 +215,7 @@ get_header();
 				$pageTitle = $curpost["post_title"];
 				$postUrl = get_permalink($curpost["ID"]);
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
-				if($comingsoon == 'true'){
+				if($comingsoon){
 					$pageTitle = 'Coming Soon';
 					$excerptStr = '';
 					$postUrl = '##';

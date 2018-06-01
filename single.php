@@ -96,14 +96,14 @@ get_header();
 			the_post();
 			$textOnImage = get_post_meta( get_the_id(),'text-on-image', true );
 			$backgroundStyle = 'background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');';
-			if($textOnImage == 'false'){
+			if(!$textOnImage){
 				$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 			}
 			echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
 					<div id="featured-text">';
 
-					if($textOnImage != 'false'){
+					if($textOnImage){
 						echo ''.get_the_title().'
 							<div style="font-size:32px;font-family:Avenir,Open Sans">
 								'.get_the_excerpt().'
@@ -118,7 +118,7 @@ get_header();
 				</div>
 			</div>';
 
-			if($textOnImage == 'false'){
+			if(!$textOnImage){
 
 			echo '	<div id="featured-wrapper--bottom">
 								<div id="featured-text--bottom">'.get_the_title().'
