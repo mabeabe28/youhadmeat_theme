@@ -286,7 +286,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		<h3>Portrait Featured Image Options:</h3>
 		<br>
 		<label for="featured-is-fixed">Fix the Featured Image while scrolling?</label>
-		<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" checked="<?php if ( isset ( $meta['featured-is-fixed'] ) ) echo true; ?>" />
+		<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" checked="<?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 'true'  ) echo true; ?>" />
 		<br>
 		<label for="featured-position">Featured Image Position?</label>
 		<input type="text" name="featured-position" id="featured-position" value="<?php if ( isset ( $meta['featured-position'] ) ) echo $meta['featured-position'][0]; ?>" />
