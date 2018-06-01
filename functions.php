@@ -316,10 +316,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		        return;
 		    }
 
-		    // Checks for input and sanitizes/saves if needed
-		    if( isset( $_POST[ 'comingsoon' ]) && $_POST[ 'comingsoon' ] == true ) {
-		        update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
-		    }else{
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'comingsoon' ] ) && $_POST[ 'comingsoon' ] == true ) {
+						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
+				}else{
 						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
 				}
 
