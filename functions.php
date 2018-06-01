@@ -290,7 +290,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		</section>
 		<br>
 		<label for="featured-theme">Light or Dark Featured Excerpt Background?</label>
-		<input type="text" name="featured-theme" id="featured-theme" value="<?php if ( isset ( $meta['featured-theme'] ) ) echo $meta['featured-theme'][0]; ?>" />
+		<select name="featured-theme">
+		  <option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
+		  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
+		</select>
 		</section>
 		<br>
 		<section>
