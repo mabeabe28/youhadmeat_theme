@@ -206,7 +206,7 @@ get_header();
 				'suppress_filters' => true
 			);
 
-			//get three recent post
+			//get four recent post
 			$recent_three = wp_get_recent_posts( $args );
 			foreach($recent_three as $curpost){
 
