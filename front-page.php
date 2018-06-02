@@ -197,7 +197,7 @@ get_header();
 			echo '<ul class="card-container">';
 
 			$args = array(
-				'numberposts' => 3,
+				'numberposts' => 4,
 				'category' => $curcat->term_id,
 				'orderby' => 'post_date',
 				'order' => 'DESC',
