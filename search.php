@@ -81,7 +81,7 @@ $(document).on('scroll', function () {
 						$ParentCategory = $curcat;
 					}
 				}
-				$excerptStr = (strlen(get_the_excerpt()) > 70) ? substr(get_the_excerpt(),0,70).'...' :get_the_excerpt();
+				$excerptStr = (strlen(get_the_excerpt()) > 40) ? substr(get_the_excerpt(),0,40).'...' :get_the_excerpt();
 				$pageTitle = get_the_title();
 				$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
 				$postUrl = get_permalink(get_the_id());
