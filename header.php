@@ -79,18 +79,20 @@
 				if($curcat->parent == 0){
 					$logo_text = $curcat->cat_name;
 					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
+					$logo_text_class = 'category--'.$curcat->slug.'';
 				}
 			}
 		}elseif($post_type == 'page' && !is_front_page()){
 			$logo_text = get_the_title($post->ID);
 			$logo_text_link = get_permalink($post->ID);
+			$logo_text_class = 'page--'.strtolower($logo_text).'';
 		}
 
 		echo '<div id="logo">
 			<a href="'.get_home_url().'">
 				<strong><i>You Had Me At</i></strong>
 			</a>
-			<div id="logo-item" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
+			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
 				<a href="'.$logo_text_link.'">
 					'.$logo_text.'
 				</a>

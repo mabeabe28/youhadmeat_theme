@@ -231,7 +231,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					color:white;
 				}
 
-
 				.card-header-category.category--'.$curcat->slug.'{
 					background-color:'.$cat_colour.';
 				}
@@ -241,6 +240,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 				.card-wrapper.category--'.$curcat->slug.':hover:after{
 				   background-color:'.$cat_colour.';
+				}
+
+				a:hover{
+					color:'.$cat_colour.';
+				}
+
+				#logo-item.category--'.$curcat->slug.' a:hover{
+					color:'.$cat_colour.';
+				}
+				#logo-item.page--'.$curcat->slug.' a:hover{
+					color:'.$cat_colour.';
 				}
 				';
 			}
