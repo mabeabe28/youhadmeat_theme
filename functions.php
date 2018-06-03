@@ -246,9 +246,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					color:'.$cat_colour.';
 				}
 
-				#logo-item.category--'.$curcat->slug.' a:hover{
-					color:'.$cat_colour.';
-				}
+
+
+				#logo-item.category--'.$curcat->slug.' a:hover,
 				#logo-item.page--'.$curcat->slug.' a:hover{
 					color:'.$cat_colour.';
 				}

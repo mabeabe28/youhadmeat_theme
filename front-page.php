@@ -69,6 +69,8 @@ get_header();
 								$postUrl = '##';
 								$ctaText = 'Coming Soon';
 							}
+							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
+
 
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
@@ -82,7 +84,11 @@ get_header();
 
 									<div id="youhadmeatHeroText">
 											<div id="leading">You Had Me At</div>
-											<div id="trailing" class="fade">'.$ParentCategory->cat_name.'
+											<div id="trailing" class="category-link fade">
+												<a href="'.$catLink.'" class="category--'.$ParentCategory->slug.'">
+													'.$ParentCategory->cat_name.'
+												</a>
+
 												<div id="recentPost">
 													<div style="font-size:12px;">Latest Post:</div>
 													<div class="recentPost_detail">

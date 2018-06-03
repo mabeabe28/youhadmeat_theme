@@ -75,6 +75,9 @@
 			padding-top: 10px;
 		}
 
+		#youhadmeatHeroText a:visited{
+			color: white;
+		}
 		/*large screens*/
 		@media screen and (min-width: 30.5em) {
 
