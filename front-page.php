@@ -223,9 +223,7 @@ get_header();
 
 				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
 									<a href="'.$postUrl.'">
-										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
-											<div class="category-title">'.$curcat->name.'</div>
-										</div></div>
+										<div class="card-header"></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="card-content">
 											<div class="card-content-container">
