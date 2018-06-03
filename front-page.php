@@ -192,7 +192,7 @@ get_header();
 			//print_r($curcat);
 			echo '<div class="card-deck category--'.$curcat->slug.'" cat-attr="'.$curcat->name.'" >';
 		 	echo '<div class="card-deck-header">
-							<div class="card-deck-header-title"><h1>'.$curcat->name.'<h1></div>
+							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
 						</div>';
 			echo '<ul class="card-container">';
 
