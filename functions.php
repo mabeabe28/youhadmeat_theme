@@ -226,9 +226,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					border-color:'.$cat_colour.';
 				}
 
-				.category--'.$curcat->slug.' h1{
-					color:'.$cat_colour.';
+				.category--'.$curcat->slug.' .card-deck-header{
+					background-color:'.$cat_colour.';
+					color:white;
 				}
+
 
 				.card-header-category.category--'.$curcat->slug.'{
 					background-color:'.$cat_colour.';
