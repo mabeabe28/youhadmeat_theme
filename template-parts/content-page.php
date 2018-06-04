@@ -248,11 +248,10 @@
 }
 .post-image{
 	margin: 20px;
-	height: 650px;
 }
 .post-image img{
 		object-fit: cover;
-		height: 60%;
+		height: 700px;
 		width: 100%;
 }
 
