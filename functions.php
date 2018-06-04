@@ -247,10 +247,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 
-
 				#logo-item.category--'.$curcat->slug.' a:hover,
 				#logo-item.page--'.$curcat->slug.' a:hover{
 					color:'.$cat_colour.';
+				}
+
+				#divider.category--'.$curcat->slug.' #divider-content{
+					border-bottom: 80px solid '.$cat_colour.';
+				}
+
+
+				#divider.category--'.$curcat->slug.':after{
+				    border-bottom: 15px solid '.$cat_colour.';
 				}
 				';
 			}

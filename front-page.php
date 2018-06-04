@@ -200,7 +200,7 @@ get_header();
 		 	/*echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
 						</div>';*/
-			echo '<div id="divider">
+			echo '<div id="divider" class="category--'.$curcat->slug.'">
 						  <div id="divider-content">
 						    <div class="text">
 						        '.$curcat->name.'
@@ -293,19 +293,27 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<style>
-	#divider-content {
+
+	#divider{
+	height: 95px;
+	}
+#divider-content {
 	border-bottom: 80px solid #2fc4c4;
 	border-right: 80px solid transparent;
 	height: 0;
-	width: 300px;
+	width: 390px;
   color:white;
   display:flex;
   justify-content:center;
 }
 
 #divider-content .text {
+padding-top: 15px;
+font-size: 40px;
+font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
+z-index: 1;
 }
 
 #divider:after {
@@ -313,9 +321,15 @@ position:relative;
     display:inline-block;
     position:relative;
     border-bottom: 15px solid #2fc4c4;
-    margin-left:300px;
     width:100%;
     top: -15px;
+}
+
+@media screen and (max-width:800px){
+	#divider-content{
+		width: 100%;
+		border: 0;
+	}
 }
 	</style>
 <?php
