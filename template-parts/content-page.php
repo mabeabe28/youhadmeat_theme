@@ -219,7 +219,7 @@
 							'.substr($content,0,600).'...'.'
 							</div>
 							<div class="read-more">
-								<a href="'.$postUrl.'">
+								<a href="'.$postUrl.'" class="ghost-button-black">
 								Continue Reading
 								</a>
 							</div>
@@ -276,11 +276,14 @@ top:-100px;
 height:100px;
 font-size: 42px;
 font-family: "Crimson Text";
+
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 
 .post-title{
-display: flex;
-align-content: center;
+
 }
 
 .post-content{
