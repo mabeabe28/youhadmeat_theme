@@ -248,7 +248,7 @@
 }
 .post-image{
 	margin: 20px;
-	height: 60%;
+	height: 650px;
 }
 .post-image img{
 		object-fit: cover;
