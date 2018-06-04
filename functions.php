@@ -391,6 +391,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						<option value="category" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'category') echo 'selected'; ?> >Category</option>
 						<option value="author" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'author') echo 'selected'; ?>>Author</option>
 					</select>
+					<br>
+					<label for="post-display">Recent Posts Display Type</label>
+					<br/><span class="hint">Choose whether to show the recent posts section as cards, or as post previews.</span>
+					<select name="post-display">
+						<option value="cards" <?php if ( isset ( $meta['post-display'] ) && $meta['post-display'][0] == 'cards') echo 'selected'; ?> >Cards</option>
+						<option value="previews" <?php if ( isset ( $meta['post-display'] ) && $meta['post-display'][0] == 'previews') echo 'selected'; ?> >Post Preview</option>
+					</select>
 				</div>
 			</section>
 
@@ -446,6 +453,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					// Checks for input and sanitizes/saves if needed
 					if( isset( $_POST[ 'page-type' ] ) ) {
 							update_post_meta( $post_id, 'page-type', sanitize_text_field( $_POST[ 'page-type' ] ) );
+					}
+
+					if( isset( $_POST[ 'post-display' ] ) ) {
+							update_post_meta( $post_id, 'post-display', sanitize_text_field( $_POST[ 'post-display' ] ) );
 					}
 
 			}

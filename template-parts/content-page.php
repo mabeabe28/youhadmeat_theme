@@ -42,6 +42,7 @@
 
 	<?php
 	$pagetype = get_post_meta( get_the_id(),'page-type', true );
+	$postdisplay = get_post_meta( get_the_id(),'post-display', true );
 
 
 	global $post;
@@ -144,56 +145,95 @@
 		//get one recent post
 		$recent_posts = wp_get_recent_posts( $args );
 
-		echo '<div class="card-deck">';
-		echo '<div class="card-deck-header"></div>';
-		echo '<ul class="card-container">';
-		foreach($recent_posts as $curpost){
-			//print_r($curpost);
-			$ParentCategory = "";
 
-			$cat = get_the_category($curpost["ID"]);
-			foreach($cat as $curcat){
-				if($curcat->parent == 0){
-					$ParentCategory = $curcat;
+		if($postdisplay == 'cards'){
+			echo '<div class="card-deck">';
+			echo '<div class="card-deck-header"></div>';
+			echo '<ul class="card-container">';
+			foreach($recent_posts as $curpost){
+				//print_r($curpost);
+				$ParentCategory = "";
+
+				$cat = get_the_category($curpost["ID"]);
+				foreach($cat as $curcat){
+					if($curcat->parent == 0){
+						$ParentCategory = $curcat;
+					}
 				}
-			}
 
-			$excerptStr = (strlen($curpost["post_excerpt"]) > 40) ? substr($curpost["post_excerpt"],0,40).'...' :$curpost["post_excerpt"];
-			$pageTitle = $curpost["post_title"];
-			$postUrl = get_permalink($curpost["ID"]);
-			$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
-			if($comingsoon){
-				$pageTitle = 'Coming Soon';
-				$excerptStr = '';
-				$postUrl = '##';
-			}
-			echo '<li class="card-wrapper category--'.$curcat->slug.'">
-								<a href="'.$postUrl.'">
-									<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
-										<div class="category-title">'.$ParentCategory->name.'</div>
-									</div></div>
-									<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
-									<div class="card-content">
-										<div class="card-content-container">
-											<div class="card-content-title">'.$pageTitle.'</div>
-											<div class="card-content-excerpt">
-												'.$excerptStr.'
+				$excerptStr = (strlen($curpost["post_excerpt"]) > 40) ? substr($curpost["post_excerpt"],0,40).'...' :$curpost["post_excerpt"];
+				$pageTitle = $curpost["post_title"];
+				$postUrl = get_permalink($curpost["ID"]);
+				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+				if($comingsoon){
+					$pageTitle = 'Coming Soon';
+					$excerptStr = '';
+					$postUrl = '##';
+				}
+				echo '<li class="card-wrapper category--'.$curcat->slug.'">
+									<a href="'.$postUrl.'">
+										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
+											<div class="category-title">'.$ParentCategory->name.'</div>
+										</div></div>
+										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+										<div class="card-content">
+											<div class="card-content-container">
+												<div class="card-content-title">'.$pageTitle.'</div>
+												<div class="card-content-excerpt">
+													'.$excerptStr.'
+												</div>
 											</div>
 										</div>
-									</div>
-								</a>
-						</li>';
+									</a>
+							</li>';
+			}
+
+			echo 		'</ul>';//card-container
+			$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
+			echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
+				<a class="ghost-button-black" href="'.$archivelink.'">
+					View Posts Archive of '.$user->display_name.'
+				</a>
+			</div>';
+			echo '</div>';//card-deck
+		}elseif($postdisplay == 'previews'){
+			echo '<div class="post-previews-wrapper">';
+
+			foreach($recent_posts as $curpost){
+				$postUrl = get_permalink($curpost["ID"]);
+				$post_content = get_post($curpost["ID"]);
+				$pageTitle = $curpost["post_title"];
+				$content = $post_content->post_content;
+				echo '<div class="post-preview post--'.$curpost["ID"].'">
+				<div class="post-image">
+					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+				</div>
+					<div class="post-header">
+						<div class="post-title">
+							'.$pageTitle.'
+						</div>
+					</div>
+					<div class="post-content">
+					'.substr($content,0,500).'...'.'
+					</div>
+					<div class="read-more">
+						<a href="'.$postUrl.'">
+						Continue Reading
+						</a>
+					</div>
+				</div>';
+			}
+
+
+			$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
+			echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
+				<a class="ghost-button-black" href="'.$archivelink.'">
+					View Posts Archive of '.$user->display_name.'
+				</a>
+			</div>';
+
+			echo '</div>';
 		}
-
-		echo 		'</ul>';//card-container
-		$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
-		echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
-			<a class="ghost-button-black" href="'.$archivelink.'">
-				View Posts Archive of '.$user->display_name.'
-			</a>
-		</div>';
-		echo '</div>';//card-deck
-
 
 
 	}
@@ -201,7 +241,20 @@
 	?>
 
 	<style>
-
+.post-preview{
+	width:100%;
+	display: block;
+	text-align: center;
+}
+.post-image{
+	margin: 20px;
+	height: 60%;
+}
+.post-image img{
+		object-fit: cover;
+		height: 60%;
+		width: 100%;
+}
 
 
 
