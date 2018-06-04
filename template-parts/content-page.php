@@ -216,7 +216,9 @@
 								</div>
 							</div>
 							<div class="post-content">
-							'.substr($content,0,600).'...'.'
+								<div class="content-preview">
+									'.substr($content,0,600).'...'.'
+								</div>
 							</div>
 							<div class="read-more">
 								<a href="'.$postUrl.'" class="ghost-button-black">
@@ -287,8 +289,15 @@ justify-content: center;
 }
 
 .post-content{
-			text-align: justify;
+		 text-align: justify;
      text-justify: inter-word;
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+}
+
+.post-content .content-preview{
+	width: 70%;
 }
 
 
