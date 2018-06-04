@@ -196,10 +196,18 @@ get_header();
 		//for each category
 		foreach($categories as $curcat) {
 			//print_r($curcat);
-			echo '<div class="card-deck category--'.$curcat->slug.'" cat-attr="'.$curcat->name.'" >';
-		 	echo '<div class="card-deck-header">
+			echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
+		 	/*echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
-						</div>';
+						</div>';*/
+			echo '<div id="divider">
+						  <div id="divider-content">
+						    <div class="text">
+						        '.$curcat->name.'
+						    </div>
+						  </div>
+						</div>
+						';
 			echo '<ul class="card-container">';
 
 			$args = array(
@@ -284,7 +292,32 @@ get_header();
 		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<style>
+	#divider-content {
+	border-bottom: 80px solid #2fc4c4;
+	border-right: 80px solid transparent;
+	height: 0;
+	width: 300px;
+  color:white;
+  display:flex;
+  justify-content:center;
+}
 
+#divider-content .text {
+display:block;
+position:relative;
+}
+
+#divider:after {
+    content:"";
+    display:inline-block;
+    position:relative;
+    border-bottom: 15px solid #2fc4c4;
+    margin-left:300px;
+    width:100%;
+    top: -15px;
+}
+	</style>
 <?php
 /*get_sidebar();*/
 get_footer();
