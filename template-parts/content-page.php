@@ -245,6 +245,7 @@
 	width:100%;
 	display: block;
 	text-align: center;
+	background-color: white;
 }
 .post-image{
 	margin: 20px;
@@ -253,6 +254,11 @@
 		object-fit: cover;
 		height: 700px;
 		width: 100%;
+}
+
+.post-header{
+	height: 100px;
+	margin-top:-100px;
 }
 
 
