@@ -293,6 +293,9 @@ justify-content: center;
      text-justify: inter-word;
 }
 
+.post-previews-wrapper .archive-cta{
+margin:30px;
+}
 
 
 	</style>
