@@ -288,7 +288,7 @@ justify-content: center;
 
 .post-content{
 		 width: 70%;
-margin: 0 auto;
+		margin: 0 auto;
 		 text-align: justify;
      text-justify: inter-word;
 }
