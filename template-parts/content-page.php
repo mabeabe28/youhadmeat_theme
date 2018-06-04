@@ -208,18 +208,20 @@
 				<div class="post-image">
 					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 				</div>
-					<div class="post-header">
-						<div class="post-title">
-							'.$pageTitle.'
+					<div class="post-content-box">
+						<div class="post-header">
+							<div class="post-title">
+								'.$pageTitle.'
+							</div>
 						</div>
-					</div>
-					<div class="post-content">
-					'.substr($content,0,500).'...'.'
-					</div>
-					<div class="read-more">
-						<a href="'.$postUrl.'">
-						Continue Reading
-						</a>
+						<div class="post-content">
+						'.substr($content,0,500).'...'.'
+						</div>
+						<div class="read-more">
+							<a href="'.$postUrl.'">
+							Continue Reading
+							</a>
+						</div>
 					</div>
 				</div>';
 			}
@@ -245,7 +247,6 @@
 	width:100%;
 	display: block;
 	text-align: center;
-	background-color: white;
 }
 .post-image{
 	margin: 20px;
@@ -254,6 +255,10 @@
 		object-fit: cover;
 		height: 700px;
 		width: 100%;
+}
+
+.post-content-box{
+background-color: white;
 }
 
 .post-header{
