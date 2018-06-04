@@ -251,7 +251,7 @@
 	text-align: center;
 }
 .post-image{
-	margin: 20px;
+	margin: 20px 20px 0px 20px;
 }
 .post-image img{
 		object-fit: cover;
@@ -269,11 +269,13 @@ background-color: white;
 display: block;
 position: relative;
 width: 80%;
+top:-100px;
 }
 
 .post-header{
-	height: 100px;
-	margin-top:-100px;
+height:100px;
+font-size: 34px;
+font-family: "Crimson Text";
 }
 
 
