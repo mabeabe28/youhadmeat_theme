@@ -216,7 +216,7 @@
 								</div>
 							</div>
 							<div class="post-content">
-							'.substr($content,0,500).'...'.'
+							'.substr($content,0,600).'...'.'
 							</div>
 							<div class="read-more">
 								<a href="'.$postUrl.'">
@@ -274,10 +274,19 @@ top:-100px;
 
 .post-header{
 height:100px;
-font-size: 34px;
+font-size: 42px;
 font-family: "Crimson Text";
 }
 
+.post-title{
+display: flex;
+align-content: center;
+}
+
+.post-content{
+			text-align: justify;
+     text-justify: inter-word;
+}
 
 
 
