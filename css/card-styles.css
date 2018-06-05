@@ -30,9 +30,9 @@
 	display:flex;
 	flex-wrap:wrap;
 	position: relative;
-	justify-content: space-between;
-	margin-left: 0;
-	margin-right: 0;
+	justify-content: space-around;
+	margin-left: 60px;
+	margin-right: 60px;
 	padding-left: 0;
 	padding-right: 0;
 	list-style: none;
