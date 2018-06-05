@@ -18,7 +18,7 @@ get_header();
 			<section>
 
 				<!-- get most recent post from each category -->
-				<div class="slideshow-container">
+				<div class="wrapper">
 
 				<?php
 				//get all cats
@@ -55,7 +55,7 @@ get_header();
 
 					//todo amend this.
 					if($ParentCategory->count > 0){
-						echo '<div class="mySlides">';
+						/*echo '<div class="mySlides">';*/
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
 							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 140) ? substr($recent_post[0]["post_excerpt"],0,140).'...' :$recent_post[0]["post_excerpt"];
@@ -71,12 +71,22 @@ get_header();
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
+							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
+							<div style="display:none;">
+								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
+								<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
+							</div>
+							</div>
 
+							<div class="slideText textslide">
+								<div class="slideTitle">
+									<h1>'.$ParentCategory->cat_name.'</h1>
+								</div>
+							</div>';
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
-							echo '
+							/*echo '
 							<div class="hero featured-fade" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');">
-									<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 									<div style="display:none;">
 										<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
 									</div>
@@ -103,19 +113,317 @@ get_header();
 									</div>
 
 							</div>
-							';
+							';*/
 						}
-						echo '<div class="scroll-down"></div>';
-						echo '</div>';
+						/*echo '<div class="scroll-down"></div>';
+						echo '</div>';*/
 				 }
 				} // foreach($categories
 				?>
 
 				<!-- Next and previous buttons -->
-   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<div id="youhadmeat">
+					<h1>You Had Me At</h1>
+				</div>
+   <a class="prev" onclick="minusSlides(-1)">&#10094;</a>
    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 			</div>
 			</section>
+			<style>
+			.slideText{
+				z-index: 100;
+				position: absolute;
+				font-size: 3vw;
+				top: 37%;
+				left: 60%;
+				font-family: "Gloss-and-Bloom";
+				color: white;
+				text-align: center;
+
+			}
+			#youhadmeat{
+				z-index: 100;
+				position: absolute;
+				top: 40%;
+				left:20%;
+				color: white;
+				font-weight: bold;
+				font-style: italic;
+				font-size: 2vw;
+			}
+
+			.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  z-index: 100;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+			.slide{
+			  height:100vh;
+			  width:100%;
+			  position:absolute;
+			  top:0;
+			  left:0;
+			  background-size:cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			  overflow: hidden;
+				background-color: black;
+			}
+
+			.slideTitle{
+				display: none;
+			}
+
+			.wrapper{
+			  height:100vh;
+			  width:100%;
+			  display:block;
+
+			}
+
+
+
+			.textslide {
+				animation:  textslide 1s ease-in-out;
+			}
+
+			@keyframes textslide {
+				0% {
+					opacity: 0;
+					transform: translateY(100%);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.textslide-out {
+				animation:  textslide-out 1s ease-in-out;
+				transform: translateY(-100%);
+				opacity: 0;
+
+			}
+
+			@keyframes textslide-out {
+				0% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+				100% {
+					opacity: 0;
+					transform: translateY(-100%);
+				}
+			}
+
+
+			.slide-in {
+			  animation-name: slide-in;
+			  animation-duration: 1.2s;
+			}
+
+			@keyframes slide-in {
+				0% {
+					transform: translateX(100%);
+				}
+				100% {
+					transform: translateX(0);
+				}
+			}
+
+			.slide-back {
+			  animation-name: slide-back;
+			  animation-duration: 1.2s;
+			}
+
+			@keyframes slide-back {
+			  from {left: -100%;transform: scale(1.2);top:-10%;}
+				to { transform: scale(1);}
+
+			}
+
+			.scale {
+			  animation: scale 1s;
+			}
+
+			@keyframes scale {
+			  from {
+			    transform: scale(1);
+			  }
+			  to {
+			    transform: scale(1.2);
+			    left: -20%;
+			    top: -10%;
+			  }
+			}
+
+			.scale-back {
+			  animation: scale-back 2s;
+			}
+
+			@keyframes scale-back {
+				0% {
+					transform: translateX(0);
+				}
+				100% {
+					transform: translateX(100%);
+				}
+			}
+
+			</style>
+			<script>
+			var slideIndex = 0;
+			var slides = $(".slide");
+			var slideTitles = $(".slideTitle");
+
+			showSlides(slideIndex)
+
+			function plusSlides(n) {
+			  slideIndex += n;
+			  showSlides(slideIndex,'forward');
+			}
+			function minusSlides(n) {
+			  slideIndex += n;
+			  showSlides(slideIndex,'backward');
+			}
+
+			function showSlides(n,direction) {
+			  	if (typeof direction === 'undefined') direction = 'forward';
+					//console.log(direction);
+
+					  var i;
+					  if (n >= slides.length){
+			        slideIndex = 0;
+			      }
+
+					  if (n < 0){
+			        slideIndex = slides.length-1;
+			      }
+
+			  if(direction == 'backward'){
+			    var previous = slideIndex+1;
+
+			     if (previous > slides.length-1){
+			        previous = 0;
+			      }
+
+					  if (previous < 0){
+			        previous = slides.length-1;
+			      }
+			    //console.log('current',slideIndex);
+			    //console.log('previous',previous);
+
+			  }else{
+			   var previous = slideIndex-1;
+
+			    if (previous > slides.length){
+			        previous = 0;
+			      }
+
+					  if (previous < 0){
+			        previous = slides.length-1;
+			      }
+
+			  }
+
+
+			      //console.log('current',slideIndex);
+			      //console.log('previous',previous);
+			      for (i = 0; i < slides.length; i++) {
+					    slides[i].style.display = "none";
+							slideTitles[i].style.display = "none";
+
+			        $(slides[i]).removeClass('slide-in');
+			        $(slides[i]).removeClass('slide-back');
+							$(slideTitles[slideIndex]).removeClass('textslide');
+							$(slideTitles[slideIndex]).removeClass('textslide-out');
+
+
+
+			        $(slides[i]).removeClass('scale');
+			        $(slides[i]).removeClass('scale-back');
+
+
+					  }
+
+				/*bring previous post behind*/
+			  slides[previous].style["z-index"] = "-1";
+			  if(direction == 'backward'){
+			   $(slides[previous]).addClass('scale-back');
+				 $(slideTitles[previous]).addClass('textslide-out');
+			  }else{
+			    $(slides[previous]).addClass('scale');
+					$(slideTitles[previous]).addClass('textslide-out');
+			  }
+			  slides[previous].style.display = "block";
+				slideTitles[previous].style.display = "block";
+
+
+				/*bring current post forward*/
+			  slides[slideIndex].style["z-index"] = "1";
+			  if(direction == 'backward'){
+			   $(slides[slideIndex]).addClass('slide-back');
+				 $(slideTitles[slideIndex]).addClass('textslide');
+			  }else{
+			   $(slides[slideIndex]).addClass('slide-in');
+				 $(slideTitles[slideIndex]).addClass('textslide');
+
+			  }
+				slides[slideIndex].style.display = "block";
+				slideTitles[slideIndex].style.display = "block";
+
+
+
+			}
+
+			/*autoSlide();
+			function autoSlide() {
+					  var i;
+					  if (slideIndex > slides.length){
+			        slideIndex = 0;
+			      }
+
+					  if (slideIndex < 0){
+			        slideIndex = slides.length;
+			      }
+
+			      var previous = slideIndex-1;
+			      if (previous > slides.length){
+			        previous = 0;
+			      }
+
+					  if (previous < 0){
+			        previous = slides.length;
+			      }
+
+			      console.log('current',slideIndex);
+			      console.log('previous',previous);
+			      slideIndex++;
+						setTimeout(autoSlide,6000);
+			}*/
+			</script>
+
 			<style>
 
 .scroll-down {
@@ -265,7 +573,7 @@ get_header();
 		?>
 
 		<script>
-		var slideIndex = 1;
+		/*var slideIndex = 1;
 		showSlides(slideIndex);
 
 		// Next/previous controls
@@ -302,7 +610,7 @@ get_header();
 
 		}
 
-
+*/
 		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
