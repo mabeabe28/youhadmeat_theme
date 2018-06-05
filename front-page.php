@@ -241,6 +241,7 @@ get_header();
 			.slide-in {
 			  animation-name: slide-in;
 			  animation-duration: 1.2s;
+				-webkit-animation: slide-in 1.2s ;
 			}
 
 			@keyframes slide-in {
@@ -251,6 +252,12 @@ get_header();
 					transform: translateX(0);
 				}
 			}
+
+
+		@-webkit-keyframes slide-in {
+			0%   { -webkit-transform:translateX(100%) }
+			100% { -webkit-transform:translateX(0); }
+		}
 
 			.slide-back {
 			  animation-name: slide-back;
@@ -265,6 +272,8 @@ get_header();
 
 			.scale {
 			  animation: scale 1s;
+				-webkit-animation: scale 1s ;
+
 			}
 
 			@keyframes scale {
@@ -276,6 +285,11 @@ get_header();
 			    left: -20%;
 			    top: -10%;
 			  }
+			}
+
+			@-webkit-keyframes scale {
+				from   { -webkit-transform:scale(1); }
+				to { -webkit-transform:scale(1.2);left: -20%;top: -10%; }
 			}
 
 			.scale-back {
