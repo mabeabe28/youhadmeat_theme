@@ -203,45 +203,66 @@ get_header();
 			}
 
 
-
+			/*text slide  in*/
 			.textslide {
 				animation:  textslide 1s ease-in-out;
+				-webkit-animation: textslide 1s ease-in-out;
+				-moz-animation: textslide 1s ease-in-out ;
 			}
 
 			@keyframes textslide {
-				0% {
-					opacity: 0;
-					transform: translateY(100%);
-				}
-				100% {
-					opacity: 1;
-					transform: translateY(0);
-				}
+				0% { opacity: 0; transform: translateY(100%);}
+				100% {opacity: 1;transform: translateY(0);}
 			}
+
+			@-webkit-keyframes textslide {
+				0%   { -webkit-transform:translateY(100%); opacity: 0; }
+				100% { -webkit-transform:translateY(0); opacity: 1;}
+			}
+
+			@-moz-keyframes textslide {
+			  0%   { -moz-transform:translateY(100%); opacity: 0;}
+			  100% { -moz-transform:translateY(0); opacity: 1;}
+			}
+
+			/*text slide previous out*/
 
 			.textslide-out {
 				animation:  textslide-out 1s ease-in-out;
+				-webkit-animation: textslide-out 1s ease-in-out;
+				-moz-animation: textslide-out 1s ease-in-out ;
+
 				transform: translateY(-100%);
+				-webkit-transform: translateY(-100%);
+				-moz-transform: translateY(-100%);
+
+
 				opacity: 0;
 
 			}
 
 			@keyframes textslide-out {
-				0% {
-					opacity: 1;
-					transform: translateY(0);
-				}
-				100% {
-					opacity: 0;
-					transform: translateY(-100%);
-				}
+				0% {opacity: 1;transform: translateY(0);}
+				100% {opacity: 0;transform: translateY(-100%);}
 			}
 
+			@-webkit-keyframes textslide-out {
+				0%   { -webkit-transform:translateY(0); opacity: 1; }
+				100% { -webkit-transform:translateY(-100%); opacity: 0;}
+			}
+
+			@-moz-keyframes textslide-out {
+			  0%   { -moz-transform:translateY(0); opacity: 1;   }
+			  100% { -moz-transform:translateY(-100%); opacity: 0; }
+			}
+
+			/*next button- slide in from right*/
 
 			.slide-in {
 			  animation-name: slide-in;
 			  animation-duration: 1.2s;
 				-webkit-animation: slide-in 1.2s ;
+				-moz-animation:    slide-in 1.2s ;
 			}
 
 			@keyframes slide-in {
@@ -255,55 +276,93 @@ get_header();
 
 
 		@-webkit-keyframes slide-in {
-			0%   { -webkit-transform:translateX(100%) }
+			0%   { -webkit-transform:translateX(100%); }
 			100% { -webkit-transform:translateX(0); }
 		}
 
+		@-moz-keyframes slide-in {
+		  0%   { -moz-transform:translateX(100%);  }
+		  100% { -moz-transform:translateX(0); }
+		}
+
+
+		/*next button. previous item scale left*/
+
+		.scale {
+			animation: scale 1s;
+			-webkit-animation: scale 1s ;
+			-moz-animation:    scale 1s ;
+
+		}
+
+		@keyframes scale {
+			0% {transform: scale(1);}
+			100% {transform: scale(1.2); }
+		}
+
+		@-webkit-keyframes scale {
+			0%   { -webkit-transform:scale(1); }
+			100% { -webkit-transform:scale(1.2); }
+		}
+
+		@-moz-keyframes scale {
+		  0%   { -moz-transform:scale(1);  }
+		  100% { -moz-transform:scale(1.2); }
+		}
+
+
+
+
+		/*previous button- slide back in from left*/
 			.slide-back {
 			  animation-name: slide-back;
 			  animation-duration: 1.2s;
+				-webkit-animation: slide-back 1.2s ;
+				-moz-animation:    slide-back 1.2s ;
 			}
 
 			@keyframes slide-back {
-			  from {left: -100%;transform: scale(1.2);top:-10%;}
+			  from {left: -100%;transform: scale(1.2);}
 				to { transform: scale(1);}
 
 			}
 
-			.scale {
-			  animation: scale 1s;
-				-webkit-animation: scale 1s ;
-
+			@-webkit-keyframes slide-back {
+				0%   { -webkit-transform:translateX(-100%); }
+				100% { -webkit-transform:translateX(0); }
 			}
 
-			@keyframes scale {
-			  from {
-			    transform: scale(1);
-			  }
-			  to {
-			    transform: scale(1.2);
-			    left: -20%;
-			    top: -10%;
-			  }
+			@-moz-keyframes slide-back  {
+				0%   { -moz-transform:translateX(-100%);  }
+				100% { -moz-transform:translateX(0); }
 			}
 
-			@-webkit-keyframes scale {
-				from   { -webkit-transform:scale(1); }
-				to { -webkit-transform:scale(1.2);left: -20%;top: -10%; }
-			}
 
+
+			/*previous button. previous item go back to left*/
 			.scale-back {
 			  animation: scale-back 2s;
+				-webkit-animation: scale-back 2s ;
+				-moz-animation:    scale-back 2s ;
 			}
 
 			@keyframes scale-back {
-				0% {
-					transform: translateX(0);
-				}
-				100% {
-					transform: translateX(100%);
-				}
+				0% {transform: translateX(0);}
+				100% {transform: translateX(100%);}
 			}
+
+			@-webkit-keyframes scale-back {
+				0%   { -webkit-transform:translateX(0); }
+				100% { -webkit-transform:translateX(100%); }
+			}
+
+			@-moz-keyframes scale-back {
+				0%   { -moz-transform:translateX(0);  }
+				100% { -moz-transform:translateX(100%); }
+			}
+
+
+
 
 			</style>
 			<script>
