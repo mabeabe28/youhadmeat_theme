@@ -150,6 +150,7 @@ get_header();
 				font-weight: bold;
 				font-style: italic;
 				font-size: 2vw;
+				padding: 20px;
 			}
 
 			.prev, .next {
@@ -193,6 +194,7 @@ get_header();
 
 			.slideTitle{
 				display: none;
+				padding:20px;
 			}
 
 			.wrapper{
