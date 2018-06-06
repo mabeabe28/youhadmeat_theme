@@ -139,6 +139,7 @@ get_header();
 				font-family: "Gloss-and-Bloom";
 				color: white;
 				text-align: center;
+				padding:20px;
 
 			}
 			#youhadmeat{
@@ -194,7 +195,6 @@ get_header();
 
 			.slideTitle{
 				display: none;
-				padding:20px;
 			}
 
 			.wrapper{
