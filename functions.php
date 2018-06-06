@@ -232,7 +232,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				.card-header-category.category--'.$curcat->slug.'{
-					background-color:'.$cat_colour.';
+					/*background-color:'.$cat_colour.';*/
 				}
 
 				.card-wrapper.category--'.$curcat->slug.':after{

@@ -363,6 +363,12 @@ textarea {
     font-weight: normal;
 }
 
+@font-face {
+    font-family: FontAwesome;
+    src: url('./includes/icons/fontawesome/webfonts/fa-regular-400.ttf');
+    font-weight: normal;
+}
+
 
 
 /* Interactive
