@@ -71,17 +71,17 @@ get_header();
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
-							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
+							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
 							<div style="display:none;">
 								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 								<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
 							</div>
 							</div>
 
-							<div class="slideText textslide">
-								<div class="slideTitle">
-									<h1>'.$ParentCategory->cat_name.'</h1>
-								</div>
+							<div class="slideText">
+									<div class="slideTitle">
+										<h1>'.$ParentCategory->cat_name.'</h1>
+									</div>
 							</div>';
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
@@ -133,7 +133,6 @@ get_header();
 			.slideText{
 				z-index: 100;
 				position: absolute;
-				font-size: 3vw;
 				top: 37%;
 				left: 60%;
 				font-family: "Gloss-and-Bloom";
@@ -142,6 +141,17 @@ get_header();
 				padding:20px;
 
 			}
+
+			.slideTitleWrapper{
+				/*position: relative;*/
+				/*overflow: hidden;*/
+			}
+
+			.slideTitle{
+				margin: 50px;
+				font-size: 3vw;
+			}
+
 			#youhadmeat{
 				z-index: 100;
 				position: absolute;
@@ -731,6 +741,11 @@ z-index: 1;
 	#divider-content{
 		width: 100%;
 		border: 0;
+	}
+
+	#divider{
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 	</style>
