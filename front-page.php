@@ -201,6 +201,9 @@ get_header();
 			  height:100vh;
 			  width:100%;
 			  display:block;
+				position: relative;
+				overflow: hidden;
+				margin-bottom: 100px;
 
 			}
 
