@@ -696,8 +696,8 @@ get_header();
 
 	#divider{
 	height: 95px;
-	margin-left: 75px;
-	margin-right: 75px;
+	margin-left: 85px;
+	margin-right: 85px;
 	}
 #divider-content {
 	border-bottom: 80px solid #2fc4c4;
