@@ -206,6 +206,8 @@
 	}
 
 	.card-content .card-content-excerpt{
+		top: 80%;
+
 		margin-top: 10px;
 		font-size: 0.87em;
 	padding-top: 15px;
