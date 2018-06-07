@@ -481,31 +481,75 @@ get_header();
 
 			}
 
-			/*autoSlide();
+			autoSlide();
 			function autoSlide() {
-					  var i;
-					  if (slideIndex > slides.length){
-			        slideIndex = 0;
-			      }
+				//console.log(direction);
 
-					  if (slideIndex < 0){
-			        slideIndex = slides.length;
-			      }
+					var i;
+					if (slideIndex >= slides.length){
+						slideIndex = 0;
+					}
 
-			      var previous = slideIndex-1;
-			      if (previous > slides.length){
-			        previous = 0;
-			      }
+					if (slideIndex < 0){
+						slideIndex = slides.length-1;
+					}
 
-					  if (previous < 0){
-			        previous = slides.length;
-			      }
+
+			 var previous = slideIndex-1;
+
+				if (previous > slides.length){
+						previous = 0;
+					}
+
+					if (previous < 0){
+						previous = slides.length-1;
+					}
+
+
+
+
+					//console.log('current',slideIndex);
+					//console.log('previous',previous);
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+						slideTitles[i].style.display = "none";
+
+						$(slides[i]).removeClass('slide-in');
+						$(slides[i]).removeClass('slide-back');
+						$(slideTitles[slideIndex]).removeClass('textslide');
+						$(slideTitles[slideIndex]).removeClass('textslide-out');
+
+
+
+						$(slides[i]).removeClass('scale');
+						$(slides[i]).removeClass('scale-back');
+
+
+					}
+
+			/*bring previous post behind*/
+			slides[previous].style["z-index"] = "-1";
+				$(slides[previous]).addClass('scale');
+				$(slideTitles[previous]).addClass('textslide-out');
+
+			slides[previous].style.display = "block";
+			slideTitles[previous].style.display = "block";
+
+
+			/*bring current post forward*/
+				slides[slideIndex].style["z-index"] = "1";
+			 $(slides[slideIndex]).addClass('slide-in');
+			 $(slideTitles[slideIndex]).addClass('textslide');
+
+
+			slides[slideIndex].style.display = "block";
+			slideTitles[slideIndex].style.display = "block";
 
 			      console.log('current',slideIndex);
 			      console.log('previous',previous);
 			      slideIndex++;
-						setTimeout(autoSlide,6000);
-			}*/
+						setTimeout(autoSlide,4000);
+			}
 			</script>
 
 			<style>
@@ -701,23 +745,23 @@ get_header();
 	<style>
 
 	#divider{
-	height: 95px;
-	margin-left: 85px;
-	margin-right: 85px;
+	height: 100px;
+	margin-left: 5.829903978052126vw;
+	margin-right: 5.829903978052126vw;
 	}
 #divider-content {
 	border-bottom: 80px solid #2fc4c4;
 	border-right: 80px solid transparent;
 	height: 0;
-	width: 390px;
+	width: 26.74897119341564vw;
   color:white;
   display:flex;
   justify-content:center;
 }
 
 #divider-content .text {
-padding-top: 15px;
-font-size: 40px;
+padding: 1.02880658436214vw;
+font-size: 2.7434842249657065vw;
 font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
@@ -733,7 +777,8 @@ z-index: 1;
     top: -15px;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:767px),
+ screen and (min-width:2000px){
 	#divider-content{
 		width: 100%;
 		border: 0;
@@ -742,6 +787,18 @@ z-index: 1;
 	#divider{
 		margin-left: 0;
 		margin-right: 0;
+	}
+
+	#divider-content .text {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width:1200px) and (min-width:767px){
+
+	#divider-content .text {
+		padding-top: 20px;
+		font-size: 33px;
 	}
 }
 	</style>
