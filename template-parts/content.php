@@ -86,7 +86,7 @@
 		 	echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"></div>
 						</div>';
-			echo '<div class="card-container">';
+			echo '<div class="card-container" style="justify-content:space-around;">';
 
 			$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename').'';
 
@@ -140,7 +140,7 @@
 					echo '<div class="card-deck-header">
 									<div class="card-deck-header-title"><h3>Related Posts:</h3></div>
 								</div>';
-					echo '<ul class="card-container">';
+					echo '<ul class="card-container" >';
 
 
 					while( $my_query->have_posts() ) {

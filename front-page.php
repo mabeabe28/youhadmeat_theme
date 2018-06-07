@@ -139,7 +139,6 @@ get_header();
 				color: white;
 				text-align: center;
 
-
 			}
 
 			.slideTitleWrapper{
@@ -148,10 +147,10 @@ get_header();
 			}
 
 			.slideTitle{
+				position: absolute;
 				font-size: 3vw;
 				margin-left: 10vw;
-				padding: 12px,50px,12px,50px;
-
+				padding: 1px 20px 1px 20px;
 			}
 
 			#youhadmeat{
@@ -163,8 +162,7 @@ get_header();
 				font-weight: bold;
 				font-style: italic;
 				font-size: 2.5vw;
-				padding: 12px,50px,12px,50px;
-
+				padding: 1px 20px 1px 20px;
 
 
 			}
@@ -228,54 +226,45 @@ get_header();
 				animation:  textslide 1s ease-in-out;
 				-webkit-animation: textslide 1s ease-in-out;
 				-moz-animation: textslide 1s ease-in-out ;
-				padding: 12px,50px,12px,50px;
-				
 			}
 
 			@keyframes textslide {
-				0% { opacity: 0; transform: translateY(100%);}
+				0% { opacity: 0; transform: translateY(50%);}
 				100% {opacity: 1;transform: translateY(0);}
 			}
 
 			@-webkit-keyframes textslide {
-				0%   { -webkit-transform:translateY(100%); opacity: 0; }
+				0%   { -webkit-transform:translateY(50%); opacity: 0; }
 				100% { -webkit-transform:translateY(0); opacity: 1;}
 			}
 
 			@-moz-keyframes textslide {
-			  0%   { -moz-transform:translateY(100%); opacity: 0;}
+			  0%   { -moz-transform:translateY(50%); opacity: 0;}
 			  100% { -moz-transform:translateY(0); opacity: 1;}
 			}
 
 			/*text slide previous out*/
 
 			.textslide-out {
-				animation:  textslide-out 1s ease-in-out;
-				-webkit-animation: textslide-out 1s ease-in-out;
-				-moz-animation: textslide-out 1s ease-in-out ;
-
-				transform: translateY(-100%);
-				-webkit-transform: translateY(-100%);
-				-moz-transform: translateY(-100%);
-
-
-				opacity: 0;
+				animation:  textslide-out 1s ease-in-out forwards;
+				-webkit-animation: textslide-out 1s ease-in-out forwards;
+				-moz-animation: textslide-out 1s ease-in-out forwards;
 
 			}
 
 			@keyframes textslide-out {
 				0% {opacity: 1;transform: translateY(0);}
-				100% {opacity: 0;transform: translateY(-100%);}
+				100% {opacity: 0;transform: translateY(-50%);}
 			}
 
 			@-webkit-keyframes textslide-out {
 				0%   { -webkit-transform:translateY(0); opacity: 1; }
-				100% { -webkit-transform:translateY(-100%); opacity: 0;}
+				100% { -webkit-transform:translateY(-50%); opacity: 0;}
 			}
 
 			@-moz-keyframes textslide-out {
 			  0%   { -moz-transform:translateY(0); opacity: 1;   }
-			  100% { -moz-transform:translateY(-100%); opacity: 0; }
+			  100% { -moz-transform:translateY(-50%); opacity: 0; }
 			}
 
 			/*next button- slide in from right*/
