@@ -133,11 +133,12 @@ get_header();
 			.slideText{
 				z-index: 100;
 				position: absolute;
-				top: 35%;
+				top: 33%;
 				left: 50%;
 				font-family: "Gloss-and-Bloom";
 				color: white;
 				text-align: center;
+
 
 			}
 
@@ -149,20 +150,22 @@ get_header();
 			.slideTitle{
 				font-size: 3vw;
 				margin-left: 10vw;
-				padding: 20px;
-				
+				padding: 12px,50px,12px,50px;
+
 			}
 
 			#youhadmeat{
 				z-index: 100;
 				position: absolute;
-				top: 35%;
+				top: 33%;
 				left:20%;
 				color: white;
 				font-weight: bold;
 				font-style: italic;
 				font-size: 2.5vw;
-				padding: 20px;
+				padding: 12px,50px,12px,50px;
+
+
 
 			}
 
@@ -225,6 +228,8 @@ get_header();
 				animation:  textslide 1s ease-in-out;
 				-webkit-animation: textslide 1s ease-in-out;
 				-moz-animation: textslide 1s ease-in-out ;
+				padding: 12px,50px,12px,50px;
+				
 			}
 
 			@keyframes textslide {
