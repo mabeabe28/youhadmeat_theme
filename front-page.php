@@ -223,9 +223,9 @@ get_header();
 
 			/*text slide  in*/
 			.textslide {
-				animation:  textslide 1s ease-in-out;
-				-webkit-animation: textslide 1s ease-in-out;
-				-moz-animation: textslide 1s ease-in-out ;
+				animation:  textslide 1.2s ease-in-out;
+				-webkit-animation: textslide 1.2s ease-in-out;
+				-moz-animation: textslide 1.2s ease-in-out ;
 			}
 
 			@keyframes textslide {
@@ -246,9 +246,9 @@ get_header();
 			/*text slide previous out*/
 
 			.textslide-out {
-				animation:  textslide-out 1s ease-in-out forwards;
-				-webkit-animation: textslide-out 1s ease-in-out forwards;
-				-moz-animation: textslide-out 1s ease-in-out forwards;
+				animation:  textslide-out 1.2s ease-in-out forwards;
+				-webkit-animation: textslide-out 1.2s ease-in-out forwards;
+				-moz-animation: textslide-out 1.2s ease-in-out forwards;
 
 			}
 
@@ -300,9 +300,9 @@ get_header();
 		/*next button. previous item scale left*/
 
 		.scale {
-			animation: scale 1s;
-			-webkit-animation: scale 1s ;
-			-moz-animation:    scale 1s ;
+			animation: scale 1.2s;
+			-webkit-animation: scale 1.2s ;
+			-moz-animation:    scale 1.2s ;
 
 		}
 
@@ -352,9 +352,9 @@ get_header();
 
 			/*previous button. previous item go back to left*/
 			.scale-back {
-			  animation: scale-back 2s;
-				-webkit-animation: scale-back 2s ;
-				-moz-animation:    scale-back 2s ;
+			  animation: scale-back 1.2s;
+				-webkit-animation: scale-back 1.2s ;
+				-moz-animation:    scale-back 2.2s ;
 			}
 
 			@keyframes scale-back {
