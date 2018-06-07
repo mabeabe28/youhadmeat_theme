@@ -199,12 +199,18 @@
 
 	.card-content .card-content-title{
 		margin-top: 10px;
-		/*font-size: 12px;*/
+		font-size: 1.2em;
+		padding-left: 12px;
+		padding-right: 15%;
+		line-height: 1em;
 	}
 
 	.card-content .card-content-excerpt{
 		margin-top: 10px;
-		/*font-size: 10px;*/
+		font-size: 0.87em;
+	padding-top: 15px;
+	padding-left: 12px;
+	padding-right: 100px;
 	}
 
 }
