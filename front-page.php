@@ -134,7 +134,7 @@ get_header();
 				z-index: 100;
 				position: absolute;
 				top: 33%;
-				left: 50%;
+				left: 47%;
 				font-family: "Gloss-and-Bloom";
 				color: white;
 				text-align: center;
@@ -157,7 +157,7 @@ get_header();
 				z-index: 100;
 				position: absolute;
 				top: 33%;
-				left:20%;
+				left:17%;
 				color: white;
 				font-weight: bold;
 				font-style: italic;
@@ -548,7 +548,7 @@ get_header();
 			      console.log('current',slideIndex);
 			      console.log('previous',previous);
 			      slideIndex++;
-						setTimeout(autoSlide,4000);
+						setTimeout(autoSlide,6000);
 			}
 			</script>
 
