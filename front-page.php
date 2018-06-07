@@ -790,6 +790,7 @@ z-index: 1;
 	}
 
 	#divider-content .text {
+		padding: 17px;
 		font-size: 40px;
 	}
 }
