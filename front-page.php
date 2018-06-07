@@ -133,12 +133,12 @@ get_header();
 			.slideText{
 				z-index: 100;
 				position: absolute;
-				top: 37%;
-				left: 60%;
+				top: 35%;
+				left: 50%;
 				font-family: "Gloss-and-Bloom";
 				color: white;
 				text-align: center;
-				padding:20px;
+
 
 			}
 
@@ -148,20 +148,19 @@ get_header();
 			}
 
 			.slideTitle{
-				margin: 50px;
 				font-size: 3vw;
+				margin-left: 10vw;
 			}
 
 			#youhadmeat{
 				z-index: 100;
 				position: absolute;
-				top: 40%;
+				top: 35%;
 				left:20%;
 				color: white;
 				font-weight: bold;
 				font-style: italic;
-				font-size: 2vw;
-				padding: 20px;
+				font-size: 2.5vw;
 			}
 
 			.prev, .next {
