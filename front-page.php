@@ -139,7 +139,6 @@ get_header();
 				color: white;
 				text-align: center;
 
-
 			}
 
 			.slideTitleWrapper{
@@ -150,6 +149,8 @@ get_header();
 			.slideTitle{
 				font-size: 3vw;
 				margin-left: 10vw;
+				padding: 20px;
+				
 			}
 
 			#youhadmeat{
@@ -161,6 +162,8 @@ get_header();
 				font-weight: bold;
 				font-style: italic;
 				font-size: 2.5vw;
+				padding: 20px;
+
 			}
 
 			.prev, .next {
