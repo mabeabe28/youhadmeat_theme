@@ -750,18 +750,18 @@ get_header();
 	margin-right: 5.829903978052126vw;
 	}
 #divider-content {
-	border-bottom: 80px solid #2fc4c4;
+	border-bottom: 70px solid #2fc4c4;
 	border-right: 80px solid transparent;
 	height: 0;
-	width: 26.74897119341564vw;
+	width: 20.5761316872428vw;
   color:white;
   display:flex;
   justify-content:center;
 }
 
 #divider-content .text {
-padding: 1.02880658436214vw;
-font-size: 2.7434842249657065vw;
+padding: 1.22880658436214vw;
+font-size: 2.3434842249657065vw;
 font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
