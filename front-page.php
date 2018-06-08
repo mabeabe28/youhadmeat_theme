@@ -134,7 +134,7 @@ get_header();
 				z-index: 100;
 				position: absolute;
 				top: 33%;
-				left: 46%;
+				left: 44%;
 				font-family: "Gloss-and-Bloom";
 				color: white;
 				text-align: center;
@@ -148,7 +148,7 @@ get_header();
 
 			.slideTitle{
 				position: absolute;
-				font-size: 2vw;
+				font-size: 2.2vw;
 				margin-left: 10vw;
 				padding: 1px 20px 1px 20px;
 			}
@@ -157,11 +157,11 @@ get_header();
 				z-index: 100;
 				position: absolute;
 				top: 33%;
-				left:28%;
+				left:21%;
 				color: white;
 				font-weight: bold;
 				font-style: italic;
-				font-size: 1.8vw;
+				font-size: 2vw;
 				padding: 1px 20px 1px 20px;
 
 
