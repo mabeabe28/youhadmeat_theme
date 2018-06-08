@@ -777,7 +777,7 @@ z-index: 1;
     top: -15px;
 }
 
-@media screen and (max-width:767px),
+@media screen and (max-width:850px),
  screen and (min-width:2000px){
 	#divider-content{
 		width: 100%;
@@ -795,7 +795,7 @@ z-index: 1;
 	}
 }
 
-@media screen and (max-width:1200px) and (min-width:767px){
+@media screen and (max-width:1200px) and (min-width:850px){
 
 	#divider-content .text {
 		padding-top: 20px;
