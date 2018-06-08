@@ -149,7 +149,7 @@ get_header();
 			.slideTitle{
 				position: absolute;
 				font-size: 2.2vw;
-				margin-left: 10vw;
+				margin-left: 14vw;
 				padding: 1px 20px 1px 20px;
 			}
 
