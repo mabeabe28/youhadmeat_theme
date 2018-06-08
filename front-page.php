@@ -761,7 +761,7 @@ get_header();
 
 #divider-content .text {
 padding: 1.22880658436214vw;
-font-size: 2.3434842249657065vw;
+font-size: 2.4434842249657065vw;
 font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
