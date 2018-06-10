@@ -174,7 +174,7 @@
 	padding-right: 15%;
 	line-height: 1.2973936899862826vw;
 	z-index: 1;
-	
+
 }
 
 
@@ -204,15 +204,17 @@
 
 .category-icon{
 	position: absolute;
-	right:10px;
+	right:0.6944444444444444vw;
 	z-index: 1;
 }
 .category-icon:after{
+	font-size:0.9722222222222222vw;
 	display: inline-block;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	width:30px;
-	height:30px;
+	border-radius: 1.3888888888888888vw;
+	-moz-border-radius: 1.3888888888888888vw;
+	-webkit-border-radius: 1.3888888888888888vw;
+	width:2.0833333333333335vw;
+	height:2.0833333333333335vw;
 	display: flex;
   flex-direction: row;
   justify-content: center;
@@ -222,13 +224,14 @@
 }
 
 .category-title{
-	height: 30px;
+	font-size: 1.1111111111111112vw;
+	height: 2.0833333333333335vw;
 	width: 0;
 	visibility: hidden;
 	right:0px;
 	position: absolute;
-	border-bottom-left-radius: 20px;
-	border-top-left-radius: 20px;
+	border-bottom-left-radius: 1.3888888888888888vw;
+	border-top-left-radius: 1.3888888888888888vw;
 	background-color: pink;
 	z-index: 1;
 
@@ -242,10 +245,10 @@
 .category-title-hover{
 	visibility: visible;
 	width: auto;
-	right: 25px;
-	padding-right: 30px;
-	padding-left: 30px;
-	padding-top: 5px;
+	right: 1.7361111111111112vw;
+	padding-right: 2.0833333333333335vw;
+	padding-left: 2.0833333333333335vw;
+	padding-top: 0.3472222222222222vw;
 	opacity: 1;
 	z-index: 1;
 
@@ -285,12 +288,44 @@
 
 	.card-content .card-content-excerpt{
 		top: 80%;
-
 		margin-top: 10px;
 		font-size: 0.87em;
-	padding-top: 15px;
-	padding-left: 12px;
-	padding-right: 100px;
+		padding-top: 15px;
+		padding-left: 12px;
+		padding-right: 100px;
+	}
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.category-icon{
+		right:10px;
+	}
+	.category-icon:after{
+		font-size:14px;
+		border-radius: 20px;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		width:30px;
+		height:30px;
+	}
+
+	.category-title{
+		font-size: 16px;
+		height: 30px;
+		right:0px;
+		border-bottom-left-radius: 20px;
+		border-top-left-radius: 20px;
+	}
+
+	.category-title-hover{
+		right: 25px;
+		padding-right: 30px;
+		padding-left: 30px;
+		padding-top: 5px;
+
 	}
 
 }
