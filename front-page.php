@@ -1070,9 +1070,6 @@ z-index: 1;
 
 	</style>
 
-	<script>
-
-	</script>
 <?php
 /*get_sidebar();*/
 get_footer();
