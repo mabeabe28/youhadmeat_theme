@@ -353,22 +353,29 @@ textarea {
 */
 
 @font-face {
-    font-family: Jullian-Regular;
-    src: url('./includes/fonts/Jullian/Jullian-Regular.ttf');
-    font-weight: normal;
-}
-
-@font-face {
     font-family: Gloss-and-Bloom;
     src: url('./includes/fonts/gloss_and_bloom/Gloss_And_Bloom.ttf');
     font-weight: normal;
 }
 
 @font-face {
-    font-family: FontAwesome;
-    src: url('./includes/icons/fontawesome/webfonts/fa-regular-400.ttf');
+    font-family: FontAwesomeSolid;
+		src: url('./includes/icons/fontawesome/webfonts/fa-solid-900.eot');
+  	src: url('./includes/icons/fontawesome/webfonts/fa-solid-900.eot') format('embedded-opentype'),
+    url('./includes/icons/fontawesome/webfonts/fa-solid-900.woff') format('woff'),
+    url('./includes/icons/fontawesome/webfonts/fa-solid-900.ttf') format('truetype');
     font-weight: normal;
 }
+
+@font-face {
+    font-family: FontAwesomeRegular;
+		src: url('./includes/icons/fontawesome/webfonts/fa-regular-400.eot');
+  	src: url('./includes/icons/fontawesome/webfonts/fa-regular-400.eot') format('embedded-opentype'),
+    url('./includes/icons/fontawesome/webfonts/fa-regular-400.woff') format('woff'),
+    url('./includes/icons/fontawesome/webfonts/fa-regular-400.ttf') format('truetype');
+    font-weight: normal;
+}
+
 
 
 

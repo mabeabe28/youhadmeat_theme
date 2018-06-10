@@ -196,10 +196,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					'transport' => 'refresh',
 				) );
 
+			$wp_customize->add_setting( ''.$curcat->slug.'_icon', array(
+					'default'   => '',
+					'transport' => 'refresh',
+				) );
+
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, ''.$curcat->slug.'_colour', array(
 					'section' => 'colors',
 					'label'   => esc_html__( ''.$curcat->name.' Colour', 'theme' ),
 				) ) );
+
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, ''.$curcat->slug.'_icon', array(
+						'section' => 'colors',
+						'label'   => esc_html__( ''.$curcat->name.' Icon', 'theme' ),
+					) ) );
 		}
 
 	}
@@ -217,6 +227,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		foreach($categories as $curcat) {
 			//get the category colour setting
 			$cat_colour = get_theme_mod( ''.$curcat->slug.'_colour', '' );
+			$cat_icon = get_theme_mod( ''.$curcat->slug.'_icon', '' );
+
 	    if ( ! empty( $cat_colour ) ) {
 
 				//create css for that category--target
@@ -261,6 +273,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				#divider.category--'.$curcat->slug.':after{
 				    border-color: '.$cat_colour.';
 				}
+
+
+				.category--'.$curcat->slug.' .category-title:after{
+					font-family: FontAwesomeRegular,FontAwesomeSolid;
+			    content: "'.$cat_icon.'";
+				}
+
 				';
 			}
     }
