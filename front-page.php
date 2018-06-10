@@ -94,7 +94,7 @@ get_header();
 							echo '<div class="slideExcerptWrapper">
 								<div class="slideExcerpt">
 									<div class="latestText">
-										Latest Post
+										Latest '.$ParentCategory->cat_name.' Post
 									</div>
 									<div class="latestExcerpt">
 										'.$excerptStr.'
@@ -107,10 +107,6 @@ get_header();
 									</div>
 
 								</div>
-
-
-
-
 
 
 							</div>';
@@ -183,6 +179,7 @@ get_header();
 			.latestText{
 				display: none;
 				font-weight: 300;
+				text-decoration: underline;
 			}
 
 			.latestExcerpt{
