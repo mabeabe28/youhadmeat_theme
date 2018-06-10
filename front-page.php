@@ -58,17 +58,17 @@ get_header();
 						/*echo '<div class="mySlides">';*/
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
-							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 140) ? substr($recent_post[0]["post_excerpt"],0,140).'...' :$recent_post[0]["post_excerpt"];
+							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 70) ? substr($recent_post[0]["post_excerpt"],0,70).'...' :$recent_post[0]["post_excerpt"];
 							$comingsoon = get_post_meta( $recent_post[0]["ID"],'comingsoon', true );
 							$pageTitle = get_the_title($recent_post[0]["ID"]);
 							$postUrl = get_permalink($recent_post[0]["ID"]);
 							$ctaText = 'Read More';
-							if($comingsoon){
+							/*if($comingsoon){
 								$pageTitle = '';
 								$excerptStr = '';
 								$postUrl = '##';
 								$ctaText = 'Coming Soon';
-							}
+							}*/
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
 							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
@@ -78,10 +78,41 @@ get_header();
 							</div>
 							</div>
 
-							<div class="slideText">
-									<div class="slideTitle">
-										<h1>'.$ParentCategory->cat_name.'</h1>
+						';
+
+
+							echo '<div class="slideTitleWrappert">
+								<div class="slideTitleLeading">
+									<h1>You Had Me At</h1>
+								</div>
+								<div class="slideTitle">
+									<h1>'.$ParentCategory->cat_name.'</h1>
+								</div>
+							</div>';
+
+
+							echo '<div class="slideExcerptWrapper">
+								<div class="slideExcerpt">
+									<div class="latestText">
+										Latest Post
 									</div>
+									<div class="latestExcerpt">
+										'.$excerptStr.'
+									</div>
+
+									<div class="latestCtaWrapper">
+										<div class="latestCta" >
+											<a class="ghost-button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a>
+										</div>
+									</div>
+
+								</div>
+
+
+
+
+
+
 							</div>';
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
@@ -107,7 +138,7 @@ get_header();
 													<div class="recentPost_excerpt">
 														'.$excerptStr.'
 													</div>
-													<div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a></div>
+													<div class="latestCta" style="font-size: 15px;"><a class="ghost-button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a></div>
 												</div>
 											</div>
 									</div>
@@ -121,23 +152,71 @@ get_header();
 				} // foreach($categories
 				?>
 
-				<!-- Next and previous buttons -->
+				<!-- Next and previous buttons
 				<div id="youhadmeat">
 					<h1>You Had Me At</h1>
-				</div>
+				</div> -->
    <a class="prev" onclick="minusSlides(-1)">&#10094;</a>
    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 			</div>
 			</section>
 			<style>
-			.slideText{
+			/*hero text wrapper stuff*/
+			.slideExcerptWrapper {
+					/*position: absolute;*/
+					color: white;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					flex-flow: row wrap;
+
+			}
+
+			.slideExcerpt{
+				top: 60%;
 				z-index: 100;
 				position: absolute;
-				top: 33%;
-				left: 44%;
-				font-family: "Gloss-and-Bloom";
 				color: white;
+				width: 300px;
 				text-align: center;
+			}
+			.latestText{
+				display: none;
+				font-weight: 300;
+			}
+
+			.latestExcerpt{
+				display: none;
+				font-style: italic;
+			}
+
+			.latestCtaWrapper{
+				width:100%;
+				display:flex;
+				flex-wrap:wrap;
+				position: relative;
+				justify-content: center;
+			}
+			.latestCta{
+				z-index: 100;
+				display: none;
+				position: absolute;
+				font-size:15px;
+				margin-top:20px;
+			}
+
+
+
+			.slideTitleWrappert{
+				z-index: 100;
+				top: 28%;
+				color: white;
+
+				width:100%;
+				display:flex;
+				flex-wrap:wrap;
+				position: absolute;
+				justify-content: center;
 
 			}
 
@@ -146,11 +225,27 @@ get_header();
 				/*overflow: hidden;*/
 			}
 
-			.slideTitle{
-				position: absolute;
-				font-size: 2.2vw;
-				margin-left: 12vw;
+			.slideTitleLeading{
+				z-index: 100;
+				color: white;
+				font-weight: bold;
+				font-style: italic;
+				position:absolute;
+				left:11%;
+
+				font-weight: bold;
+				font-style: italic;
+				font-size: 3vw;
 				padding: 1px 20px 1px 20px;
+			}
+			.slideTitle{
+				font-family: "Gloss-and-Bloom";
+				position: absolute;
+				font-size: 3.2vw;
+				margin-left: 22vw;
+				padding: 1px 20px 1px 20px;
+				left: 40%;
+				text-align: center;
 			}
 
 			#youhadmeat{
@@ -220,12 +315,107 @@ get_header();
 
 			}
 
+			/* LATEST EXCERPTtext slide  in*/
+			.textslide-side-opposite {
+				animation:  textslide-side-opposite  1.2s ease-in-out forwards;
+				-webkit-animation: textslide-side-opposite  1.2s ease-in-out forwards;
+				-moz-animation: textslide-side-opposite  1.2s ease-in-out forwards;
+			}
+
+			@keyframes textslide-side-opposite  {
+				0% { opacity: 0; transform: translateX(-100%);}
+				100% {opacity: 1;transform: translateX(0);}
+			}
+
+			@-webkit-keyframes textslide-side-opposite  {
+				0%   { -webkit-transform:translateX(-100%); opacity: 0; }
+				100% { -webkit-transform:translateX(0); opacity: 1;}
+			}
+
+			@-moz-keyframes textslide-side-opposite  {
+				0%   { -moz-transform:translateX(-100%); opacity: 0;}
+				100% { -moz-transform:translateX(0); opacity: 1;}
+			}
+
+			/*LATEST EXCERPTtext slide previous out*/
+
+			.textslide-side-out-opposite {
+				animation:  textslide-side-out-opposite 1.2s ease-in-out forwards;
+				-webkit-animation: textslide-side-out-opposite 1.2s ease-in-out forwards;
+				-moz-animation: textslide-side-out-opposite 1.2s ease-in-out forwards;
+
+			}
+
+			@keyframes textslide-side-out-opposite {
+				0% {opacity: 1;transform: translateX(0);}
+				100% {opacity: 0;transform: translateX(100%);}
+			}
+
+			@-webkit-keyframes textslide-side-out-opposite {
+				0%   { -webkit-transform:translateX(0); opacity: 1; }
+				100% { -webkit-transform:translateX(100%); opacity: 0;}
+			}
+
+			@-moz-keyframes textslide-side-out-opposite {
+				0%   { -moz-transform:translateX(0); opacity: 1;   }
+				100% { -moz-transform:translateX(100%); opacity: 0; }
+			}
+
+
+			/* LATEST TEXTtext slide  in*/
+			.textslide-side {
+				animation:  textslide-side 1.2s ease-in-out forwards;
+				-webkit-animation: textslide-side 1.2s ease-in-out forwards;
+				-moz-animation: textslide-side 1.2s ease-in-out forwards;
+			}
+
+			@keyframes textslide-side {
+				0% { opacity: 0; transform: translateX(100%);}
+				100% {opacity: 1;transform: translateX(0);}
+			}
+
+			@-webkit-keyframes textslide-side {
+				0%   { -webkit-transform:translateX(100%); opacity: 0; }
+				100% { -webkit-transform:translateX(0); opacity: 1;}
+			}
+
+			@-moz-keyframes textslide-side {
+			  0%   { -moz-transform:translateX(100%); opacity: 0;}
+			  100% { -moz-transform:translateX(0); opacity: 1;}
+			}
+
+			/*LATEST TEXTtext slide previous out*/
+
+			.textslide-side-out {
+				animation:  textslide-side-out 1.2s ease-in-out forwards;
+				-webkit-animation: textslide-side-out 1.2s ease-in-out forwards;
+				-moz-animation: textslide-side-out 1.2s ease-in-out forwards;
+
+			}
+
+			@keyframes textslide-side-out {
+				0% {opacity: 1;transform: translateX(0);}
+				100% {opacity: 0;transform: translateX(-100%);}
+			}
+
+			@-webkit-keyframes textslide-side-out {
+				0%   { -webkit-transform:translateX(0); opacity: 1; }
+				100% { -webkit-transform:translateX(-100%); opacity: 0;}
+			}
+
+			@-moz-keyframes textslide-side-out {
+			  0%   { -moz-transform:translateX(0); opacity: 1;   }
+			  100% { -moz-transform:translateX(-100%); opacity: 2; }
+			}
+
+
+
 
 			/*text slide  in*/
 			.textslide {
-				animation:  textslide 1.2s ease-in-out;
-				-webkit-animation: textslide 1.2s ease-in-out;
-				-moz-animation: textslide 1.2s ease-in-out ;
+				animation:  textslide 1.2s ease-in-out forwards;
+				-webkit-animation: textslide 1.2s ease-in-out forwards;
+				-moz-animation: textslide 1.2s ease-in-out forwards ;
 			}
 
 			@keyframes textslide {
@@ -380,6 +570,10 @@ get_header();
 			var slideIndex = 0;
 			var slides = $(".slide");
 			var slideTitles = $(".slideTitle");
+			var latestText = $(".latestText");
+			var latestExcerpt = $(".latestExcerpt");
+			var latestCta = $(".latestCta");
+
 
 			showSlides(slideIndex)
 
@@ -437,11 +631,25 @@ get_header();
 			      for (i = 0; i < slides.length; i++) {
 					    slides[i].style.display = "none";
 							slideTitles[i].style.display = "none";
+							latestText[i].style.display = "none";
+							latestExcerpt[i].style.display = "none";
+							latestCta[i].style.display = "none";
+
+
 
 			        $(slides[i]).removeClass('slide-in');
 			        $(slides[i]).removeClass('slide-back');
 							$(slideTitles[slideIndex]).removeClass('textslide');
 							$(slideTitles[slideIndex]).removeClass('textslide-out');
+
+							$(latestText[slideIndex]).removeClass('textslide-side');
+							$(latestText[slideIndex]).removeClass('textslide-side-out');
+
+							$(latestExcerpt[slideIndex]).removeClass('textslide-side-opposite');
+							$(latestExcerpt[slideIndex]).removeClass('textslide-side-out-opposite');
+
+							$(latestCta[slideIndex]).removeClass('textslide-side');
+							$(latestCta[slideIndex]).removeClass('textslide-side-out');
 
 
 
@@ -453,35 +661,54 @@ get_header();
 
 				/*bring previous post behind*/
 			  slides[previous].style["z-index"] = "-1";
+				latestExcerpt[previous].style["z-index"] = "-1";
+				latestCta[previous].style["z-index"] = "-1";
 			  if(direction == 'backward'){
 			   $(slides[previous]).addClass('scale-back');
-				 $(slideTitles[previous]).addClass('textslide-out');
 			  }else{
 			    $(slides[previous]).addClass('scale');
-					$(slideTitles[previous]).addClass('textslide-out');
 			  }
+				$(slideTitles[previous]).addClass('textslide-out');
+				$(latestText[previous]).addClass('textslide-side-out');
+				$(latestExcerpt[previous]).addClass('textslide-side-out-opposite');
+				$(latestCta[previous]).addClass('textslide-side-out');
+
+
 			  slides[previous].style.display = "block";
 				slideTitles[previous].style.display = "block";
+				latestText[previous].style.display = "block";
+				latestExcerpt[previous].style.display = "block";
+				latestCta[previous].style.display = "block";
+
 
 
 				/*bring current post forward*/
 			  slides[slideIndex].style["z-index"] = "1";
+				latestExcerpt[slideIndex].style["z-index"] = "1";
+				latestCta[slideIndex].style["z-index"] = "100";
 			  if(direction == 'backward'){
 			   $(slides[slideIndex]).addClass('slide-back');
-				 $(slideTitles[slideIndex]).addClass('textslide');
 			  }else{
 			   $(slides[slideIndex]).addClass('slide-in');
-				 $(slideTitles[slideIndex]).addClass('textslide');
-
 			  }
+				$(slideTitles[slideIndex]).addClass('textslide');
+				$(latestText[slideIndex]).addClass('textslide-side');
+ 			 $(latestExcerpt[slideIndex]).addClass('textslide-side-opposite');
+			 $(latestCta[slideIndex]).addClass('textslide-side');
+
+
 				slides[slideIndex].style.display = "block";
 				slideTitles[slideIndex].style.display = "block";
+				latestText[slideIndex].style.display = "block";
+				latestExcerpt[slideIndex].style.display = "block";
+				latestCta[slideIndex].style.display = "block";
+
 
 
 
 			}
 
-			autoSlide();
+			//autoSlide();
 			function autoSlide() {
 				//console.log(direction);
 
@@ -513,11 +740,25 @@ get_header();
 					for (i = 0; i < slides.length; i++) {
 						slides[i].style.display = "none";
 						slideTitles[i].style.display = "none";
+						latestText[i].style.display = "none";
+						latestExcerpt[i].style.display = "none";
+						latestCta[i].style.display = "none";
+
+
 
 						$(slides[i]).removeClass('slide-in');
 						$(slides[i]).removeClass('slide-back');
 						$(slideTitles[slideIndex]).removeClass('textslide');
 						$(slideTitles[slideIndex]).removeClass('textslide-out');
+
+						$(latestText[slideIndex]).removeClass('textslide-side');
+						$(latestText[slideIndex]).removeClass('textslide-side-out');
+
+						$(latestExcerpt[slideIndex]).removeClass('textslide-side-opposite');
+						$(latestExcerpt[slideIndex]).removeClass('textslide-side-out-opposite');
+
+						$(latestCta[slideIndex]).removeClass('textslide-side');
+						$(latestCta[slideIndex]).removeClass('textslide-side-out');
 
 
 
@@ -529,21 +770,50 @@ get_header();
 
 			/*bring previous post behind*/
 			slides[previous].style["z-index"] = "-1";
+			latestExcerpt[previous].style["z-index"] = "-1";
+			latestCta[previous].style["z-index"] = "-1";
+
 				$(slides[previous]).addClass('scale');
 				$(slideTitles[previous]).addClass('textslide-out');
+				$(latestText[previous]).addClass('textslide-side-out');
+				$(latestExcerpt[previous]).addClass('textslide-side-out-opposite');
+				$(latestCta[previous]).addClass('textslide-side-out');
+
+
+
 
 			slides[previous].style.display = "block";
 			slideTitles[previous].style.display = "block";
+			latestText[previous].style.display = "block";
+			latestExcerpt[previous].style.display = "block";
+			latestCta[previous].style.display = "block";
+
+
+
 
 
 			/*bring current post forward*/
 				slides[slideIndex].style["z-index"] = "1";
+				latestExcerpt[slideIndex].style["z-index"] = "1";
+				latestCta[slideIndex].style["z-index"] = "1";
+
 			 $(slides[slideIndex]).addClass('slide-in');
 			 $(slideTitles[slideIndex]).addClass('textslide');
+			 $(latestText[slideIndex]).addClass('textslide-side');
+			 $(latestExcerpt[slideIndex]).addClass('textslide-side-opposite');
+			 $(latestCta[slideIndex]).addClass('textslide-side');
+
+
 
 
 			slides[slideIndex].style.display = "block";
 			slideTitles[slideIndex].style.display = "block";
+			latestText[slideIndex].style.display = "block";
+			latestExcerpt[slideIndex].style.display = "block";
+			latestCta[slideIndex].style.display = "block";
+
+
+
 
 			      console.log('current',slideIndex);
 			      console.log('previous',previous);
