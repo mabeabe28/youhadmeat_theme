@@ -293,6 +293,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					background-color: '.$cat_colour.';
 				}
 
+				.category--'.$curcat->slug.' .card-content-title:after{
+				  border-bottom: 2px solid '.$cat_colour.';
+				}
+
 				';
 			}
     }

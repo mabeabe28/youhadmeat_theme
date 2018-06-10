@@ -91,10 +91,13 @@
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
+		z-index: 1;
 }
 .card-wrapper:hover:after{
     width: 100%;
     background-color: pink;
+		z-index: 1;
+
 }
 
 .card-wrapper img {
@@ -150,6 +153,18 @@
 	padding-right: 15%;
 	line-height: 1.2973936899862826vw;
 	z-index: 1;
+
+
+}
+
+.card-content-title:after{
+		content: '';
+	  position: absolute;
+	  left: 0.823045267489712vw;
+	  width: 6.944444444444445vw;
+	  border-bottom: 4px solid #3366FF;
+	  transition: 0.4s;
+		margin-top: 2.0833333333333335vw;
 
 }
 
@@ -238,6 +253,7 @@
     -moz-transition: opacity 0.5s;
     -o-transition: opacity 0.5s;
     transition: opacity 0.5s;
+
 }
 
 .category-title-hover{
@@ -293,6 +309,11 @@
 		padding-right: 100px;
 	}
 
+	.card-content-title:after{
+		  left: 12px;
+		  width: 100px;
+			margin-top: 24px;
+	}
 
 }
 

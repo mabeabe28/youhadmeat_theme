@@ -81,7 +81,7 @@ get_header();
 						';
 
 
-							echo '<div class="slideTitleWrapper">
+							echo '<div class="slideTitleWrapper category--'.$ParentCategory->slug.'">
 								<div class="slideTitleLeading">
 									<h1>You Had Me At</h1>
 								</div>
@@ -92,7 +92,7 @@ get_header();
 
 
 							echo '<div class="slideExcerptWrapper">
-								<div class="slideExcerpt">
+								<div class="slideExcerpt" >
 									<div class="latestText">
 										Latest '.$ParentCategory->cat_name.' Post
 									</div>
@@ -217,6 +217,8 @@ get_header();
 				justify-content: center;
 
 			}
+
+
 
 
 
