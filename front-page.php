@@ -1029,13 +1029,12 @@ z-index: 1;
     content:"";
     display:inline-block;
     position:relative;
-    border-bottom: 15px solid #2fc4c4;
+    border-bottom: 1.0416666666666667vw solid #2fc4c4;
     width:100%;
     top: -15px;
 }
 
-@media screen and (max-width:850px),
- screen and (min-width:2000px){
+@media screen and (max-width:500px){
 
 #divider-content{
 		border-bottom: 80px solid #2fc4c4;
@@ -1055,14 +1054,7 @@ z-index: 1;
 	}
 }
 
-@media screen and (max-width:1200px) and (min-width:850px){
 
-	/*#divider-content .text {
-		border-bottom: 70px solid #2fc4c4;
-		padding-top: 20px;
-		font-size: 33px;
-	}*/
-}
 
 
 	</style>

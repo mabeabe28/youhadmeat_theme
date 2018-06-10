@@ -123,30 +123,6 @@
   from   { -moz-transform:scale(1);  }
   to { -moz-transform:scale(1.1);}
 }
-.card-wrapper .card-header{
-	position: absolute;
-	color:white;
-	right:0;
-}
-
-.card-header .card-header-category{
-	margin: 5px 5px 5px 5px;
-	padding: 5px 10px 2px 10px;
-	/*background-color: black;*/
-	font-family: "Gloss-and-Bloom";
-	/*border: 2px solid #fff;*/
-	/*border-radius: 25px;*/
-
-	text-align: center;
-
-	outline: none;
-	/*background-color: black; *//* fallback */
-  /*background-color: rgba(0, 0, 0, 0.4);*/
-  border-color: black; /* fallback */
-  border-color: rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease-in,
-              border-color 0.3s ease-in;
-}
 
 .card-wrapper .card-content{
 	color:white;
@@ -200,6 +176,28 @@
 /*--------------------------------------------------------------
 # Category Icons
 --------------------------------------------------------------*/
+.card-wrapper .card-header{
+	position: absolute;
+	color:white;
+	right:0;
+}
+
+.card-header .card-header-category{
+	margin: 0.3472222222222222vw;
+	padding: 0.3472222222222222vw 0.6944444444444444vw 0.1388888888888889vw 0.6944444444444444vw;
+	/*background-color: black;*/
+	font-family: "Gloss-and-Bloom";
+
+	text-align: center;
+
+	outline: none;
+	/*background-color: black; *//* fallback */
+  /*background-color: rgba(0, 0, 0, 0.4);*/
+  border-color: black; /* fallback */
+  border-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease-in,
+              border-color 0.3s ease-in;
+}
 
 
 .category-icon{
@@ -298,7 +296,34 @@
 
 }
 
+/*--------------------------------------------------------------
+# Category Icons Mobile
+--------------------------------------------------------------*/
 @media screen and (max-width: 500px) {
+	.card-wrapper .card-header{
+		position: absolute;
+		color:white;
+		right:0;
+	}
+
+	.card-header .card-header-category{
+		margin: 5px 5px 5px 5px;
+		padding: 5px 10px 2px 10px;
+		/*background-color: black;*/
+		font-family: "Gloss-and-Bloom";
+		/*border: 2px solid #fff;*/
+		/*border-radius: 25px;*/
+
+		text-align: center;
+
+		outline: none;
+		/*background-color: black; *//* fallback */
+	  /*background-color: rgba(0, 0, 0, 0.4);*/
+	  border-color: black; /* fallback */
+	  border-color: rgba(0, 0, 0, 0.4);
+	  transition: background-color 0.3s ease-in,
+	              border-color 0.3s ease-in;
+	}
 
 	.category-icon{
 		right:10px;
