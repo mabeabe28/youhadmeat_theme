@@ -73,6 +73,7 @@
   width: 100%;
   height: 40%;
   background: linear-gradient(transparent, black);
+	z-index: 1;
 }
 
 /*hover animation*/
@@ -155,6 +156,7 @@
 	height: 60px;
 	padding: 5px;
 
+	z-index: 1;
 	/*display: flex;
 	flex-direction: column;
 	justify-content: center;*/
@@ -171,6 +173,8 @@
 	padding-left: 0.823045267489712vw;
 	padding-right: 15%;
 	line-height: 1.2973936899862826vw;
+	z-index: 1;
+	
 }
 
 
@@ -188,6 +192,9 @@
 	font-style: italic;
 	padding-left: 0.823045267489712vw;
 	padding-right: 6.858710562414266vw;
+
+	z-index: 1;
+
 }
 
 /*--------------------------------------------------------------
