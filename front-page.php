@@ -925,10 +925,12 @@ get_header();
 				}
 
 				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
-									<a href="'.$postUrl.'">
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
-											<div class="category-title"></div>
+											<div class="category-title">'.$curcat->name.'</div>
+											<div class="category-icon"></div>
+
 										</div></div>
+										<a href="'.$postUrl.'">
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="card-content">
 											<div class="card-content-container">
@@ -954,7 +956,7 @@ get_header();
 
 		wp_reset_query();
 		?>
-	
+
 		<script>
 		/*var slideIndex = 1;
 		showSlides(slideIndex);
@@ -1015,13 +1017,16 @@ get_header();
 }
 
 #divider-content .text {
-padding: 1.22880658436214vw;
+padding: 0.8vw 1.22880658436214vw 1.42880658436214vw 1.22880658436214vw;
 font-size: 2.2434842249657065vw;
 font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
 z-index: 1;
 }
+
+
+
 
 #divider:after {
     content:"";
@@ -1048,7 +1053,7 @@ z-index: 1;
 	}
 
 	#divider-content .text {
-		padding: 17px;
+		padding: 14px 18px 18px 18px;
 		font-size: 40px;
 	}
 }
@@ -1061,7 +1066,13 @@ z-index: 1;
 		font-size: 33px;
 	}*/
 }
+
+
 	</style>
+
+	<script>
+
+	</script>
 <?php
 /*get_sidebar();*/
 get_footer();

@@ -99,6 +99,7 @@ $(document).on('scroll', function () {
 										if(get_post_type() == 'post'){
 											echo '<div class="card-header-category category--'.$ParentCategory->slug.'">
 												<div class="category-title">'.$ParentCategory->name.'</div>
+												<div class="category-icon"></div>
 											</div>';
 										}
 

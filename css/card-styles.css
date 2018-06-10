@@ -30,7 +30,7 @@
 	display:flex;
 	flex-wrap:wrap;
 	position: relative;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-left: 5.1440329218107vw;
 	margin-right: 5.1440329218107vw;
 	padding-left: 0;
@@ -102,6 +102,27 @@
 	width: 100%;
 }
 
+.card-image-zoom {
+
+	z-index: -1;
+	-webkit-animation: card-image-zoom 0.5s ease-in-out forwards;
+	-moz-animation:    card-image-zoom 0.5s ease-in-out forwards;
+	animation:         card-image-zoom 0.5s ease-in-out forwards;
+}
+
+@keyframes card-image-zoom {
+  0%   { transform:scale(1);  }
+  100% { transform:scale(1.1);}
+}
+
+@-webkit-keyframes fade_move_down {
+  0%   { -webkit-transform:scale(1); }
+  100% { -webkit-transform:scale(1.1); }
+}
+@-moz-keyframes fade_move_down {
+  0%   { -moz-transform:scale(1);  }
+  100% { -moz-transform:scale(1.1);}
+}
 .card-wrapper .card-header{
 	position: absolute;
 	color:white;
@@ -127,9 +148,6 @@
               border-color 0.3s ease-in;
 }
 
-.card-header-category .category-title{
-
-}
 .card-wrapper .card-content{
 	color:white;
 	/*background-color:white;*/
@@ -173,6 +191,72 @@
 	padding-right: 6.858710562414266vw;
 }
 
+/*--------------------------------------------------------------
+# Category Icons
+--------------------------------------------------------------*/
+
+
+.category-icon{
+	position: absolute;
+	right:10px;
+	z-index: 1;
+
+}
+.category-icon:after{
+	display: inline-block;
+	 -moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	width:30px;
+	height:30px;
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+	z-index: 1;
+
+}
+
+.category-title{
+	height: 30px;
+	width: 0;
+	display: none;
+	right:0px;
+	position: absolute;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+	background-color: pink;
+	z-index: 1;
+
+
+}
+
+.category-title-hover{
+	display: inline-block;
+	width: auto;
+	right: 25px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 5px;
+	animation:   fadeitem 0.5s ease-in-out;
+	-webkit-animation: fadeitem 0.5 ease-in-out;
+	-moz-animation:    fadeitem 0.5 ease-in-out;
+	z-index: 1;
+
+}
+
+@keyframes fadeitem {
+  0%   { transform:translateX(-100); opacity: 0;  }
+  100% { transform:translateX(0); opacity: 1; }
+}
+
+@-webkit-keyframes fadeitem {
+  0%   { -webkit-transform:translateX(-100); opacity: 0; }
+  100% { -webkit-transform:translateX(0); opacity: 1;  }
+}
+@-moz-keyframes fadeitem {
+  0%   { -moz-transform:translateX(-100); opacity: 0;  }
+  100% { -moz-transform:translateX(0); opacity: 1; }
+}
 /*--------------------------------------------------------------
 # Mobile
 --------------------------------------------------------------*/

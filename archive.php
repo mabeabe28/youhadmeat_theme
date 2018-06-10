@@ -90,6 +90,7 @@ get_header();
 									<a href="'.$postUrl.'">
 										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
 											<div class="category-title">'.$ParentCategory->name.'</div>
+											<div class="category-icon"></div>
 										</div></div>
 										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
 										<div class="card-content">
