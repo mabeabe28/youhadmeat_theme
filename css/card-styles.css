@@ -110,17 +110,17 @@
 }
 
 @keyframes card-image-zoom {
-  0%   { transform:scale(1);  }
-  100% { transform:scale(1.1);}
+  from   { transform:scale(1);  }
+  to { transform:scale(1.1);}
 }
 
 @-webkit-keyframes card-image-zoom {
-  0%   { -webkit-transform:scale(1); }
-  100% { -webkit-transform:scale(1.1); }
+  from   { -webkit-transform:scale(1); }
+  to { -webkit-transform:scale(1.1); }
 }
 @-moz-keyframes card-image-zoom {
-  0%   { -moz-transform:scale(1);  }
-  100% { -moz-transform:scale(1.1);}
+  from   { -moz-transform:scale(1);  }
+  to { -moz-transform:scale(1.1);}
 }
 .card-wrapper .card-header{
 	position: absolute;

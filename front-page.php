@@ -81,7 +81,7 @@ get_header();
 						';
 
 
-							echo '<div class="slideTitleWrappert">
+							echo '<div class="slideTitleWrapper">
 								<div class="slideTitleLeading">
 									<h1>You Had Me At</h1>
 								</div>
@@ -106,10 +106,11 @@ get_header();
 										</div>
 									</div>
 
-								</div>
+								</div>';
 
+								echo '<div class="scroll-down"></div>';
 
-							</div>';
+							echo '</div>';
 							// use one of these
 							//echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
 							/*echo '
@@ -204,7 +205,7 @@ get_header();
 
 
 
-			.slideTitleWrappert{
+			.slideTitleWrapper{
 				z-index: 100;
 				top: 28%;
 				color: white;
@@ -217,10 +218,7 @@ get_header();
 
 			}
 
-			.slideTitleWrapper{
-				/*position: relative;*/
-				/*overflow: hidden;*/
-			}
+
 
 			.slideTitleLeading{
 				z-index: 100;
@@ -819,8 +817,7 @@ get_header();
   height: 30px;
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
-  z-index: 9;
-  right: 2%;
+  z-index: 100;
   -webkit-transform: translate(-50%, 0%) rotate(45deg);
   -moz-transform: translate(-50%, 0%) rotate(45deg);
   transform: translate(-50%, 0%) rotate(45deg);
