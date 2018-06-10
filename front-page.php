@@ -63,12 +63,12 @@ get_header();
 							$pageTitle = get_the_title($recent_post[0]["ID"]);
 							$postUrl = get_permalink($recent_post[0]["ID"]);
 							$ctaText = 'Read More';
-							/*if($comingsoon){
+							if($comingsoon){
 								$pageTitle = '';
-								$excerptStr = '';
+								$excerptStr = 'Content Coming Soon';
 								$postUrl = '##';
 								$ctaText = 'Coming Soon';
-							}*/
+							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
 							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
@@ -242,22 +242,8 @@ get_header();
 				margin-left: 22vw;
 				padding: 1px 20px 1px 20px;
 				left: 40%;
-				text-align: center;
 			}
 
-			#youhadmeat{
-				z-index: 100;
-				position: absolute;
-				top: 33%;
-				left:21%;
-				color: white;
-				font-weight: bold;
-				font-style: italic;
-				font-size: 2vw;
-				padding: 1px 20px 1px 20px;
-
-
-			}
 
 			.prev, .next {
   cursor: pointer;
@@ -934,7 +920,7 @@ get_header();
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				if($comingsoon){
 					$pageTitle = 'Coming Soon';
-					$excerptStr = '';
+					$excerptStr = 'Content Coming Soon';
 					$postUrl = '##';
 				}
 
