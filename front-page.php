@@ -998,7 +998,7 @@ get_header();
 	<style>
 
 	#divider{
-	height: 6.944444444444445vw;
+	height: 6.444444444444445vw;
 	margin-left: 5.829903978052126vw;
 	margin-right: 5.829903978052126vw;
 	}
