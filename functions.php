@@ -280,7 +280,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					display: inline-block;
 					font-family: FontAwesomeRegular,FontAwesomeSolid;
 			    content: "'.$cat_icon.'";
-  				margin-right: 0.6944444444444444vw;
 				}
 
 
