@@ -708,7 +708,7 @@ get_header();
 
 			}
 
-			//autoSlide();
+			autoSlide();
 			function autoSlide() {
 				//console.log(direction);
 
@@ -818,7 +818,7 @@ get_header();
 			      console.log('current',slideIndex);
 			      console.log('previous',previous);
 			      slideIndex++;
-						setTimeout(autoSlide,6000);
+						setTimeout(autoSlide,7000);
 			}
 			</script>
 
