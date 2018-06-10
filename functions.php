@@ -277,8 +277,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				#divider.category--'.$curcat->slug.' #divider-content .text:before{
+					display: inline-block;
 					font-family: FontAwesomeRegular,FontAwesomeSolid;
 			    content: "'.$cat_icon.'";
+  				margin-right: 0.6944444444444444vw;
 				}
 
 

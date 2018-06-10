@@ -1012,8 +1012,9 @@ get_header();
   display:flex;
   justify-content:center;
 }
-
 #divider-content .text {
+
+width: 100%;
 padding: 0.8vw 1.22880658436214vw 1.42880658436214vw 1.22880658436214vw;
 font-size: 2.2434842249657065vw;
 font-family: "Gloss-and-Bloom";
@@ -1049,6 +1050,7 @@ z-index: 1;
 	}
 
 	#divider-content .text {
+		text-align: center;
 		padding: 14px 18px 18px 18px;
 		font-size: 40px;
 	}
