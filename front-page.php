@@ -998,13 +998,13 @@ get_header();
 	<style>
 
 	#divider{
-	height: 100px;
+	height: 6.944444444444445vw;
 	margin-left: 5.829903978052126vw;
 	margin-right: 5.829903978052126vw;
 	}
 #divider-content {
-	border-bottom: 70px solid #2fc4c4;
-	border-right: 80px solid transparent;
+	border-bottom: 4.861111111111111vw solid #2fc4c4;
+	border-right: 5.555555555555555vw solid transparent;
 	height: 0;
 	width: 20.5761316872428vw;
   color:white;
@@ -1014,7 +1014,7 @@ get_header();
 
 #divider-content .text {
 padding: 1.22880658436214vw;
-font-size: 2.4434842249657065vw;
+font-size: 2.2434842249657065vw;
 font-family: "Gloss-and-Bloom";
 display:block;
 position:relative;
@@ -1032,12 +1032,15 @@ z-index: 1;
 
 @media screen and (max-width:850px),
  screen and (min-width:2000px){
-	#divider-content{
+
+#divider-content{
+		border-bottom: 80px solid #2fc4c4;
 		width: 100%;
-		border: 0;
+		border-right:0;
 	}
 
 	#divider{
+		height: 100px;
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -1050,10 +1053,11 @@ z-index: 1;
 
 @media screen and (max-width:1200px) and (min-width:850px){
 
-	#divider-content .text {
+	/*#divider-content .text {
+		border-bottom: 70px solid #2fc4c4;
 		padding-top: 20px;
 		font-size: 33px;
-	}
+	}*/
 }
 	</style>
 <?php

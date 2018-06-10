@@ -253,12 +253,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				#divider.category--'.$curcat->slug.' #divider-content{
-					border-bottom: 80px solid '.$cat_colour.';
+					border-color: '.$cat_colour.';
+					border-right-color: transparent;
 				}
 
 
 				#divider.category--'.$curcat->slug.':after{
-				    border-bottom: 15px solid '.$cat_colour.';
+				    border-color: '.$cat_colour.';
 				}
 				';
 			}
