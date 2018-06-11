@@ -917,7 +917,7 @@ object {
               color 0.4s ease-in;
 }
 
-#comments{
+#disqus_thread{
 margin: 0 auto;
 width: 80%;
 }
