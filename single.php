@@ -74,11 +74,11 @@ get_header();
 		margin-top: : 20px;
 		margin-bottom: : 5px;
 
-		font-family: "Gloss-and-Bloom";
+		font-family: "Crimson Text";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
-		font-size: 5vw;
+		font-size: 3.4722222222222223vw;
 		width:80%;
 	}
 
@@ -89,7 +89,6 @@ get_header();
 
 	.excerpt{
 		font-size: 1.6666666666666665vw;
-		font-family: "Crimson Text";
 		font-weight: 300;
 	}
 
@@ -107,6 +106,18 @@ get_header();
 		}
 		.meta{
 			font-size: 2.8vw;
+		}
+	}
+
+	@media screen and (max-width:850px) and (min-width: 501px){
+		#featured-text--bottom{
+			font-size: 5.882352941176471vw;
+		}
+		.excerpt{
+			font-size: 2.9411764705882355vw;
+		}
+		.meta{
+			font-size: 1.8823529411764706vw;
 		}
 	}
 	</style>
