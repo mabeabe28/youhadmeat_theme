@@ -52,8 +52,9 @@ get_header();
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
-		font-size: 5vw;
+		font-size: 3.4722222222222223vw;
 		width:80%;
+		font-family:"Crimson Text";
 	}
 
 	/*hero text wrapper stuff*/
@@ -73,12 +74,13 @@ get_header();
 		margin-top: : 20px;
 		margin-bottom: : 5px;
 
-		font-family: "Crimson Text";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
 		font-size: 3.4722222222222223vw;
 		width:80%;
+		font-family:"Crimson Text";
+
 	}
 
 	.entry-content{
@@ -89,14 +91,21 @@ get_header();
 	.excerpt{
 		font-size: 1.6666666666666665vw;
 		font-weight: 300;
+		font-family:"Avenir","Open Sans";
+
 	}
 
 	.meta{
 		font-size: 1.1111111111111112vw;
 		font-style: italic;
+		font-family:"Avenir","Open Sans";
+
 	}
 
 	@media screen and (max-width:500px){
+		#featured-text {
+			font-size: 4.8vw;
+		}
 		#featured-text--bottom{
 			font-size: 4.8vw;
 		}
@@ -109,6 +118,9 @@ get_header();
 	}
 
 	@media screen and (max-width:850px) and (min-width: 501px){
+		#featured-text{
+			font-size: 5.882352941176471vw;
+		}
 		#featured-text--bottom{
 			font-size: 5.882352941176471vw;
 		}
@@ -154,10 +166,10 @@ get_header();
 
 			echo '	<div id="featured-wrapper--bottom">
 								<div id="featured-text--bottom">'.get_the_title().'
-									<div style="font-size:32px;font-family:Avenir,Open Sans">
+									<div class="excerpt">
 										'.get_the_excerpt().'
 									</div>
-									<div style="font-size:16px;font-family:Avenir,Open Sans">
+									<div class="meta">
 										'.get_the_date().' |
 										'.get_the_author_meta('nickname').'
 									</div>
