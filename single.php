@@ -49,7 +49,6 @@ get_header();
 		padding-right: 10px;
 		margin-left: 20px;
 		margin-right: 20px;
-		font-family: "Gloss-and-Bloom";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
