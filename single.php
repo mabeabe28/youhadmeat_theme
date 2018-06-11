@@ -87,6 +87,28 @@ get_header();
 		margin-top: 0px;
 	}
 
+	.excerpt{
+		font-size: 1.6666666666666665vw;
+		font-family: "Crimson Text";
+		font-weight: 300;
+	}
+
+	.meta{
+		font-size: 1.1111111111111112vw;
+		font-style: italic;
+	}
+
+	@media screen and (max-width:500px){
+		#featured-text--bottom{
+			font-size: 4.8vw;
+		}
+		.excerpt{
+			font-size: 4vw;
+		}
+		.meta{
+			font-size: 2.8vw;
+		}
+	}
 	</style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -105,10 +127,10 @@ get_header();
 
 					if($textOnImage){
 						echo ''.get_the_title().'
-							<div style="font-size:32px;font-family:Avenir,Open Sans">
+							<div class="excerpt">
 								'.get_the_excerpt().'
 							</div>
-							<div style="font-size:16px;font-family:Avenir,Open Sans">
+							<div class="meta">
 								'.get_the_date().' |
 								'.get_the_author_meta('nickname').'
 							</div>';
