@@ -49,12 +49,12 @@ get_header();
 		padding-right: 10px;
 		margin-left: 20px;
 		margin-right: 20px;
-		font-family: "Gloss-and-Bloom";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
-		font-size: 5vw;
+		font-size: 3.4722222222222223vw;
 		width:80%;
+		font-family:"Crimson Text";
 	}
 
 	/*hero text wrapper stuff*/
@@ -74,12 +74,13 @@ get_header();
 		margin-top: : 20px;
 		margin-bottom: : 5px;
 
-		font-family: "Gloss-and-Bloom";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;
-		font-size: 5vw;
+		font-size: 3.4722222222222223vw;
 		width:80%;
+		font-family:"Crimson Text";
+
 	}
 
 	.entry-content{
@@ -87,6 +88,49 @@ get_header();
 		margin-top: 0px;
 	}
 
+	.excerpt{
+		font-size: 1.6666666666666665vw;
+		font-weight: 300;
+		font-family:"Avenir","Open Sans";
+
+	}
+
+	.meta{
+		font-size: 1.1111111111111112vw;
+		font-style: italic;
+		font-family:"Avenir","Open Sans";
+
+	}
+
+	@media screen and (max-width:500px){
+		#featured-text {
+			font-size: 4.8vw;
+		}
+		#featured-text--bottom{
+			font-size: 4.8vw;
+		}
+		.excerpt{
+			font-size: 4vw;
+		}
+		.meta{
+			font-size: 2.8vw;
+		}
+	}
+
+	@media screen and (max-width:850px) and (min-width: 501px){
+		#featured-text{
+			font-size: 5.882352941176471vw;
+		}
+		#featured-text--bottom{
+			font-size: 5.882352941176471vw;
+		}
+		.excerpt{
+			font-size: 2.9411764705882355vw;
+		}
+		.meta{
+			font-size: 1.8823529411764706vw;
+		}
+	}
 	</style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -105,10 +149,10 @@ get_header();
 
 					if($textOnImage){
 						echo ''.get_the_title().'
-							<div style="font-size:32px;font-family:Avenir,Open Sans">
+							<div class="excerpt">
 								'.get_the_excerpt().'
 							</div>
-							<div style="font-size:16px;font-family:Avenir,Open Sans">
+							<div class="meta">
 								'.get_the_date().' |
 								'.get_the_author_meta('nickname').'
 							</div>';
@@ -122,10 +166,10 @@ get_header();
 
 			echo '	<div id="featured-wrapper--bottom">
 								<div id="featured-text--bottom">'.get_the_title().'
-									<div style="font-size:32px;font-family:Avenir,Open Sans">
+									<div class="excerpt">
 										'.get_the_excerpt().'
 									</div>
-									<div style="font-size:16px;font-family:Avenir,Open Sans">
+									<div class="meta">
 										'.get_the_date().' |
 										'.get_the_author_meta('nickname').'
 									</div>
@@ -138,9 +182,9 @@ get_header();
 			/*the_post_navigation();*/
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			/*if ( comments_open() || get_comments_number() ) :
+			if ( comments_open() || get_comments_number() ) :
 				comments_template();
-			endif;*/
+			endif;
 
 		endwhile; // End of the loop.
 		?>
