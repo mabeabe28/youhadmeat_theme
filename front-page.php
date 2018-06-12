@@ -71,7 +71,7 @@ get_header();
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
-							echo '  <div class="slide featured-fade" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
+							echo '  <div class="slide" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').');"">
 							<div style="display:none;">
 								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 								<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'full').'">
@@ -924,12 +924,13 @@ get_header();
 				}
 
 				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
+				<a href="'.$postUrl.'">
+				
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
 											<div class="category-title">'.$curcat->name.'</div>
 											<div class="category-icon"></div>
 
 										</div></div>
-										<a href="'.$postUrl.'">
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 										<div class="card-content">
 											<div class="card-content-container">

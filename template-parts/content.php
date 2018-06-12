@@ -92,9 +92,8 @@
 
 			echo '<div class="card-wrapper">
 								<a href="'.$authorUrl.'">
-									<div class="card-header"><div class="card-header-category">
-										<div class="category-title" style="font-family:Crimson Text">Written by:</div>
-									</div></div>
+									<div class="card-header">
+									</div>
 									'.get_wp_user_avatar(get_the_author_id(),'large').'
 									<div class="card-content">
 										<div class="card-content-container">
