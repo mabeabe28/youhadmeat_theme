@@ -12,6 +12,23 @@ get_header();
   #site-navigation{
     background-color: black;
   }
+
+.featured-text{
+      padding-top: 20px;
+      text-align: center;
+      font-size: 3.4722222222222223vw;
+padding-bottom: 20px;
+}
+
+.title{
+font-family: "Crimson Text";
+}
+
+.excerpt {
+    font-size: 1.6666666666666665vw;
+    font-weight: 300;
+    font-family: "Avenir","Open Sans";
+}
 </style>
 <script>
 
@@ -29,11 +46,11 @@ $(document).on('scroll', function () {
 
   while ( have_posts() ) :
     the_post();
-    echo '<div class="title">
-      <div>
+    echo '<div class="featured-text">
+      <div class="title">
       '.get_the_title().'
       </div>
-      <div style="font-size:0.25em;">
+      <div class="excerpt">
         '.get_the_date().' | '.get_the_author_meta('nickname').'
       </div>
     </div>';
