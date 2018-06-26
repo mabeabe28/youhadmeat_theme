@@ -29,6 +29,14 @@ $(document).on('scroll', function () {
 
   while ( have_posts() ) :
     the_post();
+    echo '<div class="title">
+      <div>
+      '.get_the_title().'
+      </div>
+      <div style="font-size:0.25em;">
+        '.get_the_date().' | '.get_the_author_meta('nickname').'
+      </div>
+    </div>';
 
     get_template_part( 'template-parts/content', get_post_type() );
 
