@@ -25,7 +25,7 @@ font-family: "Crimson Text";
 }
 
 .excerpt {
-    font-size: 1.6666666666666665vw;
+    font-size: 1vw;
     font-weight: 300;
     font-family: "Avenir","Open Sans";
 }
