@@ -29,6 +29,16 @@ font-family: "Crimson Text";
     font-weight: 300;
     font-family: "Avenir","Open Sans";
 }
+
+@media screen and (max-width: 800px) {
+  .title{
+    font-size: 6.4722222222222223vw;
+  }
+
+  .excerpt {
+      font-size: 2vw;
+  }
+}
 </style>
 <script>
 
