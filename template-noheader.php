@@ -14,13 +14,13 @@ get_header();
   }
 
 .featured-text{
-      padding-top: 20px;
+      padding-top: 30px;
       text-align: center;
-      font-size: 3.4722222222222223vw;
-padding-bottom: 20px;
+      padding-bottom:10px;
 }
 
 .title{
+  font-size: 3.4722222222222223vw;
 font-family: "Crimson Text";
 }
 
