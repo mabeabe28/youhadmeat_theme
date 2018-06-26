@@ -14,7 +14,7 @@ get_header();
   }
 
 .featured-text{
-      padding-top: 30px;
+      padding-top: 50px;
       text-align: center;
       padding-bottom:10px;
 }
