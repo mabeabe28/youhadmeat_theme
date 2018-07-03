@@ -624,15 +624,22 @@ get_header();
 			        $(slides[i]).removeClass('slide-back');
 							$(slideTitles[slideIndex]).removeClass('textslide');
 							$(slideTitles[slideIndex]).removeClass('textslide-out');
+							$(slideTitles[slideIndex]).removeClass('textslide-side');
+							$(slideTitles[slideIndex]).removeClass('textslide-side-out');
+
 
 							$(latestText[slideIndex]).removeClass('textslide-side');
 							$(latestText[slideIndex]).removeClass('textslide-side-out');
+							$(latestText[slideIndex]).removeClass('textslide-side-opposite');
+							$(latestText[slideIndex]).removeClass('textslide-side-out-opposite');
 
 							$(latestExcerpt[slideIndex]).removeClass('textslide-side-opposite');
 							$(latestExcerpt[slideIndex]).removeClass('textslide-side-out-opposite');
 
 							$(latestCta[slideIndex]).removeClass('textslide-side');
 							$(latestCta[slideIndex]).removeClass('textslide-side-out');
+							$(latestCta[slideIndex]).removeClass('textslide-side-opposite');
+							$(latestCta[slideIndex]).removeClass('textslide-side-out-opposite');
 
 
 
@@ -651,10 +658,10 @@ get_header();
 			  }else{
 			    $(slides[previous]).addClass('scale');
 			  }
-				$(slideTitles[previous]).addClass('textslide-out');
-				$(latestText[previous]).addClass('textslide-side-out');
+				$(slideTitles[previous]).addClass('textslide-side-out');
+				$(latestText[previous]).addClass('textslide-side-out-opposite');
 				$(latestExcerpt[previous]).addClass('textslide-side-out-opposite');
-				$(latestCta[previous]).addClass('textslide-side-out');
+				$(latestCta[previous]).addClass('textslide-side-out-opposite');
 
 
 			  slides[previous].style.display = "block";
@@ -674,10 +681,10 @@ get_header();
 			  }else{
 			   $(slides[slideIndex]).addClass('slide-in');
 			  }
-				$(slideTitles[slideIndex]).addClass('textslide');
-				$(latestText[slideIndex]).addClass('textslide-side');
- 			 $(latestExcerpt[slideIndex]).addClass('textslide-side-opposite');
-			 $(latestCta[slideIndex]).addClass('textslide-side');
+				$(slideTitles[slideIndex]).addClass('textslide-side');
+				$(latestText[slideIndex]).addClass('textslide-side-opposite');
+ 			 	$(latestExcerpt[slideIndex]).addClass('textslide-side-opposite');
+			 	$(latestCta[slideIndex]).addClass('textslide-side-opposite');
 
 
 				slides[slideIndex].style.display = "block";
@@ -731,18 +738,21 @@ get_header();
 
 						$(slides[i]).removeClass('slide-in');
 						$(slides[i]).removeClass('slide-back');
-						$(slideTitles[slideIndex]).removeClass('textslide');
-						$(slideTitles[slideIndex]).removeClass('textslide-out');
+						$(slideTitles[slideIndex]).removeClass('textslide-side');
+						$(slideTitles[slideIndex]).removeClass('textslide-side-out');
 
 						$(latestText[slideIndex]).removeClass('textslide-side');
 						$(latestText[slideIndex]).removeClass('textslide-side-out');
+						$(latestText[slideIndex]).removeClass('textslide-side-opposite');
+						$(latestText[slideIndex]).removeClass('textslide-side-out-opposite');
 
 						$(latestExcerpt[slideIndex]).removeClass('textslide-side-opposite');
 						$(latestExcerpt[slideIndex]).removeClass('textslide-side-out-opposite');
 
 						$(latestCta[slideIndex]).removeClass('textslide-side');
 						$(latestCta[slideIndex]).removeClass('textslide-side-out');
-
+						$(latestCta[slideIndex]).removeClass('textslide-side-opposite');
+						$(latestCta[slideIndex]).removeClass('textslide-side-out-opposite');
 
 
 						$(slides[i]).removeClass('scale');
@@ -757,10 +767,10 @@ get_header();
 			latestCta[previous].style["z-index"] = "-1";
 
 				$(slides[previous]).addClass('scale');
-				$(slideTitles[previous]).addClass('textslide-out');
-				$(latestText[previous]).addClass('textslide-side-out');
+				$(slideTitles[previous]).addClass('textslide-side-out');
+				$(latestText[previous]).addClass('textslide-side-out-opposite');
 				$(latestExcerpt[previous]).addClass('textslide-side-out-opposite');
-				$(latestCta[previous]).addClass('textslide-side-out');
+				$(latestCta[previous]).addClass('textslide-side-out-opposite');
 
 
 
@@ -781,10 +791,10 @@ get_header();
 				latestCta[slideIndex].style["z-index"] = "1";
 
 			 $(slides[slideIndex]).addClass('slide-in');
-			 $(slideTitles[slideIndex]).addClass('textslide');
-			 $(latestText[slideIndex]).addClass('textslide-side');
+			 $(slideTitles[slideIndex]).addClass('textslide-side');
+			 $(latestText[slideIndex]).addClass('textslide-side-opposite');
 			 $(latestExcerpt[slideIndex]).addClass('textslide-side-opposite');
-			 $(latestCta[slideIndex]).addClass('textslide-side');
+			 $(latestCta[slideIndex]).addClass('textslide-side-opposite');
 
 
 
