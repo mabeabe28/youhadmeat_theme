@@ -104,7 +104,7 @@ $(document).on('scroll', function () {
 										}
 
 										echo '</div>
-										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
+										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
 										<div class="card-content">
 											<div class="card-content-container">
 												<div class="card-content-title">'.$pageTitle.'</div>

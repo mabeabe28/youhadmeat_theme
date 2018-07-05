@@ -294,7 +294,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				.category--'.$curcat->slug.' .card-content-title:after{
-				  border-bottom: 2px solid '.$cat_colour.';
 				}
 
 				';
@@ -337,6 +336,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<span class="title">General:</span>
 			<br/><div class="hint">General Post Options</div>
 			<br>
+			<div class="input-wrapper">
+				<label for="hideTitle">Hide Title and Excerpt?</label>
+				<br/><span class="hint">Choose wether to display the title and excerpt or not.</span>
+				<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
 			<div class="input-wrapper">
 				<label for="comingsoon">Coming Soon</label>
 				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
@@ -398,6 +402,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
 				}else{
 						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'hideTitle' ] ) && $_POST[ 'hideTitle' ] == true ) {
+						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( true ) );
+				}else{
+						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
 				}
 
 		}

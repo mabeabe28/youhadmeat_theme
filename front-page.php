@@ -884,7 +884,7 @@ get_header();
 											<div class="category-icon"></div>
 
 										</div></div>
-										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 										<div class="card-content">
 											<div class="card-content-container">
 												<div class="card-content-title">'.$pageTitle.'</div>

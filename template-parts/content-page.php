@@ -105,7 +105,7 @@
 											<div class="category-title">'.$ChildCategory->name.'</div>
 											<div class="category-icon"></div>
 										</div></div>
-										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 										<div class="card-content">
 											<div class="card-content-container">
 												<div class="card-content-title">'.$pageTitle.'</div>
@@ -208,7 +208,7 @@
 				$content = $post_content->post_content;
 				echo '<div class="post-preview post--'.$curpost["ID"].'">
 				<div class="post-image">
-					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
+					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 				</div>
 					<div class="post-content-box-wrapper">
 						<div class="post-content-box">
