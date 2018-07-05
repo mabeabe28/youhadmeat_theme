@@ -161,7 +161,7 @@
 												<div class="category-title">'.$ParentCategory->name.'</div>
 												<div class="category-icon"></div>
 											</div></div>
-											<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
+											<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
 											<div class="card-content">
 												<div class="card-content-container">
 													<div class="card-content-title">'.get_the_title().'</div>

@@ -143,11 +143,14 @@ get_header();
 			if(!$textOnImage){
 				$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 			}
+			$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+
 			echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
 					<div id="featured-text">';
 
 					if($textOnImage){
+						if(!$hideTitle){
 						echo ''.get_the_title().'
 							<div class="excerpt">
 								'.get_the_excerpt().'
@@ -156,6 +159,7 @@ get_header();
 								'.get_the_date().' |
 								'.get_the_author_meta('nickname').'
 							</div>';
+						}
 					}
 
 			echo '</div>
@@ -163,18 +167,19 @@ get_header();
 			</div>';
 
 			if(!$textOnImage){
-
-			echo '	<div id="featured-wrapper--bottom">
-								<div id="featured-text--bottom">'.get_the_title().'
-									<div class="excerpt">
-										'.get_the_excerpt().'
-									</div>
-									<div class="meta">
-										'.get_the_date().' |
-										'.get_the_author_meta('nickname').'
-									</div>
-								</div>
-							</div>';
+				if(!$hideTitle){
+					echo '	<div id="featured-wrapper--bottom">
+										<div id="featured-text--bottom">'.get_the_title().'
+											<div class="excerpt">
+												'.get_the_excerpt().'
+											</div>
+											<div class="meta">
+												'.get_the_date().' |
+												'.get_the_author_meta('nickname').'
+											</div>
+										</div>
+									</div>';
+				}
 			}
 
 			get_template_part( 'template-parts/content', get_post_type() );

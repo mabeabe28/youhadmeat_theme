@@ -56,14 +56,18 @@ $(document).on('scroll', function () {
 
   while ( have_posts() ) :
     the_post();
-    echo '<div class="featured-text">
-      <div class="title">
-      '.get_the_title().'
-      </div>
-      <div class="excerpt">
-        '.get_the_date().' | '.get_the_author_meta('nickname').'
-      </div>
-    </div>';
+    $hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+
+    if(!$hideTitle){
+      echo '<div class="featured-text">
+        <div class="title">
+        '.get_the_title().'
+        </div>
+        <div class="excerpt">
+          '.get_the_date().' | '.get_the_author_meta('nickname').'
+        </div>
+      </div>';
+    }
 
     get_template_part( 'template-parts/content', get_post_type() );
 
