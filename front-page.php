@@ -225,7 +225,8 @@ get_header();
 			.slideTitleLeading{
 				z-index: 100;
 				color: white;
-				font-weight: 400;
+				font-weight: bold;
+				font-style: italic;
 				position:absolute;
 				left:11%;
 
