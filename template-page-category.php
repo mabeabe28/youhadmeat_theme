@@ -56,10 +56,10 @@ get_header();
         }
 
         echo '
-        <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($curpost["ID"], 'full').');">
+        <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($curpost["ID"], 'large').');">
             <!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
             <div style="display:none;">
-              <img src="'.get_the_post_thumbnail_url($curpost["ID"], 'full').'">
+              <img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'">
             </div>
 
             <div id="youhadmeatHeroText">
