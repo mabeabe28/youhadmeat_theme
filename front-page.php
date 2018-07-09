@@ -230,10 +230,10 @@ get_header();
 				position:absolute;
 				left:11%;
 
-				font-weight: bold;
-				font-style: italic;
 				font-size: 3vw;
 				padding: 1px 20px 1px 20px;
+				-webkit-font-smoothing: antialiased;
+
 			}
 			.slideTitle{
 				font-family: "Gloss-and-Bloom";
