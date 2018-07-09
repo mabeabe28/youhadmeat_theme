@@ -58,6 +58,7 @@
 			display: inline-block;
 			padding-bottom: 20px;
 			padding-top: 10px;
+			-webkit-font-smoothing: antialiased;
 
 			font-size: 5vw;
 		}
