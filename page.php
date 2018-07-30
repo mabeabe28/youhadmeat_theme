@@ -27,7 +27,9 @@ get_header();
 				<div id="featured-text">';
 
 					if($textOnImage){
-						echo	''.get_the_title().'';
+						if(!$hideTitle){
+							echo	''.get_the_title().'';
+						}
 					}
 
 		echo '</div>
