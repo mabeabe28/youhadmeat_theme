@@ -90,16 +90,18 @@
 
 			$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename').'';
 
+
+
 						echo '<li class="card-wrapper">
 											<a href="'.$authorUrl.'">
 												<div class="card-header"><div class="card-header-category">
 													<div class="category-title"></div>
 													<div class="category-icon"></div>
 												</div></div>
-												<img src="'.get_wp_user_avatar(get_the_author_id(),'medium').'" />
+												'.get_wp_user_avatar(get_the_author_id(),'large').'
 												<div class="card-content">
 													<div class="card-content-container">
-														<div class="card-content-title">'.get_the_author_meta('user_firstname').'</div>
+														<div class="card-content-title">You had me at '.get_the_author_meta('user_firstname').'</div>
 														<div class="card-content-excerpt">
 															'.get_the_author_meta('description').'
 														</div>
