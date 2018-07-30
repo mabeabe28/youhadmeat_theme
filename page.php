@@ -21,6 +21,8 @@ get_header();
 		if(!$textOnImage){
 			$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 		}
+		$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+		
 
 		echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 			<div id="featured-wrapper">
@@ -37,11 +39,13 @@ get_header();
 		</div>';
 
 		if(!$textOnImage){
-			echo '<div id="featured-wrapper--bottom">
-				<div id="featured-text--bottom">
-					'.get_the_title().'
-				</div>
-			</div>';
+			if(!$hideTitle){
+				echo '<div id="featured-wrapper--bottom">
+					<div id="featured-text--bottom">
+						'.get_the_title().'
+					</div>
+				</div>';
+			}
 		}
 ?>
 
