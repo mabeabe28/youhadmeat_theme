@@ -114,16 +114,16 @@
 
 @keyframes card-image-zoom {
   from   { transform:scale(1);  }
-  to { transform:scale(1.1);}
+  to { transform:scale(1.05);}
 }
 
 @-webkit-keyframes card-image-zoom {
   from   { -webkit-transform:scale(1); }
-  to { -webkit-transform:scale(1.1); }
+  to { -webkit-transform:scale(1.05); }
 }
 @-moz-keyframes card-image-zoom {
   from   { -moz-transform:scale(1);  }
-  to { -moz-transform:scale(1.1);}
+  to { -moz-transform:scale(1.05);}
 }
 
 .card-wrapper .card-content{
@@ -144,7 +144,7 @@
 
 .card-content .card-content-title{
 	position: absolute;
-	bottom: 16%;
+	bottom: 14%;
 	font-size: 1.3031550068587106vw;
 	font-weight:bold;
 	/*font-family: 'Crimson Text', serif;*/
@@ -156,16 +156,7 @@
 
 }
 
-.card-content-title:after{
-		content: '';
-	  position: absolute;
-	  left: 0.823045267489712vw;
-	  width: 6.944444444444445vw;
-	  border-bottom: 4px solid #3366FF;
-	  transition: 0.4s;
-		margin-top: 2.0833333333333335vw;
 
-}
 
 
 .card-content .card-content-excerpt{
