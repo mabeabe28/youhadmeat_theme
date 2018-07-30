@@ -155,8 +155,18 @@
 						}
 					}
 					$excerptStr = (strlen(get_the_excerpt()) > 40) ? substr(get_the_excerpt(),0,40).'...' :get_the_excerpt();
+
+					$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
+					$pageTitle = get_the_title();
+					$postUrl = get_permalink(get_the_id());
+					if($comingsoon){
+						$pageTitle = 'Coming Soon';
+						$excerptStr = 'Content Coming Soon';
+						$postUrl = '##';
+					}
+
 					echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
-										<a href="'.get_permalink(get_the_id()).'">
+										<a href="'.$postUrl.'">
 											<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
 												<div class="category-title">'.$ParentCategory->name.'</div>
 												<div class="category-icon"></div>
@@ -164,7 +174,7 @@
 											<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
 											<div class="card-content">
 												<div class="card-content-container">
-													<div class="card-content-title">'.get_the_title().'</div>
+													<div class="card-content-title">'.$pageTitle.'</div>
 													<div class="card-content-excerpt">
 														'.$excerptStr.'
 													</div>
