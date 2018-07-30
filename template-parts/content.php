@@ -97,7 +97,6 @@
 									'.get_wp_user_avatar(get_the_author_id(),'large').'
 									<div class="card-content">
 										<div class="card-content-container">
-											<div class="card-content-pre" style="text-align:center;padding-left:0;padding-right:0;width:100%;font-size:0.8vw;">Written by:</div>
 											<div class="card-content-title" style="text-align:center;padding-left:0;padding-right:0;width:100%;">You had me at '.get_the_author_meta('user_firstname').'</div>
 											<div class="card-content-excerpt" style="text-align:center;padding-left:0;padding-right:0;width:100%;">
 												'.get_the_author_meta('description').'
