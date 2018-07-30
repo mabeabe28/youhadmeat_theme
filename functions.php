@@ -448,6 +448,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						<option value="author" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'author') echo 'selected'; ?>>Author</option>
 					</select>
 					<br>
+					
+					<label for="post-display">Hide Title and Excerpt?</label>
+					<br/><span class="hint">Choose wether to display the title and excerpt or not.</span>
+					<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
+
+					<br>
 					<label for="post-display">Recent Posts Display Type</label>
 					<br/><span class="hint">Choose whether to show the recent posts section as cards, or as post previews.</span>
 					<select name="post-display">
@@ -513,6 +519,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 					if( isset( $_POST[ 'post-display' ] ) ) {
 							update_post_meta( $post_id, 'post-display', sanitize_text_field( $_POST[ 'post-display' ] ) );
+					}
+
+					// Checks for input and sanitizes/saves if needed
+					if( isset( $_POST[ 'hideTitle' ] ) && $_POST[ 'hideTitle' ] == true ) {
+							update_post_meta( $post_id, 'hideTitle', sanitize_text_field( true ) );
+					}else{
+							update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
 					}
 
 			}
