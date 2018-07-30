@@ -97,8 +97,8 @@
 									'.get_wp_user_avatar(get_the_author_id(),'large').'
 									<div class="card-content">
 										<div class="card-content-container">
-											<div class="card-content-title" style="text-align:center;">You had me at '.get_the_author_meta('user_firstname').'</div>
-											<div class="card-content-excerpt" style="text-align:center;">
+											<div class="card-content-title" style="text-align:center;padding-left:0;padding-right:0;">You had me at '.get_the_author_meta('user_firstname').'</div>
+											<div class="card-content-excerpt" style="text-align:center;padding-left:0;padding-right:0;">
 												'.get_the_author_meta('description').'
 											</div>
 										</div>
