@@ -206,6 +206,15 @@
 				$post_content = get_post($curpost["ID"]);
 				$pageTitle = $curpost["post_title"];
 				$content = $post_content->post_content;
+				$excerptStr = substr($content,0,600);
+
+				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+				if($comingsoon){
+					$pageTitle = 'Coming Soon';
+					$excerptStr = '';
+					$postUrl = '##';
+				}
+
 				echo '<div class="post-preview post--'.$curpost["ID"].'">
 				<div class="post-image">
 					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
@@ -218,7 +227,7 @@
 								</div>
 							</div>
 							<div class="post-content">
-							'.substr($content,0,600).'...'.'
+							'.$excerptStr.'...'.'
 							</div>
 							<div class="read-more">
 								<a href="'.$postUrl.'" class="ghost-button-black">
