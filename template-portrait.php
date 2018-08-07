@@ -77,7 +77,7 @@ get_header();
   }
 
   .section-one{
-    height: auto;
+    /*height: auto;*/
     width: 1000px;
     /*background-attachment: fixed;*/
   }
