@@ -77,13 +77,23 @@ get_header();
   }
 
   .section-one{
-    height: 100vh;
+    height: auto;
     width: 1000px;
     /*background-attachment: fixed;*/
   }
   .section-two{
-    height: 100vh;
+    height: auto;
     width: 1000px;
+  }
+
+  .section-two .title{
+    position: inherit;
+    margin: 20px;
+  }
+
+  .section-two .excerpt{
+    position: inherit;
+    margin: 20px;
   }
 
 }
@@ -111,6 +121,12 @@ get_header();
     margin-right:20px;
   }
 }
+
+@media screen and (max-width:400px){
+
+}
+
+
 
 
 
