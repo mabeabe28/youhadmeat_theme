@@ -97,7 +97,7 @@ get_header();
   }
 
 }
-@media screen and (max-height: 700px){
+@media screen and (max-height: 800px){
   .section-two .title{
     top:10%;
   }
