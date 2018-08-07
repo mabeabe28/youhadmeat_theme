@@ -87,7 +87,20 @@ get_header();
   }
 
 }
-@media screen and (max-width:500px){
+@media screen and (max-height: 700px){
+  .section-two .title{
+    top:10%;
+  }
+
+  .section-two .excerpt{
+    top:20%;
+    margin-left:20px;
+    margin-right:20px;
+  }
+}
+
+
+@media screen and (max-width:500px) , screen and (max-height: 500px){
   .section-two .title{
     top:5%;
   }
@@ -98,6 +111,9 @@ get_header();
     margin-right:20px;
   }
 }
+
+
+
 
 </style>
 <div id="primary" class="content-area">
