@@ -71,7 +71,7 @@ get_header();
 }
 
 
-@media screen and (max-width:850px){
+@media screen and (max-width:850px) , screen and (max-height: 450px) {
   .featured-image{
     height: auto;
   }
