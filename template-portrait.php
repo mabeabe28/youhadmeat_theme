@@ -49,10 +49,13 @@ get_header();
 .section-two{
   height: 100vh;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-two .title{
-  top:20%;
+  /*top:20%;*/
   position:relative;
   font-size:3em;
   font-family:"Crimson Text";
@@ -62,29 +65,41 @@ get_header();
 .section-two .excerpt{
   margin-left:75px;
   margin-right:75px;
-  top:30%;
+  margin-top: 30px;
+  /*top:30%;*/
   position:relative;
-  font-size:1em;
+  font-size:1.2em;
   font-style:italic;
   text-align:justify;
   text-justify:inter-word;
 }
 
+@media screen and (max-width:950px) {
+  .section-two .title{
+    font-size:2em;
+  }
 
-@media screen and (max-width:850px) , screen and (max-height: 450px) {
+  .section-two .excerpt{
+    font-size:1em;
+  }
+}
+
+@media screen and (max-width:850px) , screen and (max-height: 600px) {
   .featured-image{
     height: auto;
   }
 
   .section-one{
     /*height: auto;*/
-    width: 1000px;
+    width: 100vw;
     /*background-attachment: fixed;*/
   }
   .section-two{
     height: auto;
-    width: 1000px;
+    width: 100vw;
   }
+
+
 
   .section-two .title{
     position: inherit;
@@ -100,13 +115,11 @@ get_header();
 
 @media screen and (max-height: 850px){
   .section-two .title{
-    top:10%;
   }
 
   .section-two .excerpt{
-    top:20%;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:30px;
+    margin-right:30px;
   }
 }
 
@@ -209,16 +222,18 @@ get_header();
         if($featuredPosition == 'right'){
           echo  '
             <div class="section-two fade-slow">
-              <div class="title">
-                <div>
-                '.get_the_title().'
+              <div class="section-two-container">
+                <div class="title">
+                  <div>
+                  '.get_the_title().'
+                  </div>
+                  <div style="font-size:0.25em;">
+                    '.get_the_date().' | '.get_the_author_meta('nickname').'
+                  </div>
                 </div>
-                <div style="font-size:0.25em;">
-                  '.get_the_date().' | '.get_the_author_meta('nickname').'
+                <div class="excerpt">
+                  '.get_the_excerpt().'
                 </div>
-              </div>
-              <div class="excerpt">
-                '.get_the_excerpt().'
               </div>
             </div><div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
               </div>';
@@ -226,16 +241,18 @@ get_header();
           echo  '<div class="section-one" style="background-image:url('.get_the_post_thumbnail_url().');">
             </div>
             <div class="section-two fade-slow">
-              <div class="title">
-                <div>
-                '.get_the_title().'
+              <div class="section-two-container">
+                <div class="title">
+                  <div>
+                  '.get_the_title().'
+                  </div>
+                  <div style="font-size:0.25em;">
+                    '.get_the_date().' | '.get_the_author_meta('nickname').'
+                  </div>
                 </div>
-                <div style="font-size:0.25em;">
-                  '.get_the_date().' | '.get_the_author_meta('nickname').'
+                <div class="excerpt">
+                  '.get_the_excerpt().'
                 </div>
-              </div>
-              <div class="excerpt">
-                '.get_the_excerpt().'
               </div>
             </div>';
         }
