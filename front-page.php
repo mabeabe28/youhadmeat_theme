@@ -855,6 +855,7 @@ get_header();
 		//$categories_all=get_categories();
 		//for each category
 		foreach($recent_categories as $catID) {
+			//set category object
 			$curcat = get_category($catID);
 			echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
 		 	/*echo '<div class="card-deck-header">
