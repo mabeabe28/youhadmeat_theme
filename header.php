@@ -24,7 +24,7 @@
 
 	<?php wp_head(); ?>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123741580-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
