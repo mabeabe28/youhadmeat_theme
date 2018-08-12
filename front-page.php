@@ -24,7 +24,7 @@ get_header();
 				//get all cats
 				$catargs = array(
 					'parent' => 0,
-					'orderby' => 'name',
+					'orderby' => 'post_date',
 					'order' => 'DESC',
 				);
 				$categories=get_categories($catargs);
