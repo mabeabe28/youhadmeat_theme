@@ -23,17 +23,36 @@ get_header();
 				<?php
 				//get all cats
 				$catargs = array(
-					'parent' => 0,
-					'orderby' => 'post_date',
-					'order' => 'DESC',
+					'parent' => 0
 				);
 				$categories=get_categories($catargs);
+
+		    $recent_posts = array();
+		    foreach ($categories as $key=>$category) {
+		        // get latest post from $category
+		        $args = array(
+		            'numberposts' => 1,
+		            'category' => $category->term_id,
+		        );
+		        $post = get_posts($args)[0];
+		        // save category id & post date in an array
+		        $recent_posts[ $category->term_id ] = strtotime($post->post_date);
+		    }
+
+		    // order by post date, preserve category_id
+		    arsort($recent_posts);
+
+		    // get $limit most recent category ids
+		    $recent_categories = array_slice(array_keys($recent_posts), 0, $limit);
+
+
+
 				//for each category
-		  	foreach($categories as $category) {
+		  	foreach($recent_categories as $category) {
 
 					$args = array(
 						'numberposts' => 1,
-						'category' => $category->term_id,
+						'category' => $category,
 						'orderby' => 'post_date',
 						'order' => 'DESC',
 						'post_type' => 'post',
@@ -835,8 +854,8 @@ get_header();
 		//get all cats
 		//$categories_all=get_categories();
 		//for each category
-		foreach($categories as $curcat) {
-			//print_r($curcat);
+		foreach($recent_categories as $catID) {
+			$curcat = get_category($catID);
 			echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
 		 	/*echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
@@ -853,7 +872,7 @@ get_header();
 
 			$args = array(
 				'numberposts' => 4,
-				'category' => $curcat->term_id,
+				'category' => $catID,
 				'orderby' => 'post_date',
 				'order' => 'DESC',
 				'post_type' => 'post',
