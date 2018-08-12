@@ -227,7 +227,7 @@ get_header();
                   <div>
                   '.get_the_title().'
                   </div>
-                  <div style="font-size:0.25em;">
+                  <div class="post-meta" style="font-size:0.25em;">
                     '.get_the_date().' | '.get_the_author_meta('nickname').'
                   </div>
                 </div>
@@ -246,7 +246,7 @@ get_header();
                   <div>
                   '.get_the_title().'
                   </div>
-                  <div style="font-size:0.25em;">
+                  <div class="post-meta" style="font-size:0.25em;">
                     '.get_the_date().' | '.get_the_author_meta('nickname').'
                   </div>
                 </div>
