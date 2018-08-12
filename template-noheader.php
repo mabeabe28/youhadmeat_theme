@@ -24,10 +24,16 @@ get_header();
 font-family: "Crimson Text";
 }
 
-.excerpt {
-    font-size: 1vw;
-    font-weight: 300;
-    font-family: "Avenir","Open Sans";
+.excerpt{
+  font-size: 1.6666666666666665vw;
+  font-weight: 300;
+  font-family:"Avenir","Open Sans";
+}
+
+.meta{
+  font-size: 1.1111111111111112vw;
+  font-style: italic;
+  font-family:"Avenir","Open Sans";
 }
 
 @media screen and (max-width: 800px) {
@@ -35,8 +41,12 @@ font-family: "Crimson Text";
     font-size: 6.4722222222222223vw;
   }
 
-  .excerpt {
-      font-size: 2vw;
+  .excerpt{
+    font-size: 2.9411764705882355vw;
+  }
+
+  .meta{
+    font-size: 1.8823529411764706vw;
   }
 }
 </style>
@@ -57,17 +67,32 @@ $(document).on('scroll', function () {
   while ( have_posts() ) :
     the_post();
     $hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+    $hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
+    $hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
 
-    if(!$hideTitle){
-      echo '<div class="featured-text">
-        <div class="title">
+
+      echo '<div class="featured-text">';
+
+      if(!$hideTitle){
+      echo '<div class="title">
         '.get_the_title().'
-        </div>
-        <div class="excerpt">
+        </div>';
+      }
+
+
+      if(!$hideExcerpt){
+      echo '  <div class="excerpt">
+          '.get_the_excerpt().'
+        </div>';
+      }
+
+      if(!$hideMeta){
+      echo '  <div class="meta">
           '.get_the_date().' | '.get_the_author_meta('nickname').'
-        </div>
-      </div>';
-    }
+        </div>';
+      }
+
+    echo '  </div>';
 
     get_template_part( 'template-parts/content', get_post_type() );
 

@@ -92,7 +92,6 @@ get_header();
 		font-size: 1.6666666666666665vw;
 		font-weight: 300;
 		font-family:"Avenir","Open Sans";
-
 	}
 
 	.meta{
@@ -144,6 +143,8 @@ get_header();
 				$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 			}
 			$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+			$hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
+			$hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
 
 			echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
@@ -151,14 +152,20 @@ get_header();
 
 					if($textOnImage){
 						if(!$hideTitle){
-						echo ''.get_the_title().'
-							<div class="excerpt">
-								'.get_the_excerpt().'
-							</div>
-							<div class="meta">
-								'.get_the_date().' |
-								'.get_the_author_meta('nickname').'
-							</div>';
+							echo ''.get_the_title().'';
+						}
+
+						if(!$hideExcerpt){
+							echo	'<div class="excerpt">
+									'.get_the_excerpt().'
+								</div>';
+						}
+
+						if(!$hideMeta){
+							echo '<div class="meta">
+									'.get_the_date().' |
+									'.get_the_author_meta('nickname').'
+								</div>';
 						}
 					}
 
@@ -167,19 +174,28 @@ get_header();
 			</div>';
 
 			if(!$textOnImage){
-				if(!$hideTitle){
 					echo '	<div id="featured-wrapper--bottom">
-										<div id="featured-text--bottom">'.get_the_title().'
-											<div class="excerpt">
+										<div id="featured-text--bottom">';
+
+					if(!$hideTitle){
+						echo ''.get_the_title().'';
+					}
+
+										if(!$hideExcerpt){
+										echo '	<div class="excerpt">
 												'.get_the_excerpt().'
-											</div>
-											<div class="meta">
+											</div>';
+										}
+
+										if(!$hideMeta){
+										echo '	<div class="meta">
 												'.get_the_date().' |
 												'.get_the_author_meta('nickname').'
-											</div>
-										</div>
+											</div>';
+										}
+
+								echo'		</div>
 									</div>';
-				}
 			}
 
 			get_template_part( 'template-parts/content', get_post_type() );

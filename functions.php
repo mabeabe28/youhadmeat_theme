@@ -337,9 +337,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<br/><div class="hint">General Post Options</div>
 			<br>
 			<div class="input-wrapper">
-				<label for="hideTitle">Hide Title and Excerpt?</label>
-				<br/><span class="hint">Choose wether to display the title and excerpt or not.</span>
+				<label for="hideTitle">Hide Title</label>
+				<br/><span class="hint">Choose whether to display the title or not.</span>
 				<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
+			<div class="input-wrapper">
+				<label for="hideExcerpt">Hide Excerpt</label>
+				<br/><span class="hint">Choose whether to display the excerpt or not.</span>
+				<input type="checkbox" name="hideExcerpt" id="hideExcerpt" value="true" <?php if ( isset ( $meta['hideExcerpt'] ) && $meta['hideExcerpt'][0] == 1  ) echo 'checked="true"'; ?> />
+			</div>
+			<div class="input-wrapper">
+				<label for="hideMeta">Hide Post Meta</label>
+				<br/><span class="hint">Choose whether to display the post published date and author.</span>
+				<input type="checkbox" name="hideMeta" id="hideMeta" value="true" <?php if ( isset ( $meta['hideMeta'] ) && $meta['hideMeta'][0] == 1  ) echo 'checked="true"'; ?> />
 			</div>
 			<div class="input-wrapper">
 				<label for="comingsoon">Coming Soon</label>
@@ -411,6 +421,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
 				}
 
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'hideExcerpt' ] ) && $_POST[ 'hideExcerpt' ] == true ) {
+						update_post_meta( $post_id, 'hideExcerpt', sanitize_text_field( true ) );
+				}else{
+						update_post_meta( $post_id, 'hideExcerpt', sanitize_text_field( false ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'hideMeta' ] ) && $_POST[ 'hideMeta' ] == true ) {
+						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( true ) );
+				}else{
+						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( false ) );
+				}
+
+
+
 		}
 		add_action( 'save_post', 'general_post_options_save' );
 
@@ -448,7 +474,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						<option value="author" <?php if ( isset ( $meta['page-type'] ) && $meta['page-type'][0] == 'author') echo 'selected'; ?>>Author</option>
 					</select>
 					<br>
-					
+
 					<label for="post-display">Hide Title and Excerpt?</label>
 					<br/><span class="hint">Choose wether to display the title and excerpt or not.</span>
 					<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
