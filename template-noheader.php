@@ -70,8 +70,9 @@ $(document).on('scroll', function () {
     $hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
     $hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
 
-
+    if(!$hideTitle || !$hideExcerpt || !$hideMeta){
       echo '<div class="featured-text">';
+    }
 
       if(!$hideTitle){
       echo '<div class="title">
@@ -92,8 +93,9 @@ $(document).on('scroll', function () {
         </div>';
       }
 
-    echo '  </div>';
-
+    if(!$hideTitle || !$hideExcerpt || !$hideMeta){
+      echo '  </div>';
+    }
     get_template_part( 'template-parts/content', get_post_type() );
 
     /*the_post_navigation();*/
