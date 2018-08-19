@@ -876,10 +876,18 @@ get_header();
 			//get four recent post
 			$recent_posts_all = wp_get_recent_posts( $args );
 			foreach($recent_posts_all as $post){
+				$curPostTitle = $post["post_title"];
 				$curExcerptStr = (strlen($post["post_excerpt"]) > 40) ? substr($post["post_excerpt"],0,40).'...' :$post["post_excerpt"];
+				$curPostUrl = get_permalink($post["ID"]);
+				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+				if($comingsoon){
+					$pageTitle = 'Coming Soon';
+					$curExcerptStr = 'Content Coming Soon';
+					$curPostUrl = '##';
+				}
 
 				echo'	<li class="card-wrapper post--'.$post["ID"].'">
-					<a href="'.get_permalink($post["ID"]).'">
+					<a href="'..'">
 								<div class="card-header"><div class="card-header-category">
 
 									<div class="category-icon"></div>
@@ -888,7 +896,7 @@ get_header();
 								<img src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
 								<div class="card-content">
 									<div class="card-content-container">
-										<div class="card-content-title">'.$post["post_title"].'</div>
+										<div class="card-content-title">'.$curPostTitle.'</div>
 										<div class="card-content-excerpt">
 											'.$curExcerptStr.'
 										</div>
