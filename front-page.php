@@ -800,7 +800,9 @@ get_header();
 	animation:         fade_move_down 3s ease-in-out infinite;
 }
 
-
+.latest{
+	text-align: center;
+}
 /*animated scroll arrow animation*/
 @-webkit-keyframes fade_move_down {
   0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
@@ -853,6 +855,53 @@ get_header();
 		<?php
 		//get all cats
 		//$categories_all=get_categories();
+		echo '<div class="card-deck">
+			<div class="latest">
+				<h1>
+					Latest Posts
+				</h1>
+			</div>
+			<ul class="card-container">';
+
+
+			$args = array(
+				'numberposts' => 4,
+				'orderby' => 'post_date',
+				'order' => 'DESC',
+				'post_type' => 'post',
+				'post_status' => 'publish',
+				'suppress_filters' => true
+			);
+
+			//get four recent post
+			$recent_posts_all = wp_get_recent_posts( $args );
+			foreach($recent_posts_all as $post){
+				$curExcerptStr = (strlen($post["post_excerpt"]) > 40) ? substr($post["post_excerpt"],0,40).'...' :$post["post_excerpt"];
+
+				echo'	<li class="card-wrapper post--'.$post["ID"].'">
+					<a href="'.get_permalink($post["ID"]).'">
+								<div class="card-header"><div class="card-header-category">
+
+									<div class="category-icon"></div>
+
+								</div></div>
+								<img src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
+								<div class="card-content">
+									<div class="card-content-container">
+										<div class="card-content-title">'.$post["post_title"].'</div>
+										<div class="card-content-excerpt">
+											'.$curExcerptStr.'
+										</div>
+									</div>
+								</div>
+							</a>
+					</li>';
+			}
+
+
+
+		echo'	</ul>
+		</div>';
 		//for each category
 		foreach($recent_categories as $catID) {
 			//set category object
