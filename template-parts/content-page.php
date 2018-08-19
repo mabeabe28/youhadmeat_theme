@@ -311,7 +311,17 @@ margin:30px;
 .read-more{
 	margin: 30px;
 }
+@media screen and (max-width: 500px) {
 
+.ghost-button-black{
+	width: auto;
+}
+
+.post-content-box{
+width: 100%;
+}
+
+}
 
 	</style>
 </article><!-- #post-<?php the_ID(); ?> -->
