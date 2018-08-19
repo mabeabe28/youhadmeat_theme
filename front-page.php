@@ -887,7 +887,7 @@ get_header();
 				}
 
 				echo'	<li class="card-wrapper post--'.$post["ID"].'">
-					<a href="'..'">
+					<a href="'.$curPostUrl.'">
 								<div class="card-header"><div class="card-header-category">
 
 									<div class="category-icon"></div>
