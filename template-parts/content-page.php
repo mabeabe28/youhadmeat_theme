@@ -203,10 +203,10 @@
 
 			foreach($recent_posts as $curpost){
 				$postUrl = get_permalink($curpost["ID"]);
-				$post_content = get_post($curpost["ID"]);
+				$post_content = get_post($curpost["ID"],'object','display');
 				$pageTitle = $curpost["post_title"];
 				$content = $post_content->post_content;
-				$excerptStr = substr($content,0,600);
+				$excerptStr = substr(wp_strip_all_tags($content),0,600);
 
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				if($comingsoon){
