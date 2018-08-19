@@ -879,7 +879,7 @@ get_header();
 				$curPostTitle = $post["post_title"];
 				$curExcerptStr = (strlen($post["post_excerpt"]) > 40) ? substr($post["post_excerpt"],0,40).'...' :$post["post_excerpt"];
 				$curPostUrl = get_permalink($post["ID"]);
-				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+				$comingsoon = get_post_meta( $post["ID"],'comingsoon', true );
 				if($comingsoon){
 					$curPostTitle = 'Coming Soon';
 					$curExcerptStr = 'Content Coming Soon';
