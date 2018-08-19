@@ -206,7 +206,7 @@
 				$post_content = get_post($curpost["ID"],'object','display');
 				$pageTitle = $curpost["post_title"];
 				$content = $post_content->post_content;
-				$excerptStr = substr(strip_tags($content,'<p><br><a>'),0,600);
+				$excerptStr = substr(strip_tags($content,'<p><br><a><span>'),0,600);
 
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				if($comingsoon){
