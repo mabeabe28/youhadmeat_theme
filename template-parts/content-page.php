@@ -308,6 +308,10 @@ justify-content: center;
 margin:30px;
 }
 
+.read-more{
+	margin: 30px;
+}
+
 
 	</style>
 </article><!-- #post-<?php the_ID(); ?> -->
