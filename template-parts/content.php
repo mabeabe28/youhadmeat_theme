@@ -134,6 +134,9 @@
 												'.get_the_author_meta('description').'
 											</div>';
 
+
+											if (strlen(get_the_author_meta('social_instagram')) || strlen(get_the_author_meta('social_twitter')) || strlen(get_the_author_meta('social_facebook'))){
+
 																	echo '<div class="card-author-social" style="color:white;">
 																		<div class="card-author-social-wrapper">';
 
@@ -162,6 +165,7 @@
 
 																	echo '</div>
 																	</div>';
+											}
 
 									echo'	</div>
 									</div>
