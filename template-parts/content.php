@@ -95,12 +95,17 @@
 		margin-right: 10px;
 	}
 
-	a{text-decoration:none;color:white;}
-	a:visited { text-decoration: none; color:white; }
-	a:hover { text-decoration: none;color:pink; }
-	a:focus { text-decoration: none;  color:white;}
-	a:hover, a:active { text-decoration: none; color:pink;}
+	.author-box a{text-decoration:none;color:white;}
+	.author-box	a:visited { text-decoration: none; color:white; }
+	.author-box	a:hover { text-decoration: none;color:pink; }
+	.author-box	a:focus { text-decoration: none;  color:white;}
+	.author-box a:hover,.author-box a:active { text-decoration: none; color:pink;}
 
+	a{text-decoration:none;color:pink}
+	a:visited { text-decoration: none; color:pink; }
+	a:hover { text-decoration: none;color:pink; }
+	a:focus { text-decoration: none;  color:pink;}
+	a:hover, a:active { text-decoration: none; color:pink;}
 	</style>
 
 

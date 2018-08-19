@@ -131,7 +131,7 @@ a:hover, a:active {
 }
 
 .menu-toggle:hover{
-	color: red;
+	color: pink;
 }
 
 /*--------------------------------------------------------------
@@ -203,7 +203,7 @@ text-align: left;
 }
 /* When you mouse over the navigation links, change their color */
 #side-navigation a:hover {
-	color: #f1f1f1;
+	color: pink;
 }
 
 /* Position and style the close button (top right corner) */
@@ -308,7 +308,7 @@ text-align: left;
 
 .nav-previous a:hover,.nav-next a:hover,
 .nav-previous a:active,.nav-next a:active{
-  color: #66d8ed;
+  color: pink;
   border-color: #66d8ed;
   transition: border-color 0.4s ease-in,
               color 0.4s ease-in;
@@ -326,7 +326,7 @@ text-align: left;
 }
 
 .search-toggle:hover{
-	color: red;
+	color: pink;
 }
 
 	#searchOverlay .search-form,
