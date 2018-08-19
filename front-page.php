@@ -881,7 +881,7 @@ get_header();
 				$curPostUrl = get_permalink($post["ID"]);
 				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
 				if($comingsoon){
-					$pageTitle = 'Coming Soon';
+					$curPostTitle = 'Coming Soon';
 					$curExcerptStr = 'Content Coming Soon';
 					$curPostUrl = '##';
 				}
