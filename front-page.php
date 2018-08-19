@@ -885,13 +885,20 @@ get_header();
 					$curExcerptStr = 'Content Coming Soon';
 					$curPostUrl = '##';
 				}
+				$curCategory = get_the_category($post["ID"]);
+				$curParentCategory = "";
 
-				echo'	<li class="card-wrapper post--'.$post["ID"].'">
+				foreach($curCategory as $cat){
+					if($cat->parent == 0){
+						$curParentCategory = $cat;
+					}
+				}
+
+				echo'	<li class="card-wrapper post--'.$post["ID"].' category--'.$curParentCategory->slug.'">
 					<a href="'.$curPostUrl.'">
-								<div class="card-header"><div class="card-header-category">
-
+								<div class="card-header"><div class="card-header-category category--'.$curParentCategory->slug.'">
+									<div class="category-title">'.$curParentCategory->name.'</div>
 									<div class="category-icon"></div>
-
 								</div></div>
 								<img src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
 								<div class="card-content">
@@ -959,7 +966,6 @@ get_header();
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
 											<div class="category-title">'.$curcat->name.'</div>
 											<div class="category-icon"></div>
-
 										</div></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 										<div class="card-content">
