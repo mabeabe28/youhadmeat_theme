@@ -689,3 +689,49 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		}
 		add_action( 'save_post', 'custom_template_options_save' );
+
+add_action( 'show_user_profile', 'social_profile_fields' );
+add_action( 'edit_user_profile', 'social_profile_fields' );
+
+
+function social_profile_fields( $user ) { ?>
+    <h3><?php _e("Social Profile information", "blank"); ?></h3>
+
+    <table class="form-table">
+    <tr>
+        <th><label for="social_instagram"><?php _e("Instagram"); ?></label></th>
+        <td>
+            <input type="text" name="social_instagram" id="social_instagram" value="<?php echo esc_attr( get_the_author_meta( 'social_instagram', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description"><?php _e("Please enter your instagram url."); ?></span>
+        </td>
+    </tr>
+		<tr>
+				<th><label for="social_twitter"><?php _e("Twitter"); ?></label></th>
+				<td>
+						<input type="text" name="social_twitter" id="social_twitter" value="<?php echo esc_attr( get_the_author_meta( 'social_twitter', $user->ID ) ); ?>" class="regular-text" /><br />
+						<span class="description"><?php _e("Please enter your twitter url."); ?></span>
+				</td>
+		</tr>
+		<tr>
+				<th><label for="social_facebook"><?php _e("Facebook"); ?></label></th>
+				<td>
+						<input type="text" name="social_facebook" id="social_facebook" value="<?php echo esc_attr( get_the_author_meta( 'social_facebook', $user->ID ) ); ?>" class="regular-text" /><br />
+						<span class="description"><?php _e("Please enter your facebook url."); ?></span>
+				</td>
+		</tr>
+
+
+    </table>
+<?php }
+
+add_action( 'personal_options_update', 'save_social_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_social_profile_fields' );
+
+function save_social_profile_fields( $user_id ) {
+    if ( !current_user_can( 'edit_user', $user_id ) ) {
+        return false;
+    }
+    update_user_meta( $user_id, 'social_twitter', $_POST['social_twitter'] );
+		update_user_meta( $user_id, 'social_facebook', $_POST['social_facebook'] );
+		update_user_meta( $user_id, 'social_instagram', $_POST['social_instagram'] );
+}

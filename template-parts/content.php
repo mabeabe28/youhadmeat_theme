@@ -68,6 +68,38 @@
 	}
 
 
+	.card-author-social{
+		position: absolute;
+		top: 90%;
+
+		/*display: flex;
+		align-items: center;*/
+		/*justify-content: center;*/
+		padding-top: 1.02880658436214vw;
+		font-style: italic;
+		width: 100%;
+		z-index: 1;
+
+	}
+	.card-author-social-wrapper{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		position: relative;
+	}
+	.card-social-item{
+		position: relative;
+		display: block;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	a{text-decoration:none;color:white;}
+	a:visited { text-decoration: none; color:white; }
+	a:hover { text-decoration: none;color:pink; }
+	a:focus { text-decoration: none;  color:white;}
+	a:hover, a:active { text-decoration: none; color:pink;}
 
 	</style>
 
@@ -100,13 +132,45 @@
 											<div class="card-content-title" style="text-align:center;padding-left:0;padding-right:0;width:100%;">You had me at '.get_the_author_meta('user_firstname').'</div>
 											<div class="card-content-excerpt" style="text-align:center;padding-left:0;padding-right:0;width:100%;">
 												'.get_the_author_meta('description').'
-											</div>
-										</div>
+											</div>';
+
+																	echo '<div class="card-author-social" style="color:white;">
+																		<div class="card-author-social-wrapper">';
+
+																	if (strlen(get_the_author_meta('social_instagram'))){
+																		echo '<div class="card-social-item">
+																			<a class="card-social-item--link" href="'.get_the_author_meta('social_instagram').'" target="_blank">
+																				<i class="fab fa-instagram fa-lg"></i>
+																			</a>
+																		</div>';
+																	}
+																	if (strlen(get_the_author_meta('social_twitter'))){
+																		echo '<div class="card-social-item">
+																			<a class="card-social-item--link" href="'.get_the_author_meta('social_twitter').'" target="_blank">
+																				<i class="fab fa-twitter fa-lg"></i>
+																			</a>
+																		</div>';
+																	}
+																	if (strlen(get_the_author_meta('social_facebook'))){
+																		echo '<div class="card-social-item">
+																			<a class="card-social-item--link" href="'.get_the_author_meta('social_facebook').'" target="_blank">
+																				<i class="fab fa-facebook-square fa-lg"></i>
+																			</a>
+																		</div>';
+																	}
+
+
+																	echo '</div>
+																	</div>';
+
+									echo'	</div>
 									</div>
 								</a>
 						</div>';
 
 						echo 		'</div>';//card-container
+
+
 						echo '</div>';//card-deck
 
 			?>
