@@ -217,7 +217,7 @@
 
 				echo '<div class="post-preview post--'.$curpost["ID"].'">
 				<div class="post-image">
-					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
+					<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'" />
 				</div>
 					<div class="post-content-box-wrapper">
 						<div class="post-content-box">
