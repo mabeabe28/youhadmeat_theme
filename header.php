@@ -83,7 +83,7 @@
 		$post_type = get_post_type($post->ID);
 		$logo_text = "";
 		$logo_text_link = get_home_url();
-
+		$logo_text_class = "";
 
 		if($post_type == 'post' && !is_archive() && !is_search() ){
 			$category = get_the_category($post->ID);
