@@ -427,7 +427,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: "Raleway","Calibri", sans-serif;
+	font-family: "Avenir", "Open Sans","Calibri", sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -435,12 +435,10 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: 'Montserrat', sans-serif;
 }
 
 p {
 	margin-bottom: 1.5em;
-	font-family: "Raleway","Calibri", sans-serif;
 }
 
 dfn, cite, em, i {

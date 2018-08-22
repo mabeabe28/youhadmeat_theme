@@ -51,7 +51,7 @@
 			padding-right: 10px;
 			margin-left: 20px;
 			margin-right: 20px;
-			font-family: "Raleway","Calibri", sans-serif;
+			font-family: "Avenir","Open Sans","Calibri", sans-serif;
 			font-style: italic;
 			font-weight:bold;
 			text-align: center;
@@ -97,8 +97,7 @@
 		/*Recent Post Detail stuff*/
 		#recentPost{
 			padding-top: 20px;
-			font-family: "Raleway","Calibri", sans-serif;
-
+			font-family: "Avenir","Open Sans","Calibri", sans-serif;
 		}
 		.recentPost_detail{
 			font-weight: bold;

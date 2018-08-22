@@ -58,7 +58,7 @@ get_header();
   /*top:20%;*/
   position:relative;
   font-size:3em;
-  font-family: 'Montserrat', sans-serif;
+  font-family:"Crimson Text";
   letter-spacing:2px;
 }
 
