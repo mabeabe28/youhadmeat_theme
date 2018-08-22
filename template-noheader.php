@@ -21,19 +21,19 @@ get_header();
 
 .title{
   font-size: 3.4722222222222223vw;
-font-family: "Crimson Text";
+  font-family: 'Montserrat', sans-serif;
 }
 
 .excerpt{
   font-size: 1.6666666666666665vw;
   font-weight: 300;
-  font-family:"Avenir","Open Sans";
+  font-family: "Raleway","Calibri", sans-serif;
 }
 
 .meta{
   font-size: 1.1111111111111112vw;
   font-style: italic;
-  font-family:"Avenir","Open Sans";
+  font-family: "Raleway","Calibri", sans-serif;
 }
 
 @media screen and (max-width: 800px) {

@@ -65,7 +65,7 @@ get_header();
 			padding-right: 10px;
 			margin-left: 20px;
 			margin-right: 5px;
-			font-family: "Avenir","Open Sans","Calibri", sans-serif;
+			font-family: "Raleway","Calibri", sans-serif;
 			font-style: italic;
 			font-weight:bold;
 			text-align: center;

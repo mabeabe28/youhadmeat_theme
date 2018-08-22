@@ -770,8 +770,8 @@ get_header();
 			slideExcerptDiv[slideIndex].style.display = "block";
 
 
-			      console.log('current',slideIndex);
-			      console.log('previous',previous);
+			      //console.log('current',slideIndex);
+			      //console.log('previous',previous);
 			      slideIndex++;
 						setTimeout(autoSlide,7000);
 			}
