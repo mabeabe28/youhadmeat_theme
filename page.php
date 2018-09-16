@@ -21,8 +21,9 @@ get_header();
 		if(!$textOnImage){
 			$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
 		}
-		$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
-		
+		if(!$hideTitle){
+			$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
+		}
 
 		echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 			<div id="featured-wrapper">
