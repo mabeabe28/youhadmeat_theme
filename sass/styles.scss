@@ -5,3 +5,16 @@
 @import "_partials/mixins";
 @import "_partials/variables";
 @import "_partials/typography";
+
+//fonts
+@import "components/fonts";
+
+//default/general wp styling
+@import "components/general-wp/alignments";
+@import "components/general-wp/captions";
+@import "components/general-wp/clearings";
+@import "components/general-wp/forms";
+@import "components/general-wp/galleries";
+@import "components/general-wp/media";
+@import "components/general-wp/postspages";
+@import "components/general-wp/widgets";

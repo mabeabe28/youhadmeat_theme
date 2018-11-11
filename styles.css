@@ -65,3 +65,261 @@ body {
   font-family: "Avenir", "Open Sans", "Calibri", sans-serif;
   font-weight: 400;
   line-height: 1.6; }
+
+/* Fonts
+	 ========================================================================== */
+/**
+*/
+@font-face {
+  font-family: Gloss-and-Bloom;
+  src: url("./includes/fonts/gloss_and_bloom/Gloss_And_Bloom.ttf");
+  font-weight: normal; }
+@font-face {
+  font-family: FontAwesomeSolid;
+  src: url("./includes/icons/fontawesome/webfonts/fa-solid-900.eot");
+  src: url("./includes/icons/fontawesome/webfonts/fa-solid-900.eot") format("embedded-opentype"), url("./includes/icons/fontawesome/webfonts/fa-solid-900.woff") format("woff"), url("./includes/icons/fontawesome/webfonts/fa-solid-900.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: FontAwesomeRegular;
+  src: url("./includes/icons/fontawesome/webfonts/fa-regular-400.eot");
+  src: url("./includes/icons/fontawesome/webfonts/fa-regular-400.eot") format("embedded-opentype"), url("./includes/icons/fontawesome/webfonts/fa-regular-400.woff") format("woff"), url("./includes/icons/fontawesome/webfonts/fa-regular-400.ttf") format("truetype");
+  font-weight: normal; }
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_alignments.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+/* line 10, sass/components/general-wp/_alignments.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+/* line 16, sass/components/general-wp/_alignments.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_captions.scss */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+
+/* line 9, sass/components/general-wp/_captions.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 15, sass/components/general-wp/_captions.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0; }
+
+/* line 19, sass/components/general-wp/_captions.scss */
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_clearings.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+/* line 17, sass/components/general-wp/_clearings.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_forms.scss */
+button,
+input[type="button"],
+input[type="reset"],
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus {
+  border-color: #aaa #bbb #bbb; }
+
+/* line 22, sass/components/general-wp/_forms.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px; }
+
+/* line 43, sass/components/general-wp/_forms.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111; }
+
+/* line 61, sass/components/general-wp/_forms.scss */
+select {
+  border: 1px solid #ccc; }
+
+/* line 65, sass/components/general-wp/_forms.scss */
+textarea {
+  width: 100%; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_galleries.scss */
+.gallery {
+  margin-bottom: 1.5em; }
+
+/* line 8, sass/components/general-wp/_galleries.scss */
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+
+/* line 15, sass/components/general-wp/_galleries.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 50%; }
+
+/* line 19, sass/components/general-wp/_galleries.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%; }
+
+/* line 23, sass/components/general-wp/_galleries.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 25%; }
+
+/* line 27, sass/components/general-wp/_galleries.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 20%; }
+
+/* line 31, sass/components/general-wp/_galleries.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%; }
+
+/* line 35, sass/components/general-wp/_galleries.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%; }
+
+/* line 39, sass/components/general-wp/_galleries.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%; }
+
+/* line 43, sass/components/general-wp/_galleries.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%; }
+
+/* line 47, sass/components/general-wp/_galleries.scss */
+.gallery-caption {
+  display: block; }
+
+/* line 1, sass/components/general-wp/_media.scss */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 11, sass/components/general-wp/_media.scss */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/* Make sure logo link wraps around logo image. */
+/* line 18, sass/components/general-wp/_media.scss */
+.custom-logo-link {
+  display: inline-block; }
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_postspages.scss */
+.sticky {
+  display: block; }
+
+/* line 8, sass/components/general-wp/_postspages.scss */
+.hentry {
+  margin: 0 0 1.5em; }
+
+/* line 12, sass/components/general-wp/_postspages.scss */
+.updated:not(.published) {
+  display: none; }
+
+/* line 16, sass/components/general-wp/_postspages.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0; }
+
+/* line 22, sass/components/general-wp/_postspages.scss */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* line 4, sass/components/general-wp/_widgets.scss */
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */ }
+
+/* line 9, sass/components/general-wp/_widgets.scss */
+.widget select {
+  max-width: 100%; }
