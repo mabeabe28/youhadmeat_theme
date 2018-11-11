@@ -137,6 +137,7 @@ function youhadmeat_theme_scripts() {
 
 	wp_enqueue_style( 'fontawesome-all', get_template_directory_uri() . '/includes/icons/fontawesome/css/fontawesome-all.css');;
 
+	wp_enqueue_script( 'youhadmeat_theme-navigation', get_template_directory_uri() . '/js/front-hero.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'youhadmeat_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

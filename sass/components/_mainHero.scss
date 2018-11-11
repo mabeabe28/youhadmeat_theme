@@ -1,0 +1,169 @@
+
+.hero-wrapper{
+  height:100vh;
+  width:100%;
+  display:block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 100px;
+
+  .slide__container{
+    height:100vh;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  /* YHMA Leading
+  	 ========================================================================== */
+  /**
+  */
+  .slide-title{
+    z-index: 100;
+    top: 28%;
+    color: white;
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    position: absolute;
+    justify-content: center;
+
+    .slide-title__leading{
+        z-index: 100;
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+        position:absolute;
+        left:11%;
+
+        font-size: 3vw;
+        padding: 1px 20px 1px 20px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .slide-title__trailing{
+      font-family: "Gloss-and-Bloom";
+      position: absolute;
+      font-size: 3.2vw;
+      margin-left: 22vw;
+      padding: 1px 20px 1px 20px;
+      left: 40%;
+      display: none;
+    }
+
+  }
+
+  /* Excerpt
+  	 ========================================================================== */
+  /**
+  */
+
+  .slide-excerpt {
+      /*position: absolute;*/
+      color: white;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .slide-excerpt__container{
+        top: 60%;
+        z-index: 100;
+        position: absolute;
+        color: white;
+        width: 300px;
+        text-align: center;
+        display: none;
+
+        .slide-excerpt__category{
+          /*display: none;*/
+          font-weight: 300;
+          text-decoration: underline;
+        }
+
+        .slide-excerpt__text{
+          font-style: italic;
+        }
+
+        .slide-excerpt__cta{
+          width:100%;
+          display:flex;
+          flex-wrap:wrap;
+          position: relative;
+          justify-content: center;
+
+          .slide-excerpt__cta-container{
+            z-index: 100;
+            /*display: none;*/
+            position: absolute;
+            font-size:15px;
+            margin-top:20px;
+          }
+
+        }
+
+
+      }
+
+  }
+
+  /* Slider Buttons
+  	 ========================================================================== */
+  /**
+  */
+  .slider-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    z-index: 100;
+    /* Position the "next button" to the right */
+    &__next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    &__prev {
+      left: 0;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  /* Slider Scroll down prompt
+  	 ========================================================================== */
+  /**
+  */
+.slider-scroll-down{
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  text-align: center;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  z-index: 100;
+  -webkit-transform: translate(-50%, 0%) rotate(45deg);
+  -moz-transform: translate(-50%, 0%) rotate(45deg);
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+
+
+}

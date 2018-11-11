@@ -6,8 +6,18 @@
 @import "_partials/variables";
 @import "_partials/typography";
 
+//heroes
+@import "components/mainHero";
+
+//buttons
+@import "components/buttons";
+
 //fonts
 @import "components/fonts";
+
+//animations
+@import "animations/general";
+
 
 //default/general wp styling
 @import "components/general-wp/alignments";
