@@ -45,7 +45,7 @@
 
 	<header id="masthead" class="site-header">
 
-		<div id="searchOverlay" class="overlay fade">
+		<!--<div id="searchOverlay" class="overlay fade">
 			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-xs">
 			</i></span>
 			<div class="overlay-content">
@@ -76,7 +76,7 @@
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
 				</i>
-			</span>
+			</span>-->
 
 		<?php
 		global $post;
@@ -101,7 +101,7 @@
 			$logo_text_class = 'page--'.strtolower($logo_text).'';
 		}
 
-		echo '<div id="logo">
+		/*echo '<div id="logo">
 			<a href="'.get_home_url().'">
 				<strong><i>You Had Me At</i></strong>
 			</a>
@@ -110,7 +110,7 @@
 					'.$logo_text.'
 				</a>
 			</div>
-		</div>';
+		</div>';*/
 
 		 ?>
 
@@ -122,7 +122,7 @@
 				</a>
 			</div>-->
 
-			<div class="search-toggle" onclick="openSearch()">
+			<!--<div class="search-toggle" onclick="openSearch()">
 			 	<i class="fas fa-search fa-lg">
 			 	</i>
 		 	</div>
@@ -135,7 +135,7 @@
 						'menu_id'        => 'primary-menu',
 					) );
 					?>
-			 </div>
+			 </div>-->
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
