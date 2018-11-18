@@ -14,7 +14,7 @@
     top:0;
     left:0;
     background-size:cover;
-    background-position: center center;
+    background-position: left center;
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: black;
@@ -26,13 +26,15 @@
   */
   .slide-title{
     z-index: 100;
-    top: 28%;
+    top: 30%;
     color: white;
-    width:100%;
+    width:50%;
+    float: left;
     display:flex;
     flex-wrap:wrap;
     position: absolute;
     justify-content: center;
+    margin-left: 50px;
 
     .slide-title__leading{
         z-index: 100;
@@ -41,19 +43,25 @@
         font-style: italic;
         position:absolute;
         left:11%;
-
-        font-size: 3vw;
-        padding: 1px 20px 1px 20px;
+        font-size: 3.5vw;
+        padding: 0px 0px 0px 10px;
         -webkit-font-smoothing: antialiased;
     }
 
     .slide-title__trailing{
       font-family: "Gloss-and-Bloom";
       position: absolute;
-      font-size: 3.2vw;
-      margin-left: 22vw;
-      padding: 1px 20px 1px 20px;
-      left: 40%;
+      font-size: 8.5vw;
+      float: left;
+      text-align:left;
+      width: 100%;
+      left:12.5%;
+      //margin-left: 22vw;
+      //padding: 1px 20px 1px 20px;
+      //width:50%;
+      top: 75px;
+
+      //left: 40%;
       display: none;
     }
 
@@ -73,13 +81,17 @@
       flex-flow: row wrap;
 
       .slide-excerpt__container{
-        top: 60%;
+        top: 70%;
         z-index: 100;
         position: absolute;
         color: white;
-        width: 300px;
+        //width: 300px;
         text-align: center;
         display: none;
+        float: left;
+        //left:1px;
+        width:50%;
+
 
         .slide-excerpt__category{
           /*display: none;*/
