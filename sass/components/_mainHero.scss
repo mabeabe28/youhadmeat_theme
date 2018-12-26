@@ -20,46 +20,62 @@
     background-color: black;
   }
 
+  /* Slide wrapper
+  	 ========================================================================== */
+  /**
+  */
+
+  .slide-wrapper{
+    top: 55%;
+    position: absolute;
+    width:50%;
+    display: block;
+  }
+
   /* YHMA Leading
   	 ========================================================================== */
   /**
   */
   .slide-title{
     z-index: 100;
-    top: 25%;
+    //top: 55%;
     color: white;
     width:50%;
     float: left;
-    display:flex;
-    flex-wrap:wrap;
-    position: absolute;
+    display: inline-block;
+    position: relative;
     justify-content: center;
     margin-left: 50px;
 
     .slide-title__leading{
+      font-family: "Montserrat";
+      float: left;
+      width: 100%;
+
         z-index: 100;
         color: white;
         font-weight: bold;
-        font-style: italic;
-        position:absolute;
-        left:11%;
-        font-size: 3.5vw;
-        padding: 0px 0px 0px 10px;
+        //font-style: italic;
+        position:relative;
+        //left:12.5%;
+        font-size: 2.5vw;
+        //padding: 0px 0px 0px 10px;
         -webkit-font-smoothing: antialiased;
     }
 
     .slide-title__trailing{
-      font-family: "Gloss-and-Bloom";
-      position: absolute;
+      font-family: "MontserratBlack";
+      //font-weight: 900;
+      position: relative;
       font-size: 8.5vw;
       float: left;
       text-align:left;
       width: 100%;
-      left:12.5%;
+      line-height: 6vw;
+      //left:5%;
       //margin-left: 22vw;
       //padding: 1px 20px 1px 20px;
       //width:50%;
-      top: 75px;
 
       //left: 40%;
       display: none;
@@ -73,16 +89,27 @@
   */
 
   .slide-excerpt {
-      /*position: absolute;*/
-      color: white;
+      /*position: relative;*/
+      /*color: white;
       display: flex;
       justify-content: center;
       flex-flow: row wrap;
-      width:45%;
+      width:50%;
+      float: left;*/
+
+      z-index: 100;
+      color: white;
+      width:85%;
       float: left;
+      display: inline-block;
+      position: relative;
+      justify-content: center;
+      margin-left: 50px;
+      padding-top: 10px;
+      //top: 70%;
 
       .slide-excerpt__container{
-        top: 60%;
+        //top: 70%;
         z-index: 100;
         position: absolute;
         color: white;
@@ -91,33 +118,47 @@
         display: none;
         float: left;
         //left:1px;
-        width:35%;
+        width:100%;
 
 
         .slide-excerpt__category{
           /*display: none;*/
-          font-weight: 300;
+          //font-weight: 300;
+          font-family: "Merriweather";
+          text-align: left;
+          //width: 100%;
+
           text-decoration: underline;
         }
 
         .slide-excerpt__text{
-          font-style: italic;
+          //font-style: italic;
           //padding: 20px;
-          margin-left: 20px;
-          margin-right: 20px;
-          padding-left: 20px;
-          padding-right: 20px;
+          font-family: "Merriweather";
+          //margin-left: 20px;
+          //margin-right: 20px;
+          //padding-left: 20px;
+          //padding-right: 20px;
+          text-align: justify;
+
+          //font-family: "Montserrat";
+          float: left;
+          width: 70%;
 
         }
 
         .slide-excerpt__cta{
+          float: left;
+
           width:100%;
           display:flex;
           flex-wrap:wrap;
           position: relative;
-          justify-content: center;
+          //justify-content: center;
 
           .slide-excerpt__cta-container{
+            font-family: "Merriweather";
+
             z-index: 100;
             /*display: none;*/
             position: absolute;

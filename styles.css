@@ -74,6 +74,10 @@ body {
   position: relative;
   overflow: hidden;
   margin-bottom: 100px;
+  /* Slide wrapper
+  	 ========================================================================== */
+  /**
+  */
   /* YHMA Leading
   	 ========================================================================== */
   /**
@@ -102,86 +106,98 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: black; }
-  /* line 27, sass/components/_mainHero.scss */
+  /* line 28, sass/components/_mainHero.scss */
+  .hero-wrapper .slide-wrapper {
+    top: 55%;
+    position: absolute;
+    width: 50%;
+    display: block; }
+  /* line 39, sass/components/_mainHero.scss */
   .hero-wrapper .slide-title {
     z-index: 100;
-    top: 25%;
     color: white;
     width: 50%;
     float: left;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
+    display: inline-block;
+    position: relative;
     justify-content: center;
     margin-left: 50px; }
-    /* line 39, sass/components/_mainHero.scss */
+    /* line 50, sass/components/_mainHero.scss */
     .hero-wrapper .slide-title .slide-title__leading {
+      font-family: "Montserrat";
+      float: left;
+      width: 100%;
       z-index: 100;
       color: white;
       font-weight: bold;
-      font-style: italic;
-      position: absolute;
-      left: 11%;
-      font-size: 3.5vw;
-      padding: 0px 0px 0px 10px;
+      position: relative;
+      font-size: 2.5vw;
       -webkit-font-smoothing: antialiased; }
-    /* line 51, sass/components/_mainHero.scss */
+    /* line 66, sass/components/_mainHero.scss */
     .hero-wrapper .slide-title .slide-title__trailing {
-      font-family: "Gloss-and-Bloom";
-      position: absolute;
+      font-family: "MontserratBlack";
+      position: relative;
       font-size: 8.5vw;
       float: left;
       text-align: left;
       width: 100%;
-      left: 12.5%;
-      top: 75px;
+      line-height: 6vw;
       display: none; }
-  /* line 75, sass/components/_mainHero.scss */
+  /* line 91, sass/components/_mainHero.scss */
   .hero-wrapper .slide-excerpt {
-    /*position: absolute;*/
-    color: white;
+    /*position: relative;*/
+    /*color: white;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    width: 45%;
-    float: left; }
-    /* line 84, sass/components/_mainHero.scss */
+    width:50%;
+    float: left;*/
+    z-index: 100;
+    color: white;
+    width: 85%;
+    float: left;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    margin-left: 50px;
+    padding-top: 10px; }
+    /* line 111, sass/components/_mainHero.scss */
     .hero-wrapper .slide-excerpt .slide-excerpt__container {
-      top: 60%;
       z-index: 100;
       position: absolute;
       color: white;
       text-align: center;
       display: none;
       float: left;
-      width: 35%; }
-      /* line 97, sass/components/_mainHero.scss */
+      width: 100%; }
+      /* line 124, sass/components/_mainHero.scss */
       .hero-wrapper .slide-excerpt .slide-excerpt__container .slide-excerpt__category {
         /*display: none;*/
-        font-weight: 300;
+        font-family: "Merriweather";
+        text-align: left;
         text-decoration: underline; }
-      /* line 103, sass/components/_mainHero.scss */
+      /* line 134, sass/components/_mainHero.scss */
       .hero-wrapper .slide-excerpt .slide-excerpt__container .slide-excerpt__text {
-        font-style: italic;
-        margin-left: 20px;
-        margin-right: 20px;
-        padding-left: 20px;
-        padding-right: 20px; }
-      /* line 113, sass/components/_mainHero.scss */
+        font-family: "Merriweather";
+        text-align: justify;
+        float: left;
+        width: 70%; }
+      /* line 150, sass/components/_mainHero.scss */
       .hero-wrapper .slide-excerpt .slide-excerpt__container .slide-excerpt__cta {
+        float: left;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        position: relative;
-        justify-content: center; }
-        /* line 120, sass/components/_mainHero.scss */
+        position: relative; }
+        /* line 159, sass/components/_mainHero.scss */
         .hero-wrapper .slide-excerpt .slide-excerpt__container .slide-excerpt__cta .slide-excerpt__cta-container {
+          font-family: "Merriweather";
           z-index: 100;
           /*display: none;*/
           position: absolute;
           font-size: 15px;
           margin-top: 20px; }
-  /* line 139, sass/components/_mainHero.scss */
+  /* line 180, sass/components/_mainHero.scss */
   .hero-wrapper .slider-button {
     cursor: pointer;
     position: absolute;
@@ -196,15 +212,15 @@ body {
     border-radius: 0 3px 3px 0;
     z-index: 100;
     /* Position the "next button" to the right */ }
-    /* line 153, sass/components/_mainHero.scss */
+    /* line 194, sass/components/_mainHero.scss */
     .hero-wrapper .slider-button__next {
       right: 0;
       border-radius: 3px 0 0 3px; }
-    /* line 158, sass/components/_mainHero.scss */
+    /* line 199, sass/components/_mainHero.scss */
     .hero-wrapper .slider-button__prev {
       left: 0;
       border-radius: 3px 0 0 3px; }
-  /* line 168, sass/components/_mainHero.scss */
+  /* line 209, sass/components/_mainHero.scss */
   .hero-wrapper .slider-scroll-down {
     position: absolute;
     bottom: 10px;
@@ -257,6 +273,18 @@ body {
 @font-face {
   font-family: Gloss-and-Bloom;
   src: url("./includes/fonts/gloss_and_bloom/Gloss_And_Bloom.ttf");
+  font-weight: normal; }
+@font-face {
+  font-family: Montserrat;
+  src: url("./includes/fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: normal; }
+@font-face {
+  font-family: MontserratBlack;
+  src: url("./includes/fonts/Montserrat/Montserrat-Black.ttf");
+  font-weight: Montserrat-Black; }
+@font-face {
+  font-family: Merriweather;
+  src: url("./includes/fonts/Merriweather/Merriweather-Regular.ttf");
   font-weight: normal; }
 @font-face {
   font-family: FontAwesomeSolid;

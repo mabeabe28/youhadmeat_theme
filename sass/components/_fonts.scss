@@ -10,6 +10,24 @@
 }
 
 @font-face {
+    font-family: Montserrat;
+    src: url('./includes/fonts/Montserrat/Montserrat-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: MontserratBlack;
+    src: url('./includes/fonts/Montserrat/Montserrat-Black.ttf');
+    font-weight: Montserrat-Black;
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url('./includes/fonts/Merriweather/Merriweather-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
     font-family: FontAwesomeSolid;
 		src: url('./includes/icons/fontawesome/webfonts/fa-solid-900.eot');
   	src: url('./includes/icons/fontawesome/webfonts/fa-solid-900.eot') format('embedded-opentype'),

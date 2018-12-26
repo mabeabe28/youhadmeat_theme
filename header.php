@@ -17,9 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<style>
-	@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans');
-	</style>
+
 	<script src="https://code.jquery.com/jquery-git.min.js"></script>
 
 	<?php wp_head(); ?>

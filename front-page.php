@@ -99,13 +99,13 @@ get_header();
 
 						';
 
-
+						echo '<div class="slide-wrapper">';
 							echo '<div class="slide-title category--'.$ParentCategory->slug.'">
 								<div class="slide-title__leading">
 									<h1>You Had Me At</h1>
 								</div>
 								<div class="slide-title__trailing js-slide-title">
-									<h1>'.$ParentCategory->cat_name.'</h1>
+									<h1>'.strtoupper($ParentCategory->cat_name).'</h1>
 								</div>
 							</div>';
 
@@ -113,9 +113,6 @@ get_header();
 
 							echo '<div class="slide-excerpt">
 								<div class="slide-excerpt__container js-slide-excerpt" >
-									<div class="slide-excerpt__category">
-										Latest '.$ParentCategory->cat_name.' Post
-									</div>
 									<div class="slide-excerpt__text">
 										'.$excerptStr.'
 									</div>
@@ -128,7 +125,8 @@ get_header();
 
 								</div>';
 
-								echo '<div class="slider-scroll-down anmt-scroll-down"></div>';
+								//echo '<div class="slider-scroll-down anmt-scroll-down"></div>';
+								echo '</div>';
 
 							echo '</div>';
 
