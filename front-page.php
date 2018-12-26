@@ -77,7 +77,7 @@ get_header();
 						/*echo '<div class="mySlides">';*/
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
-							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 70) ? substr($recent_post[0]["post_excerpt"],0,70).'...' :$recent_post[0]["post_excerpt"];
+							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 150) ? substr($recent_post[0]["post_excerpt"],0,150).'...' :$recent_post[0]["post_excerpt"];
 							$comingsoon = get_post_meta( $recent_post[0]["ID"],'comingsoon', true );
 							$pageTitle = get_the_title($recent_post[0]["ID"]);
 							$postUrl = get_permalink($recent_post[0]["ID"]);

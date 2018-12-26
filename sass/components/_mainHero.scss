@@ -26,7 +26,7 @@
   */
   .slide-title{
     z-index: 100;
-    top: 30%;
+    top: 25%;
     color: white;
     width:50%;
     float: left;
@@ -75,13 +75,14 @@
   .slide-excerpt {
       /*position: absolute;*/
       color: white;
-      width: 100%;
       display: flex;
       justify-content: center;
       flex-flow: row wrap;
+      width:45%;
+      float: left;
 
       .slide-excerpt__container{
-        top: 70%;
+        top: 60%;
         z-index: 100;
         position: absolute;
         color: white;
@@ -90,7 +91,7 @@
         display: none;
         float: left;
         //left:1px;
-        width:50%;
+        width:35%;
 
 
         .slide-excerpt__category{
@@ -101,6 +102,12 @@
 
         .slide-excerpt__text{
           font-style: italic;
+          //padding: 20px;
+          margin-left: 20px;
+          margin-right: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+
         }
 
         .slide-excerpt__cta{
