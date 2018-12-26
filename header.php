@@ -49,13 +49,13 @@
 			<div class="overlay-content">
 				<?php get_search_form() ?>
 			</div>
-		</div>
+		</div>-->
 
 
 
 		<nav id="site-navigation">
 
-			<div id="side-navigation">
+			<!--<div id="side-navigation">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 				<?php
 				wp_nav_menu( array(
@@ -69,12 +69,12 @@
 						You Had Me At
 					</div>
 				</div>
-			</div>
+			</div>-->
 
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
 				</i>
-			</span>-->
+			</span>
 
 		<?php
 		global $post;
@@ -99,7 +99,7 @@
 			$logo_text_class = 'page--'.strtolower($logo_text).'';
 		}
 
-		/*echo '<div id="logo">
+		echo '<div id="logo">
 			<a href="'.get_home_url().'">
 				<strong><i>You Had Me At</i></strong>
 			</a>
@@ -108,32 +108,27 @@
 					'.$logo_text.'
 				</a>
 			</div>
-		</div>';*/
+		</div>';
 
 		 ?>
 
 
-			<!--<div id="navigation-buttons">
+		<!--<div id="navigation-buttons">
 				<a href="<?php echo get_home_url()?>">
 					<i class="fas fa-home fa-lg">
 					</i>
 				</a>
 			</div>-->
 
-			<!--<div class="search-toggle" onclick="openSearch()">
+		<div class="search-toggle" onclick="openSearch()">
 			 	<i class="fas fa-search fa-lg">
 			 	</i>
 		 	</div>
 
 			<div class="main-navigation">
 
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'main',
-						'menu_id'        => 'primary-menu',
-					) );
-					?>
-			 </div>-->
+
+			 </div>
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
@@ -167,7 +162,7 @@
 	    $('#sideNav-menu .menu-item .sub-menu').toggle();
 	}
 
-	$(document).on('scroll', function (e) {
+	/*$(document).on('scroll', function (e) {
 	  //  $('.navbar').css('opacity', ($(document).scrollTop() / 50));
 	    var rgba = $(document).scrollTop() / 250;
 	    $('#site-navigation').css('background-color', 'rgba(0,0,0,' + (rgba) + ')');
@@ -178,7 +173,7 @@
 	    }
 
 			$(".featured-fade").css("opacity", 1 - $(document).scrollTop() / screen.height);
-	});
+	});*/
 
 		/*search*/
 			// Open the full screen search box

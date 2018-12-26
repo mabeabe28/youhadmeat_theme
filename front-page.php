@@ -90,7 +90,7 @@ get_header();
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
-							echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').');"">
+							echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').');"">
 							<div style="display:none;">
 								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 								<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').'">

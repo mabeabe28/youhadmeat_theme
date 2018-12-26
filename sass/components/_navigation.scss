@@ -1,0 +1,104 @@
+
+#site-navigation{
+  /* Slide wrapper
+  	 ========================================================================== */
+  /**
+  */
+  top: 0;
+	position: fixed;
+	text-align:center;
+	z-index: 101;
+	color: white;
+	width: 100%;
+
+  a { text-decoration: none; color: white;}
+  a:visited { text-decoration: none; color: white;  }
+  a:hover { text-decoration: none; color: white;  }
+  a:focus { text-decoration: none; color: white;  }
+  a:hover, a:active { text-decoration: none; color: white;}
+
+  #logo{
+  	display: inline-block;
+  	margin-top: 10px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    float: left;
+  }
+
+  .main-navigation {
+  	/*clear: both;*/
+  	display: inline-block;
+  	float: right;
+  	padding-right: 50px;
+
+    ul {
+    	//display: none;
+    	list-style: none;
+    	margin: 0;
+    	padding-left: 0;
+    }
+
+    li {
+    	float: left;
+    	position: relative;
+    	margin-top: 10px;
+    	margin-right: 20px;
+    	margin-left: 20px;
+    }
+
+    a{
+    	text-decoration: none;
+    	color: white;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  ## Menu Items
+  --------------------------------------------------------------*/
+
+  #navigation-buttons{
+  	display:inline-block;
+  	position:relative;
+  	margin-top:10px;
+  	float:right;
+  	margin-right:10px;
+
+  }
+
+  /*--------------------------------------------------------------
+  ## Side Menu
+  --------------------------------------------------------------*/
+
+  /* Side Menu Toggle. */
+  .menu-toggle,
+  .main-navigation.toggled ul {
+  	display: absolute;
+  }
+
+  .menu-toggle{
+  	float: left;
+  	padding: 10px 10px 10px 10px;
+  	display: inline-block;
+  }
+
+  .menu-toggle:hover{
+  	color: pink;
+  }
+
+  /*--------------------------------------------------------------
+  ## Search Box
+  --------------------------------------------------------------*/
+
+  .search-toggle{
+  	display:inline-block;
+  	position:relative;
+  	float:right;
+  	padding: 10px 10px 10px 10px;
+  }
+
+  .search-toggle:hover{
+  	color: pink;
+  }
+
+
+}
