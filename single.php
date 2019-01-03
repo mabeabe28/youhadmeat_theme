@@ -54,7 +54,7 @@ get_header();
 		padding-bottom: 20px;
 		font-size: 3.4722222222222223vw;
 		width:80%;
-		font-family:"Crimson Text";
+		font-family:"Merriweather";
 	}
 
 	/*hero text wrapper stuff*/
@@ -79,7 +79,7 @@ get_header();
 		padding-bottom: 20px;
 		font-size: 3.4722222222222223vw;
 		width:80%;
-		font-family:"Crimson Text";
+		font-family:"Merriweather";
 
 	}
 
@@ -91,13 +91,13 @@ get_header();
 	.excerpt{
 		font-size: 1.6666666666666665vw;
 		font-weight: 300;
-		font-family:"Avenir","Open Sans";
+		font-family:"Montserrat";
 	}
 
 	.meta{
 		font-size: 1.1111111111111112vw;
 		font-style: italic;
-		font-family:"Avenir","Open Sans";
+		font-family:"Montserrat";
 
 	}
 

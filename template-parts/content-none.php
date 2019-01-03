@@ -30,7 +30,7 @@
 	.no-results .title{
 		width: 100%;
 		text-align: center;
-		font-family: "Gloss-and-Bloom";
+		font-family: "MontserratBlack";
 	}
 
 </style>

@@ -103,7 +103,7 @@
 			<a href="'.get_home_url().'">
 				<strong><i>You Had Me At</i></strong>
 			</a>
-			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
+			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
 				<a href="'.$logo_text_link.'">
 					'.$logo_text.'
 				</a>

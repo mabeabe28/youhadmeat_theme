@@ -63,7 +63,7 @@
 
 
     .slide-title__leading{
-      font-family: "Montserrat";
+      font-family: $base-font-family;
       float: left;
       width: 100%;
 
@@ -79,7 +79,7 @@
     }
 
     .slide-title__trailing{
-      font-family: "MontserratBlack";
+      font-family: $loud-font-family;
       //font-weight: 900;
       position: relative;
       font-size: 8.5vw;
@@ -152,7 +152,7 @@
         .slide-excerpt__category{
           /*display: none;*/
           //font-weight: 300;
-          font-family: "Merriweather";
+          font-family: $alt-font-family;
           text-align: left;
           //width: 100%;
 
@@ -162,7 +162,7 @@
         .slide-excerpt__text{
           //font-style: italic;
           //padding: 20px;
-          font-family: "Merriweather";
+          font-family: $alt-font-family;
           //margin-left: 20px;
           //margin-right: 20px;
           //padding-left: 20px;
@@ -170,7 +170,6 @@
           text-align: justify;
           width: 70%;
 
-          //font-family: "Montserrat";
           @media screen and (max-width: $medium-breakpoint) {
             padding-right: 30px;
             float: none;
@@ -188,7 +187,7 @@
           //justify-content: center;
 
           .slide-excerpt__cta-container{
-            font-family: "Merriweather";
+            font-family: $alt-font-family;
 
             z-index: 100;
             /*display: none;*/

@@ -286,7 +286,7 @@ top:-100px;
 .post-header{
 height:100px;
 font-size: 42px;
-font-family: "Crimson Text";
+font-family: "Merriweather";
 
 display: flex;
 flex-direction: column;

@@ -252,7 +252,7 @@ get_header();
 			echo '<div id="divider" class="category--'.$curcat->slug.'">
 						  <div id="divider-content">
 						    <div class="text">
-						        '.$curcat->name.'
+						        '.strtoupper($curcat->name).'
 						    </div>
 						  </div>
 						</div>
@@ -288,7 +288,7 @@ get_header();
 				<a href="'.$postUrl.'">
 
 										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
-											<div class="category-title">'.$curcat->name.'</div>
+											<div class="category-title">'.strtoupper($curcat->name).'</div>
 											<div class="category-icon"></div>
 										</div></div>
 										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
@@ -340,7 +340,7 @@ get_header();
 width: 100%;
 padding: 0.8vw 1.22880658436214vw 1.42880658436214vw 1.22880658436214vw;
 font-size: 2.2434842249657065vw;
-font-family: "Gloss-and-Bloom";
+font-family: "MontserratBlack";
 display:block;
 position:relative;
 z-index: 1;

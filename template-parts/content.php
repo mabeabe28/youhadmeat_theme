@@ -61,7 +61,7 @@
 	}
 
 	.author-name .trailing{
-		font-family: "Gloss-and-Bloom";
+		font-family: "MontserratBlack";
 		display: inline-block;
 		padding: 8px;
 

@@ -447,7 +447,7 @@ text-align: left;
 
 #footer {
 	background-color: black;
-	font-family: "Avenir", "Open Sans";
+	font-family: "Montserrat";
 	color: white;
 	font-size: 0.75em;
 	position: relative;
@@ -481,7 +481,7 @@ text-align: left;
 }
 
 #footer .site-logo .trailing{
-	font-family: "Gloss-and-Bloom";
+	font-family: "MontserratBlack";
 	padding:10px;
 }
 #footer .site-info{

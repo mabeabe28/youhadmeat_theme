@@ -58,7 +58,7 @@ get_header();
   /*top:20%;*/
   position:relative;
   font-size:3em;
-  font-family:"Crimson Text";
+  font-family:"Merriweather";
   letter-spacing:2px;
 }
 
