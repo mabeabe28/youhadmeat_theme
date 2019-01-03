@@ -310,7 +310,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	function theme_enqueue_styles() {
 		//wp_enqueue_style( 'card-styles', get_template_directory_uri() . '/css/card-styles.css');
 	  $custom_css = theme_get_customizer_css();
-	  //wp_add_inline_style( 'card-styles', $custom_css );
+	  wp_add_inline_style( 'styles', $custom_css );
 	}
 	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
