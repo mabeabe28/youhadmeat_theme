@@ -278,7 +278,7 @@ get_header();
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     document.getElementById("site-navigation").style.top = "0";
   } else {
     document.getElementById("site-navigation").style.top = "-50px";
