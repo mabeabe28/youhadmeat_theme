@@ -1,4 +1,5 @@
 
+#initial-navigation,
 #site-navigation{
   top: 0;
 	position: fixed;
@@ -98,13 +99,24 @@
 
 }
 
+
+#site-navigation{
+  background: #333;
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+#initial-navigation{
+  position: absolute;
+}
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
 
 
 #footer {
-	background-color: black;
+	background-color: #333;
 	font-family: "Montserrat";
 	color: white;
 	font-size: 0.75em;
@@ -192,4 +204,58 @@
     &:hover, a:active { text-decoration: none; color:white;}
   }
 
+}
+
+/*--------------------------------------------------------------
+## MISC
+--------------------------------------------------------------*/
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	width: 50%;
+	margin: 0;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	width: 50%;
+	margin: 0;
+
+}
+
+.nav-links{
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.nav-previous a,.nav-next a{
+	display: inline-block;
+	padding: 8px;
+	margin: 10px;
+	color: black;
+	border: 2px solid black;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	transition: border-color 0.3s ease-out,
+							color 0.3s ease-out;
+}
+
+
+.nav-previous a:hover,.nav-next a:hover,
+.nav-previous a:active,.nav-next a:active{
+  color: pink;
+  border-color: #66d8ed;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
 }

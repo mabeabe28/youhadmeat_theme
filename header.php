@@ -52,7 +52,84 @@
 		</div>-->
 
 
+		<nav id="initial-navigation">
 
+			<!--<div id="side-navigation">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'sidenav',
+					'menu_id'        => 'sideNav-menu',
+				) );
+				?>
+
+				<div class="logo">
+					<div class="text">
+						You Had Me At
+					</div>
+				</div>
+			</div>-->
+
+			<span class="menu-toggle" onclick="openNav()">
+				<i class="fas fa-bars fa-lg">
+				</i>
+			</span>
+
+		<?php
+		global $post;
+		$post_type = get_post_type($post->ID);
+		$logo_text = "";
+		$logo_text_link = get_home_url();
+		$logo_text_class = "";
+
+		if($post_type == 'post' && !is_archive() && !is_search() ){
+			$category = get_the_category($post->ID);
+			//get top level parent only
+			foreach($category as $curcat){
+				if($curcat->parent == 0){
+					$logo_text = $curcat->cat_name;
+					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
+					$logo_text_class = 'category--'.$curcat->slug.'';
+				}
+			}
+		}elseif($post_type == 'page' && !is_front_page()){
+			$logo_text = get_the_title($post->ID);
+			$logo_text_link = get_permalink($post->ID);
+			$logo_text_class = 'page--'.strtolower($logo_text).'';
+		}
+
+		echo '<div id="logo">
+			<a href="'.get_home_url().'">
+				<strong><i>You Had Me At</i></strong>
+			</a>
+			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
+				<a href="'.$logo_text_link.'">
+					'.$logo_text.'
+				</a>
+			</div>
+		</div>';
+
+		 ?>
+
+
+		<!--<div id="navigation-buttons">
+				<a href="<?php echo get_home_url()?>">
+					<i class="fas fa-home fa-lg">
+					</i>
+				</a>
+			</div>-->
+
+		<div class="search-toggle" onclick="openSearch()">
+				<i class="fas fa-search fa-lg">
+				</i>
+			</div>
+
+			<div class="main-navigation">
+
+
+			 </div>
+
+		</nav><!-- #site-navigation -->
 		<nav id="site-navigation">
 
 			<!--<div id="side-navigation">
