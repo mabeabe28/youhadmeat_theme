@@ -77,7 +77,7 @@ get_header();
 						/*echo '<div class="mySlides">';*/
 
 						if(has_post_thumbnail($recent_post[0]["ID"])){
-							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 150) ? substr($recent_post[0]["post_excerpt"],0,150).'...' :$recent_post[0]["post_excerpt"];
+							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 100) ? substr($recent_post[0]["post_excerpt"],0,100).'...' :$recent_post[0]["post_excerpt"];
 							$comingsoon = get_post_meta( $recent_post[0]["ID"],'comingsoon', true );
 							$pageTitle = get_the_title($recent_post[0]["ID"]);
 							$postUrl = get_permalink($recent_post[0]["ID"]);
@@ -180,12 +180,12 @@ get_header();
 		//get all cats
 		//$categories_all=get_categories();
 		echo '<div class="card-deck">
-			<div class="latest">
+			<div class="card-deck__latest">
 				<h1>
 					Latest Posts
 				</h1>
 			</div>
-			<ul class="card-container">';
+			<ul class="card-deck__container">';
 
 
 			$args = array(
@@ -218,20 +218,18 @@ get_header();
 					}
 				}
 
-				echo'	<li class="card-wrapper post--'.$post["ID"].' category--'.$curParentCategory->slug.'">
+				echo'	<li class="card post--'.$post["ID"].' category--'.$curParentCategory->slug.'">
 					<a href="'.$curPostUrl.'">
-								<div class="card-header"><div class="card-header-category category--'.$curParentCategory->slug.'">
-									<div class="category-title">'.$curParentCategory->name.'</div>
-									<div class="category-icon"></div>
+								<div class="card__header"><div class="card__header-category category--'.$curParentCategory->slug.'">
+									<div class="card__header-category__title">'.strtoupper($curParentCategory->name).'</div>
+									<div class="card__header-category__icon"></div>
 								</div></div>
 								<img src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
-								<div class="card-content">
-									<div class="card-content-container">
-										<div class="card-content-title">'.$curPostTitle.'</div>
-										<div class="card-content-excerpt">
+								<div class="card__content">
+										<div class="card__content-title">'.$curPostTitle.'</div>
+										<div class="card__content-excerpt">
 											'.$curExcerptStr.'
 										</div>
-									</div>
 								</div>
 							</a>
 					</li>';
@@ -257,7 +255,7 @@ get_header();
 						  </div>
 						</div>
 						';
-			echo '<ul class="card-container">';
+			echo '<ul class="card-deck__container">';
 
 			$args = array(
 				'numberposts' => 4,
@@ -284,24 +282,22 @@ get_header();
 					$postUrl = '##';
 				}
 
-				echo '<li class="card-wrapper post--'.$curpost["ID"].' category--'.$curcat->slug.'">
-				<a href="'.$postUrl.'">
-
-										<div class="card-header"><div class="card-header-category category--'.$curcat->slug.'">
-											<div class="category-title">'.strtoupper($curcat->name).'</div>
-											<div class="category-icon"></div>
-										</div></div>
-										<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
-										<div class="card-content">
-											<div class="card-content-container">
-												<div class="card-content-title">'.$pageTitle.'</div>
-												<div class="card-content-excerpt">
-													'.$excerptStr.'
-												</div>
-											</div>
+				echo'	<li class="card post--'.$curpost["ID"].' category--'.$curcat->slug.'">
+					<a href="'.$postUrl.'">
+								<div class="card__header"><div class="card__header-category category--'.$curcat->slug.'">
+									<div class="card__header-category__title">'.strtoupper($curcat->name).'</div>
+									<div class="card__header-category__icon"></div>
+								</div></div>
+								<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
+								<div class="card__content">
+										<div class="card__content-title">'.$pageTitle.'</div>
+										<div class="card__content-excerpt">
+											'.$excerptStr.'
 										</div>
-									</a>
-							</li>';
+								</div>
+							</a>
+					</li>';
+
 			}
 
 			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
