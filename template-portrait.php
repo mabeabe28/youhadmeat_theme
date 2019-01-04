@@ -274,7 +274,17 @@ get_header();
 
   </main><!-- #main -->
 </div><!-- #primary -->
+<script>
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("site-navigation").style.top = "0";
+  } else {
+    document.getElementById("site-navigation").style.top = "-50px";
+  }
+}
+</script>
 <?php
 /*get_sidebar();*/
 get_footer();

@@ -104,7 +104,7 @@
 			</a>
 			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
 				<a href="'.$logo_text_link.'">
-					'.$logo_text.'
+					'.strtoupper($logo_text).'
 				</a>
 			</div>
 		</div>';
@@ -182,7 +182,7 @@
 			</a>
 			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
 				<a href="'.$logo_text_link.'">
-					'.$logo_text.'
+					'.strtoupper($logo_text).'
 				</a>
 			</div>
 		</div>';
