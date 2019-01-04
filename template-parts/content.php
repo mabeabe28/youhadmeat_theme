@@ -106,6 +106,10 @@
 	a:hover { text-decoration: none;color:pink; }
 	a:focus { text-decoration: none;  color:pink;}
 	a:hover, a:active { text-decoration: none; color:pink;}
+
+	ins {
+		background: #ffffff00;
+	}
 	</style>
 
 
@@ -119,7 +123,7 @@
 	<script>
 			 (adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
-	
+
 	<footer class="entry-footer">
 
 
