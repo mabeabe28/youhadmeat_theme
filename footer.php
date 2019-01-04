@@ -20,11 +20,11 @@
 					You Had Me At
 				</div>
 				<div class="trailing">
-					Blog
+					BLOG
 				</div>
 			</div>
 			<div class="site-info">
-				<h3><strong>About</strong></h3>
+				<h3><strong>ABOUT</strong></h3>
 				<p>
 					You had me at hello. The <i><strong>You Had Me At</strong></i> blog is a communal blog between a group of friends,
 					looking to share each others wealth of information
@@ -32,17 +32,17 @@
 				</p>
 			</div>
 			<div class="contact-info">
-				<h3><strong>Contact</strong></h3>
+				<h3><strong>CONTACT</strong></h3>
 					Feel free to contact us about anything!
 				</br>
 				<i class="fas fa-envelope fa-sm">
-				</i> Email: hello@youhadme.at
+				</i> Email: <a href="mailto:hello@youhadme.at" target="_blank">hello@youhadme.at</a>
 				</br>
 				<i class="fab fa-instagram fa-sm">
 		</i> Instagram: <a href="https://www.instagram.com/youhadme.at" target="_blank">@youhadme.at</a>
 			</div>
 			<div class="menu-info">
-				<h3><strong>Navigation</strong></h3>
+				<h3><strong>NAVIGATION</strong></h3>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer',

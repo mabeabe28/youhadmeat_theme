@@ -1,9 +1,5 @@
 
 #site-navigation{
-  /* Slide wrapper
-  	 ========================================================================== */
-  /**
-  */
   top: 0;
 	position: fixed;
 	text-align:center;
@@ -100,5 +96,100 @@
   	color: pink;
   }
 
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+
+#footer {
+	background-color: black;
+	font-family: "Montserrat";
+	color: white;
+	font-size: 0.75em;
+	position: relative;
+
+  .footer-main{
+  	width: 100%;
+  	display: flex;
+  	justify-content: space-around;
+  	flex-flow: row wrap;
+  }
+
+  .copyright-info{
+  	width: 100%;
+  	display: block;
+  	text-align: center;
+  }
+
+  .site-logo{
+  	text-align: center;
+  	font-size: 1.25em;
+  	color: white;
+  	margin: 40px;
+  	width: 300px;
+  	display: inline-block;
+
+    .leading{
+    	font-weight: bold;
+    }
+
+    .trailing{
+    	font-family: "MontserratBlack";
+    	padding:10px;
+    }
+  }
+
+  .site-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+  .contact-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+  .menu-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+
+  #footer-menu{
+  	margin: 0;
+  	width: 300px;
+  	display: inline-block;
+  	list-style: none;
+  	overflow:hidden;
+
+    li{
+    	float:left;
+    	display:inline;
+    	width:50%;
+    }
+
+    .menu-main-container{
+    	padding: 0px;
+    	margin: 0px;
+    }
+
+    .sub-menu{
+    	padding-left: 5px;
+    }
+  }
+
+  /* Links */
+  a{
+    text-decoration:underline;color:white;
+    &:visited { text-decoration: none; color:white; }
+    &:hover { text-decoration: none;color:white; }
+    &:focus { text-decoration: none; color:white;}
+    &:hover, a:active { text-decoration: none; color:white;}
+  }
 
 }
