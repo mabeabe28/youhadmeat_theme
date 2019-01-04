@@ -111,7 +111,16 @@
 
 	<footer class="entry-footer">
 
-
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+		     style="display:block; text-align:center;"
+		     data-ad-layout="in-article"
+		     data-ad-format="fluid"
+		     data-ad-client="ca-pub-5329286116812288"
+		     data-ad-slot="7318134937"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 			<?php
 			echo '<div class="author-box" style="background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('.get_the_post_thumbnail_url().');
 			background-size: cover;
