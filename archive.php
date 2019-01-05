@@ -56,10 +56,10 @@ get_header();
 			<?php
 			/* Start the Loop */
 			echo '<div class="card-deck">';
-			echo '<div class="card-deck-header">
+			/*echo '<div class="card-deck-header">
 						 <div class="card-deck-header-title"></div>
-					 </div>';
-			echo '<ul class="card-container">';
+					 </div>';*/
+			echo '<ul class="card-deck__container">';
 
 			while ( have_posts() ) :
 				the_post();
@@ -86,23 +86,24 @@ get_header();
 					$excerptStr = '';
 					$postUrl = '##';
 				}
-				echo '<li class="card-wrapper category--'.$ParentCategory->slug.'">
-									<a href="'.$postUrl.'">
-										<div class="card-header"><div class="card-header-category category--'.$ParentCategory->slug.'">
-											<div class="category-title">'.$ParentCategory->name.'</div>
-											<div class="category-icon"></div>
-										</div></div>
-										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'large').'" />
-										<div class="card-content">
-											<div class="card-content-container">
-												<div class="card-content-title">'.$pageTitle.'</div>
-												<div class="card-content-excerpt">
-													'.$excerptStr.'
-												</div>
-											</div>
+
+				echo'	<li class="card category--'.$ParentCategory->slug.'">
+					<a href="'.$postUrl.'">
+								<div class="card__header"><div class="card__header-category category--'.$ParentCategory->slug.'">
+									<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
+									<div class="card__header-category__icon"></div>
+								</div></div>
+								<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
+								<div class="card__content">
+										<div class="card__content-title">'.$pageTitle.'</div>
+										<div class="card__content-excerpt">
+											'.$excerptStr.'
 										</div>
-									</a>
-							</li>';
+								</div>
+							</a>
+					</li>';
+
+
 
 
 
