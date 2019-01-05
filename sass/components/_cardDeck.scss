@@ -8,41 +8,54 @@
 	margin-top:20px;
 	margin-bottom:20px ;
 
+ &__header{
+ 	text-align: center;
+ 	padding:1px;
+ 	margin-top: 8px;
+ 	margin-bottom: 20px;
+
+		&-title{
+			font-family:"MontserratBlack";
+			font-size: 32px;
+			text-align: center;
+
+			h1{
+				margin:15px;
+			}
+		}
+ }
+
+ &__latest{
+	 margin-left: 5.829903978052126vw;
+ 	 margin-right: 5.829903978052126vw;
+	 margin-bottom: 20px;
+	 font-size: 2.2434842249657065vw;
+
+	 @media screen and (max-width:$small-breakpoint){
+		 font-size: 40px;
+	 }
+
+ }
+
+ &__container{
+ 	display:flex;
+ 	flex-wrap:wrap;
+ 	position: relative;
+ 	justify-content: space-around;
+ 	margin-left: 5.1440329218107vw;
+ 	margin-right: 5.1440329218107vw;
+ 	padding-left: 0;
+ 	padding-right: 0;
+ 	list-style: none;
+
+ 	@media screen and (max-width: $small-breakpoint) {
+ 		margin-left: 0px;
+ 		margin-right: 0px;
+ 	}
+ }
 }
 
-.card-deck__header{
-	text-align: center;
-	padding:1px;
-	margin-top: 8px;
-	margin-bottom: 20px;
-}
 
-.card-deck__header-title{
-	font-family:"MontserratBlack";
-	font-size: 32px;
-	text-align: center;
-}
-
-.card-deck__header-title h1{
-	margin:15px;
-}
-
-.card-deck__container{
-	display:flex;
-	flex-wrap:wrap;
-	position: relative;
-	justify-content: space-around;
-	margin-left: 5.1440329218107vw;
-	margin-right: 5.1440329218107vw;
-	padding-left: 0;
-	padding-right: 0;
-	list-style: none;
-
-	@media screen and (max-width: $small-breakpoint) {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
-}
 
 /*--------------------------------------------------------------
 # Card

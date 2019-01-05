@@ -278,11 +278,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				    border-color: '.$cat_colour.';
 				}
 
-				#divider.category--'.$curcat->slug.' #divider-content .text:before{
+				/*#divider.category--'.$curcat->slug.' #divider-content .text:before{
 					display: inline-block;
 					font-family: FontAwesomeRegular,FontAwesomeSolid;
 			    content: "'.$cat_icon.'";
-				}
+				}*/
 
 
 				.category--'.$curcat->slug.' .category-icon:after{

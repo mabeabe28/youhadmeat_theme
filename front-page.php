@@ -90,7 +90,7 @@ get_header();
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
-							echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').');"">
+							echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').');">
 							<div style="display:none;">
 								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
 								<img src="'.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').'">
@@ -182,7 +182,7 @@ get_header();
 		echo '<div class="card-deck">
 			<div class="card-deck__latest">
 				<h1>
-					Latest Posts
+					LATEST POSTS
 				</h1>
 			</div>
 			<ul class="card-deck__container">';
@@ -323,10 +323,13 @@ get_header();
 	margin-right: 5.829903978052126vw;
 	}
 #divider-content {
-	border-bottom: 4.861111111111111vw solid #2fc4c4;
-	border-right: 5.555555555555555vw solid transparent;
+	/*(border-bottom: 4.861111111111111vw solid #2fc4c4;*/
+	/*border-right: 5.555555555555555vw solid transparent;*/
+	border-bottom: 80px solid #2fc4c4;
+	border-right:0;
+
 	height: 0;
-	width: 20.5761316872428vw;
+	/*width: 20.5761316872428vw;*/
   color:white;
   display:flex;
   justify-content:center;
@@ -344,15 +347,6 @@ z-index: 1;
 
 
 
-
-#divider:after {
-    content:"";
-    display:inline-block;
-    position:relative;
-    border-bottom: 1.0416666666666667vw solid #2fc4c4;
-    width:100%;
-    top: -15px;
-}
 
 @media screen and (max-width:500px){
 
