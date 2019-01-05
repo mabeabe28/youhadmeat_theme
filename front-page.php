@@ -102,7 +102,7 @@ get_header();
 						echo '<div class="slide-wrapper">';
 							echo '<div class="slide-title category--'.$ParentCategory->slug.'">
 								<div class="slide-title__leading">
-									<h1>You Had Me At</h1>
+									<h1>YOU HAD ME AT</h1>
 								</div>
 								<div class="slide-title__trailing js-slide-title">
 									<h1>'.strtoupper($ParentCategory->cat_name).'</h1>
