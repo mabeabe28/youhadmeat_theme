@@ -52,24 +52,24 @@
 			</div>
 		</div>
 
+		<div id="side-navigation">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'sidenav',
+				'menu_id'        => 'sideNav-menu',
+			) );
+			?>
 
+			<div class="logo">
+				<div class="text">
+					You Had Me At
+				</div>
+			</div>
+		</div>
 		<nav id="initial-navigation">
 
-			<!--<div id="side-navigation">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'sidenav',
-					'menu_id'        => 'sideNav-menu',
-				) );
-				?>
 
-				<div class="logo">
-					<div class="text">
-						You Had Me At
-					</div>
-				</div>
-			</div>-->
 
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
@@ -111,14 +111,6 @@
 		</div>';
 
 		 ?>
-
-
-		<!--<div id="navigation-buttons">
-				<a href="<?php echo get_home_url()?>">
-					<i class="fas fa-home fa-lg">
-					</i>
-				</a>
-			</div>-->
 
 		<div class="search-toggle" onclick="openSearch()">
 				<i class="fas fa-search fa-lg">

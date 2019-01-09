@@ -263,3 +263,103 @@
   transition: border-color 0.4s ease-in,
               color 0.4s ease-in;
 }
+
+/*--------------------------------------------------------------
+## side navigation
+--------------------------------------------------------------*/
+#side-navigation {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 102; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+  	padding-top: 15px;
+  }
+
+  a {
+  	padding: 5px 5px 5px 32px;
+  	text-decoration: none;
+  	font-size: 1.56em;
+  	color: #818181;
+  	display: block;
+  	transition: 0.3s;
+
+    @media screen and (max-height: 450px) {font-size: 1.13em;}
+
+    &:visited { text-decoration: none; color:#818181; }
+    &:focus { text-decoration: none; color:white;}
+    &:hover { text-decoration: none; color:pink;}
+    &:active { text-decoration: none; color:white;}
+  }
+
+  .logo{
+  	width: 100%;
+  	position:relative;
+  	bottom:0;
+  	margin: 10px;
+  	display: flex;
+  	justify-content: center;
+    color: white;
+    .text{
+      bottom: 0px;
+    	font-weight: bold;
+    }
+  }
+
+  .closebtn {
+  	position: absolute;
+  	top: 0;
+  	right: 25px;
+  	font-size: 2.25em;
+  	margin-left: 20px;
+  }
+
+  ul{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-align: left;
+  }
+
+  &.navOpen{
+  	width: 100%;
+
+    @media screen and (min-width: $medium-breakpoint) {
+      width: 300px;
+    }
+  }
+
+  &.navClose{
+  	width: 0px;
+  }
+
+
+  #sideNav-menu {
+    .menu-item {
+      a{
+        display: inline-block;
+      }
+
+      .sub-menu {
+        padding-left: 20px;
+        position: block;
+        overflow: hidden;
+        width: 100%;
+
+        a{
+          font-size: 1.44em;
+        }
+      }
+    }
+  }
+  
+}
