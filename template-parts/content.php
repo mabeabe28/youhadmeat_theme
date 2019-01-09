@@ -107,15 +107,13 @@
 	a:focus { text-decoration: none;  color:pink;}
 	a:hover, a:active { text-decoration: none; color:pink;}
 
-	ins {
-		background: #ffffff00;
-	}
+	
 	</style>
 
 
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<ins class="adsbygoogle"
-			 style="display:block; text-align:center;"
+			 style="display:block; text-align:center;background: #ffffff00;"
 			 data-ad-layout="in-article"
 			 data-ad-format="fluid"
 			 data-ad-client="ca-pub-5329286116812288"
