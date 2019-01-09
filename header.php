@@ -125,8 +125,12 @@
 			</div>
 
 			<div class="main-navigation">
-
-
+				<?php
+									wp_nav_menu( array(
+										'theme_location' => 'main',
+										'menu_id'        => 'primary-menu',
+									) );
+									?>
 			 </div>
 
 		</nav><!-- #site-navigation -->
@@ -203,7 +207,12 @@
 		 	</div>
 
 			<div class="main-navigation">
-
+				<?php
+									wp_nav_menu( array(
+										'theme_location' => 'main',
+										'menu_id'        => 'primary-menu',
+									) );
+									?>
 
 			 </div>
 
