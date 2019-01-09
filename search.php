@@ -65,10 +65,10 @@ $(document).on('scroll', function () {
 
 			<?php
 			echo '<div class="card-deck">';
-			echo '<div class="card-deck-header">
+			/*echo '<div class="card-deck-header">
 						 <div class="card-deck-header-title"></div>
-					 </div>';
-			echo '<ul class="card-container">';
+					 </div>';*/
+			echo '<ul class="card-deck__container">';
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -91,30 +91,29 @@ $(document).on('scroll', function () {
 					$excerptStr = '';
 					$postUrl = '##';
 				}
-				echo '<li class="card-wrapper category--'.$curcat->slug.'">
-									<a href="'.$postUrl.'">
-										<div class="card-header">';
 
-										/*only add category tag if its a post page*/
-										if(get_post_type() == 'post'){
-											echo '<div class="card-header-category category--'.$ParentCategory->slug.'">
-												<div class="category-title">'.$ParentCategory->name.'</div>
-												<div class="category-icon"></div>
-											</div>';
-										}
 
-										echo '</div>
-										<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
-										<div class="card-content">
-											<div class="card-content-container">
-												<div class="card-content-title">'.$pageTitle.'</div>
-												<div class="card-content-excerpt">
-													'.$excerptStr.'
-												</div>
-											</div>
+				echo'	<li class="card category--'.$curcat->slug.'">
+					<a href="'.$postUrl.'">
+								<div class="card__header">';
+
+								if(get_post_type() == 'post'){
+										echo'<div class="card__header-category category--'.$ParentCategory->slug.'">
+															<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
+															<div class="card__header-category__icon"></div>
+														</div>';//'</div>
+								}
+				echo '</div>
+				<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
+								<div class="card__content">
+										<div class="card__content-title">'.$pageTitle.'</div>
+										<div class="card__content-excerpt">
+											'.$excerptStr.'
 										</div>
-									</a>
-							</li>';
+								</div>
+							</a>
+					</li>';
+
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file

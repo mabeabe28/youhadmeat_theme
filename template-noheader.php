@@ -9,9 +9,6 @@
 get_header();
 ?>
 <style>
-  #site-navigation{
-    background-color: black;
-  }
 
 .featured-text{
       padding-top: 50px;
@@ -21,19 +18,19 @@ get_header();
 
 .title{
   font-size: 3.4722222222222223vw;
-font-family: "Crimson Text";
+font-family: "Merriweather";
 }
 
 .excerpt{
   font-size: 1.6666666666666665vw;
   font-weight: 300;
-  font-family:"Avenir","Open Sans";
+  font-family:"Montserrat";
 }
 
 .meta{
   font-size: 1.1111111111111112vw;
   font-style: italic;
-  font-family:"Avenir","Open Sans";
+  font-family:"Montserrat";
 }
 
 @media screen and (max-width: 800px) {
@@ -50,16 +47,6 @@ font-family: "Crimson Text";
   }
 }
 </style>
-<script>
-
-$(document).on('scroll', function () {
-    event.stopPropagation();
-    event.preventDefault();
-    $('#site-navigation').css('background-color', 'rgba(0,0,0,100)');
-
-});
-
-</script>
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
   <?php
@@ -110,7 +97,9 @@ $(document).on('scroll', function () {
 
   </main><!-- #main -->
 </div><!-- #primary -->
-
+<script>
+    document.getElementById("site-navigation").style.top = "0";
+</script>
 <?php
 /*get_sidebar();*/
 get_footer();

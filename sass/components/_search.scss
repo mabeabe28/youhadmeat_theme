@@ -1,0 +1,127 @@
+
+
+.search-overlay{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 103;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
+  .search-form,
+	.no-results .search-form,
+	.wrapper-404 .search-form{
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+	}
+
+  .search-field,
+	.no-results .search-field,
+	.wrapper-404 .search-field {
+		width: 100%;
+    position: inline-block;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 5em;
+    font-weight: 300;
+    text-align: center;
+    outline: none;
+		border-color: rgba(0,0,0,0);
+		-webkit-appearance: none;
+    text-transform: uppercase;
+    font-family: $loud-font-family;
+  }
+
+  .search-submit,
+  .no-results .search-submit,
+  .wrapper-404 .search-submit  {
+    position: inline-block;
+    border: black;
+    background-color: white;
+    -webkit-appearance: none;
+  }
+
+  .search-submit,
+  .screen-reader-text{
+    display: none;
+  }
+
+  .no-results .search-field,
+	.wrapper-404 .search-field{
+		background-color: rgb(0,0,0);
+	}
+
+
+  @media screen and (max-width:$small-breakpoint) {
+    .search-field,
+    .no-results .search-field,
+    .wrapper-404 .search-field {
+      font-size: 2.5em;
+    }
+  }
+
+
+  /* The content */
+  .overlay-content {
+    position: relative;
+    top: 40%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+  }
+
+  /* Close button */
+   .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 3.75em;
+    cursor: pointer;
+    color: white;
+
+    &:hover{
+      color: #ccc;
+
+    }
+  }
+
+
+
+  /* Style the search field */
+   input[type=text] {
+    padding: 15px;
+    font-size: 1.06em;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+
+    &:hover{
+      background: #f1f1f1;
+    }
+  }
+
+
+
+  /* Style the submit button */
+   button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 1.06em;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+      background: #bbb;
+
+    }
+  }
+
+
+}

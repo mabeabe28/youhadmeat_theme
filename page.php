@@ -108,7 +108,7 @@ get_header();
 	  padding-right: 10px;
 	  margin-left: 20px;
 	  margin-right: 20px;
-	  font-family: "Gloss-and-Bloom";
+	  font-family: "MontserratBlack";
 	  text-align: center;
 	  display: inline-block;
 	  padding-bottom: 20px;
@@ -133,7 +133,7 @@ get_header();
 		margin-top: : 20px;
 		margin-bottom: : 5px;
 
-		font-family: "Gloss-and-Bloom";
+		font-family: "MontserratBlack";
 		text-align: center;
 		display: inline-block;
 		padding-bottom: 20px;

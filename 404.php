@@ -49,7 +49,7 @@ get_header();
 		.wrapper-404 .title{
 			width: 100%;
 			text-align: center;
-			font-family: "Gloss-and-Bloom";
+			font-family: "MontserratBlack";
 			display: flex;
 			justify-content: center;
 			flex-flow: row wrap;
@@ -62,11 +62,8 @@ get_header();
 
 		.text-404-leading{
 			padding-left: 10px;
-			padding-right: 10px;
 			margin-left: 20px;
-			margin-right: 5px;
-			font-family: "Avenir","Open Sans","Calibri", sans-serif;
-			font-style: italic;
+			font-family: "Montserrat";
 			font-weight:bold;
 			text-align: center;
 			display: inline-block;
@@ -79,12 +76,10 @@ get_header();
 		}
 
 		.text-404-trailing{
-			padding-left: 10px;
 			padding-right: 10px;
-			margin-left: 5px;
 			margin-right: 20px;
 			width: 400px;
-			font-family: "Gloss-and-Bloom", Arial, sans-serif;
+			font-family: "MontserratBlack";
 			display: inline-block;
 			text-align: center;
 			font-size: 6vw;
@@ -98,7 +93,7 @@ get_header();
 	<section class="wrapper-404" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(<?php echo ''.get_template_directory_uri().'/includes/images/404.jpg'; ?>);">
 		<header class="title">
 			<div class="text-404-leading"><?php esc_html_e( 'You had me at ', 'youhadmeat_theme' ); ?></div>
-			<div class="text-404-trailing"><?php esc_html_e( 'Oops', 'youhadmeat_theme' ); ?></div>
+			<div class="text-404-trailing"><?php esc_html_e( 'OOPS', 'youhadmeat_theme' ); ?></div>
 		</header><!-- .page-header -->
 
 		<div class="page-content">

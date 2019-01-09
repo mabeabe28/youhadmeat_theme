@@ -17,9 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<style>
-	@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans');
-	</style>
+
 	<script src="https://code.jquery.com/jquery-git.min.js"></script>
 
 	<?php wp_head(); ?>
@@ -33,6 +31,13 @@
 
 	  gtag('config', 'UA-123741580-1');
 	</script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-5329286116812288",
+           enable_page_level_ads: true
+      });
+ </script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -40,37 +45,37 @@
 
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'youhadmeat_theme' ); ?></a>
+	<!---<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'youhadmeat_theme' ); ?></a>-->
 
 	<header id="masthead" class="site-header">
 
-		<div id="searchOverlay" class="overlay fade">
+		<div id="searchOverlay" class="search-overlay fade">
 			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-xs">
 			</i></span>
 			<div class="overlay-content">
+				<span class="blinking-cursor">|</span>
 				<?php get_search_form() ?>
 			</div>
 		</div>
 
+		<div id="side-navigation">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'sidenav',
+				'menu_id'        => 'sideNav-menu',
+			) );
+			?>
 
-
-		<nav id="site-navigation">
-
-			<div id="side-navigation">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'sidenav',
-					'menu_id'        => 'sideNav-menu',
-				) );
-				?>
-
-				<div class="logo">
-					<div class="text">
-						You Had Me At
-					</div>
+			<div class="logo">
+				<div class="text">
+					You Had Me At
 				</div>
 			</div>
+		</div>
+		<nav id="initial-navigation">
+
+
 
 			<span class="menu-toggle" onclick="openNav()">
 				<i class="fas fa-bars fa-lg">
@@ -104,9 +109,83 @@
 			<a href="'.get_home_url().'">
 				<strong><i>You Had Me At</i></strong>
 			</a>
-			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:Gloss-and-Bloom">
+			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
 				<a href="'.$logo_text_link.'">
-					'.$logo_text.'
+					'.strtoupper($logo_text).'
+				</a>
+			</div>
+		</div>';
+
+		 ?>
+
+		<div class="search-toggle" onclick="openSearch()">
+				<i class="fas fa-search fa-lg">
+				</i>
+			</div>
+
+			<div class="main-navigation">
+				<?php
+									wp_nav_menu( array(
+										'theme_location' => 'main',
+										'menu_id'        => 'primary-menu',
+									) );
+									?>
+			 </div>
+
+		</nav><!-- #site-navigation -->
+		<nav id="site-navigation">
+
+			<!--<div id="side-navigation">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'sidenav',
+					'menu_id'        => 'sideNav-menu',
+				) );
+				?>
+
+				<div class="logo">
+					<div class="text">
+						You Had Me At
+					</div>
+				</div>
+			</div>-->
+
+			<span class="menu-toggle" onclick="openNav()">
+				<i class="fas fa-bars fa-lg">
+				</i>
+			</span>
+
+		<?php
+		global $post;
+		$post_type = get_post_type($post->ID);
+		$logo_text = "";
+		$logo_text_link = get_home_url();
+		$logo_text_class = "";
+
+		if($post_type == 'post' && !is_archive() && !is_search() ){
+			$category = get_the_category($post->ID);
+			//get top level parent only
+			foreach($category as $curcat){
+				if($curcat->parent == 0){
+					$logo_text = $curcat->cat_name;
+					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
+					$logo_text_class = 'category--'.$curcat->slug.'';
+				}
+			}
+		}elseif($post_type == 'page' && !is_front_page()){
+			$logo_text = get_the_title($post->ID);
+			$logo_text_link = get_permalink($post->ID);
+			$logo_text_class = 'page--'.strtolower($logo_text).'';
+		}
+
+		echo '<div id="logo">
+			<a href="'.get_home_url().'">
+				<strong><i>You Had Me At</i></strong>
+			</a>
+			<div id="logo-item" class="'.$logo_text_class.'" style="display:inline-block;margin-left:5px;font-family:MontserratBlack">
+				<a href="'.$logo_text_link.'">
+					'.strtoupper($logo_text).'
 				</a>
 			</div>
 		</div>';
@@ -114,26 +193,26 @@
 		 ?>
 
 
-			<!--<div id="navigation-buttons">
+		<!--<div id="navigation-buttons">
 				<a href="<?php echo get_home_url()?>">
 					<i class="fas fa-home fa-lg">
 					</i>
 				</a>
 			</div>-->
 
-			<div class="search-toggle" onclick="openSearch()">
+		<div class="search-toggle" onclick="openSearch()">
 			 	<i class="fas fa-search fa-lg">
 			 	</i>
 		 	</div>
 
 			<div class="main-navigation">
-
 				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'main',
-						'menu_id'        => 'primary-menu',
-					) );
-					?>
+									wp_nav_menu( array(
+										'theme_location' => 'main',
+										'menu_id'        => 'primary-menu',
+									) );
+									?>
+
 			 </div>
 
 		</nav><!-- #site-navigation -->
@@ -168,7 +247,7 @@
 	    $('#sideNav-menu .menu-item .sub-menu').toggle();
 	}
 
-	$(document).on('scroll', function (e) {
+	/*$(document).on('scroll', function (e) {
 	  //  $('.navbar').css('opacity', ($(document).scrollTop() / 50));
 	    var rgba = $(document).scrollTop() / 250;
 	    $('#site-navigation').css('background-color', 'rgba(0,0,0,' + (rgba) + ')');
@@ -179,7 +258,7 @@
 	    }
 
 			$(".featured-fade").css("opacity", 1 - $(document).scrollTop() / screen.height);
-	});
+	});*/
 
 		/*search*/
 			// Open the full screen search box

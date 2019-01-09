@@ -1,0 +1,313 @@
+
+/*--------------------------------------------------------------
+# Cards Deck Container
+--------------------------------------------------------------*/
+
+.card-deck{
+	width: 100%;
+	margin-top:20px;
+	margin-bottom:20px ;
+
+ &__header{
+ 	text-align: center;
+ 	padding:1px;
+ 	margin-top: 8px;
+ 	margin-bottom: 20px;
+
+		&-title{
+			font-family:"MontserratBlack";
+			font-size: 32px;
+			text-align: center;
+
+			h1{
+				margin:15px;
+			}
+		}
+ }
+
+ &__latest{
+	 margin-left: 5.829903978052126vw;
+ 	 margin-right: 5.829903978052126vw;
+	 margin-bottom: 20px;
+	 font-size: 2.2434842249657065vw;
+
+	 @media screen and (max-width:$small-breakpoint){
+		 font-size: 40px;
+	 }
+
+ }
+
+ &__container{
+ 	display:flex;
+ 	flex-wrap:wrap;
+ 	position: relative;
+ 	justify-content: space-around;
+ 	margin-left: 5.1440329218107vw;
+ 	margin-right: 5.1440329218107vw;
+ 	padding-left: 0;
+ 	padding-right: 0;
+ 	list-style: none;
+
+ 	@media screen and (max-width: $small-breakpoint) {
+ 		margin-left: 0px;
+ 		margin-right: 0px;
+ 	}
+ }
+
+ &__divider{
+	height: 60px;
+ 	margin-left: 5.829903978052126vw;
+ 	margin-right: 5.829903978052126vw;
+ 	margin-bottom: 20px;
+ 	color:white;
+ 	display:flex;
+  justify-content:space-between;
+ 	background-color: #2fc4c4;
+	font-family: $loud-font-family;
+
+	@media screen and (max-width: $small-breakpoint){
+		height: 60px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+		&-text{
+			padding-left: 30px;
+			padding-top: 8px;
+			font-size: 30px;
+			display:block;
+			position:relative;
+			z-index: 1;
+
+			@media screen and (max-width: $small-breakpoint){
+				text-align: center;
+				padding: 10px;
+				width: 100%;
+			}
+		}
+
+		&-cta{
+			margin-right: 5px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			font-size: 20px;
+			display:block;
+			position:relative;
+			z-index: 1;
+
+			@media screen and (max-width: $small-breakpoint){
+				display: none;
+			}
+		}
+ 	}
+
+	&__cta{
+		margin-top:20px;text-align:center;
+
+		@media screen and (min-width: $small-breakpoint){
+			display: none;
+		}
+	}
+
+
+
+}
+
+
+
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+.card{
+	position: relative;
+	width: 20.919067215363512vw;
+	height: 37.29355281207133vw;
+	background-color: black;
+	margin-bottom: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+	display: block;
+	overflow: hidden;
+	color: white;
+
+	@media screen and (max-width: $small-breakpoint) {
+		width: 100%;
+		height: 75vh;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	/*--------------------------------------------------------------
+	# Card - Header
+	--------------------------------------------------------------*/
+	.card__header{
+		position: absolute;
+		color:white;
+		right:0;
+
+		.card__header-category{
+			margin: 0.3472222222222222vw;
+			padding: 0.3472222222222222vw 0.6944444444444444vw 0.1388888888888889vw 0.6944444444444444vw;
+			font-family: "MontserratBlack";
+			text-align: center;
+			outline: none;
+		  border-color: black; /* fallback */
+		  border-color: rgba(0, 0, 0, 0.4);
+		  transition: background-color 0.3s ease-in,
+		              border-color 0.3s ease-in;
+
+			@media screen and (max-width: $small-breakpoint) {
+				margin: 5px 5px 5px 5px;
+				padding: 5px 10px 2px 10px;
+				font-family: "MontserratBlack";
+				text-align: center;
+				outline: none;
+			  border-color: black; /* fallback */
+			  border-color: rgba(0, 0, 0, 0.4);
+			  transition: background-color 0.3s ease-in,
+			              border-color 0.3s ease-in;
+
+				&__title{
+				font-size: 16px;
+				height: 30px;
+				right:0px;
+				border-bottom-left-radius: 20px;
+				border-top-left-radius: 20px;
+				}
+			}
+
+
+
+		}
+
+	}
+
+	/*--------------------------------------------------------------
+	# Card - Content
+	--------------------------------------------------------------*/
+	.card__content{
+		color:white;
+		width: 100%;
+		height: 60px;
+		padding: 5px;
+		z-index: 1;
+
+
+		.card__content-title{
+			position: absolute;
+			bottom: 14%;
+			font-size: 1.3031550068587106vw;
+			font-weight:bold;
+			padding-left: 0.823045267489712vw;
+			padding-right: 15%;
+			line-height: 1.2973936899862826vw;
+			z-index: 1;
+
+			@media screen and (max-width: $small-breakpoint) {
+				margin-top: 10px;
+				font-size: 1.2em;
+				padding-left: 12px;
+				padding-right: 15%;
+				line-height: 1em;
+
+				&:after{
+					left: 12px;
+				  width: 100px;
+					margin-top: 24px;
+				}
+			}
+		}
+
+		.card__content-excerpt{
+			position: absolute;
+			top: 85%;
+			font-size: 0.8916323731138546vw;
+			font-weight: lighter;
+			text-overflow: ellipsis;
+			padding-top: 1.02880658436214vw;
+			font-style: italic;
+			padding-left: 0.823045267489712vw;
+			padding-right: 6.858710562414266vw;
+			z-index: 1;
+
+			@media screen and (max-width: $small-breakpoint) {
+				//top: 80%;
+				margin-top: 10px;
+				font-size: 0.87em;
+				padding-top: 15px;
+				padding-left: 12px;
+				padding-right: 100px;
+			}
+		}
+	}
+
+	/*--------------------------------------------------------------
+	# Card - Hover
+	--------------------------------------------------------------*/
+	&:before {
+	  content: "";
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 40%;
+	  background: linear-gradient(transparent, black);
+		z-index: 1;
+	}
+
+	/*hover animation*/
+	&:after{
+	    content: '';
+	    display: block;
+	    width: 0;
+	    height: 5px;
+	    position: absolute;
+	    top: 100%;
+	    left: 0;
+	    margin-top: -5px;
+	    background-color: pink;
+	    -webkit-transition: all .5s ease;
+	    -moz-transition: all .5s ease;
+	    -o-transition: all .5s ease;
+	    transition: all .5s ease;
+			z-index: 1;
+	}
+	&:hover:after{
+	    width: 100%;
+	    background-color: pink;
+			z-index: 1;
+
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Animation
+--------------------------------------------------------------*/
+.card-image-zoom {
+	-webkit-animation: card-image-zoom 0.5s ease-in-out forwards;
+	-moz-animation:    card-image-zoom 0.5s ease-in-out forwards;
+	animation:         card-image-zoom 0.5s ease-in-out forwards;
+}
+
+@keyframes card-image-zoom {
+	from   { transform:scale(1);  }
+	to { transform:scale(1.05);}
+}
+
+@-webkit-keyframes card-image-zoom {
+	from   { -webkit-transform:scale(1); }
+	to { -webkit-transform:scale(1.05); }
+}
+@-moz-keyframes card-image-zoom {
+	from   { -moz-transform:scale(1);  }
+	to { -moz-transform:scale(1.05);}
+}

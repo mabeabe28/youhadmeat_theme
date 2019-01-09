@@ -1,0 +1,35 @@
+@import "compass";
+@import "compass/reset";
+
+// Here we import our partials
+@import "_partials/mixins";
+@import "_partials/variables";
+@import "_partials/typography";
+
+//buttons
+@import "components/buttons";
+//search
+@import "components/search";
+//heroes
+@import "components/mainHero";
+@import "components/navigation";
+
+//card
+@import "components/cardDeck";
+
+//fonts
+@import "components/fonts";
+
+//animations
+@import "animations/general";
+
+
+//default/general wp styling
+@import "components/general-wp/alignments";
+@import "components/general-wp/captions";
+@import "components/general-wp/clearings";
+@import "components/general-wp/forms";
+@import "components/general-wp/galleries";
+@import "components/general-wp/media";
+@import "components/general-wp/postspages";
+@import "components/general-wp/widgets";

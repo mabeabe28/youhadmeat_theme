@@ -1,0 +1,365 @@
+
+#initial-navigation,
+#site-navigation{
+  top: 0;
+	position: fixed;
+	text-align:center;
+	z-index: 101;
+	color: white;
+	width: 100%;
+
+  a { text-decoration: none; color: white;}
+  a:visited { text-decoration: none; color: white;  }
+  a:hover { text-decoration: none; color: white;  }
+  a:focus { text-decoration: none; color: white;  }
+  a:hover, a:active { text-decoration: none; color: white;}
+
+  #logo{
+  	display: inline-block;
+  	margin-top: 10px;
+    font-family: $base-font-family;
+    font-weight: bold;
+    float: left;
+  }
+
+  .main-navigation {
+  	/*clear: both;*/
+  	display: inline-block;
+  	float: right;
+  	padding-right: 50px;
+
+    ul {
+    	//display: none;
+    	list-style: none;
+    	margin: 0;
+    	padding-left: 0;
+    }
+
+    li {
+    	float: left;
+    	position: relative;
+    	margin-top: 10px;
+    	margin-right: 20px;
+    	margin-left: 20px;
+    }
+
+    a{
+    	text-decoration: none;
+    	color: white;
+    }
+
+    @media screen and (max-width:$small-breakpoint) {
+      display: none;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  ## Menu Items
+  --------------------------------------------------------------*/
+
+  #navigation-buttons{
+  	display:inline-block;
+  	position:relative;
+  	margin-top:10px;
+  	float:right;
+  	margin-right:10px;
+
+  }
+
+  /*--------------------------------------------------------------
+  ## Side Menu
+  --------------------------------------------------------------*/
+
+  /* Side Menu Toggle. */
+  .menu-toggle,
+  .main-navigation.toggled ul {
+  	display: absolute;
+  }
+
+  .menu-toggle{
+  	float: left;
+  	padding: 10px 10px 10px 10px;
+  	display: inline-block;
+  }
+
+  .menu-toggle:hover{
+  	color: pink;
+  }
+
+  /*--------------------------------------------------------------
+  ## Search Box
+  --------------------------------------------------------------*/
+
+  .search-toggle{
+  	display:inline-block;
+  	position:relative;
+  	float:right;
+  	padding: 10px 10px 10px 10px;
+  }
+
+  .search-toggle:hover{
+  	color: pink;
+  }
+
+}
+
+
+#site-navigation{
+  background: #333;
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+#initial-navigation{
+  position: absolute;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+
+#footer {
+	background-color: #333;
+	font-family: "Montserrat";
+	color: white;
+	font-size: 0.75em;
+	position: relative;
+
+  .footer-main{
+  	width: 100%;
+  	display: flex;
+  	justify-content: space-around;
+  	flex-flow: row wrap;
+  }
+
+  .copyright-info{
+  	width: 100%;
+  	display: block;
+  	text-align: center;
+  }
+
+  .site-logo{
+  	text-align: center;
+  	font-size: 1.25em;
+  	color: white;
+  	margin: 40px;
+  	width: 300px;
+  	display: inline-block;
+
+    .leading{
+    	font-weight: bold;
+    }
+
+    .trailing{
+    	font-family: "MontserratBlack";
+    	padding:10px;
+    }
+  }
+
+  .site-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+  .contact-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+  .menu-info{
+  	margin: 20px;
+  	width: 300px;
+  	display: inline-block;
+  }
+
+
+  #footer-menu{
+  	margin: 0;
+  	width: 300px;
+  	display: inline-block;
+  	list-style: none;
+  	overflow:hidden;
+
+    li{
+    	float:left;
+    	display:inline;
+    	width:50%;
+    }
+
+    .menu-main-container{
+    	padding: 0px;
+    	margin: 0px;
+    }
+
+    .sub-menu{
+    	padding-left: 5px;
+    }
+  }
+
+  /* Links */
+  a{
+    text-decoration:underline;color:white;
+    &:visited { text-decoration: none; color:white; }
+    &:hover { text-decoration: none;color:white; }
+    &:focus { text-decoration: none; color:white;}
+    &:hover, a:active { text-decoration: none; color:white;}
+  }
+
+}
+
+/*--------------------------------------------------------------
+## MISC
+--------------------------------------------------------------*/
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	width: 50%;
+	margin: 0;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	width: 50%;
+	margin: 0;
+
+}
+
+.nav-links{
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.nav-previous a,.nav-next a{
+	display: inline-block;
+	padding: 8px;
+	margin: 10px;
+	color: black;
+	border: 2px solid black;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	transition: border-color 0.3s ease-out,
+							color 0.3s ease-out;
+}
+
+
+.nav-previous a:hover,.nav-next a:hover,
+.nav-previous a:active,.nav-next a:active{
+  color: pink;
+  border-color: #66d8ed;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
+}
+
+/*--------------------------------------------------------------
+## side navigation
+--------------------------------------------------------------*/
+#side-navigation {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 102; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+  	padding-top: 15px;
+  }
+
+  a {
+  	padding: 5px 5px 5px 32px;
+  	text-decoration: none;
+  	font-size: 1.56em;
+  	color: #818181;
+  	display: block;
+  	transition: 0.3s;
+
+    @media screen and (max-height: 450px) {font-size: 1.13em;}
+
+    &:visited { text-decoration: none; color:#818181; }
+    &:focus { text-decoration: none; color:white;}
+    &:hover { text-decoration: none; color:pink;}
+    &:active { text-decoration: none; color:white;}
+  }
+
+  .logo{
+  	width: 100%;
+  	position:relative;
+  	bottom:0;
+  	margin: 10px;
+  	display: flex;
+  	justify-content: center;
+    color: white;
+    .text{
+      bottom: 0px;
+    	font-weight: bold;
+    }
+  }
+
+  .closebtn {
+  	position: absolute;
+  	top: 0;
+  	right: 25px;
+  	font-size: 2.25em;
+  	margin-left: 20px;
+  }
+
+  ul{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-align: left;
+  }
+
+  &.navOpen{
+  	width: 100%;
+
+    @media screen and (min-width: $medium-breakpoint) {
+      width: 300px;
+    }
+  }
+
+  &.navClose{
+  	width: 0px;
+  }
+
+
+  #sideNav-menu {
+    .menu-item {
+      a{
+        display: inline-block;
+      }
+
+      .sub-menu {
+        padding-left: 20px;
+        position: block;
+        overflow: hidden;
+        width: 100%;
+
+        a{
+          font-size: 1.44em;
+        }
+      }
+    }
+  }
+  
+}
