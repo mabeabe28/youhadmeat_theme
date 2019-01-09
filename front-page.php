@@ -243,16 +243,18 @@ get_header();
 		foreach($recent_categories as $catID) {
 			//set category object
 			$curcat = get_category($catID);
+			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 			echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
 		 	/*echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
 						</div>';*/
-			echo '<div id="divider" class="category--'.$curcat->slug.'">
-						  <div id="divider-content">
-						    <div class="text">
+			echo '<div class="card-deck__divider category--'.$curcat->slug.'">
+						    <div class="card-deck__divider-text">
 						        '.strtoupper($curcat->name).'
 						    </div>
-						  </div>
+								<div class="card-deck__divider-cta button">
+						        <a href="'.$catLink.'">MORE '.strtoupper($curcat->name).'</a>
+						    </div>
 						</div>
 						';
 			echo '<ul class="card-deck__container">';
@@ -300,9 +302,9 @@ get_header();
 
 			}
 
-			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
+
 			echo 		'</ul>';//category-content
-				echo '<div class="cta" style="margin-top:20px;text-align:center;">
+				echo '<div class="card-deck__cta">
 								<a href="'.$catLink.'" class="button button--black category--'.$curcat->slug.'">
 								  View more in '.$curcat->name.'
 								</a>
@@ -315,64 +317,6 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<style>
-
-	#divider{
-	height: 6.444444444444445vw;
-	margin-left: 5.829903978052126vw;
-	margin-right: 5.829903978052126vw;
-	}
-#divider-content {
-	/*(border-bottom: 4.861111111111111vw solid #2fc4c4;*/
-	/*border-right: 5.555555555555555vw solid transparent;*/
-	border-bottom: 80px solid #2fc4c4;
-	border-right:0;
-
-	height: 0;
-	/*width: 20.5761316872428vw;*/
-  color:white;
-  display:flex;
-  justify-content:center;
-}
-#divider-content .text {
-
-width: 100%;
-padding: 0.8vw 1.22880658436214vw 1.42880658436214vw 1.22880658436214vw;
-font-size: 2.2434842249657065vw;
-font-family: "MontserratBlack";
-display:block;
-position:relative;
-z-index: 1;
-}
-
-
-
-
-@media screen and (max-width:500px){
-
-#divider-content{
-		border-bottom: 80px solid #2fc4c4;
-		width: 100%;
-		border-right:0;
-	}
-
-	#divider{
-		height: 100px;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	#divider-content .text {
-		text-align: center;
-		padding: 14px 18px 18px 18px;
-		font-size: 40px;
-	}
-}
-
-
-
-
-	</style>
 <script>
 window.onscroll = function() {scrollFunction()};
 

@@ -268,14 +268,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					color:'.$cat_colour.';
 				}
 
-				#divider.category--'.$curcat->slug.' #divider-content{
-					border-color: '.$cat_colour.';
-					border-right-color: transparent;
-				}
 
-
-				#divider.category--'.$curcat->slug.':after{
-				    border-color: '.$cat_colour.';
+				.card-deck__divider.category--'.$curcat->slug.'{
+					background-color:'.$cat_colour.';
 				}
 
 				/*#divider.category--'.$curcat->slug.' #divider-content .text:before{

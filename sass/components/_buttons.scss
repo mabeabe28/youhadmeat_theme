@@ -5,7 +5,7 @@
 
 .button {
   display: inline-block;
-  width: 200px;
+  //width: 200px;
   padding: 8px;
   color: #fff;
   border: 2px solid #fff;
@@ -15,9 +15,15 @@
   transition: border-color 0.3s ease-out,
               color 0.3s ease-out;
 
+                a { text-decoration: none; color: white;}
+                a:visited { text-decoration: none; color: white;  }
+                a:hover { text-decoration: none; color: white;  }
+                a:focus { text-decoration: none; color: white;  }
+                a:hover, a:active { text-decoration: none; color: white;}
+
   &--black{
     border: 2px solid black;
-    width: 300px;
+    //width: 300px;
     color: black;
 
   }

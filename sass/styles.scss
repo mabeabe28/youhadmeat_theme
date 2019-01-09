@@ -6,16 +6,14 @@
 @import "_partials/variables";
 @import "_partials/typography";
 
+//buttons
+@import "components/buttons";
 //heroes
 @import "components/mainHero";
 @import "components/navigation";
 
 //card
 @import "components/cardDeck";
-
-
-//buttons
-@import "components/buttons";
 
 //fonts
 @import "components/fonts";
