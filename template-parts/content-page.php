@@ -99,6 +99,8 @@
 					$excerptStr = '';
 					$postUrl = '##';
 				}
+				$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$curpost["post_author"]).'';
+
 
 
 				echo'	<li class="card category--'.$ParentCategory->slug.'">
@@ -112,6 +114,11 @@
 										<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$excerptStr.'
+										</div>
+										<div class="card__author">
+											<a href="'.$authorUrl.'">
+												'.get_wp_user_avatar($curpost["post_author"],'small').'
+											</a>
 										</div>
 								</div>
 							</a>

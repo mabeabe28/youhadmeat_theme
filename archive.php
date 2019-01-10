@@ -86,6 +86,8 @@ get_header();
 					$excerptStr = '';
 					$postUrl = '##';
 				}
+				$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename').'';
+
 
 				echo'	<li class="card category--'.$ParentCategory->slug.'">
 					<a href="'.$postUrl.'">
@@ -98,6 +100,11 @@ get_header();
 										<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$excerptStr.'
+										</div>
+										<div class="card__author">
+											<a href="'.$authorUrl.'">
+												'.get_wp_user_avatar(get_the_author_meta('ID'),'small').'
+											</a>
 										</div>
 								</div>
 							</a>

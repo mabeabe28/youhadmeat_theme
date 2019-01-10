@@ -133,8 +133,8 @@
 			background-color: black;">';
 
 			echo '<div class="card-deck" >';
-		 	echo '<div class="card-deck-header">
-							<div class="card-deck-header-title"></div>
+		 	echo '<div class="card-deck__header">
+							<div class="card-deck__header-title"></div>
 						</div>';
 			echo '<div class="card-deck__container" >';
 
@@ -146,8 +146,9 @@
 
 			echo '<div class="card">
 								<a href="'.$authorUrl.'">
-									<div class="card__header">
-									</div>
+								<div class="card__header"><div class="card__header-category">
+									<div class="card__header-category__title">WRITTEN BY</div>
+								</div></div>
 									'.get_wp_user_avatar(get_the_author_id(),'large').'
 									<div class="card__content">
 											<div class="card__content-title" style="text-align:center;padding-left:0;padding-right:0;width:100%;">You had me at '.get_the_author_meta('user_firstname').'</div>
@@ -244,7 +245,7 @@
 								echo'	<li class="card category--'.$ParentCategory->slug.'">
 									<a href="'.$postUrl.'">
 												<div class="card__header"><div class="card__header-category category--'.$ParentCategory->slug.'">
-													<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
+													<div class="card__header-category__title">RELATED '.strtoupper($ParentCategory->name).'</div>
 													<div class="card__header-category__icon"></div>
 												</div></div>
 												<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
@@ -278,8 +279,6 @@
 			?>
 		</div><!-- Author box -->
 
-		<div class="related-box" style:"background-color:white;">
 
-		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

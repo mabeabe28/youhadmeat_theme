@@ -217,6 +217,8 @@ get_header();
 						$curParentCategory = $cat;
 					}
 				}
+				$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$post["post_author"]).'';
+
 
 				echo'	<li class="card post--'.$post["ID"].' category--'.$curParentCategory->slug.'">
 					<a href="'.$curPostUrl.'">
@@ -229,6 +231,11 @@ get_header();
 										<div class="card__content-title category--'.$curParentCategory->slug.'">'.$curPostTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$curExcerptStr.'
+										</div>
+										<div class="card__author">
+											<a href="'.$authorUrl.'">
+												'.get_wp_user_avatar($post["post_author"],'small').'
+											</a>
 										</div>
 								</div>
 							</a>
@@ -273,7 +280,6 @@ get_header();
 			$recent_three = wp_get_recent_posts( $args );
 			foreach($recent_three as $curpost){
 
-				//print_r($curpost);
 				$excerptStr = (strlen($curpost["post_excerpt"]) > 40) ? substr($curpost["post_excerpt"],0,40).'...' :$curpost["post_excerpt"];
 				$pageTitle = $curpost["post_title"];
 				$postUrl = get_permalink($curpost["ID"]);
@@ -283,6 +289,8 @@ get_header();
 					$excerptStr = 'Content Coming Soon';
 					$postUrl = '##';
 				}
+
+				$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$curpost["post_author"]).'';
 
 				echo'	<li class="card post--'.$curpost["ID"].' category--'.$curcat->slug.'">
 					<a href="'.$postUrl.'">
@@ -295,6 +303,11 @@ get_header();
 										<div class="card__content-title category--'.$curcat->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$excerptStr.'
+										</div>
+										<div class="card__author">
+											<a href="'.$authorUrl.'">
+												'.get_wp_user_avatar($curpost["post_author"],'small').'
+											</a>
 										</div>
 								</div>
 							</a>

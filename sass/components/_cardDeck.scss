@@ -267,6 +267,37 @@
 				padding-right: 100px;
 			}
 		}
+
+		.card__author{
+			position: absolute;
+			bottom: 2%;
+			z-index: 10;
+			right: 0;
+			margin: 15px;
+			border-radius: 50%;
+			background: black;
+			width: 35px;
+			height: 35px;
+
+
+			@media screen and (max-width: $medium-breakpoint) {
+				width: 25px;
+				height: 25px;
+				bottom: 1%;
+
+			}
+
+			@media screen and (max-width: $small-breakpoint) {
+				width: 50px;
+				height: 50px;
+				bottom: 4%;
+
+			}
+			img{
+				border-radius: 50%;
+				background: black;
+			}
+		}
 	}
 
 	/*--------------------------------------------------------------
@@ -283,7 +314,11 @@
 		z-index: 1;
 	}
 
-
+	a { text-decoration: none; color: white;}
+  a:visited { text-decoration: none; color: white;  }
+  a:hover { text-decoration: none; color: white;  }
+  a:focus { text-decoration: none; color: white;  }
+  a:hover, a:active { text-decoration: none; color: white;}
 	/*hover animation*/
 	/*&:after{
 	    content: '';
