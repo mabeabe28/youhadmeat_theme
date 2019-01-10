@@ -136,7 +136,7 @@
 		 	echo '<div class="card-deck-header">
 							<div class="card-deck-header-title"></div>
 						</div>';
-			echo '<div class="card-container" >';
+			echo '<div class="card-deck__container" >';
 
 			$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename').'';
 
