@@ -109,7 +109,7 @@
 								</div></div>
 								<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 								<div class="card__content">
-										<div class="card__content-title">'.$pageTitle.'</div>
+										<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$excerptStr.'
 										</div>
@@ -181,7 +181,7 @@
 								</div></div>
 								<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 								<div class="card__content">
-										<div class="card__content-title">'.$pageTitle.'</div>
+										<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">
 											'.$excerptStr.'
 										</div>

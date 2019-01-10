@@ -58,7 +58,6 @@
 	height: 60px;
  	margin-left: 5.829903978052126vw;
  	margin-right: 5.829903978052126vw;
- 	margin-bottom: 20px;
  	color:white;
  	display:flex;
   justify-content:space-between;
@@ -124,6 +123,8 @@
 	height: 37.29355281207133vw;
 	background-color: black;
 	margin-bottom: 20px;
+	margin-top: 20px;
+
 	padding-left: 0px;
 	padding-right: 0px;
 	display: block;
@@ -132,11 +133,11 @@
 
 	@media screen and (max-width: $small-breakpoint) {
 		width: 100%;
-		height: 75vh;
+		height: 100vh;
 		margin-left: 0;
 		margin-right: 0;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 
 	img {
@@ -202,41 +203,60 @@
 
 
 		.card__content-title{
+			font-family: $alt-font-family;
+
 			position: absolute;
-			bottom: 14%;
-			font-size: 1.3031550068587106vw;
-			font-weight:bold;
+			bottom: 15%;
+			font-size: 1.8031550068587106vw;
+			font-weight:bolder;
 			padding-left: 0.823045267489712vw;
 			padding-right: 15%;
-			line-height: 1.2973936899862826vw;
+			line-height: 1.2;
 			z-index: 1;
+			text-transform: uppercase;
+
+			&:after{
+					content: '';
+					display: block;
+					width: 40%;
+					height: 4px;
+					position: absolute;
+					top: 105%;
+					padding-left: 0.823045267489712vw;
+					margin-bottom: 5px;
+					//background-color: pink;
+					-webkit-transition: all .5s ease;
+					-moz-transition: all .5s ease;
+					-o-transition: all .5s ease;
+					transition: all .5s ease;
+					z-index: 1;
+			}
+
 
 			@media screen and (max-width: $small-breakpoint) {
 				margin-top: 10px;
-				font-size: 1.2em;
+				font-size: 3.2em;
 				padding-left: 12px;
 				padding-right: 15%;
 				line-height: 1em;
-
-				&:after{
-					left: 12px;
-				  width: 100px;
-					margin-top: 24px;
-				}
 			}
 		}
 
 		.card__content-excerpt{
+			font-family: $base-font-family;
 			position: absolute;
+			line-height: 1.4;
 			top: 85%;
 			font-size: 0.8916323731138546vw;
 			font-weight: lighter;
 			text-overflow: ellipsis;
 			padding-top: 1.02880658436214vw;
-			font-style: italic;
+			//font-style: italic;
 			padding-left: 0.823045267489712vw;
 			padding-right: 6.858710562414266vw;
 			z-index: 1;
+			margin-top: 5px;
+
 
 			@media screen and (max-width: $small-breakpoint) {
 				//top: 80%;
@@ -258,13 +278,14 @@
 	  bottom: 0;
 	  left: 0;
 	  width: 100%;
-	  height: 30%;
-	  background: linear-gradient(transparent, black);
+	  height: 25%;
+	  background: linear-gradient(to top, black, black, transparent);
 		z-index: 1;
 	}
 
+
 	/*hover animation*/
-	&:after{
+	/*&:after{
 	    content: '';
 	    display: block;
 	    width: 0;
@@ -285,7 +306,7 @@
 	    background-color: pink;
 			z-index: 1;
 
-	}
+	}*/
 
 }
 

@@ -258,6 +258,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				   background-color:'.$cat_colour.';
 				}
 
+				.card__content-title.category--'.$curcat->slug.':after {
+					background-color:'.$cat_colour.';
+				}
+
+				.card__header-category.category--'.$curcat->slug.':hover {
+					color:'.$cat_colour.';
+				}
+
 				a:hover{
 					color:'.$cat_colour.';
 				}
@@ -290,8 +298,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					background-color: '.$cat_colour.';
 				}
 
-				.category--'.$curcat->slug.' .card-content-title:after{
-				}
+
 
 				';
 			}

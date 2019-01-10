@@ -193,6 +193,83 @@
 								</a>
 						</div>';
 
+
+
+
+
+						/*Related*/
+						$orig_post = $post;
+						global $post;
+
+						$tags = wp_get_post_tags($post->ID);
+						if ($tags) {
+							$tag_ids = array();
+
+							foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+
+							$args=array(
+							'tag__in' => $tag_ids,
+							'post__not_in' => array($post->ID),
+							'posts_per_page'=>3, // Number of related posts that will be shown.
+							'caller_get_posts'=>1
+							);
+
+							$my_query = new wp_query( $args );
+							if( $my_query->have_posts() ) {
+
+								while( $my_query->have_posts() ) {
+								$my_query->the_post();
+
+
+
+								$ParentCategory = "";
+								$category = get_the_category();
+								foreach($category as $curcat){
+									if($curcat->parent == 0){
+										$ParentCategory = $curcat;
+									}
+								}
+								$excerptStr = (strlen(get_the_excerpt()) > 40) ? substr(get_the_excerpt(),0,40).'...' :get_the_excerpt();
+
+								$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
+								$pageTitle = get_the_title();
+								$postUrl = get_permalink(get_the_id());
+								if($comingsoon){
+									$pageTitle = 'Coming Soon';
+									$excerptStr = 'Content Coming Soon';
+									$postUrl = '##';
+								}
+
+
+								echo'	<li class="card category--'.$ParentCategory->slug.'">
+									<a href="'.$postUrl.'">
+												<div class="card__header"><div class="card__header-category category--'.$ParentCategory->slug.'">
+													<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
+													<div class="card__header-category__icon"></div>
+												</div></div>
+												<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
+												<div class="card__content">
+														<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
+														<div class="card__content-excerpt">
+															'.$excerptStr.'
+														</div>
+												</div>
+											</a>
+									</li>';
+
+
+
+								}
+
+
+							}
+						}
+
+						$post = $orig_post;
+						wp_reset_query();
+
+
+
 						echo 		'</div>';//card-container
 
 
@@ -202,87 +279,7 @@
 		</div><!-- Author box -->
 
 		<div class="related-box" style:"background-color:white;">
-			<?php
 
-			/*Related*/
-			$orig_post = $post;
-			global $post;
-
-			$tags = wp_get_post_tags($post->ID);
-			if ($tags) {
-				$tag_ids = array();
-
-				foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-
-				$args=array(
-				'tag__in' => $tag_ids,
-				'post__not_in' => array($post->ID),
-				'posts_per_page'=>3, // Number of related posts that will be shown.
-				'caller_get_posts'=>1
-				);
-
-				$my_query = new wp_query( $args );
-				if( $my_query->have_posts() ) {
-
-					echo '<div class="card-deck" >';
-					echo '<div class="card-deck-header">
-									<div class="card-deck-header-title"><h3>Related Posts:</h3></div>
-								</div>';
-					echo '<ul class="card-deck__container"  >';
-
-
-					while( $my_query->have_posts() ) {
-					$my_query->the_post();
-
-
-
-					$ParentCategory = "";
-					$category = get_the_category();
-					foreach($category as $curcat){
-						if($curcat->parent == 0){
-							$ParentCategory = $curcat;
-						}
-					}
-					$excerptStr = (strlen(get_the_excerpt()) > 40) ? substr(get_the_excerpt(),0,40).'...' :get_the_excerpt();
-
-					$comingsoon = get_post_meta( get_the_id(),'comingsoon', true );
-					$pageTitle = get_the_title();
-					$postUrl = get_permalink(get_the_id());
-					if($comingsoon){
-						$pageTitle = 'Coming Soon';
-						$excerptStr = 'Content Coming Soon';
-						$postUrl = '##';
-					}
-
-
-					echo'	<li class="card category--'.$ParentCategory->slug.'">
-						<a href="'.$postUrl.'">
-									<div class="card__header"><div class="card__header-category category--'.$ParentCategory->slug.'">
-										<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
-										<div class="card__header-category__icon"></div>
-									</div></div>
-									<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
-									<div class="card__content">
-											<div class="card__content-title">'.$pageTitle.'</div>
-											<div class="card__content-excerpt">
-												'.$excerptStr.'
-											</div>
-									</div>
-								</a>
-						</li>';
-
-
-
-					}
-
-					echo 		'</ul>';//category-content
-					echo '</div>';//category-wrapper
-				}
-			}
-
-			$post = $orig_post;
-			wp_reset_query();
-			?>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
