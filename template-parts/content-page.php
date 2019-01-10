@@ -150,8 +150,8 @@
 
 		if($postdisplay == 'cards'){
 			echo '<div class="card-deck">';
-			echo '<div class="card-deck-header"></div>';
-			echo '<ul class="card-container">';
+			//echo '<div class="card-deck-header"></div>';
+			echo '<ul class="card-deck__container">';
 			foreach($recent_posts as $curpost){
 				//print_r($curpost);
 				$ParentCategory = "";
@@ -189,7 +189,7 @@
 							</a>
 					</li>';
 
-	
+
 			}
 
 			echo 		'</ul>';//card-container
