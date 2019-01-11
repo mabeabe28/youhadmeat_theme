@@ -324,7 +324,7 @@ body{
 
 			echo 		'</ul>';//category-content
 				echo '<div class="card-deck__cta">
-								<a href="'.$catLink.'" class="button button--black category--'.$curcat->slug.'">
+								<a href="'.$catLink.'" class="button button category--'.$curcat->slug.'">
 								  View more in '.$curcat->name.'
 								</a>
 							</div>';
