@@ -8,11 +8,10 @@
 
 get_header();
 ?>
-
 <section>
 
   <!-- get most recent post from each category -->
-  <div class="slideshow-container">
+  <div class="hero-wrapper">
 
   <?php
   global $post;
@@ -32,90 +31,100 @@ get_header();
 
     //get one recent post
     $recent_posts = wp_get_recent_posts( $args );
-    //get the categories for the post
-    //$category = get_the_category($recent_post[0]["ID"]);
-    //$firstCategory = $category[0]->cat_name;
 
-    //if($category[0]->count > 0){
-    foreach($recent_posts as $curpost){
-      echo '<div class="mySlides">';
+
+
+  //for each category
+  foreach($recent_posts as $curpost) {
+
+
+    //get the categories for the post
+    $category = get_the_category($curpost["ID"]);
+    $ParentCategory = "";
+    $ChildCategory = "";
+
+    $cat = get_the_category($curpost["ID"]);
+    foreach($cat as $curcat){
+      if($curcat->parent == 0){
+        $ParentCategory = $curcat;
+      }else{
+        $ChildCategory = $curcat;
+      }
+    }
+
+    if($ChildCategory == ""){
+      $ChildCategory = $ParentCategory;
+    }
+
+    //todo amend this.
+    if($ParentCategory->count > 0){
 
       if(has_post_thumbnail($curpost["ID"])){
-        // use one of these
-        //echo get_the_post_thumbnail( $post_id, array(80, 80), array('class' => 'post_thumbnail') );
-        $excerptStr = (strlen($curpost["post_excerpt"]) > 140) ? substr($curpost["post_excerpt"],0,140).'...' :$curpost["post_excerpt"];
+        $excerptStr = (strlen($curpost["post_excerpt"]) > 100) ? substr($curpost["post_excerpt"],0,100).'...' :$curpost["post_excerpt"];
         $comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
         $pageTitle = get_the_title($curpost["ID"]);
         $postUrl = get_permalink($curpost["ID"]);
         $ctaText = 'Read More';
         if($comingsoon){
           $pageTitle = '';
-          $excerptStr = '';
+          $excerptStr = 'Content Coming Soon';
           $postUrl = '##';
           $ctaText = 'Coming Soon';
         }
+        $catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
-        echo '
-        <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('.get_the_post_thumbnail_url($curpost["ID"], 'large').');">
-            <!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
-            <div style="display:none;">
-              <img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'">
-            </div>
-
-            <div id="youhadmeatHeroText">
-                <div id="leading">You Had Me At</div>
-                <div id="trailing">'.$category->cat_name.'
-                  <div id="recentPost" class="fade">
-                    <div style="font-size:12px;">Latest Post:</div>
-                    <div class="recentPost_detail">
-                      '.$pageTitle.'
-                    </div>
-                    <div class="recentPost_excerpt">
-                     '.$excerptStr.'
-                    </div>
-                    <div class="cta" style="font-size: 15px;"><a class="ghost-button category--'.$category->slug.'" href="'.$postUrl.'">'.$ctaText.'</a></div>
-                  </div>
-                </div>
-            </div>
-
+        echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($curpost["ID"], 'large').');">
+        <div style="display:none;">
+          <!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
+          <img src="'.get_the_post_thumbnail_url($curpost["ID"], 'large').'">
         </div>
-        ';
+        </div>
+
+      ';
+
+      echo '<div class="slide-wrapper">';
+        echo '<div class="slide-title category--'.$ParentCategory->slug.'">
+          <div class="slide-title__leading">
+            <h1>YOU HAD ME AT</h1>
+          </div>
+          <div class="slide-title__trailing js-slide-title">
+            <h1>'.strtoupper($ChildCategory->cat_name).'</h1>
+          </div>
+        </div>';
+
+
+
+        echo '<div class="slide-excerpt">
+          <div class="slide-excerpt__container js-slide-excerpt" >
+            <div class="slide-excerpt__text">
+              '.$excerptStr.'
+            </div>
+
+            <div class="slide-excerpt__cta">
+              <div class="slide-excerpt__cta-container" >
+                <a class="button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a>
+              </div>
+            </div>
+
+          </div>';
+
+          //echo '<div class="slider-scroll-down anmt-scroll-down"></div>';
+          echo '</div>';
+
+        echo '</div>';
+
       }
 
-      echo '</div>';
-
-    }//end for each
-
-   //}
+   }
+  } // foreach($categories
   ?>
-  <script>
-  var slideIndex = 0;
-  showSlides();
 
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
+  <!-- Next and previous buttons-->
+<a class="slider-button slider-button__previous" onclick="minusSlides(-1)">&#10094;</a>
+<a class=" slider-button slider-button__next" onclick="plusSlides(1)">&#10095;</a>
 
-
-  function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 6000); // Change image every 2 seconds
-  }
-  </script>
-  <!-- Next and previous buttons -->
-<!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>-->
 </div>
 </section>
-
 
 
 <div id="primary" class="content-area">
