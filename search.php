@@ -10,22 +10,6 @@
 get_header();
 ?>
 
-<style>
-	#site-navigation{
-		background-color: black;
-	}
-</style>
-<script>
-
-$(document).on('scroll', function () {
-		event.stopPropagation();
-		event.preventDefault();
-		$('#site-navigation').css('background-color', 'rgba(0,0,0,100)');
-
-});
-
-</script>
-
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -141,6 +125,8 @@ $(document).on('scroll', function () {
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
+	<script>
+	    document.getElementById("site-navigation").style.top = "0";
+	</script>
 <?php
 get_footer();

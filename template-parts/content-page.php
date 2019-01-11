@@ -202,7 +202,7 @@
 			echo 		'</ul>';//card-container
 			$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
 			echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
-				<a class="ghost-button-black" href="'.$archivelink.'">
+				<a class="button--black" href="'.$archivelink.'">
 					View Posts Archive of '.$user->display_name.'
 				</a>
 			</div>';
@@ -251,7 +251,7 @@
 
 			$archivelink = ''.get_site_url().'/author/'.$user->user_nicename.'';
 			echo '<div class="archive-cta" style="display:block;margin: 0 auto;text-align:center;">
-				<a class="ghost-button-black" href="'.$archivelink.'">
+				<a class="button--black" href="'.$archivelink.'">
 					View Posts Archive of '.$user->display_name.'
 				</a>
 			</div>';
@@ -265,6 +265,21 @@
 	?>
 
 	<style>
+	.archive-cta{
+		font-family: 'Montserrat';
+		/*display: none;*/
+		font-size:18px;
+		margin-top:10px;
+	}
+	.archive-cta a{
+		padding: 10px;
+	}
+	.archive-cta a { text-decoration: none; color: black;}
+  .archive-cta a:visited { text-decoration: none; color: black;  }
+  .archive-cta a:hover { text-decoration: none; color: black;  }
+  .archive-cta a:focus { text-decoration: none; color: black;  }
+  .archive-cta a:hover, a:active { text-decoration: none; color: black;}
+
 .post-preview{
 	width:100%;
 	display: block;
