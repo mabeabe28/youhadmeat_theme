@@ -53,7 +53,6 @@
 			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-xs">
 			</i></span>
 			<div class="overlay-content">
-				<span class="blinking-cursor">|</span>
 				<?php get_search_form() ?>
 			</div>
 		</div>
