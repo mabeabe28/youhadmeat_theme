@@ -602,10 +602,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<br/><div class="hint">Theme Options if using the Portrait Template</div>
 			<br>
 			<div class="input-wrapper">
-				<label for="featured-is-fixed">Featured Image Fixed Position</label>
-				<br/><span class="hint">If selected, the Featured Image will stay in position as you scroll. You will then have to position the content to the corresponding side in the editor</span>
-				<input type="checkbox" name="featured-is-fixed" id="featured-is-fixed" value="true" <?php if ( isset ( $meta['featured-is-fixed'] ) && $meta['featured-is-fixed'][0] == 1  ) echo 'checked="true"'; ?> />
-				<br>
 				<label for="featured-position">Featured Image Position</label>
 				<br/><span class="hint">Determines which side the Featured Image would be on.</span>
 				<select name="featured-position">
@@ -678,12 +674,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( false ) );
 				}
 
-				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'featured-is-fixed' ] ) && $_POST[ 'featured-is-fixed' ] == true ) {
-						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'featured-is-fixed', sanitize_text_field( false ) );
-				}
 
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'featured-position' ] ) ) {
