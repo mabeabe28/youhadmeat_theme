@@ -156,7 +156,6 @@
 
 		if($postdisplay == 'cards'){
 			echo '<div class="card-deck">';
-			//echo '<div class="card-deck-header"></div>';
 			echo '<ul class="card-deck__container">';
 			foreach($recent_posts as $curpost){
 				$ParentCategory = "";
