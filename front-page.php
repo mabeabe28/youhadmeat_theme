@@ -232,7 +232,7 @@ body{
 									<div class="card__header-category__title">'.strtoupper($curParentCategory->name).'</div>
 									<div class="card__header-category__icon"></div>
 								</div></div>
-								<img src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
+								<img class="a-card-image-zoom" src="'.get_the_post_thumbnail_url($post["ID"], 'medium').'" />
 								<div class="card__content">
 										<div class="card__content-title category--'.$curParentCategory->slug.'">'.$curPostTitle.'</div>
 										<div class="card__content-excerpt">
@@ -304,7 +304,7 @@ body{
 									<div class="card__header-category__title">'.strtoupper($curcat->name).'</div>
 									<div class="card__header-category__icon"></div>
 								</div></div>
-								<img src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
+								<img class="a-card-image-zoom" src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
 								<div class="card__content">
 										<div class="card__content-title category--'.$curcat->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">

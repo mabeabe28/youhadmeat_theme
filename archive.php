@@ -81,7 +81,7 @@ get_header();
 									<div class="card__header-category__title">'.strtoupper($ParentCategory->name).'</div>
 									<div class="card__header-category__icon"></div>
 								</div></div>
-								<img src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
+								<img class="a-card-image-zoom" src="'.get_the_post_thumbnail_url(get_the_id(), 'medium').'" />
 								<div class="card__content">
 										<div class="card__content-title category--'.$ParentCategory->slug.'">'.$pageTitle.'</div>
 										<div class="card__content-excerpt">

@@ -276,7 +276,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					color:'.$cat_colour.';
 				}
 
-
+				/*Divider Color*/
 				.card-deck__divider.category--'.$curcat->slug.'{
 					background-color:'.$cat_colour.';
 				}
@@ -287,8 +287,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			    content: "'.$cat_icon.'";
 				}*/
 
+				/*Card Hover items*/
+				.card:hover .card__header-category.category--'.$curcat->slug.'{
+					color:'.$cat_colour.';
+				}
 
-				.category--'.$curcat->slug.' .category-icon:after{
+				/*.category--'.$curcat->slug.' .category-icon:after{
 					font-family: FontAwesomeRegular,FontAwesomeSolid;
 			    content: "'.$cat_icon.'";
 					background-color: '.$cat_colour.';
@@ -296,7 +300,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 				.category--'.$curcat->slug.' .category-title{
 					background-color: '.$cat_colour.';
-				}
+				}*/
 
 
 
