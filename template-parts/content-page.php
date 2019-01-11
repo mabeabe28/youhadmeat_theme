@@ -73,7 +73,6 @@
 			//echo '<div class="card-deck-header"></div>';
 			echo '<ul class="card-deck__container">';
 	    foreach($recent_posts as $curpost){
-				//print_r($curpost);
 				$ParentCategory = "";
 				$ChildCategory = "";
 
@@ -160,7 +159,6 @@
 			//echo '<div class="card-deck-header"></div>';
 			echo '<ul class="card-deck__container">';
 			foreach($recent_posts as $curpost){
-				//print_r($curpost);
 				$ParentCategory = "";
 
 				$cat = get_the_category($curpost["ID"]);
