@@ -14,7 +14,13 @@
 
 get_header();
 ?>
-
+<!--Background for Front Page only-->
+<style>
+body{
+  background-color: rgb(35,35,35);
+  color: white;
+}
+</style>
 			<section>
 
 				<!-- get most recent post from each category -->
