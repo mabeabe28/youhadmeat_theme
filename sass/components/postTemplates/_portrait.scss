@@ -29,6 +29,9 @@
       justify-content: center;
       flex-flow: row wrap;
 
+      @media screen and (max-width: $small-breakpoint) {
+        color: white;
+      }
 
       .pt-section-one{
         position: absolute;
