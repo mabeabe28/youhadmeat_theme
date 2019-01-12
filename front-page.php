@@ -161,6 +161,11 @@ body{
 							}
 							$catLink = ''.get_site_url().'/'.$curcat->slug.'';
 
+							$featuredWord = $ParentCategory->cat_name;
+							$queryFeaturedWord = get_post_meta( $recent_post[0]["ID"],'featured-word', true );
+							if(strlen($queryFeaturedWord)){
+								$featuredWord = $queryFeaturedWord;
+							}
 							echo '  <div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($recent_post[0]["ID"], 'large').');">
 							<div style="display:none;">
 								<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
@@ -176,7 +181,7 @@ body{
 									<h1>YOU HAD ME AT</h1>
 								</div>
 								<div class="slide-title__trailing js-slide-title">
-									<h1>'.strtoupper($ParentCategory->cat_name).'</h1>
+									<h1>'.strtoupper($featuredWord).'</h1>
 								</div>
 							</div>';
 
