@@ -26,16 +26,85 @@ body{
 				<!-- get most recent post from each category -->
 				<div class="hero-wrapper">
 
+				<!--Show the Featured Post First-->
 				<?php
-				//get all cats
+					//Get the latest feature post only
+					$featuredargs = array(
+					'numberposts' => 1,
+					'orderby' => 'post_date',
+					'order' => 'DESC',
+					'post_type' => 'post',
+					'post_status' => 'publish',
+					'suppress_filters' => true,
+					'meta_query' => array(
+					        array(
+					            'key' => 'featured',
+					            'value' => '1',
+					            'compare' => '='
+					        )
+					));
+					$featuredpost=wp_get_recent_posts($featuredargs);
+					if(sizeOf($featuredpost) > 0){
+						$category = get_the_category($featuredpost[0]["ID"]);
+						$ParentCategory = "";
+						foreach($category as $curcat){
+							if($curcat->parent == 0){
+								$ParentCategory = $curcat;
+							}
+						}
+
+						$featuredWord = $ParentCategory->cat_name;
+						$queryFeaturedWord = get_post_meta( $featuredpost[0]["ID"],'featured-word', true );
+						if(strlen($queryFeaturedWord)){
+							$featuredWord = $queryFeaturedWord;
+						}
+
+						$excerptStr = (strlen($featuredpost[0]["post_excerpt"]) > 100) ? substr($featuredpost[0]["post_excerpt"],0,100).'...' :$featuredpost[0]["post_excerpt"];
+						$postUrl = get_permalink($featuredpost[0]["ID"]);
+						$ctaText = 'Read More';
+
+						echo '<div class="slide__container js-slider" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($featuredpost[0]["ID"], 'large').');">
+										<div style="display:none;">
+											<!--load image before hand,but hide display to prevent blank flashes when changing slide since background-image still be loading image-->
+											<img src="'.get_the_post_thumbnail_url($featuredpost[0]["ID"], 'large').'">
+										</div>
+								  </div>
+									<div class="slide-wrapper">
+										<div class="slide-title category--'.$ParentCategory->slug.'">
+											<div class="slide-title__leading">
+												<h1>YOU HAD ME AT</h1>
+											</div>
+											<div class="slide-title__trailing js-slide-title">
+												<h1>'.strtoupper($featuredWord).'</h1>
+											</div>
+										</div>
+										<div class="slide-excerpt">
+											<div class="slide-excerpt__container js-slide-excerpt" >
+												<div class="slide-excerpt__text">
+													'.$excerptStr.'
+												</div>
+												<div class="slide-excerpt__cta">
+													<div class="slide-excerpt__cta-container" >
+														<a class="button category--'.$ParentCategory->slug.'" href="'.$postUrl.'">'.$ctaText.'</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>';
+					}
+				?>
+
+				<?php
+				//get all top level categories
 				$catargs = array(
 					'parent' => 0
 				);
 				$categories=get_categories($catargs);
 
+				//get posts categoryies in order of latest post overall
 		    $recent_posts = array();
 		    foreach ($categories as $key=>$category) {
-		        // get latest post from $category
+		        // get latest post from the current $category
 		        $args = array(
 		            'numberposts' => 1,
 		            'category' => $category->term_id,
@@ -44,16 +113,12 @@ body{
 		        // save category id & post date in an array
 		        $recent_posts[ $category->term_id ] = strtotime($post->post_date);
 		    }
-
-		    // order by post date, preserve category_id
+		    // sort that array in order by post date, preserve category_id
 		    arsort($recent_posts);
-
 		    // get $limit most recent category ids
 		    $recent_categories = array_slice(array_keys($recent_posts), 0, $limit);
 
-
-
-				//for each category
+				//for each category, now in correct order
 		  	foreach($recent_categories as $category) {
 
 					$args = array(
@@ -66,22 +131,20 @@ body{
 						'suppress_filters' => true
 					);
 
-					//get one recent post
+					//get one recent post from that category. this will be used as the object
 					$recent_post = wp_get_recent_posts( $args );
-					//get the categories for the post
+
+					//get the categories for the post, then we have to loop it to get the top level category which we will display
 					$category = get_the_category($recent_post[0]["ID"]);
 					$ParentCategory = "";
-
 					foreach($category as $curcat){
 						if($curcat->parent == 0){
 							$ParentCategory = $curcat;
 						}
 					}
 
-					//todo amend this.
-					if($ParentCategory->count > 0){
-						/*echo '<div class="mySlides">';*/
 
+					if($ParentCategory->count > 0){
 						if(has_post_thumbnail($recent_post[0]["ID"])){
 							$excerptStr = (strlen($recent_post[0]["post_excerpt"]) > 100) ? substr($recent_post[0]["post_excerpt"],0,100).'...' :$recent_post[0]["post_excerpt"];
 							$comingsoon = get_post_meta( $recent_post[0]["ID"],'comingsoon', true );
@@ -115,8 +178,6 @@ body{
 								</div>
 							</div>';
 
-
-
 							echo '<div class="slide-excerpt">
 								<div class="slide-excerpt__container js-slide-excerpt" >
 									<div class="slide-excerpt__text">
@@ -130,15 +191,12 @@ body{
 									</div>
 
 								</div>';
-
 								//echo '<div class="slider-scroll-down anmt-scroll-down"></div>';
 								echo '</div>';
-
 							echo '</div>';
 
 						}
-
-				 }
+				 	}
 				} // foreach($categories
 				?>
 
