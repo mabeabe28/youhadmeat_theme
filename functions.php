@@ -352,7 +352,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					<option value=1 <?php if ( isset ( $meta['featured'] ) && $meta['featured'][0] == 1) echo 'selected'; ?> >Yes</option>
 				</select>
 			</div>
-
 			<div class="input-wrapper">
 				<label for="featured">Custom Featured Word</label>
 				<br/><span class="hint">A custom word for: "YOU HAD ME AT ______ " rather than the post category </span>
@@ -361,22 +360,34 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<div class="input-wrapper">
 				<label for="hideTitle">Hide Title</label>
 				<br/><span class="hint">Choose whether to display the title or not.</span>
-				<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
+				<select name="hideTitle">
+					<option value=0 <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
 			</div>
 			<div class="input-wrapper">
 				<label for="hideExcerpt">Hide Excerpt</label>
 				<br/><span class="hint">Choose whether to display the excerpt or not.</span>
-				<input type="checkbox" name="hideExcerpt" id="hideExcerpt" value="true" <?php if ( isset ( $meta['hideExcerpt'] ) && $meta['hideExcerpt'][0] == 1  ) echo 'checked="true"'; ?> />
+				<select name="hideExcerpt">
+					<option value=0 <?php if ( isset ( $meta['hideExcerpt'] ) && $meta['hideExcerpt'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['hideExcerpt'] ) && $meta['hideExcerpt'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
 			</div>
 			<div class="input-wrapper">
 				<label for="hideMeta">Hide Post Meta</label>
 				<br/><span class="hint">Choose whether to display the post published date and author.</span>
-				<input type="checkbox" name="hideMeta" id="hideMeta" value="true" <?php if ( isset ( $meta['hideMeta'] ) && $meta['hideMeta'][0] == 1  ) echo 'checked="true"'; ?> />
+				<select name="hideMeta">
+					<option value=0 <?php if ( isset ( $meta['hideMeta'] ) && $meta['hideMeta'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['hideMeta'] ) && $meta['hideMeta'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
 			</div>
 			<div class="input-wrapper">
 				<label for="comingsoon">Coming Soon</label>
 				<br/><span class="hint">Selecting this, ensures any link to the post in Featured Sliders and cards are non-linkable, and show the words 'Coming Soon'</span>
-				<input type="checkbox" name="comingsoon" id="comingsoon" value="true" <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1  ) echo 'checked="true"'; ?> />
+				<select name="comingsoon">
+					<option value=0 <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
 			</div>
 		</section>
 
@@ -430,17 +441,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'comingsoon' ] ) && $_POST[ 'comingsoon' ] == true ) {
-						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( false ) );
+				if( isset( $_POST[ 'comingsoon' ] ) ) {
+						update_post_meta( $post_id, 'comingsoon', sanitize_text_field( $_POST[ 'comingsoon' ] ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'hideTitle' ] ) && $_POST[ 'hideTitle' ] == true ) {
-						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
+				if( isset( $_POST[ 'hideTitle' ] ) ) {
+						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( $_POST[ 'hideTitle' ] ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
@@ -454,17 +461,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'hideExcerpt' ] ) && $_POST[ 'hideExcerpt' ] == true ) {
-						update_post_meta( $post_id, 'hideExcerpt', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'hideExcerpt', sanitize_text_field( false ) );
+				if( isset( $_POST[ 'hideExcerpt' ] ) ) {
+						update_post_meta( $post_id, 'hideExcerpt', sanitize_text_field( $_POST[ 'hideExcerpt' ] ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'hideMeta' ] ) && $_POST[ 'hideMeta' ] == true ) {
-						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( false ) );
+				if( isset( $_POST[ 'hideMeta' ] ) ) {
+						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( $_POST[ 'hideMeta' ] ) );
 				}
 
 
@@ -507,9 +510,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					</select>
 					<br>
 
-					<label for="post-display">Hide Title and Excerpt?</label>
+					<label for="hideTitle">Hide Title and Excerpt?</label>
 					<br/><span class="hint">Choose wether to display the title and excerpt or not.</span>
-					<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
+					<select name="hideTitle">
+						<option value=0 <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 0) echo 'selected'; ?> >No</option>
+						<option value=1 <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1) echo 'selected'; ?> >Yes</option>
+					</select>
 
 					<br>
 					<label for="post-display">Recent Posts Display Type</label>
@@ -579,11 +585,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 							update_post_meta( $post_id, 'post-display', sanitize_text_field( $_POST[ 'post-display' ] ) );
 					}
 
+
 					// Checks for input and sanitizes/saves if needed
-					if( isset( $_POST[ 'hideTitle' ] ) && $_POST[ 'hideTitle' ] == true ) {
-							update_post_meta( $post_id, 'hideTitle', sanitize_text_field( true ) );
-					}else{
-							update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
+					if( isset( $_POST[ 'hideTitle' ] ) ) {
+							update_post_meta( $post_id, 'hideTitle', sanitize_text_field( $_POST[ 'hideTitle' ] ) );
 					}
 
 			}
@@ -617,7 +622,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<div class="input-wrapper">
 				<label for="text-on-image">Text on Image?</label>
 				<br/><span class="hint">Determines whether the Title and Excerpt will be shown on top of the image, or under the Featured Image.</span>
-				<input type="checkbox" name="text-on-image" id="text-on-image" value="true"  <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1  ) echo 'checked="true"'; ?> />
+				<select name="text-on-image">
+					<option value=0 <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['text-on-image'] ) && $meta['text-on-image'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
+
 			</div>
 		</section>
 		<br>
@@ -692,12 +701,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 				// Checks for input and sanitizes/saves if needed
-				if( isset( $_POST[ 'text-on-image' ] ) && $_POST[ 'text-on-image' ] == true ) {
-						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( true ) );
-				}else{
-						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( false ) );
+				if( isset( $_POST[ 'text-on-image' ] ) ) {
+						update_post_meta( $post_id, 'text-on-image', sanitize_text_field( $_POST[ 'text-on-image' ] ) );
 				}
-
 
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'featured-position' ] ) ) {
