@@ -92,7 +92,7 @@
 			$category = get_the_category($post->ID);
 			//get top level parent only
 			foreach($category as $curcat){
-				if($curcat->parent == 0){
+				if($curcat->parent == 0 && $curcat->cat_name !== 'UNCATEGORISED'){
 					$logo_text = $curcat->cat_name;
 					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
 					$logo_text_class = 'category--'.$curcat->slug.'';
@@ -166,7 +166,7 @@
 			$category = get_the_category($post->ID);
 			//get top level parent only
 			foreach($category as $curcat){
-				if($curcat->parent == 0){
+				if($curcat->parent == 0 && $curcat->cat_name != 'Uncategorised'){
 					$logo_text = $curcat->cat_name;
 					$logo_text_link = ''.get_site_url().'/'.$curcat->slug.'';
 					$logo_text_class = 'category--'.$curcat->slug.'';
