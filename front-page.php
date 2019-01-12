@@ -28,7 +28,7 @@ body{
 
 				<!--Show the Featured Post First-->
 				<?php
-					$ignoreCats = array("blog", "uncategorised");
+					$ignoreCats = array("blog", "uncategorised","uncategorized");
 
 					//Get the latest feature post only
 					$featuredargs = array(
