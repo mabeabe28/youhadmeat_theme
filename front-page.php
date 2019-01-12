@@ -28,6 +28,8 @@ body{
 
 				<!--Show the Featured Post First-->
 				<?php
+					$ignoreCats = array("blog", "uncategorised");
+
 					//Get the latest feature post only
 					$featuredargs = array(
 					'numberposts' => 1,
@@ -97,7 +99,8 @@ body{
 				<?php
 				//get all top level categories
 				$catargs = array(
-					'parent' => 0
+					'parent' => 0,
+					'category__not_in' => array(96,104,1)
 				);
 				$categories=get_categories($catargs);
 
@@ -319,81 +322,83 @@ body{
 		</div>';
 		//for each category
 		foreach($recent_categories as $catID) {
-			//set category object
+				//set category object
 			$curcat = get_category($catID);
-			$catLink = ''.get_site_url().'/'.$curcat->slug.'';
-			echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
-		 	/*echo '<div class="card-deck-header">
-							<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
-						</div>';*/
-			echo '<div class="card-deck__divider category--'.$curcat->slug.'">
-						    <div class="card-deck__divider-text">
-						        '.strtoupper($curcat->name).'
-						    </div>
-								<div class="card-deck__divider-cta button">
-						        <a href="'.$catLink.'">MORE '.strtoupper($curcat->name).'</a>
-						    </div>
-						</div>
-						';
-			echo '<ul class="card-deck__container">';
+			if(!in_array($curcat->slug, $ignoreCats)){
+				$catLink = ''.get_site_url().'/'.$curcat->slug.'';
+				echo '<div class="card-deck" cat-attr="'.$curcat->name.'" >';
+			 	/*echo '<div class="card-deck-header">
+								<div class="card-deck-header-title"><h1>'.$curcat->name.'</h1></div>
+							</div>';*/
+				echo '<div class="card-deck__divider category--'.$curcat->slug.'">
+							    <div class="card-deck__divider-text">
+							        '.strtoupper($curcat->name).'
+							    </div>
+									<div class="card-deck__divider-cta button">
+							        <a href="'.$catLink.'">MORE '.strtoupper($curcat->name).'</a>
+							    </div>
+							</div>
+							';
+				echo '<ul class="card-deck__container">';
 
-			$args = array(
-				'numberposts' => 4,
-				'category' => $catID,
-				'orderby' => 'post_date',
-				'order' => 'DESC',
-				'post_type' => 'post',
-				'post_status' => 'publish',
-				'suppress_filters' => true
-			);
+				$args = array(
+					'numberposts' => 4,
+					'category' => $catID,
+					'orderby' => 'post_date',
+					'order' => 'DESC',
+					'post_type' => 'post',
+					'post_status' => 'publish',
+					'suppress_filters' => true
+				);
 
-			//get four recent post
-			$recent_three = wp_get_recent_posts( $args );
-			foreach($recent_three as $curpost){
+				//get four recent post
+				$recent_three = wp_get_recent_posts( $args );
+				foreach($recent_three as $curpost){
 
-				$excerptStr = (strlen($curpost["post_excerpt"]) > 40) ? substr($curpost["post_excerpt"],0,40).'...' :$curpost["post_excerpt"];
-				$pageTitle = $curpost["post_title"];
-				$postUrl = get_permalink($curpost["ID"]);
-				$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
-				if($comingsoon){
-					$pageTitle = 'Coming Soon';
-					$excerptStr = 'Content Coming Soon';
-					$postUrl = '##';
+					$excerptStr = (strlen($curpost["post_excerpt"]) > 40) ? substr($curpost["post_excerpt"],0,40).'...' :$curpost["post_excerpt"];
+					$pageTitle = $curpost["post_title"];
+					$postUrl = get_permalink($curpost["ID"]);
+					$comingsoon = get_post_meta( $curpost["ID"],'comingsoon', true );
+					if($comingsoon){
+						$pageTitle = 'Coming Soon';
+						$excerptStr = 'Content Coming Soon';
+						$postUrl = '##';
+					}
+
+					$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$curpost["post_author"]).'';
+
+					echo'	<li class="card post--'.$curpost["ID"].' category--'.$curcat->slug.'">
+						<a href="'.$postUrl.'">
+									<div class="card__header"><div class="card__header-category category--'.$curcat->slug.'">
+										<div class="card__header-category__title">'.strtoupper($curcat->name).'</div>
+										<div class="card__header-category__icon"></div>
+									</div></div>
+									<img class="a-card-image-zoom" src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
+									<div class="card__content">
+											<div class="card__content-title category--'.$curcat->slug.'">'.$pageTitle.'</div>
+											<div class="card__content-excerpt">
+												'.$excerptStr.'
+											</div>
+											<div class="card__author">
+												<a href="'.$authorUrl.'">
+													'.get_wp_user_avatar($curpost["post_author"],'small').'
+												</a>
+											</div>
+									</div>
+								</a>
+						</li>';
+
 				}
 
-				$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$curpost["post_author"]).'';
 
-				echo'	<li class="card post--'.$curpost["ID"].' category--'.$curcat->slug.'">
-					<a href="'.$postUrl.'">
-								<div class="card__header"><div class="card__header-category category--'.$curcat->slug.'">
-									<div class="card__header-category__title">'.strtoupper($curcat->name).'</div>
-									<div class="card__header-category__icon"></div>
-								</div></div>
-								<img class="a-card-image-zoom" src="'.get_the_post_thumbnail_url($curpost["ID"], 'medium').'" />
-								<div class="card__content">
-										<div class="card__content-title category--'.$curcat->slug.'">'.$pageTitle.'</div>
-										<div class="card__content-excerpt">
-											'.$excerptStr.'
-										</div>
-										<div class="card__author">
-											<a href="'.$authorUrl.'">
-												'.get_wp_user_avatar($curpost["post_author"],'small').'
-											</a>
-										</div>
-								</div>
-							</a>
-					</li>';
-
+				echo 		'</ul>';//category-content
+					echo '<div class="card-deck__cta">
+									<a href="'.$catLink.'" class="button button category--'.$curcat->slug.'">
+									  View more in '.$curcat->name.'
+									</a>
+								</div>';
+				echo '</div>';//category-wrapper
 			}
-
-
-			echo 		'</ul>';//category-content
-				echo '<div class="card-deck__cta">
-								<a href="'.$catLink.'" class="button button category--'.$curcat->slug.'">
-								  View more in '.$curcat->name.'
-								</a>
-							</div>';
-			echo '</div>';//category-wrapper
 		}//for each category
 
 		wp_reset_query();
