@@ -345,6 +345,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			<br/><div class="hint">General Post Options</div>
 			<br>
 			<div class="input-wrapper">
+				<label for="featured">Featured Post</label>
+				<br/><span class="hint">Is this a Featured Post. This will show as the first post on the homepage slider. Only the most recent featured post will show on the slider.</span>
+				<select name="featured">
+					<option value=0 <?php if ( isset ( $meta['featured'] ) && $meta['featured'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['featured'] ) && $meta['featured'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
+			</div>
+
+			<div class="input-wrapper">
+				<label for="featured">Custom Featured Word</label>
+				<br/><span class="hint">A custom word for: "YOU HAD ME AT ______ " rather than the post category </span>
+				<input type="text" name="featured-word" id="featured-word" value="<?php echo $meta['featured-word'][0]; ?>" />
+			</div>
+			<div class="input-wrapper">
 				<label for="hideTitle">Hide Title</label>
 				<br/><span class="hint">Choose whether to display the title or not.</span>
 				<input type="checkbox" name="hideTitle" id="hideTitle" value="true" <?php if ( isset ( $meta['hideTitle'] ) && $meta['hideTitle'][0] == 1  ) echo 'checked="true"'; ?> />
@@ -427,6 +441,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( true ) );
 				}else{
 						update_post_meta( $post_id, 'hideTitle', sanitize_text_field( false ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured' ] ) ) {
+						update_post_meta( $post_id, 'featured', sanitize_text_field( $_POST[ 'featured' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured-word' ] ) ) {
+						update_post_meta( $post_id, 'featured-word', sanitize_text_field( $_POST[ 'featured-word' ] ) );
 				}
 
 				// Checks for input and sanitizes/saves if needed
