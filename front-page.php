@@ -133,7 +133,7 @@ body{
 						'post__not_in' => array($featuredpost[0]["ID"])
 					);
 
-					//get one recent post from that category and thats not the featured post this will be used as the object
+					//get one recent post from that category and thats not the featured post. This will be used as the object
 					$recent_post = wp_get_recent_posts( $args );
 
 					//get the categories for the post, then we have to loop it to get the top level category which we will display
