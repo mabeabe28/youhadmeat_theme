@@ -104,10 +104,11 @@ body{
 				//get posts categoryies in order of latest post overall
 		    $recent_posts = array();
 		    foreach ($categories as $key=>$category) {
-		        // get latest post from the current $category
+		        // get latest post from the current $category - and make sure its not the same as featured
 		        $args = array(
 		            'numberposts' => 1,
 		            'category' => $category->term_id,
+								'post__not_in' => array($featuredpost[0]["ID"])
 		        );
 		        $post = get_posts($args)[0];
 		        // save category id & post date in an array
@@ -128,10 +129,11 @@ body{
 						'order' => 'DESC',
 						'post_type' => 'post',
 						'post_status' => 'publish',
-						'suppress_filters' => true
+						'suppress_filters' => true,
+						'post__not_in' => array($featuredpost[0]["ID"])
 					);
 
-					//get one recent post from that category. this will be used as the object
+					//get one recent post from that category and thats not the featured post this will be used as the object
 					$recent_post = wp_get_recent_posts( $args );
 
 					//get the categories for the post, then we have to loop it to get the top level category which we will display
