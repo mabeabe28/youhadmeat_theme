@@ -19,6 +19,22 @@ input[type="reset"]:focus{
 	border-color: #aaa #bbb #bbb;
 }
 
+#disqus_thread{
+	margin-top: 10px;
+	margin-left: 20%;
+	margin-right: 20%;
+
+	@media screen and (max-width: $medium-breakpoint) {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	@media screen and (max-width: $small-breakpoint) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],

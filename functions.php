@@ -258,6 +258,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				   background-color:'.$cat_colour.';
 				}
 
+				/*Card divider color*/
 				.card__content-title.category--'.$curcat->slug.':after {
 					background-color:'.$cat_colour.';
 				}
@@ -281,26 +282,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					background-color:'.$cat_colour.';
 				}
 
-				/*#divider.category--'.$curcat->slug.' #divider-content .text:before{
-					display: inline-block;
-					font-family: FontAwesomeRegular,FontAwesomeSolid;
-			    content: "'.$cat_icon.'";
-				}*/
-
 				/*Card Hover items*/
 				.card:hover .card__header-category.category--'.$curcat->slug.'{
 					color:'.$cat_colour.';
 				}
 
-				/*.category--'.$curcat->slug.' .category-icon:after{
-					font-family: FontAwesomeRegular,FontAwesomeSolid;
-			    content: "'.$cat_icon.'";
-					background-color: '.$cat_colour.';
-				}
-
-				.category--'.$curcat->slug.' .category-title{
-					background-color: '.$cat_colour.';
-				}*/
 
 
 
@@ -314,7 +300,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 	/*output category colour css*/
 	function theme_enqueue_styles() {
-		//wp_enqueue_style( 'card-styles', get_template_directory_uri() . '/css/card-styles.css');
 	  $custom_css = theme_get_customizer_css();
 	  wp_add_inline_style( 'styles', $custom_css );
 	}
