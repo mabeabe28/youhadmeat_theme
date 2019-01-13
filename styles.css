@@ -71,6 +71,10 @@ h1, h2, h3, h4, h5 {
   font-family: "MontserratBlack";
   text-transform: uppercase; }
 
+/* line 16, sass/_partials/_typography.scss */
+strong {
+  font-weight: bold; }
+
 /* Buttons
 	 ========================================================================== */
 /**
