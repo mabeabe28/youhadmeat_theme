@@ -61,7 +61,6 @@ get_header();
 	#featured-wrapper--bottom {
 			/*position: absolute;*/
 			margin-top: 40px;
-			color: black;
 			width: 100%;
 			display: flex;
 			justify-content: center;
@@ -145,7 +144,15 @@ get_header();
 			$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
 			$hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
 			$hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
-
+			$nightMode = get_post_meta( get_the_id(),'nightMode', true );
+			if($nightMode){
+				echo '<style>
+					body{
+					  background-color: rgb(35,35,35);
+					  color: white;
+					}
+				</style>';
+			}
 			echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 				<div id="featured-wrapper">
 					<div id="featured-text">';

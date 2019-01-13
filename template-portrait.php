@@ -32,6 +32,16 @@ get_header();
   while ( have_posts() ) :
     the_post();
 
+    $nightMode = get_post_meta( get_the_id(),'nightMode', true );
+    if($nightMode){
+      echo '<style>
+        body{
+          background-color: rgb(35,35,35);
+          color: white;
+        }
+      </style>';
+    }
+
     echo '<div class="pt-portrait '.$darkThemeClass.'">
       <div class="pt-portrait-wrapper">';
           echo  '<div class="pt-section-one '.$positionOneClass.'" style="background-image:url('.get_the_post_thumbnail_url().');">

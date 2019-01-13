@@ -374,6 +374,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					<option value=1 <?php if ( isset ( $meta['comingsoon'] ) && $meta['comingsoon'][0] == 1) echo 'selected'; ?> >Yes</option>
 				</select>
 			</div>
+			<div class="input-wrapper">
+				<label for="nightMode">Dark Theme?</label>
+				<br/><span class="hint">Dark background for the post?</span>
+				<select name="nightMode">
+					<option value=0 <?php if ( isset ( $meta['nightMode'] ) && $meta['nightMode'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['nightMode'] ) && $meta['nightMode'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
+			</div>
 		</section>
 
 		<br>
@@ -453,6 +461,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'hideMeta' ] ) ) {
 						update_post_meta( $post_id, 'hideMeta', sanitize_text_field( $_POST[ 'hideMeta' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'nightMode' ] ) ) {
+						update_post_meta( $post_id, 'nightMode', sanitize_text_field( $_POST[ 'nightMode' ] ) );
 				}
 
 

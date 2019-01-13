@@ -56,7 +56,15 @@ font-family: "Merriweather";
     $hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
     $hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
     $hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
-
+    $nightMode = get_post_meta( get_the_id(),'nightMode', true );
+    if($nightMode){
+      echo '<style>
+        body{
+          background-color: rgb(35,35,35);
+          color: white;
+        }
+      </style>';
+    }
     if(!$hideTitle || !$hideExcerpt || !$hideMeta){
       echo '<div class="featured-text">';
     }
