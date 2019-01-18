@@ -10,8 +10,8 @@ get_header();
 ?>
 <div id="YHMAC-root"></div>
 
-<script src="../yhmac-react/main.js"></script>
-<link rel = "stylesheet" type = "text/css" href = "../yhmac-react/main.css" />
+<script src="https://www.youhadme.at/wp-content/themes/youhadmeat_theme-master/includes/react-apps/yhmac/main.js"></script>
+<link rel = "stylesheet" type = "text/css" href = "https://www.youhadme.at/wp-content/themes/youhadmeat_theme-master/includes/react-apps/yhmac/main.css" />
 
 <script>
 window.onscroll = function() {scrollFunction()};
