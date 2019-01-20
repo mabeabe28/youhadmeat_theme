@@ -14,7 +14,7 @@ get_header();
 <link rel = "stylesheet" type = "text/css" href = "https://www.youhadme.at/wp-content/themes/youhadmeat_theme-master/includes/react-apps/yhmac/main.css" />
 
 <script>
-    document.getElementById("site-navigation").style.top = "0";
+    document.getElementById("site-navigation").style.display = "none";
 </script>
 <?php
 /*get_sidebar();*/
