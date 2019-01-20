@@ -15,6 +15,7 @@ get_header();
 
 <script>
     document.getElementById("site-navigation").style.display = "none";
+    document.getElementById("initial-navigation").style.display = "none";
 </script>
 <?php
 /*get_sidebar();*/
