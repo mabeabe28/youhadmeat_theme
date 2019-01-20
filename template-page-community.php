@@ -14,15 +14,7 @@ get_header();
 <link rel = "stylesheet" type = "text/css" href = "https://www.youhadme.at/wp-content/themes/youhadmeat_theme-master/includes/react-apps/yhmac/main.css" />
 
 <script>
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     document.getElementById("site-navigation").style.top = "0";
-  } else {
-    document.getElementById("site-navigation").style.top = "-50px";
-  }
-}
 </script>
 <?php
 /*get_sidebar();*/
