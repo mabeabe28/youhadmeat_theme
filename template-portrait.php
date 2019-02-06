@@ -15,6 +15,8 @@ get_header();
 
   $featuredTheme = get_post_meta( get_the_id(),'featured-theme', true );
   $featuredPosition = get_post_meta( get_the_id(),'featured-position', true );
+  $isFixedPosition= get_post_meta( get_the_id(),'featured-fixed', true );
+
 
   $darkThemeClass = '';
   if($featuredTheme == 'dark'){
@@ -29,6 +31,12 @@ get_header();
     $positionOneClass = "pt-right";
     $positionTwoClass = "pt-left";
   }
+
+  $fixedClass = "";
+  if($isFixedPosition){
+    $fixedClass = "image-fixed";
+  }
+
   while ( have_posts() ) :
     the_post();
 
@@ -44,7 +52,7 @@ get_header();
 
     echo '<div class="pt-portrait '.$darkThemeClass.'">
       <div class="pt-portrait-wrapper">';
-          echo  '<div class="pt-section-one '.$positionOneClass.'" style="background-image:url('.get_the_post_thumbnail_url().');">
+          echo  '<div class="pt-section-one '.$positionOneClass.' '.$fixedClass.'" style="background-image:url('.get_the_post_thumbnail_url().');">
               <div class="pt-section-one__overlay">
               </div>
             </div>

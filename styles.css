@@ -1548,17 +1548,23 @@ strong {
       background-repeat: no-repeat;
       height: 100vh;
       width: 50%; }
+      /* line 44, sass/components/postTemplates/_portrait.scss */
+      .pt-portrait-wrapper .pt-section-one.image-fixed {
+        position: fixed; }
       @media screen and (max-width: 600px) {
         /* line 36, sass/components/postTemplates/_portrait.scss */
         .pt-portrait-wrapper .pt-section-one {
           height: 100vh;
           width: 100%; }
-          /* line 50, sass/components/postTemplates/_portrait.scss */
+          /* line 52, sass/components/postTemplates/_portrait.scss */
+          .pt-portrait-wrapper .pt-section-one.image-fixed {
+            position: absolute; }
+          /* line 56, sass/components/postTemplates/_portrait.scss */
           .pt-portrait-wrapper .pt-section-one__overlay {
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
             width: 100%;
             height: 100%; } }
-    /* line 57, sass/components/postTemplates/_portrait.scss */
+    /* line 63, sass/components/postTemplates/_portrait.scss */
     .pt-portrait-wrapper .pt-section-two {
       position: absolute;
       height: 100vh;
@@ -1567,11 +1573,11 @@ strong {
       align-items: center;
       justify-content: center; }
       @media screen and (max-width: 600px) {
-        /* line 57, sass/components/postTemplates/_portrait.scss */
+        /* line 63, sass/components/postTemplates/_portrait.scss */
         .pt-portrait-wrapper .pt-section-two {
           height: 100vh;
           width: 100%; } }
-      /* line 72, sass/components/postTemplates/_portrait.scss */
+      /* line 78, sass/components/postTemplates/_portrait.scss */
       .pt-portrait-wrapper .pt-section-two .title {
         /*top:20%;*/
         position: relative;
@@ -1583,10 +1589,10 @@ strong {
         font-weight: bold;
         margin: 15px; }
         @media screen and (max-width: 1081px) {
-          /* line 72, sass/components/postTemplates/_portrait.scss */
+          /* line 78, sass/components/postTemplates/_portrait.scss */
           .pt-portrait-wrapper .pt-section-two .title {
             font-size: 1.4em; } }
-      /* line 87, sass/components/postTemplates/_portrait.scss */
+      /* line 93, sass/components/postTemplates/_portrait.scss */
       .pt-portrait-wrapper .pt-section-two .excerpt {
         margin-left: 75px;
         margin-right: 75px;
@@ -1597,14 +1603,14 @@ strong {
         text-align: justify;
         text-justify: inter-word; }
         @media screen and (max-width: 1081px) {
-          /* line 87, sass/components/postTemplates/_portrait.scss */
+          /* line 93, sass/components/postTemplates/_portrait.scss */
           .pt-portrait-wrapper .pt-section-two .excerpt {
             font-size: 0.9em; } }
     @media screen and (min-width: 600px) {
-      /* line 104, sass/components/postTemplates/_portrait.scss */
+      /* line 110, sass/components/postTemplates/_portrait.scss */
       .pt-portrait-wrapper .pt-left {
         left: 0; }
-      /* line 107, sass/components/postTemplates/_portrait.scss */
+      /* line 113, sass/components/postTemplates/_portrait.scss */
       .pt-portrait-wrapper .pt-right {
         right: 0; } }
 

@@ -41,11 +41,17 @@
         height: 100vh;
         width: 50%;
 
-
+          &.image-fixed{
+            position: fixed;
+          }
 
         @media screen and (max-width: $small-breakpoint) {
           height: 100vh;
           width: 100%;
+
+          &.image-fixed{
+            position: absolute;
+          }
 
           &__overlay{
             background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4));

@@ -646,6 +646,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				  <option value="light" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'light') echo 'selected'; ?>>Light</option>
 					<option value="dark" <?php if ( isset ( $meta['featured-theme'] ) && $meta['featured-theme'][0] == 'dark') echo 'selected'; ?> >Dark</option>
 				</select>
+				<br>
+				<label for="featured-fixed">Featured Image Fixed</label>
+				<br/><span class="hint">Is the image fixed as you scroll?</span>
+				<select name="featured-fixed">
+					<option value=0 <?php if ( isset ( $meta['featured-fixed'] ) && $meta['featured-fixed'][0] == 0) echo 'selected'; ?> >No</option>
+					<option value=1 <?php if ( isset ( $meta['featured-fixed'] ) && $meta['featured-fixed'][0] == 1) echo 'selected'; ?> >Yes</option>
+				</select>
 			</div>
 		</section>
 		<br>
@@ -711,6 +718,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				// Checks for input and sanitizes/saves if needed
 				if( isset( $_POST[ 'featured-theme' ] ) ) {
 						update_post_meta( $post_id, 'featured-theme', sanitize_text_field( $_POST[ 'featured-theme' ] ) );
+				}
+
+				// Checks for input and sanitizes/saves if needed
+				if( isset( $_POST[ 'featured-fixed' ] ) ) {
+						update_post_meta( $post_id, 'featured-fixed', sanitize_text_field( $_POST[ 'featured-fixed' ] ) );
 				}
 
 		}
