@@ -1197,6 +1197,10 @@ strong {
       padding-left: 0;
       padding-right: 0; } }
 
+/* line 14, sass/components/_comments.scss */
+.adsbygoogle {
+  margin-top: 20px; }
+
 /* Fonts
 	 ========================================================================== */
 /**
