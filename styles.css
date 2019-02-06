@@ -1184,6 +1184,19 @@ strong {
 .card:hover .card__header-category {
   color: pink; }
 
+/* line 1, sass/components/_comments.scss */
+#disqus_thread, #comments {
+  margin: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: white;
+  position: relative; }
+  @media screen and (max-width: 600px) {
+    /* line 1, sass/components/_comments.scss */
+    #disqus_thread, #comments {
+      padding-left: 0;
+      padding-right: 0; } }
+
 /* Fonts
 	 ========================================================================== */
 /**

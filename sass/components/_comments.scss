@@ -1,0 +1,12 @@
+#disqus_thread, #comments{
+  margin: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: white;
+  position: relative;
+
+  @media screen and (max-width: $small-breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
