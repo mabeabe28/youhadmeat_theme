@@ -1186,7 +1186,7 @@ strong {
 
 /* line 1, sass/components/_comments.scss */
 #disqus_thread, #comments {
-  margin: 0;
+  margin: 0 !important;
   padding-left: 20%;
   padding-right: 20%;
   background-color: white;
