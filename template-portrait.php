@@ -16,7 +16,8 @@ get_header();
   $featuredTheme = get_post_meta( get_the_id(),'featured-theme', true );
   $featuredPosition = get_post_meta( get_the_id(),'featured-position', true );
   $isFixedPosition= get_post_meta( get_the_id(),'featured-fixed', true );
-
+  $hideExcerpt = get_post_meta( get_the_id(),'hideExcerpt', true );
+  $hideMeta = get_post_meta( get_the_id(),'hideMeta', true );
 
   $darkThemeClass = '';
   if($featuredTheme == 'dark'){
@@ -61,17 +62,26 @@ get_header();
                 <div class="title">
                   <div>
                   '.get_the_title().'
-                  </div>
-                  <div class="post-meta" style="font-size:0.25em;">
+                  </div>';
+
+                  if(!$hideMeta){
+                  echo '<div class="post-meta" style="font-size:0.25em;">
                     '.get_the_date().' | '.get_the_author_meta('nickname').'
-                  </div>
-                </div>
-                <div class="excerpt">
+                  </div>';
+                  }
+
+
+                echo '</div>';
+
+                if(!$hideExcerpt){
+                echo '<div class="excerpt">
                   '.get_the_excerpt().'
-                </div>
-              </div>
+                </div>';
+              }
+
+              echo '</div>
             </div>';
-        //}
+
 
       echo '</div>
     </div>';
