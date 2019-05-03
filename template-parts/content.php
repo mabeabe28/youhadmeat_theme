@@ -111,7 +111,7 @@
 	</style>
 
 
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<ins class="adsbygoogle"
 			 style="display:block; text-align:center;background: #ffffff00;"
 			 data-ad-layout="in-article"
@@ -120,6 +120,13 @@
 			 data-ad-slot="7318134937"></ins>
 	<script>
 			 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>-->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-7101197309332352",
+	    enable_page_level_ads: true
+	  });
 	</script>
 
 	<footer class="entry-footer">
