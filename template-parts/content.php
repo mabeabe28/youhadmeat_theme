@@ -111,22 +111,15 @@
 	</style>
 
 
-	<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<ins class="adsbygoogle"
-			 style="display:block; text-align:center;background: #ffffff00;"
-			 data-ad-layout="in-article"
-			 data-ad-format="fluid"
-			 data-ad-client="ca-pub-5329286116812288"
-			 data-ad-slot="7318134937"></ins>
-	<script>
-			 (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>-->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+	     style="display:block; text-align:center;"
+	     data-ad-layout="in-article"
+	     data-ad-format="fluid"
+	     data-ad-client="ca-pub-7101197309332352"
+	     data-ad-slot="1631056650"></ins>
 	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-7101197309332352",
-	    enable_page_level_ads: true
-	  });
+	     (adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 
 	<footer class="entry-footer">
