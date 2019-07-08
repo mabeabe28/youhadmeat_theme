@@ -102,7 +102,7 @@
 
       //left: 40%;
       display: none;
-
+      white-space: nowrap;
       @media screen and (max-height: 600px) {
         font-size: 7.5vw;
         line-height: 5vw;
