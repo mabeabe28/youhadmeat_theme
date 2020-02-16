@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Community Page React
+ * Template Name: Billsplit Page React
  * Template Post Type:  page
  *
  * @package youhadmeat_theme
