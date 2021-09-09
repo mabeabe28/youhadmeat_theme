@@ -30,4 +30,4 @@ jobs:
           command: ssh-keyscan 160.153.129.30 >> ~/.ssh/known_hosts
       - run:
           name: Server Deploy
-          command: scp -r ./*  ets5cio5mb9p@160.153.129.30:public_html/
+          command: scp -r ./*  ets5cio5mb9p@160.153.129.30:public_html/wp-content/themes/YHMA_theme
