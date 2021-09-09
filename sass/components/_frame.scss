@@ -1,0 +1,23 @@
+
+/*--------------------------------------------------------------
+# Cards Deck Container
+--------------------------------------------------------------*/
+.frame{
+
+	&__border{
+		height:100vh;
+		width:100%;
+		position: fixed;
+	}
+
+	&__item{
+		height:100vh;
+		width:100%;
+		background-size:cover;
+		background-position: left center;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		background-color: black;
+		display: inline-block;
+	}
+}
