@@ -19,7 +19,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "1c:3c:26:c1:78:e6:63:8c:cd:56:83:40:bf:f1:d8:d9"
+            - "ac:02:d8:7a:2d:80:5f:2a:24:03:30:b5:f5:4a:61:b5"
       - run:
           name: fix host authenticity for production server
           command: ssh-keyscan 160.153.129.30 >> ~/.ssh/known_hosts
