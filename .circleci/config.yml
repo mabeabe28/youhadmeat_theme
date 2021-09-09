@@ -3,6 +3,20 @@ executors:
   node-executor:
     docker:
       - image: circleci/node:10
+commands:
+  wp-build:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
 workflows:
   version: 2
   build-deploy:
@@ -17,6 +31,7 @@ jobs:
     executor: node-executor
     working_directory: ~/repo
     steps:
+      - wp-build
       - add_ssh_keys:
           fingerprints:
             - "ac:02:d8:7a:2d:80:5f:2a:24:03:30:b5:f5:4a:61:b5"
@@ -25,4 +40,4 @@ jobs:
           command: ssh-keyscan 160.153.129.30 >> ~/.ssh/known_hosts
       - run:
           name: Server Deploy
-          command: scp -r public/*  ets5cio5mb9p@160.153.129.30:public_html/wp_content/theme/YHMA_theme
+          command: scp -r public/*  ets5cio5mb9p@160.153.129.30:public_html/
