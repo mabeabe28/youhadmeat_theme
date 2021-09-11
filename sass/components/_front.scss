@@ -1,0 +1,96 @@
+#hero{
+    background-color: #141515;
+    width: 100vw;
+    height: 700px;
+
+    .hero__content-wrapper{
+        width: 1000px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .hero__content{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 40%;
+
+            &__information{
+                width: 60%;
+                &__items{
+                    padding: 32px;
+
+                    .pre-head{
+                        width: 100%;
+                        display: flex;
+                        margin-top: 10px;
+                        font-size: 10px;
+
+                        .latest{
+                            padding: 2px 5px;
+                            width: auto;
+                            font-weight: bold;
+                            background-color: white;
+                            color: black;
+                            margin-right: 10px;
+                        }
+                        
+                    }
+
+                    .title{
+                        font-family: $header-font-family;
+                        font-size: 32px;
+                        text-transform: uppercase;
+                    }
+                    .excerpt{
+                        font-family: $base-font-family;
+                        font-size: 12px;
+                    }
+
+                    .meta{
+                        width: 100%;
+                        display: flex;
+                        margin-top: 10px;
+                        font-size: 8px;
+
+                        .category{
+                            padding: 2px 5px;
+                            width: auto;
+                            font-weight: bold;
+                            background-color: white;
+                            border-radius: 40px;
+                            color: black;
+                            margin-right: 10px;
+                        }
+
+                        .author{
+                            i{
+                                margin-right: 5px;
+                            }
+                            font-weight: bold;
+                            padding: 2px 5px;
+                            margin-right: 10px;
+
+                        }
+
+                        .date{
+                            i{
+                                margin-right: 5px;
+                            }
+                            font-weight: bold;
+                            padding: 2px 5px;
+                            margin-right: 10px;
+                        }
+                    }
+                    
+                }
+            }
+            &__photo{
+                width: 40%;
+                border-radius: 20px;
+                background-color: white;
+            }
+        }
+    }
+}

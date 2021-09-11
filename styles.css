@@ -667,310 +667,73 @@ strong {
     #side-navigation #sideNav-menu .menu-item .sub-menu a {
       font-size: 1.44em; }
 
-/*--------------------------------------------------------------
-# Cards Deck Container
---------------------------------------------------------------*/
-.card-deck {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-  .card-deck__header {
-    text-align: center;
-    padding: 1px;
-    margin-top: 8px;
-    margin-bottom: 20px; }
-    .card-deck__header-title {
-      font-family: "MontserratBlack";
-      font-size: 32px;
-      text-align: center; }
-      .card-deck__header-title h1 {
-        margin: 15px; }
-  .card-deck__latest {
-    margin-left: 5.829903978052126vw;
-    margin-right: 5.829903978052126vw;
-    margin-bottom: 20px;
-    font-size: 2.2434842249657065vw; }
-    @media screen and (max-width: 600px) {
-      .card-deck__latest {
-        font-size: 40px; } }
-  .card-deck__container {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: space-around;
-    margin-left: 5.1440329218107vw;
-    margin-right: 5.1440329218107vw;
-    padding-left: 0;
-    padding-right: 0;
-    list-style: none; }
-    @media screen and (max-width: 600px) {
-      .card-deck__container {
-        margin-left: 0px;
-        margin-right: 0px; } }
-  .card-deck__divider {
-    height: 60px;
-    margin-left: 5.829903978052126vw;
-    margin-right: 5.829903978052126vw;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    background-color: #2fc4c4;
-    font-family: "MontserratBlack"; }
-    @media screen and (max-width: 600px) {
-      .card-deck__divider {
-        height: 60px;
-        margin-left: 0;
-        margin-right: 0; } }
-    .card-deck__divider-text {
-      padding-left: 30px;
-      padding-top: 8px;
-      font-size: 30px;
-      display: block;
-      position: relative;
-      z-index: 1; }
-      @media screen and (max-width: 600px) {
-        .card-deck__divider-text {
-          text-align: center;
-          padding: 10px;
-          width: 100%; } }
-    .card-deck__divider-cta {
-      margin-right: 5px;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      font-size: 20px;
-      display: block;
-      position: relative;
-      z-index: 1; }
-      @media screen and (max-width: 600px) {
-        .card-deck__divider-cta {
-          display: none; } }
-  .card-deck__cta {
-    margin-top: 20px;
-    text-align: center; }
-    @media screen and (min-width: 600px) {
-      .card-deck__cta {
-        display: none; } }
-
-/*--------------------------------------------------------------
-# Card
---------------------------------------------------------------*/
-.card {
-  position: relative;
-  width: 20.919067215363512vw;
-  height: 37.29355281207133vw;
-  background-color: black;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding-left: 0px;
-  padding-right: 0px;
-  display: block;
-  overflow: hidden;
-  color: white;
-  /*--------------------------------------------------------------
-	# Card - Header
-	--------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-	# Card - Content
-	--------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-	# Card - Hover
-	--------------------------------------------------------------*/
-  /*hover animation*/
-  /*&:after{
-	    content: '';
-	    display: block;
-	    width: 0;
-	    height: 5px;
-	    position: absolute;
-	    top: 100%;
-	    left: 0;
-	    margin-top: -5px;
-	    background-color: pink;
-	    -webkit-transition: all .5s ease;
-	    -moz-transition: all .5s ease;
-	    -o-transition: all .5s ease;
-	    transition: all .5s ease;
-			z-index: 1;
-	}
-	&:hover:after{
-	    width: 100%;
-	    background-color: pink;
-			z-index: 1;
-
-	}*/ }
-  @media screen and (max-width: 600px) {
-    .card {
-      width: 100%;
-      height: 100vh;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0px;
-      margin-bottom: 0px; } }
-  .card img {
-    object-fit: cover;
+#hero {
+  background-color: #141515;
+  width: 100vw;
+  height: 700px; }
+  #hero .hero__content-wrapper {
+    width: 1000px;
+    margin: 0 auto;
     height: 100%;
-    width: 100%; }
-  .card .card__header {
-    position: absolute;
-    color: white;
-    right: 0;
-    z-index: 10; }
-    .card .card__header .card__header-category {
-      margin: 0.3472222222222222vw;
-      padding: 0.3472222222222222vw 0.6944444444444444vw 0.1388888888888889vw 0.6944444444444444vw;
-      font-family: "MontserratBlack";
-      text-align: center;
-      outline: none;
-      border-color: black;
-      /* fallback */
-      border-color: rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s ease-in, border-color 0.3s ease-in; }
-      @media screen and (max-width: 600px) {
-        .card .card__header .card__header-category {
-          margin: 5px 5px 5px 5px;
-          padding: 5px 10px 2px 10px;
-          font-family: "MontserratBlack";
-          text-align: center;
-          outline: none;
-          border-color: black;
-          /* fallback */
-          border-color: rgba(0, 0, 0, 0.4);
-          transition: background-color 0.3s ease-in, border-color 0.3s ease-in; }
-          .card .card__header .card__header-category__title {
-            font-size: 16px;
-            height: 30px;
-            right: 0px;
-            border-bottom-left-radius: 20px;
-            border-top-left-radius: 20px; } }
-  .card .card__content {
-    color: white;
-    width: 100%;
-    height: 60px;
-    padding: 5px;
-    z-index: 1; }
-    .card .card__content .card__content-title {
-      font-family: "Merriweather";
-      position: absolute;
-      bottom: 15%;
-      font-size: 1.8031550068587106vw;
-      font-weight: bolder;
-      padding-left: 0.823045267489712vw;
-      padding-right: 15%;
-      line-height: 1.2;
-      z-index: 1;
-      text-transform: uppercase; }
-      .card .card__content .card__content-title:after {
-        content: '';
-        display: block;
+    display: flex;
+    align-items: center; }
+    #hero .hero__content-wrapper .hero__content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 40%; }
+      #hero .hero__content-wrapper .hero__content__information {
+        width: 60%; }
+        #hero .hero__content-wrapper .hero__content__information__items {
+          padding: 32px; }
+          #hero .hero__content-wrapper .hero__content__information__items .pre-head {
+            width: 100%;
+            display: flex;
+            margin-top: 10px;
+            font-size: 10px; }
+            #hero .hero__content-wrapper .hero__content__information__items .pre-head .latest {
+              padding: 2px 5px;
+              width: auto;
+              font-weight: bold;
+              background-color: white;
+              color: black;
+              margin-right: 10px; }
+          #hero .hero__content-wrapper .hero__content__information__items .title {
+            font-family: "MontserratBlack";
+            font-size: 32px;
+            text-transform: uppercase; }
+          #hero .hero__content-wrapper .hero__content__information__items .excerpt {
+            font-family: "Montserrat";
+            font-size: 12px; }
+          #hero .hero__content-wrapper .hero__content__information__items .meta {
+            width: 100%;
+            display: flex;
+            margin-top: 10px;
+            font-size: 8px; }
+            #hero .hero__content-wrapper .hero__content__information__items .meta .category {
+              padding: 2px 5px;
+              width: auto;
+              font-weight: bold;
+              background-color: white;
+              border-radius: 40px;
+              color: black;
+              margin-right: 10px; }
+            #hero .hero__content-wrapper .hero__content__information__items .meta .author {
+              font-weight: bold;
+              padding: 2px 5px;
+              margin-right: 10px; }
+              #hero .hero__content-wrapper .hero__content__information__items .meta .author i {
+                margin-right: 5px; }
+            #hero .hero__content-wrapper .hero__content__information__items .meta .date {
+              font-weight: bold;
+              padding: 2px 5px;
+              margin-right: 10px; }
+              #hero .hero__content-wrapper .hero__content__information__items .meta .date i {
+                margin-right: 5px; }
+      #hero .hero__content-wrapper .hero__content__photo {
         width: 40%;
-        height: 4px;
-        position: absolute;
-        top: 105%;
-        padding-left: 0.823045267489712vw;
-        margin-bottom: 5px;
-        -webkit-transition: all .5s ease;
-        -moz-transition: all .5s ease;
-        -o-transition: all .5s ease;
-        transition: all .5s ease;
-        z-index: 1; }
-      @media screen and (max-width: 600px) {
-        .card .card__content .card__content-title {
-          margin-top: 10px;
-          font-size: 2.8em;
-          padding-left: 12px;
-          padding-right: 15%;
-          line-height: 1em; } }
-    .card .card__content .card__content-excerpt {
-      font-family: "Montserrat";
-      position: absolute;
-      line-height: 1.4;
-      top: 85%;
-      font-size: 0.8916323731138546vw;
-      font-weight: lighter;
-      text-overflow: ellipsis;
-      padding-top: 1.02880658436214vw;
-      padding-left: 0.823045267489712vw;
-      padding-right: 6.858710562414266vw;
-      z-index: 1;
-      margin-top: 5px; }
-      @media screen and (max-width: 600px) {
-        .card .card__content .card__content-excerpt {
-          margin-top: 10px;
-          font-size: 0.87em;
-          padding-top: 15px;
-          padding-left: 12px;
-          padding-right: 100px; } }
-    .card .card__content .card__author {
-      position: absolute;
-      bottom: 2%;
-      z-index: 10;
-      right: 0;
-      margin: 15px;
-      border-radius: 50%;
-      background: black;
-      width: 35px;
-      height: 35px; }
-      @media screen and (max-width: 1081px) {
-        .card .card__content .card__author {
-          width: 25px;
-          height: 25px;
-          bottom: 1%; } }
-      @media screen and (max-width: 600px) {
-        .card .card__content .card__author {
-          width: 50px;
-          height: 50px;
-          bottom: 4%; } }
-      .card .card__content .card__author img {
-        border-radius: 50%;
-        background: black; }
-  .card:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, black, black, transparent);
-    z-index: 1; }
-  .card a {
-    text-decoration: none;
-    color: white; }
-  .card a:visited {
-    text-decoration: none;
-    color: white; }
-  .card a:hover {
-    text-decoration: none;
-    color: white; }
-  .card a:focus {
-    text-decoration: none;
-    color: white; }
-  .card a:hover, .card a:active {
-    text-decoration: none;
-    color: white; }
-
-/*--------------------------------------------------------------
-# Animation
---------------------------------------------------------------*/
-.card .a-card-image-zoom {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -moz-transform: scale(1);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out; }
-
-.card .card__header-category {
-  -webkit-transition: color 2s ease-out;
-  -moz-transition: color 2s ease-out;
-  transition: color 2s ease-out; }
-
-.card:hover .a-card-image-zoom {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -moz-transform: scale(1.05); }
-
-.card:hover .card__header-category {
-  color: pink; }
+        border-radius: 20px;
+        background-color: white; }
 
 /*--------------------------------------------------------------
 # Cards Deck Container
