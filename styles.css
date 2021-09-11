@@ -733,7 +733,73 @@ strong {
       #hero .hero__content-wrapper .hero__content__photo {
         width: 40%;
         border-radius: 20px;
-        background-color: white; }
+        background-color: white;
+        background-position: center; }
+
+#recent {
+  width: 100vw;
+  height: 350px;
+  margin-top: -100px; }
+  #recent .recent__content-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+    #recent .recent__content-wrapper .recent__content {
+      width: 100%;
+      display: flex;
+      height: 100%;
+      justify-content: space-between; }
+      #recent .recent__content-wrapper .recent__content .recent-item {
+        width: 30%;
+        height: 100%;
+        background-color: white;
+        border-radius: 20px 20px 0px 0px;
+        color: black;
+        background-position: center; }
+        #recent .recent__content-wrapper .recent__content .recent-item__photo {
+          background-size: cover;
+          border-radius: 20px 20px 0px 0px;
+          width: 100%;
+          height: 60%; }
+        #recent .recent__content-wrapper .recent__content .recent-item__information {
+          width: 100%;
+          height: 40%; }
+          #recent .recent__content-wrapper .recent__content .recent-item__information__items {
+            padding: 10px 18px; }
+            #recent .recent__content-wrapper .recent__content .recent-item__information__items .title {
+              font-family: "MontserratBlack";
+              font-size: 16px;
+              text-transform: uppercase; }
+            #recent .recent__content-wrapper .recent__content .recent-item__information__items .excerpt {
+              font-family: "Montserrat";
+              font-size: 12px; }
+            #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta {
+              width: 100%;
+              display: flex;
+              margin-top: 10px;
+              font-size: 8px; }
+              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .category {
+                padding: 2px 5px;
+                width: auto;
+                font-weight: bold;
+                background-color: white;
+                border-radius: 40px;
+                color: black;
+                margin-right: 10px; }
+              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .author {
+                font-weight: bold;
+                padding: 2px 5px;
+                margin-right: 10px; }
+                #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .author i {
+                  margin-right: 5px; }
+              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .date {
+                font-weight: bold;
+                padding: 2px 5px;
+                margin-right: 10px; }
+                #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .date i {
+                  margin-right: 5px; }
 
 /*--------------------------------------------------------------
 # Cards Deck Container
