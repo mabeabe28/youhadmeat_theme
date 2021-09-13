@@ -47,9 +47,6 @@ if ( ! function_exists( 'youhadmeat_theme_setup' ) ) :
 			'main' => esc_html__( 'Primary', 'youhadmeat_theme' ),
 		) );
 
-		register_nav_menus( array(
-			'sidenav' => esc_html__( 'Side Navigation', 'youhadmeat_theme' ),
-		) );
 
 		register_nav_menus( array(
 			'footer' => esc_html__( 'Footer', 'youhadmeat_theme' ),

@@ -47,66 +47,51 @@
 <div id="page" class="site">
 	<!---<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'youhadmeat_theme' ); ?></a>-->
 
+	<header class="header-container" id="masthead">
+
+		<!-- <div id="searchOverlay" class="search-overlay fade">
+			<span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-times fa-xs">
+			</i></span>
+			<div class="overlay-content">
+				<?php get_search_form() ?>
+			</div>
+		</div> -->
+
+		
+		<nav id="navigation">
+
+		
+			<div id="left-side">
+				<div class="nav-home">
+					<a href="'.get_home_url().'">
+						You Had Me At
+					</a>
+				</div>
+
+				<div class="main-navigation">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'main',
+							'menu_id'        => 'primary-menu',
+						) );
+					?>
+				</div>
+			</div>
+			<div id="right-side">
+				<div class="search-toggle" onclick="openSearch()">
+					<i class="fas fa-search fa-lg">
+					</i>
+				</div>
+
+				<div class="theme-toggle" onclick="openSearch()">
+					<i class="fas fa-moon fa-lg">
+					</i>
+				</div>
+			</div>
+
+		</nav><!-- #site-navigation -->
 	
+	</header><!-- #masthead -->
 
-	<script type="text/javascript">
 
-	/*side nav drop down*/
-	/*$('#sideNav-menu .menu-item-has-children').prepend('<div class="sidenav-dropdown fas fa-caret-down"></div>');
-
-	$('.sidenav-dropdown').click(function(event) {
-		//console.log(event);
-		$(event.target).siblings('.sub-menu').toggle();
-	});*/
-
-	/* Set the width of the side navigation to 250px */
-	function openNav() {
-			$('#side-navigation').addClass('navOpen');
-			$('#side-navigation').removeClass('navClose');
-	    //document.getElementById("side-navigation").style.width = "300px";
-	}
-
-	/* Set the width of the side navigation to 0 */
-	function closeNav() {
-			$('#side-navigation').removeClass('navOpen');
-			$('#side-navigation').addClass('navClose');
-	}
-
-	/*side nav sub menus*/
-	function showSideNavSub() {
-	    $('#sideNav-menu .menu-item .sub-menu').toggle();
-	}
-
-	/*$(document).on('scroll', function (e) {
-	  //  $('.navbar').css('opacity', ($(document).scrollTop() / 50));
-	    var rgba = $(document).scrollTop() / 250;
-	    $('#site-navigation').css('background-color', 'rgba(0,0,0,' + (rgba) + ')');
-	    if(rgba >= 1){
-	      $('#site-navigation').css('color', 'white');
-	    }else{
-	      $('#site-navigation').css('color', 'white');
-	    }
-
-			$(".featured-fade").css("opacity", 1 - $(document).scrollTop() / screen.height);
-	});*/
-
-		/*search*/
-			// Open the full screen search box
-		function openSearch() {
-		  document.getElementById("searchOverlay").style.display = "block";
-		}
-
-		// Close the full screen search box
-		function closeSearch() {
-		  document.getElementById("searchOverlay").style.display = "none";
-		}
-	</script>
-
-	<?php if ( is_admin_bar_showing() ) { ?>
-	    <style>
-	        #site-navigation {
-	            top: 30px;
-	        }
-	    </style>
-	<?php } ?>
 	<div id="content" class="site-content">

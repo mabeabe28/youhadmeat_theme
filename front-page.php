@@ -19,6 +19,7 @@ get_header();
 body{
   background-color: rgb(35,35,35);
   color: white;
+  margin: 0;
 }
 </style>
 

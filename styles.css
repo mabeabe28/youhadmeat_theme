@@ -344,332 +344,77 @@ strong {
     -moz-transform: translate(-50%, 0%) rotate(45deg);
     transform: translate(-50%, 0%) rotate(45deg); }
 
-#initial-navigation,
-#site-navigation {
-  top: 0;
+.header-container {
+  width: 100%;
   position: fixed;
-  text-align: center;
+  display: flex;
+  justify-content: center; }
+
+#navigation {
   z-index: 101;
   color: white;
-  width: 100%;
-  /*--------------------------------------------------------------
-  ## Menu Items
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  ## Side Menu
-  --------------------------------------------------------------*/
-  /* Side Menu Toggle. */
-  /*--------------------------------------------------------------
-  ## Search Box
-  --------------------------------------------------------------*/ }
-  #initial-navigation a,
-  #site-navigation a {
-    text-decoration: none;
-    color: white; }
-  #initial-navigation a:visited,
-  #site-navigation a:visited {
-    text-decoration: none;
-    color: white; }
-  #initial-navigation a:hover,
-  #site-navigation a:hover {
-    text-decoration: none;
-    color: white; }
-  #initial-navigation a:focus,
-  #site-navigation a:focus {
-    text-decoration: none;
-    color: white; }
-  #initial-navigation a:hover, #initial-navigation a:active,
-  #site-navigation a:hover,
-  #site-navigation a:active {
-    text-decoration: none;
-    color: white; }
-  #initial-navigation #logo,
-  #site-navigation #logo {
-    display: inline-block;
-    margin-top: 10px;
-    font-family: "Montserrat";
-    font-weight: bold;
-    float: left; }
-  #initial-navigation .main-navigation,
-  #site-navigation .main-navigation {
-    /*clear: both;*/
-    display: inline-block;
-    float: right; }
-    #initial-navigation .main-navigation ul,
-    #site-navigation .main-navigation ul {
-      list-style: none;
-      margin: 0;
-      padding-left: 0; }
-    #initial-navigation .main-navigation li,
-    #site-navigation .main-navigation li {
-      float: left;
-      position: relative;
-      margin-top: 10px;
-      margin-right: 20px;
-      margin-left: 20px; }
-      @media screen and (max-width: 1000px) {
-        #initial-navigation .main-navigation li,
-        #site-navigation .main-navigation li {
-          margin-right: 10px;
-          margin-left: 10px; } }
-    #initial-navigation .main-navigation a,
-    #site-navigation .main-navigation a {
-      text-decoration: none;
-      color: white; }
-    @media screen and (max-width: 800px) {
-      #initial-navigation .main-navigation,
-      #site-navigation .main-navigation {
-        display: none; } }
-  #initial-navigation #navigation-buttons,
-  #site-navigation #navigation-buttons {
-    display: inline-block;
-    position: relative;
-    margin-top: 10px;
-    float: right;
-    margin-right: 10px; }
-  #initial-navigation .menu-toggle,
-  #initial-navigation .main-navigation.toggled ul,
-  #site-navigation .menu-toggle,
-  #site-navigation .main-navigation.toggled ul {
-    display: absolute; }
-  #initial-navigation .menu-toggle,
-  #site-navigation .menu-toggle {
-    float: left;
-    padding: 10px 10px 10px 10px;
-    display: inline-block; }
-  #initial-navigation .menu-toggle:hover,
-  #site-navigation .menu-toggle:hover {
-    color: pink; }
-  #initial-navigation .search-toggle,
-  #site-navigation .search-toggle {
-    display: inline-block;
-    position: relative;
-    float: right;
-    padding: 10px 10px 10px 10px; }
-  #initial-navigation .search-toggle:hover,
-  #site-navigation .search-toggle:hover {
-    color: pink; }
-
-#site-navigation {
-  background: #333;
-  top: -50px;
-  /* Hide the navbar 50 px outside of the top view */
-  transition: top 0.3s;
-  /* Transition effect when sliding down (and up) */ }
-
-#initial-navigation {
-  position: absolute; }
-
-/*--------------------------------------------------------------
-## Footer
---------------------------------------------------------------*/
-#footer {
-  background-color: #333;
-  font-family: "Montserrat";
-  color: white;
-  font-size: 0.75em;
-  position: relative;
-  /* Links */ }
-  #footer .footer-main {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap; }
-  #footer .copyright-info {
-    width: 100%;
-    display: block;
-    text-align: center; }
-  #footer .site-logo {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-    margin: 40px;
-    width: 300px;
-    display: inline-block; }
-    #footer .site-logo .leading {
-      font-weight: bold; }
-    #footer .site-logo .trailing {
-      font-family: "MontserratBlack";
-      padding: 10px; }
-  #footer .site-info {
-    margin: 20px;
-    width: 300px;
-    display: inline-block; }
-  #footer .contact-info {
-    margin: 20px;
-    width: 300px;
-    display: inline-block; }
-  #footer .menu-info {
-    margin: 20px;
-    width: 300px;
-    display: inline-block; }
-  #footer #footer-menu {
-    margin: 0;
-    width: 300px;
-    display: inline-block;
-    list-style: none;
-    overflow: hidden; }
-    #footer #footer-menu li {
-      float: left;
-      display: inline;
-      width: 50%; }
-    #footer #footer-menu .menu-main-container {
-      padding: 0px;
-      margin: 0px; }
-    #footer #footer-menu .sub-menu {
-      padding-left: 5px; }
-  #footer a {
-    text-decoration: underline;
-    color: white; }
-    #footer a:visited {
-      text-decoration: none;
-      color: white; }
-    #footer a:hover {
-      text-decoration: none;
-      color: white; }
-    #footer a:focus {
-      text-decoration: none;
-      color: white; }
-    #footer a:hover, #footer a a:active {
-      text-decoration: none;
-      color: white; }
-
-/*--------------------------------------------------------------
-## MISC
---------------------------------------------------------------*/
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  overflow: hidden;
-  text-align: center;
-  width: 100%; }
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  width: 50%;
-  margin: 0; }
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  width: 50%;
-  margin: 0; }
-
-.nav-links {
+  width: 1000px;
   display: flex;
-  justify-content: center;
-  flex-flow: row wrap; }
-
-.nav-previous a, .nav-next a {
-  display: inline-block;
-  padding: 8px;
-  margin: 10px;
-  color: black;
-  border: 2px solid black;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  transition: border-color 0.3s ease-out, color 0.3s ease-out; }
-
-.nav-previous a:hover, .nav-next a:hover,
-.nav-previous a:active, .nav-next a:active {
-  color: pink;
-  border-color: #66d8ed;
-  transition: border-color 0.4s ease-in, color 0.4s ease-in; }
-
-/*--------------------------------------------------------------
-## side navigation
---------------------------------------------------------------*/
-#side-navigation {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
-  position: fixed;
-  /* Stay in place */
-  z-index: 102;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: #111;
-  /* Black*/
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 60px;
-  /* Place content 60px from the top */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */ }
-  @media screen and (max-height: 450px) {
-    #side-navigation {
-      padding-top: 15px; } }
-  #side-navigation a {
-    padding: 5px 5px 5px 32px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px; }
+  #navigation a {
     text-decoration: none;
-    font-size: 1.56em;
-    color: #818181;
-    display: block;
-    transition: 0.3s; }
-    @media screen and (max-height: 450px) {
-      #side-navigation a {
-        font-size: 1.13em; } }
-    #side-navigation a:visited {
-      text-decoration: none;
-      color: #818181; }
-    #side-navigation a:focus {
-      text-decoration: none;
-      color: white; }
-    #side-navigation a:hover {
-      text-decoration: none;
-      color: pink; }
-    #side-navigation a:active {
-      text-decoration: none;
-      color: white; }
-  #side-navigation .logo {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
     color: white; }
-    #side-navigation .logo .text {
-      bottom: 0px;
-      font-weight: bold; }
-  #side-navigation .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 2.25em;
-    margin-left: 20px; }
-  #side-navigation ul {
-    list-style-type: none;
-    margin-left: 0px;
-    padding-left: 0px;
-    text-align: left; }
-  #side-navigation.navOpen {
-    width: 100%; }
-    @media screen and (min-width: 1081px) {
-      #side-navigation.navOpen {
-        width: 300px; } }
-  #side-navigation.navClose {
-    width: 0px; }
-  #side-navigation #sideNav-menu .menu-item a {
-    display: inline-block; }
-  #side-navigation #sideNav-menu .menu-item .sub-menu {
-    padding-left: 20px;
-    position: block;
-    overflow: hidden;
-    width: 100%; }
-    #side-navigation #sideNav-menu .menu-item .sub-menu a {
-      font-size: 1.44em; }
+  #navigation a:visited {
+    text-decoration: none;
+    color: white; }
+  #navigation a:hover {
+    text-decoration: none;
+    color: white; }
+  #navigation a:focus {
+    text-decoration: none;
+    color: white; }
+  #navigation a:hover, #navigation a:active {
+    text-decoration: none;
+    color: white; }
+  #navigation #left-side {
+    width: 90%;
+    display: flex;
+    align-items: center; }
+    #navigation #left-side .nav-home {
+      display: inline-block;
+      font-weight: bolder;
+      text-transform: uppercase;
+      margin-right: 40px; }
+    #navigation #left-side .main-navigation {
+      /*clear: both;*/
+      display: inline-block;
+      text-transform: uppercase; }
+      #navigation #left-side .main-navigation ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0; }
+      #navigation #left-side .main-navigation li {
+        float: left;
+        margin: 0 20px; }
+      #navigation #left-side .main-navigation a {
+        text-decoration: none;
+        color: white; }
+  #navigation #right-side {
+    float: right;
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    #navigation #right-side .search-toggle {
+      margin-left: 15px;
+      display: inline-block; }
+    #navigation #right-side .theme-toggle {
+      margin-left: 15px;
+      display: inline-block; }
+
+html {
+  margin: 0 !important; }
 
 #hero {
   background-color: #141515;
-  width: 100vw;
+  width: 100%;
   height: 700px; }
   #hero .hero__content-wrapper {
     width: 1000px;
@@ -681,9 +426,9 @@ strong {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      height: 40%; }
+      height: 50%; }
       #hero .hero__content-wrapper .hero__content__information {
-        width: 60%; }
+        width: 40%; }
         #hero .hero__content-wrapper .hero__content__information__items {
           padding: 32px; }
           #hero .hero__content-wrapper .hero__content__information__items .pre-head {
@@ -731,13 +476,13 @@ strong {
               #hero .hero__content-wrapper .hero__content__information__items .meta .date i {
                 margin-right: 5px; }
       #hero .hero__content-wrapper .hero__content__photo {
-        width: 40%;
+        width: 60%;
         border-radius: 20px;
         background-color: white;
         background-position: center; }
 
 #recent {
-  width: 100vw;
+  width: 100%;
   height: 350px;
   margin-top: -100px; }
   #recent .recent__content-wrapper {
