@@ -348,7 +348,9 @@ strong {
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #141515;
+  padding: 10px 0px; }
 
 #navigation {
   z-index: 101;
@@ -428,6 +430,7 @@ html {
       width: 100%;
       height: 50%; }
       #hero .hero__content-wrapper .hero__content__information {
+        color: white;
         width: 40%; }
         #hero .hero__content-wrapper .hero__content__information__items {
           padding: 32px; }
@@ -477,7 +480,6 @@ html {
                 margin-right: 5px; }
       #hero .hero__content-wrapper .hero__content__photo {
         width: 60%;
-        border-radius: 20px;
         background-color: white;
         background-position: center; }
 
@@ -500,11 +502,9 @@ html {
         width: 30%;
         height: 100%;
         background-color: white;
-        border-radius: 20px 20px 0px 0px;
         color: black; }
         #recent .recent__content-wrapper .recent__content .recent-item__photo {
           background-size: cover;
-          border-radius: 20px 20px 0px 0px;
           width: 100%;
           height: 60%;
           background-position: center; }

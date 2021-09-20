@@ -14,7 +14,7 @@
 </div> <!--#content -->
 
 	<footer id="footer" >
-		<div class="footer-main">
+		<!-- <div class="footer-main">
 			<div class="site-logo">
 				<div class="leading">
 					You Had Me At
@@ -53,7 +53,8 @@
 		</div>
 		<div class="copyright-info">
 			 &copy; <?php echo date('Y'); ?> You Had Me At
-		</div><!-- .site-info -->
+		</div> -->
+		<!-- .site-info -->
 
 	</footer><!-- #colophon -->
 </div> <!--#page -->

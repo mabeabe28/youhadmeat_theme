@@ -17,8 +17,7 @@ get_header();
 <!--Background for Front Page only-->
 <style>
 body{
-  background-color: rgb(35,35,35);
-  color: white;
+  background-color: #212020;
   margin: 0;
 }
 </style>
@@ -68,7 +67,7 @@ body{
 						<div class="hero__content__information">
 							<div class="hero__content__information__items">
 								<div class="pre-head">
-									<div class="latest">MOST RECENT</div>
+									<div class="latest">LATEST</div>
 								</div>
 								<div class="title" >'.$curPostTitle.'</div>
 								<div class="excerpt">'.$curExcerptStr.'</div>
@@ -140,6 +139,7 @@ body{
 									
 									<div class="title" >'.$curPostTitle.'</div>
 									<div class="excerpt">'.$curExcerptStr.'</div>
+									<a href="'.$curPostUrl.'" class="read">READ MORE</a>
 									<div class="meta">
 										<div class="category">'.strtoupper($curParentCategory->name).'</div>
 										<div class="author"><i class="fa fa-user"></i>'.strtoupper($authorName).'</div>
@@ -157,6 +157,10 @@ body{
 			?>
 		</div>
 	</div>
+</div>
+
+<div class="main">
+	
 </div>
 
 
