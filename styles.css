@@ -349,13 +349,12 @@ strong {
   position: fixed;
   display: flex;
   justify-content: center;
-  background-color: #141515;
   padding: 10px 0px; }
 
 #navigation {
   z-index: 101;
   color: white;
-  width: 1000px;
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -378,7 +377,8 @@ strong {
   #navigation #left-side {
     width: 90%;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding-left: 32px; }
     #navigation #left-side .nav-home {
       display: inline-block;
       font-weight: bolder;
@@ -403,7 +403,8 @@ strong {
     width: 10%;
     display: flex;
     justify-content: flex-end;
-    align-items: center; }
+    align-items: center;
+    padding-right: 32px; }
     #navigation #right-side .search-toggle {
       margin-left: 15px;
       display: inline-block; }
@@ -415,24 +416,27 @@ html {
   margin: 0 !important; }
 
 #hero {
-  background-color: #141515;
   width: 100%;
-  height: 700px; }
+  height: 100vh;
+  background-color: red; }
   #hero .hero__content-wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center; }
+    width: 100%;
+    height: 100%; }
     #hero .hero__content-wrapper .hero__content {
-      display: flex;
-      flex-wrap: wrap;
       width: 100%;
-      height: 50%; }
+      height: 100%;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; }
       #hero .hero__content-wrapper .hero__content__information {
         color: white;
-        width: 40%; }
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: flex-end; }
         #hero .hero__content-wrapper .hero__content__information__items {
+          width: 40%;
           padding: 32px; }
           #hero .hero__content-wrapper .hero__content__information__items .pre-head {
             width: 100%;
@@ -459,7 +463,7 @@ html {
             margin-top: 10px;
             font-size: 8px; }
             #hero .hero__content-wrapper .hero__content__information__items .meta .category {
-              padding: 2px 5px;
+              padding: 2px 10px;
               width: auto;
               font-weight: bold;
               background-color: white;
@@ -478,73 +482,31 @@ html {
               margin-right: 10px; }
               #hero .hero__content-wrapper .hero__content__information__items .meta .date i {
                 margin-right: 5px; }
-      #hero .hero__content-wrapper .hero__content__photo {
-        width: 60%;
-        background-color: white;
-        background-position: center; }
-
-#recent {
-  width: 100%;
-  height: 350px;
-  margin-top: -100px; }
-  #recent .recent__content-wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center; }
-    #recent .recent__content-wrapper .recent__content {
-      width: 100%;
-      display: flex;
-      height: 100%;
-      justify-content: space-between; }
-      #recent .recent__content-wrapper .recent__content .recent-item {
-        width: 30%;
-        height: 100%;
-        background-color: white;
-        color: black; }
-        #recent .recent__content-wrapper .recent__content .recent-item__photo {
-          background-size: cover;
-          width: 100%;
-          height: 60%;
-          background-position: center; }
-        #recent .recent__content-wrapper .recent__content .recent-item__information {
-          width: 100%;
-          height: 40%; }
-          #recent .recent__content-wrapper .recent__content .recent-item__information__items {
-            padding: 10px 18px; }
-            #recent .recent__content-wrapper .recent__content .recent-item__information__items .title {
-              font-family: "MontserratBlack";
-              font-size: 16px;
-              text-transform: uppercase; }
-            #recent .recent__content-wrapper .recent__content .recent-item__information__items .excerpt {
-              font-family: "Montserrat";
-              font-size: 12px; }
-            #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta {
-              width: 100%;
-              display: flex;
-              margin-top: 10px;
-              font-size: 8px; }
-              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .category {
-                padding: 2px 5px;
-                width: auto;
-                font-weight: bold;
-                background-color: white;
-                border-radius: 40px;
-                color: black;
-                margin-right: 10px; }
-              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .author {
-                font-weight: bold;
-                padding: 2px 5px;
-                margin-right: 10px; }
-                #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .author i {
-                  margin-right: 5px; }
-              #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .date {
-                font-weight: bold;
-                padding: 2px 5px;
-                margin-right: 10px; }
-                #recent .recent__content-wrapper .recent__content .recent-item__information__items .meta .date i {
-                  margin-right: 5px; }
+          #hero .hero__content-wrapper .hero__content__information__items .read-more {
+            margin: 24px 0px; }
+            #hero .hero__content-wrapper .hero__content__information__items .read-more a {
+              border-radius: 40px;
+              background-color: white;
+              font-size: 12px;
+              text-decoration: none;
+              color: black;
+              width: auto;
+              padding: 8px 24px; }
+            #hero .hero__content-wrapper .hero__content__information__items .read-more a:visited {
+              text-decoration: none;
+              color: black; }
+            #hero .hero__content-wrapper .hero__content__information__items .read-more a:hover {
+              text-decoration: none;
+              color: black; }
+            #hero .hero__content-wrapper .hero__content__information__items .read-more a:focus {
+              text-decoration: none;
+              color: black; }
+            #hero .hero__content-wrapper .hero__content__information__items .read-more a:hover, #hero .hero__content-wrapper .hero__content__information__items .read-more a:active {
+              text-decoration: none;
+              color: black; }
+      #hero .hero__content-wrapper .hero__content__bottom {
+        width: 100%;
+        height: 30%; }
 
 /*--------------------------------------------------------------
 # Cards Deck Container
