@@ -19,6 +19,10 @@ html{
             width: 100%;
             height: 100%;
             background-size: cover;
+            background-position: center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -135,6 +139,7 @@ html{
                     margin-left: 16px;
                     margin-right: 16px;
                     overflow-x: scroll;
+                    overflow-y: hidden;
                 }
 
                 &__items{
@@ -146,6 +151,16 @@ html{
                         margin-top: 24px;
                         margin-bottom: 24px;
                         width: 25%;
+
+                        a{
+                            color: white;
+                            text-decoration: none;
+                        }
+
+                        a:visited { text-decoration: none; color: white;  }
+                        a:hover { text-decoration: none; color: white;  }
+                        a:focus { text-decoration: none; color: white;  }
+                        a:hover, a:active { text-decoration: none; color: white;}
 
                         @media screen and (max-width:850px){
                             width: auto;
@@ -171,6 +186,10 @@ html{
                                     height: 100px;
                                     border-radius: 50px;
                                     background-size: cover;
+                                    background-position: center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
                                 }
                                 
                             }
