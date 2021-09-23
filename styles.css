@@ -379,6 +379,9 @@ strong {
     display: flex;
     align-items: center;
     padding-left: 32px; }
+    @media screen and (max-width: 850px) {
+      #navigation #left-side {
+        padding-left: 16px; } }
     #navigation #left-side .nav-home {
       display: inline-block;
       font-weight: bolder;
@@ -388,6 +391,9 @@ strong {
       /*clear: both;*/
       display: inline-block;
       text-transform: uppercase; }
+      @media screen and (max-width: 850px) {
+        #navigation #left-side .main-navigation {
+          display: none; } }
       #navigation #left-side .main-navigation ul {
         list-style: none;
         margin: 0;
@@ -405,6 +411,9 @@ strong {
     justify-content: flex-end;
     align-items: center;
     padding-right: 32px; }
+    @media screen and (max-width: 850px) {
+      #navigation #right-side {
+        display: none; } }
     #navigation #right-side .search-toggle {
       margin-left: 15px;
       display: inline-block; }
@@ -441,6 +450,10 @@ html {
         #hero .hero__content-wrapper .hero__content__information__items {
           width: 50%;
           padding: 32px; }
+          @media screen and (max-width: 850px) {
+            #hero .hero__content-wrapper .hero__content__information__items {
+              width: 100%;
+              padding: 16px; } }
           #hero .hero__content-wrapper .hero__content__information__items .pre-head {
             width: 100%;
             display: flex;
@@ -514,13 +527,23 @@ html {
         margin-left: 32px;
         margin-right: 32px;
         border-top: 0.5px solid rgba(255, 255, 255, 0.3); }
+        @media screen and (max-width: 850px) {
+          #hero .hero__content-wrapper .hero__content__bottom {
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll; } }
         #hero .hero__content-wrapper .hero__content__bottom__items {
           width: 100%;
           height: 100%;
           display: flex; }
           #hero .hero__content-wrapper .hero__content__bottom__items .recent-item {
             margin-top: 24px;
-            margin-bottom: 24px; }
+            margin-bottom: 24px;
+            width: 25%; }
+            @media screen and (max-width: 850px) {
+              #hero .hero__content-wrapper .hero__content__bottom__items .recent-item {
+                width: auto;
+                margin-right: 25px; } }
             #hero .hero__content-wrapper .hero__content__bottom__items .recent-item:last-of-type {
               border: none; }
             #hero .hero__content-wrapper .hero__content__bottom__items .recent-item__information {
