@@ -589,7 +589,8 @@ html {
                 padding: 12px 24px;
                 color: white;
                 text-align: center;
-                font-size: 14px; }
+                font-size: 14px;
+                text-transform: uppercase; }
 
 /*--------------------------------------------------------------
 # Cards Deck Container
