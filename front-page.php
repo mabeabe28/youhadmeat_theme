@@ -56,7 +56,7 @@ body{
 					
 
 					echo '
-						<div class="hero__content" style="background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.8)), url('.get_the_post_thumbnail_url($post["ID"], 'large').');">
+						<div class="hero__content" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.9)), url('.get_the_post_thumbnail_url($post["ID"], 'large').');">
 
 							<div class="hero__content__information">
 								<div class="hero__content__information__items">
@@ -74,7 +74,55 @@ body{
 								</div>
 							</div>
 							<div class="hero__content__bottom">
-								HERE INIT
+								<div class="hero__content__bottom__items">';
+
+									$args = array(
+										'numberposts' => 4,
+										'offset' => 1,
+										'orderby' => 'post_date',
+										'order' => 'DESC',
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'suppress_filters' => true
+									);
+									$recent_posts_all = wp_get_recent_posts( $args );
+									
+									foreach($recent_posts_all as $post){
+										$curPostTitle = $post["post_title"];
+										$curExcerptStr = (strlen($post["post_excerpt"]) > 80) ? substr($post["post_excerpt"],0,80).'...' :$post["post_excerpt"];
+										$curPostUrl = get_permalink($post["ID"]);
+										$curCategory = get_the_category($post["ID"]);
+										$curParentCategory = "";
+						
+										foreach($curCategory as $cat){
+											if($cat->parent == 0){
+												$curParentCategory = $cat;
+											}
+										}
+										$authorName = get_the_author_meta('user_nicename',$post["post_author"]);
+										$authorUrl = ''.get_site_url().'/'.get_the_author_meta('user_nicename',$post["post_author"]).'';
+										$date = date_create($post["post_date"]);
+					
+						
+										
+					
+										echo '
+											<div class="[ recent-item w-25 ]">			
+												<a href="'.$curPostUrl.'" class="recent-item__information">
+														<div class="photo">
+														<div  class="image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('.get_the_post_thumbnail_url($post["ID"], 'large').');">
+														</div>
+														</div>
+
+														<div class="title" >'.$curPostTitle.'</div>
+												</a>
+											</div>
+										';
+									}
+					
+					
+								echo '
+								</div>
 							</div>
 						</div>
 					';
