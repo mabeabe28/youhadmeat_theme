@@ -1,6 +1,6 @@
 body{
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
 
 }
 
@@ -8,8 +8,9 @@ body{
   width: 100%;
   display: flex;
   align-items: center;
-  font-size: 32px;
-  padding-bottom: 48px;
+  font-size: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   #menu{
     width: 10%;
 
@@ -27,15 +28,17 @@ body{
 
   #links{
     width: 15%;
+    text-align: right;
+
   }
  
 }
 
 
 .button{
-  font-size: 24px;
+  font-size: 18px;
   width: auto;
-  padding: 18px 32px;
+  padding: 12px 24px;
   font-weight: bold;
   text-transform: uppercase;
   background-color: black;
