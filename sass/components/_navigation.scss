@@ -1,102 +1,43 @@
+body{
+  padding-left: 48px;
+  padding-right: 48px;
 
-.header-container{
-  width: 100%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  //background-color: #141515;
-  padding: 10px 0px;
 }
 
 #navigation{
-	z-index: 101;
-	color: white;
-	width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  font-size: 14px;
-  a { text-decoration: none; color: white;}
-  a:visited { text-decoration: none; color: white;  }
-  a:hover { text-decoration: none; color: white;  }
-  a:focus { text-decoration: none; color: white;  }
-  a:hover, a:active { text-decoration: none; color: white;}
-
-  #left-side{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    padding-left: 32px;
-    @media screen and (max-width:850px){
-      padding-left: 16px;
-
-    }
-    .nav-home{
-      display: inline-block;
-      font-weight: bolder;
-      text-transform: uppercase;
-      margin-right: 40px;
-    }
-  
-    .main-navigation {
-      
-    @media screen and (max-width:850px){
-      display: none;
-    }
-      /*clear: both;*/
-      display: inline-block;
-      text-transform: uppercase;
-  
-      ul {
-        //display: none;
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
-      }
-  
-      li {
-        float: left;
-        margin: 0 20px;
-      }
-  
-      a{
-        text-decoration: none;
-        color: white;
-      }
-  
-      // @media screen and (max-width:800px) {
-      //   display: none;
-      // }
-    }
-  }
-  
-  #right-side{
-    float: right;
+  font-size: 32px;
+  padding-bottom: 48px;
+  #menu{
     width: 10%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 32px;
 
-    @media screen and (max-width:850px){
-      display: none;
-    }
-
-    .search-toggle{
-      margin-left: 15px;
-      display: inline-block;
-    }
-  
-    .theme-toggle{
-      margin-left: 15px;
-      display: inline-block;
+    i{
+      color: black;
     }
   }
 
-  
+  #title{
+    color: black;
+    width: 75%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #links{
+    width: 15%;
+  }
+ 
 }
 
 
-
-
-
+.button{
+  font-size: 24px;
+  width: auto;
+  padding: 18px 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}

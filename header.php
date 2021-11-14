@@ -61,33 +61,27 @@
 		<nav id="navigation">
 
 		
-			<div id="left-side">
-				<div class="nav-home">
-					<a href="'.get_home_url().'">
-						You Had Me At
-					</a>
-				</div>
-
-				<div class="main-navigation">
-					<?php
+			<div id="menu">
+					<i class="fas fa-bars fa-lg">
+					</i>
+					<!-- <?php
 						wp_nav_menu( array(
 							'theme_location' => 'main',
 							'menu_id'        => 'primary-menu',
 						) );
-					?>
-				</div>
+					?> -->
+				
 			</div>
-			<div id="right-side">
-				<div class="search-toggle" onclick="openSearch()">
-					<i class="fas fa-search fa-lg">
-					</i>
-				</div>
+			<div id="title">
+				YOU HAD ME AT
+			</div>
 
-				<div class="theme-toggle" onclick="openSearch()">
-					<i class="fas fa-moon fa-lg">
-					</i>
-				</div>
+			<div id="links">
+				<a class="button" href="/here">
+					OUR LINKS
+				</a>
 			</div>
+		
 
 		</nav><!-- #site-navigation -->
 	
