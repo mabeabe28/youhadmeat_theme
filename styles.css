@@ -276,6 +276,14 @@ article {
   text-align: center;
 }
 
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 html {
   margin: 0 !important;
 }
