@@ -50,11 +50,12 @@ get_header();
 
 					echo '
 						<div class="item item-'.$key.'" >
+						
 								<div class="post-grid-image" style="background-image:url('.get_the_post_thumbnail_url($post["ID"], 'large').');">
 								</div>
 								
 								<div class="post-grid-content">
-									<div class="title" >'.$curPostTitle.'</div>
+									<div class="title" ><a href="'.$curPostUrl.'"> '.$curPostTitle.'</a></div>
 									<div class="post-grid-meta">
 										<div class="category">'.strtoupper($curParentCategory->name).'</div>
 										<div class="author"><i class="fa fa-user"></i>'.strtoupper($authorName).'</div>

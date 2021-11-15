@@ -308,12 +308,17 @@ html {
 .post-grid .item .post-grid-content {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .post-grid .item .post-grid-content .title {
   width: 100%;
   padding: 12px;
   font-size: 28px;
   font-weight: bold;
+}
+.post-grid .item .post-grid-content .title a, .post-grid .item .post-grid-content .title a:visited, .post-grid .item .post-grid-content .title a:hover {
+  text-decoration: none;
+  color: black;
 }
 .post-grid .item .post-grid-content .post-grid-meta {
   color: black;
@@ -362,7 +367,7 @@ html {
 @media (min-width: 1200px) {
   .post-grid {
     grid-template-columns: repeat(3, [col] 30%);
-    grid-template-rows: repeat(10, [row] 200px);
+    grid-template-rows: repeat(10, [row] 250px);
   }
   .post-grid .item-0 {
     grid-column: col/span 2;

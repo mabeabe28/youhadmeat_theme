@@ -311,17 +311,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 	/*custom field metaboxes*/
-	function general_post_options() {
-		add_meta_box(
-			'general_post_options', // $id
-			'General Options', // $title
-			'show_general_post_options', // $callback
-			'post', // $screen
-			'normal', // $context
-			'high' // $priority
-		);
-	}
-	add_action( 'add_meta_boxes', 'general_post_options' );
+	// function general_post_options() {
+	// 	add_meta_box(
+	// 		'general_post_options', // $id
+	// 		'General Options', // $title
+	// 		'show_general_post_options', // $callback
+	// 		'post', // $screen
+	// 		'normal', // $context
+	// 		'high' // $priority
+	// 	);
+	// }
+	// add_action( 'add_meta_boxes', 'general_post_options' );
 
 	function show_general_post_options() {
 		wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
@@ -479,17 +479,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		/*General Page Options*/
 		/*custom field metaboxes*/
-		function general_page_options() {
-			add_meta_box(
-				'general_page_options', // $id
-				'General Options', // $title
-				'show_general_page_options', // $callback
-				'page', // $screen
-				'normal', // $context
-				'high' // $priority
-			);
-		}
-		add_action( 'add_meta_boxes', 'general_page_options' );
+		// function general_page_options() {
+		// 	add_meta_box(
+		// 		'general_page_options', // $id
+		// 		'General Options', // $title
+		// 		'show_general_page_options', // $callback
+		// 		'page', // $screen
+		// 		'normal', // $context
+		// 		'high' // $priority
+		// 	);
+		// }
+		// add_action( 'add_meta_boxes', 'general_page_options' );
 
 		function show_general_page_options() {
 			wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
@@ -598,17 +598,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 	/*custom field metaboxes*/
-	function custom_template_options() {
-		add_meta_box(
-			'custom_template_options', // $id
-			'Template Options', // $title
-			'show_custom_template_options', // $callback
-			'', // $screen
-			'normal', // $context
-			'high' // $priority
-		);
-	}
-	add_action( 'add_meta_boxes', 'custom_template_options' );
+	// function custom_template_options() {
+	// 	add_meta_box(
+	// 		'custom_template_options', // $id
+	// 		'Template Options', // $title
+	// 		'show_custom_template_options', // $callback
+	// 		'', // $screen
+	// 		'normal', // $context
+	// 		'high' // $priority
+	// 	);
+	// }
+	// add_action( 'add_meta_boxes', 'custom_template_options' );
 
 	function show_custom_template_options() {
 		wp_nonce_field( basename( __FILE__ ), 'yhma_nonce' );
