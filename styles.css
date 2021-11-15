@@ -317,7 +317,6 @@ html {
   padding: 12px;
   font-size: 28px;
   font-weight: bold;
-  text-align: justify;
 }
 .post-grid .item .post-grid-content .title a, .post-grid .item .post-grid-content .title a:visited, .post-grid .item .post-grid-content .title a:hover {
   text-decoration: none;
