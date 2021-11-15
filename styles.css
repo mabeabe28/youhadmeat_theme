@@ -322,6 +322,11 @@ html {
   text-decoration: none;
   color: black;
 }
+@media (max-width: 1200px) {
+  .post-grid .item .post-grid-content .title {
+    padding-left: 0;
+  }
+}
 .post-grid .item .post-grid-content .post-grid-meta {
   color: black;
   font-size: 10px;
@@ -330,6 +335,11 @@ html {
   flex-wrap: wrap;
   align-content: center;
   padding: 0 12px 12px 12px;
+}
+@media (max-width: 1200px) {
+  .post-grid .item .post-grid-content .post-grid-meta {
+    padding-left: 0;
+  }
 }
 .post-grid .item .post-grid-content .post-grid-meta .category {
   margin-right: 8px;
@@ -359,10 +369,20 @@ html {
   font-size: 14px;
   text-align: justify;
 }
+@media (max-width: 1200px) {
+  .post-grid .item .post-grid-content .excerpt {
+    padding-left: 0;
+  }
+}
 .post-grid .item .post-grid-content .read-more-wrapper {
   display: flex;
   align-items: flex-end;
   padding: 0px 12px;
+}
+@media (max-width: 1200px) {
+  .post-grid .item .post-grid-content .read-more-wrapper {
+    padding-left: 0;
+  }
 }
 .post-grid .item .post-grid-content .read-more-wrapper .button {
   font-size: 12px;
