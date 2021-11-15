@@ -2,6 +2,9 @@ body{
   padding-left: 42px;
   padding-right: 42px;
 
+  background-color: #ebebeb;
+  margin: 0;
+
   @media (max-width: 550px){
     padding-left: 12px;
     padding-right: 12px;
@@ -48,4 +51,25 @@ body{
   background-color: black;
   color: white;
   border: none;
+}
+
+#content,
+#main{
+  width: 100%;
+  display: flex;
+    justify-content: center;
+}
+
+.content-area{
+
+  width: 100%;
+}
+
+
+article{
+  width: 800px;
+
+  @media (max-width: 500px){
+    width: 100%;
+  }
 }

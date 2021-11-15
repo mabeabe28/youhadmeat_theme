@@ -44,7 +44,6 @@
 <body <?php body_class(); ?>>
 
 
-
 <div id="page" class="site">
 	<!---<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'youhadmeat_theme' ); ?></a>-->
 
@@ -80,7 +79,12 @@
 		 -->
 
 		</nav><!-- #site-navigation -->
-	
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'main',
+				'menu_id'        => 'front-banner',
+			) );
+		?>
 	</header><!-- #masthead -->
 
 

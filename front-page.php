@@ -14,20 +14,6 @@
 
 get_header();
 ?>
-<!--Background for Front Page only-->
-<style>
-body{
-  background-color: #ebebeb;
-  margin: 0;
-}
-</style>
-
-<?php
-	wp_nav_menu( array(
-		'theme_location' => 'main',
-		'menu_id'        => 'front-banner',
-	) );
-?>
 
 
 <div class="post-grid">
