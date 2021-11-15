@@ -30,7 +30,7 @@
 	.no-results .title{
 		width: 100%;
 		text-align: center;
-		font-family: "MontserratBlack";
+		font-family: 'Fjalla One', sans-serif;
 	}
 
 </style>

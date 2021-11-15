@@ -49,7 +49,7 @@ get_header();
 		.wrapper-404 .title{
 			width: 100%;
 			text-align: center;
-			font-family: "MontserratBlack";
+			font-family: 'Fjalla One', sans-serif;
 			display: flex;
 			justify-content: center;
 			flex-flow: row wrap;
@@ -63,7 +63,7 @@ get_header();
 		.text-404-leading{
 			padding-left: 10px;
 			margin-left: 20px;
-			font-family: "Montserrat";
+			font-family: 'Fjalla One', sans-serif;
 			font-weight:bold;
 			text-align: center;
 			display: inline-block;
@@ -79,7 +79,7 @@ get_header();
 			padding-right: 10px;
 			margin-right: 20px;
 			width: 400px;
-			font-family: "MontserratBlack";
+			font-family: 'Fjalla One', sans-serif;
 			display: inline-block;
 			text-align: center;
 			font-size: 6vw;

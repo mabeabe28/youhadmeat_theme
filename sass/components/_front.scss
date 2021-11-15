@@ -45,6 +45,7 @@ html{
                 padding: 12px;
                 font-size: 28px;
                 font-weight: bold;
+                font-family: 'Fjalla One', sans-serif;
 
                 a,a:visited,a:hover{
                     text-decoration: none;
@@ -66,6 +67,8 @@ html{
                 align-content: center;
                 opacity: 40%;
                 padding: 0 12px 12px 12px;
+                font-family: 'Fjalla One', sans-serif;
+
                 @media (max-width: 1200px){
                     padding-left: 0;
                 }
@@ -449,6 +452,8 @@ html{
     font-size: 18px;
     font-weight: bold;
     color: white;
+    font-family: 'Fjalla One', sans-serif;
+
     @media (max-width: 1200px) {
         padding: 0;
     }

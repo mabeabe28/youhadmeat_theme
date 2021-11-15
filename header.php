@@ -39,6 +39,9 @@
 			enable_page_level_ads: true
 		});
 	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?>>
