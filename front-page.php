@@ -25,7 +25,7 @@ body{
 <div class="post-grid">
 <?php
 				$args = array(
-					'numberposts' => 9,
+					'numberposts' => 10,
 					'orderby' => 'post_date',
 					'order' => 'DESC',
 					'post_type' => 'post',
@@ -36,7 +36,7 @@ body{
 				
 				foreach($recent_posts_all as $key=>$post){
 					$curPostTitle = $post["post_title"];
-					$curExcerptStr = (strlen($post["post_excerpt"]) > 500) ? substr($post["post_excerpt"],0,500).'...' :$post["post_excerpt"];
+					$curExcerptStr = (strlen($post["post_excerpt"]) > 200) ? substr($post["post_excerpt"],0,200).'...' :$post["post_excerpt"];
 					$curPostUrl = get_permalink($post["ID"]);
 					
 					$curCategory = get_the_category($post["ID"]);
@@ -56,7 +56,17 @@ body{
 
 					echo '
 						<div class="item item-'.$key.'" >
+								<div class="post-grid-image" style="background-image:url('.get_the_post_thumbnail_url($post["ID"], 'large').');">
+								</div>
+								<div class="post-grid-content">
 									<div class="title" >'.$curPostTitle.'</div>
+									<div class="excerpt">'.$curExcerptStr.'</div>
+									<div class="read-more-wrapper">
+									<div class="read-more button"> <a href="'.$curPostUrl.'"> Read More </a> </div>
+									</div>
+									
+								</div>
+								
 						</div>
 					';
 	
