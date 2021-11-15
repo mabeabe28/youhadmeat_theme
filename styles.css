@@ -367,7 +367,7 @@ html {
 @media (min-width: 1200px) {
   .post-grid {
     grid-template-columns: repeat(3, [col] 30%);
-    grid-template-rows: repeat(10, [row] 250px);
+    grid-template-rows: repeat(6, [row] 250px);
   }
   .post-grid .item-0 {
     grid-column: col/span 2;
