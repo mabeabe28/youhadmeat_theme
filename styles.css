@@ -647,13 +647,18 @@ html {
   width: 100%;
   text-align: center;
   font-size: 18px;
-  color: black;
   font-weight: bold;
-}
-.cta-banner .button {
   color: white;
 }
-.cta-banner a, .cta-banner a:visited, .cta-banner a:hover {
+@media (max-width: 1200px) {
+  .cta-banner {
+    padding: 0;
+  }
+}
+.cta-banner a.button {
+  color: white;
+}
+.cta-banner a, .cta-banner a:visited, .cta-banner a:hover, .cta-banner span {
   font-size: 24px;
   color: black;
   font-weight: bold;
