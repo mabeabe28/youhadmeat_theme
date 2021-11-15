@@ -393,21 +393,21 @@ html {
 .post-grid .item-8 .post-grid-content .excerpt {
   font-size: 12px;
 }
-.post-grid .item-8 {
+.post-grid .item-9 {
   grid-column: col/span 1;
   grid-row: row 6;
 }
-.post-grid .item-8 .post-grid-image {
+.post-grid .item-9 .post-grid-image {
   display: none;
 }
-.post-grid .item-8 .post-grid-content {
+.post-grid .item-9 .post-grid-content {
   width: 100%;
   height: 100%;
 }
-.post-grid .item-8 .post-grid-content .title {
+.post-grid .item-9 .post-grid-content .title {
   font-size: 20px;
 }
-.post-grid .item-8 .post-grid-content .excerpt {
+.post-grid .item-9 .post-grid-content .excerpt {
   font-size: 12px;
 }
 .post-grid .item-10 {
