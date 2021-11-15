@@ -31,7 +31,8 @@
 
 	  gtag('config', 'UA-123741580-1');
 	</script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7101197309332352"
+     crossorigin="anonymous"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
 			google_ad_client: "ca-pub-7101197309332352",

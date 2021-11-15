@@ -47,52 +47,63 @@ html{
 .post-grid{
     display: grid;
     grid-gap: 42px;
-    grid-template-columns: repeat(3, [col] 30% ) ;
-    grid-template-rows: repeat(10, [row] 200px  );
+    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) ;
 
-        .item {
-            color: black;
-            display: flex;           
-            flex-wrap: wrap; 
-            &:hover{
-                background-color: #e7e7e7;
-            }
-
-            .post-grid-image{
-                background-position: center;
-                background-size: cover;
-            }
-
-            .post-grid-content{
-                display: flex;
-                flex-wrap: wrap;
-
-                .title{
-                    width: 100%;
-                    padding: 12px;
-                    font-size: 28px;
-                    font-weight: bold;
-                }
-
-                .excerpt{
-                    width: 100%;
-                    padding: 0px 12px 12px 12px;
-                    font-size: 14px;
-                }
-
-                .read-more-wrapper{
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0px 12px;
-
-                    .button{
-                        font-size: 12px;
-                    }
-                }
-
-              
-            }
+    .item {
+        color: black;
+        display: flex;           
+        flex-wrap: wrap; 
+        &:hover{
+            background-color: #e7e7e7;
         }
+
+        .post-grid-image{
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+        }
+
+        .post-grid-content{
+            display: flex;
+            flex-wrap: wrap;
+
+            .title{
+                width: 100%;
+                padding: 12px;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .excerpt{
+                width: 100%;
+                padding: 0px 12px 12px 12px;
+                font-size: 14px;
+            }
+
+            .read-more-wrapper{
+                display: flex;
+                align-items: flex-end;
+                padding: 0px 12px;
+
+                .button{
+                    font-size: 12px;
+                }
+            }
+
+          
+        }
+    }
+
+
+    
+    @media (min-width: 1200px){
+
+        grid-template-columns: repeat(3, [col] 30% ) ;
+        grid-template-rows: repeat(10, [row] 200px  );
+
+       
 
       .item-0 {
         grid-column: col / span 2;
@@ -304,6 +315,8 @@ html{
         grid-column: col 3 / span 1;
         grid-row: row 4;
       }
+
+    }
     
 }
 
