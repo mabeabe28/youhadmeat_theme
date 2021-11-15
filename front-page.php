@@ -19,7 +19,7 @@ get_header();
 <div class="post-grid">
 <?php
 				$args = array(
-					'numberposts' => 10,
+					'numberposts' => 14,
 					'orderby' => 'post_date',
 					'order' => 'DESC',
 					'post_type' => 'post',
@@ -76,7 +76,8 @@ get_header();
 				
 			?>
 
-<div class="item-10">
+<div class="item item-14">
+	Advertising Space
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-7101197309332352"
@@ -85,6 +86,11 @@ get_header();
      data-full-width-responsive="true"></ins>
 			</div>
 
+</div>
+<div class="cta-banner">
+	<a class="button" href="/archive">
+		View All Posts
+	</a>
 </div>
 
 

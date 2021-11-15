@@ -32,13 +32,20 @@ body{
           color: gray;
           padding: 24px 48px;
           text-transform: uppercase;
-  
+
           
   
           a,a:visited,a:hover{
               color: gray;
               text-decoration: none;
           }
+
+  @media (max-width: 550px){
+    font-size: 10px;
+          padding: 10px 20px;
+  }
+
+
       }
   
 
@@ -88,8 +95,6 @@ body{
 
 #content{
   width: 100%;
-  display: flex;
-    justify-content: center;
 }
 
 #main{
