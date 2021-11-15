@@ -14,41 +14,7 @@
 
 get_header();
 ?>
-<?php
 
-		$textOnImage = get_post_meta( get_the_id(),'text-on-image', true );
-		$backgroundStyle = 'background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('.get_the_post_thumbnail_url().');';
-		if(!$textOnImage){
-			$backgroundStyle = 'background-image: url('.get_the_post_thumbnail_url().');';
-		}
-		if(!$hideTitle){
-			$hideTitle = get_post_meta( get_the_id(),'hideTitle', true );
-		}
-
-		echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
-			<div id="featured-wrapper">
-				<div id="featured-text">';
-
-					if($textOnImage){
-						if(!$hideTitle){
-							echo	''.get_the_title().'';
-						}
-					}
-
-		echo '</div>
-			</div>
-		</div>';
-
-		if(!$textOnImage){
-			if(!$hideTitle){
-				echo '<div id="featured-wrapper--bottom">
-					<div id="featured-text--bottom">
-						'.get_the_title().'
-					</div>
-				</div>';
-			}
-		}
-?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -56,7 +22,11 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
+			
+			echo '
+			<div class="page-title"><h1>'.get_the_title().'</h1></div>
+			';
+			
 			get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -70,76 +40,6 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<style>
-
-	#featured-image {
-	  /* Sizing */
-	  width: 100%;
-	  height: 100vh;
-	  /* Flexbox stuff */
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  /* Text styles */
-	  text-align: center;
-	  color: white;
-	  /* Background styles */
-	  /*background-image: url(http://localhost:8888/youhadmeat/wp-content/uploads/2018/05/DSCF6505.jpg);*/
-	  background-size: cover;
-	  background-position: center center;
-	  background-repeat: no-repeat;
-	  /*background-attachment: fixed;*/
-	  background-color: black;
-	}
-
-	/*hero text wrapper stuff*/
-	#featured-wrapper {
-	    /*position: absolute;*/
-	    top: 40%;
-	    color: white;
-	    width: 100%;
-	    display: flex;
-	    justify-content: center;
-	    flex-flow: row wrap;
-	}
-
-	/*hero text wrapper stuff*/
-	#featured-text {
-	  padding-left: 10px;
-	  padding-right: 10px;
-	  margin-left: 20px;
-	  margin-right: 20px;
-	  font-family: "MontserratBlack";
-	  text-align: center;
-	  display: inline-block;
-	  padding-bottom: 20px;
-	  font-size: 5vw;
-	  width:80%;
-	}
-
-	/*hero text wrapper stuff*/
-	#featured-wrapper--bottom {
-			/*position: absolute;*/
-			margin-top: 40px;
-			color: black;
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			flex-flow: row wrap;
-	}
-
-	/*hero text wrapper stuff*/
-	#featured-text--bottom {
-		padding-top: 20px;
-		margin-top: : 20px;
-		margin-bottom: : 5px;
-
-		font-family: "MontserratBlack";
-		text-align: center;
-		display: inline-block;
-		padding-bottom: 20px;
-		font-size: 5vw;
-		width:80%;
-	}
 
 	</style>
 <?php

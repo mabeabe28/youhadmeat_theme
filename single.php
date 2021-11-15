@@ -14,11 +14,14 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+		
 		<?php
 		while ( have_posts() ) :
 			the_post();
 	
-		
+			echo '
+			<div class="page-title"><h1>'.get_the_title().'</h1></div>
+			';
 			// echo '<div id="featured-image" class="featured-fade" style="'.$backgroundStyle.'">
 			// 	<div id="featured-wrapper">
 			// 		<div id="featured-text">';
