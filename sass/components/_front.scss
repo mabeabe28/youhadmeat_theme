@@ -6,6 +6,12 @@ html{
     width: 25%;
 }
 
+.current-menu-item,.current_page_item{
+    color: black !important;
+    font-weight: bolder !important;
+    border-bottom: 2px solid black !important;
+
+}
 #front-banner{
     width: 100%;
     display: flex;
