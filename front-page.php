@@ -22,6 +22,14 @@ body{
 }
 </style>
 
+<?php
+	wp_nav_menu( array(
+		'theme_location' => 'main',
+		'menu_id'        => 'front-banner',
+	) );
+?>
+
+
 <div class="post-grid">
 <?php
 				$args = array(

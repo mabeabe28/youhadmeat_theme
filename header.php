@@ -61,27 +61,22 @@
 		<nav id="navigation">
 
 		
-			<div id="menu">
+			<!-- <div id="menu">
 					<i class="fas fa-bars fa-lg">
 					</i>
-					<!-- <?php
-						wp_nav_menu( array(
-							'theme_location' => 'main',
-							'menu_id'        => 'primary-menu',
-						) );
-					?> -->
+					
 				
-			</div>
+			</div> -->
 			<div id="title">
 				YOU HAD ME AT
 			</div>
 
-			<div id="links">
+			<!-- <div id="links">
 				<a class="button" href="/here">
 					OUR LINKS
 				</a>
 			</div>
-		
+		 -->
 
 		</nav><!-- #site-navigation -->
 	

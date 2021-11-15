@@ -190,9 +190,9 @@ body {
 }
 #navigation #title {
   color: black;
-  width: 75%;
+  width: 100%;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
 }
 #navigation #links {
   width: 15%;
@@ -218,10 +218,36 @@ html {
   width: 25%;
 }
 
+#front-banner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  border-bottom: 2px solid #bdbbbb;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+#front-banner:first-child {
+  color: black;
+}
+#front-banner li {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+  padding: 24px 48px;
+  text-transform: uppercase;
+}
+#front-banner li a, #front-banner li a:visited, #front-banner li a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
 .post-grid {
   display: grid;
   grid-gap: 42px;
-  grid-template-columns: repeat(3, [col] 32%);
+  grid-template-columns: repeat(3, [col] 30%);
   grid-template-rows: repeat(10, [row] 200px);
 }
 .post-grid .item {
@@ -264,11 +290,11 @@ html {
   grid-row: row/span 2;
 }
 .post-grid .item-0 .post-grid-image {
-  width: 60%;
+  width: 70%;
   height: 100%;
 }
 .post-grid .item-0 .post-grid-content {
-  width: 40%;
+  width: 30%;
   height: 100%;
 }
 .post-grid .item-0 .post-grid-content .title {
@@ -287,6 +313,7 @@ html {
 .post-grid .item-1 .post-grid-content {
   width: 100%;
   height: 100%;
+  border-left: 1px solid black;
 }
 .post-grid .item-1 .post-grid-content .title {
   font-size: 20px;
@@ -328,6 +355,7 @@ html {
 .post-grid .item-4 .post-grid-content {
   width: 100%;
   height: 100%;
+  border-left: 1px solid black;
 }
 .post-grid .item-4 .post-grid-content .title {
   font-size: 20px;
@@ -345,6 +373,7 @@ html {
 .post-grid .item-5 .post-grid-content {
   width: 100%;
   height: 100%;
+  border-left: 1px solid black;
 }
 .post-grid .item-5 .post-grid-content .title {
   font-size: 20px;
@@ -386,6 +415,7 @@ html {
 .post-grid .item-8 .post-grid-content {
   width: 100%;
   height: 100%;
+  border-left: 1px solid black;
 }
 .post-grid .item-8 .post-grid-content .title {
   font-size: 20px;
@@ -403,6 +433,7 @@ html {
 .post-grid .item-9 .post-grid-content {
   width: 100%;
   height: 100%;
+  border-left: 1px solid black;
 }
 .post-grid .item-9 .post-grid-content .title {
   font-size: 20px;
