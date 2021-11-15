@@ -170,8 +170,8 @@ strong {
 }
 
 body {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 42px;
+  padding-right: 42px;
 }
 
 #navigation {
@@ -221,7 +221,7 @@ html {
 .post-grid {
   display: grid;
   grid-gap: 42px;
-  grid-template-columns: repeat(3, [col] auto);
+  grid-template-columns: repeat(3, [col] 32%);
   grid-template-rows: repeat(10, [row] 200px);
 }
 .post-grid .item {
