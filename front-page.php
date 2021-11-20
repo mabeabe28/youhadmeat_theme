@@ -77,14 +77,18 @@ get_header();
 			?>
 
 <div class="item item-14">
-	Advertising Space
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7101197309332352"
-     data-ad-slot="4859855228"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-			</div>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7101197309332352"
+		crossorigin="anonymous"></script>
+	<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-format="fluid"
+		data-ad-layout-key="-6t+ed+2i-1n-4w"
+		data-ad-client="ca-pub-7101197309332352"
+		data-ad-slot="4604519529"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
 
 </div>
 <div class="cta-banner">
