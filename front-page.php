@@ -82,9 +82,9 @@ get_header();
 	<ins class="adsbygoogle"
 		style="display:block"
 		data-ad-format="fluid"
-		data-ad-layout-key="-6t+ed+2i-1n-4w"
+		data-ad-layout-key="-gw-3+1f-3d+2z"
 		data-ad-client="ca-pub-7101197309332352"
-		data-ad-slot="4604519529"></ins>
+		data-ad-slot="9254210977"></ins>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
