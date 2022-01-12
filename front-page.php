@@ -19,7 +19,7 @@ get_header();
 <div class="post-grid">
 <?php
 				$args = array(
-					'numberposts' => 14,
+					'numberposts' => 15,
 					'orderby' => 'post_date',
 					'order' => 'DESC',
 					'post_type' => 'post',
@@ -76,19 +76,7 @@ get_header();
 				
 			?>
 
-<div class="item item-14">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7101197309332352"
-		crossorigin="anonymous"></script>
-	<ins class="adsbygoogle"
-		style="display:block"
-		data-ad-format="fluid"
-		data-ad-layout-key="-gw-3+1f-3d+2z"
-		data-ad-client="ca-pub-7101197309332352"
-		data-ad-slot="9254210977"></ins>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-</div>
+
 
 </div>
 <div class="cta-banner">
