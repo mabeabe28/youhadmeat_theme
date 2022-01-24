@@ -80,7 +80,7 @@ get_header();
 
 </div>
 <div class="cta-banner">
-	<a class="button" href="/archive">
+	<a class="button" href="/archive" style="color:white;">
 		View All Posts
 	</a>
 </div>
