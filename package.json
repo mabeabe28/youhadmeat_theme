@@ -23,5 +23,8 @@
     "gulp-sass": "^5.0.0",
     "gulp-util": "^3.0.8",
     "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1"
   }
 }
